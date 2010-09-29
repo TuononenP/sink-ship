@@ -336,7 +336,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 				"Author: Petri Tuononen\n" +
 				"Date: 10/2010\n" +
 				"Version: 1.0\n" +
-				"Info: This software is a part of Advanced Software Engineering" +
+				"Info: This software is a part of Advanced Software Engineering " +
 				"course at Sungkyunkwan University.\n" +
 				"Feedback: petri.tuononen@gmail.com", "About",
 				JOptionPane.PLAIN_MESSAGE);
