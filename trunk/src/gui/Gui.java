@@ -158,12 +158,33 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * @param g
 	 */
 	public void drawBoard(Graphics g) {
+		int menuHeight = menuBar.getHeight();
+		
+		//draw the background sea color
 		int width = board.getWidth()*getCellWidth();
 		int height = board.getHeight()*getCellHeight();
 		Color seaColour = new Color(81,167,255);
 		g.setColor(seaColour);
-		int x=0, y=0;
+		int x=0, y=menuHeight;
 		g.fillRect(x, y, width, height);
+		
+		//draw the horizontal lines
+		Color verticeColor = new Color(67,104, 142);
+		g.setColor(seaColour);
+		width = board.getWidth()*getCellWidth();
+		height = 2;
+		//loop
+		x=0; y=0; //starting point
+		y=menuBar.getHeight();
+		g.fillRect(x, y, width, height);
+		
+		//draw the vertical lines
+		height = board.getHeight()*getCellHeight();
+		width = 2;
+		//loop
+		x=0; y=0; //starting point
+		
+		
 	}
 
 	/**
