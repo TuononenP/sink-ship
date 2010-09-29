@@ -68,7 +68,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		setCellHeight(20);
 		//add mouse listener to the panel
 		addMouseListener(this);	
-		Dimension d = new Dimension(board.getWidth(), board.getHeight());
+		Dimension d = new Dimension(board.getBlockWidth(), board.getBlockHeight());
 		setPreferredSize(d);
 		createMenubar();
 	}
@@ -161,8 +161,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		int menuHeight = menuBar.getHeight();
 		
 		//draw the background sea color
-		int width = board.getWidth()*getCellWidth();
-		int height = board.getHeight()*getCellHeight();
+		int width = board.getBlockWidth()*getCellWidth();
+		int height = board.getBlockHeight()*getCellHeight();
 		Color seaColour = new Color(81,167,255);
 		g.setColor(seaColour);
 		int x=0, y=menuHeight;
@@ -171,7 +171,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//draw the horizontal lines
 		Color verticeColor = new Color(67,104, 142);
 		g.setColor(seaColour);
-		width = board.getWidth()*getCellWidth();
+		width = board.getBlockWidth()*getCellWidth();
 		height = 2;
 		//loop
 		x=0; y=0; //starting point
@@ -179,7 +179,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		g.fillRect(x, y, width, height);
 		
 		//draw the vertical lines
-		height = board.getHeight()*getCellHeight();
+		height = board.getBlockHeight()*getCellHeight();
 		width = 2;
 		//loop
 		x=0; y=0; //starting point
@@ -308,7 +308,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//make frame visible
 		f.setVisible(true);
 		//great frame same size as panel and take menubar height into an account
-		Dimension d = new Dimension(board.getWidth(), board.getHeight()/*+menuBar.getHeight()*/);
+		Dimension d = new Dimension(board.getBlockWidth(), board.getBlockHeight()/*+menuBar.getHeight()*/);
 		//set the frame size
 		f.setSize(d);
 		//don't allow to change the frame size to keep it fixed
