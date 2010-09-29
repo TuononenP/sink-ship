@@ -25,54 +25,100 @@ public class Board {
 	 * Constructor.
 	 */
 	public Board(int width, int height) {
-		this.width = width;
-		this.height = height;
+		this.blockWidth = width;
+		this.blockHeight = height;
 	}
 	
 	/**
-	 * @uml.property  name="width"
+	 * @uml.property  name="blockWidth"
 	 */
-	private int width;
+	private int blockWidth;
+
+	/**
+	 * Getter of the property <tt>blockWidth</tt>
+	 * @return  Returns the blockWidth.
+	 * @uml.property  name="blockWidth"
+	 */
+	public int getBlockWidth() {
+		return blockWidth;
+	}
+
+	/**
+	 * Setter of the property <tt>blockWidth</tt>
+	 * @param blockWidth  The blockWidth to set.
+	 * @uml.property  name="blockWidth"
+	 */
+	public void setBlockWidth(int blockWidth) {
+		this.blockWidth = blockWidth;
+	}
+
+	/**
+	 * @uml.property  name="blockHeight"
+	 */
+	private int blockHeight;
+
+	/**
+	 * Getter of the property <tt>blockHeight</tt>
+	 * @return  Returns the blockHeight.
+	 * @uml.property  name="blockHeight"
+	 */
+	public int getBlockHeight() {
+		return blockHeight;
+	}
+
+	/**
+	 * Setter of the property <tt>blockHeight</tt>
+	 * @param blockHeight  The blockHeight to set.
+	 * @uml.property  name="blockHeight"
+	 */
+	public void setBlockHeight(int blockHeight) {
+		this.blockHeight = blockHeight;
+	}
+
+	/**
+	 * @uml.property  name="HorizontalBlocks"
+	 */
+	private int horizontalBlocks;
 
 	/** 
 	 * Getter of the property <tt>horizontalSize</tt>
 	 * @return  Returns the horizontalSize.
-	 * @uml.property  name="width"
+	 * @uml.property  name="HorizontalBlocks"
 	 */
-	public int getWidth() {
-		return width;
+	public int getHorizontalBlocks() {
+		return horizontalBlocks;
 	}
 
 	/** 
 	 * Setter of the property <tt>horizontalSize</tt>
 	 * @param horizontalSize  The horizontalSize to set.
-	 * @uml.property  name="width"
+	 * @uml.property  name="HorizontalBlocks"
 	 */
-	public void setWidth(int width) {
-		this.width = width;
+	public void setHorizontalBlocks(int horizontalBlocks) {
+		this.horizontalBlocks = horizontalBlocks;
 	}
 
 	/**
-	 * @uml.property  name="height"
+	 * @uml.property  name="VerticalBlocks"
 	 */
-	private int height;
+	private int verticalBlocks;
 
 	/** 
 	 * Getter of the property <tt>verticalSize</tt>
 	 * @return  Returns the verticalSize.
-	 * @uml.property  name="height"
+	 * @uml.property  name="VerticalBlocks"
 	 */
-	public int getHeight() {
-		return height;
+	public int getVerticalBlocks() {
+		return verticalBlocks;
 	}
 
 	/** 
 	 * Setter of the property <tt>verticalSize</tt>
 	 * @param verticalSize  The verticalSize to set.
-	 * @uml.property  name="height"
+	 * @uml.property  name="VerticalBlocks"
 	 */
-	public void setHeight(int height) {
-		this.height = height;
+	public void setVerticalBlocks(int verticalBlocks) {
+		this.verticalBlocks = verticalBlocks;
 	}
 
 }
