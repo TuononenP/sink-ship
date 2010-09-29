@@ -21,42 +21,24 @@ package general;
  */
 public class Board {
 
-	/**
-	 * Constructor.
-	 */
-	public Board(int width, int height) {
-		this.blockWidth = width;
-		this.blockHeight = height;
-	}
-	
-	/**
-	 * @uml.property  name="blockWidth"
-	 */
-	private int blockWidth;
-
-	/**
-	 * Getter of the property <tt>blockWidth</tt>
-	 * @return  Returns the blockWidth.
-	 * @uml.property  name="blockWidth"
-	 */
-	public int getBlockWidth() {
-		return blockWidth;
-	}
-
-	/**
-	 * Setter of the property <tt>blockWidth</tt>
-	 * @param blockWidth  The blockWidth to set.
-	 * @uml.property  name="blockWidth"
-	 */
-	public void setBlockWidth(int blockWidth) {
-		this.blockWidth = blockWidth;
-	}
-
+	//constant global variables
 	/**
 	 * @uml.property  name="blockHeight"
 	 */
-	private int blockHeight;
-
+	private static int blockHeight=20;
+	/**
+	 * @uml.property  name="blockWidth"
+	 */
+	private static int blockWidth=20;	
+		
+	/**
+	 * Constructor.
+	 */
+	public Board(int horizontalBlocksAmount, int verticalBlocksAmount) {
+		horizontalBlocks = horizontalBlocksAmount;
+		verticalBlocks = verticalBlocksAmount;
+	}
+	
 	/**
 	 * Getter of the property <tt>blockHeight</tt>
 	 * @return  Returns the blockHeight.
@@ -119,6 +101,24 @@ public class Board {
 	 */
 	public void setVerticalBlocks(int verticalBlocks) {
 		this.verticalBlocks = verticalBlocks;
+	}
+
+	/** 
+	 * Getter of the property <tt>blockWidth</tt>
+	 * @return  Returns the blockWidth.
+	 * @uml.property  name="blockWidth"
+	 */
+	public int getBlockWidth() {
+		return blockWidth;
+	}
+
+	/** 
+	 * Setter of the property <tt>blockWidth</tt>
+	 * @param blockWidth  The blockWidth to set.
+	 * @uml.property  name="blockWidth"
+	 */
+	public void setBlockWidth(int blockWidth) {
+		this.blockWidth = blockWidth;
 	}
 
 }
