@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="class_diagram" size="772,449" id="" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D313030302073696E6B2D736869702F70657065">
-  <children xsi:type="editmodel:ClassEditModel" name="Ship" location="60,60" size="113,130" id="/Ship" runTimeClassModel="startX,startY,endX,endY,size">
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="class_diagram" size="772,449" id="general" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D313030302073696E6B2D736869702F70657065">
+  <children xsi:type="editmodel:ClassEditModel" name="Ship" location="60,60" size="113,130" id="general/Ship" runTimeClassModel="startX,startY,endX,endY,size">
     <children xsi:type="editmodel:CompartmentEditModel" size="90,90">
-      <children xsi:type="editmodel:AttributeEditModel" name="endX" id="/Ship#endX"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="endY" id="/Ship#endY"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="size" id="/Ship#size"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="startX" id="/Ship#startX"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="startY" id="/Ship#startY"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="endX" id="general/Ship#endX"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="endY" id="general/Ship#endY"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="size" id="general/Ship#size"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="startX" id="general/Ship#startX"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="startY" id="general/Ship#startY"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="Team" location="55,255" size="123,76" id="/Team" runTimeClassModel="player1,player2">
+  <children xsi:type="editmodel:ClassEditModel" name="Team" location="55,255" size="123,76" id="general/Team" runTimeClassModel="player1,player2">
     <children xsi:type="editmodel:CompartmentEditModel" size="100,36">
-      <children xsi:type="editmodel:AttributeEditModel" name="player1" id="/Team#player1"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="player2" id="/Team#player2"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="player1" id="general/Team#player1"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="player2" id="general/Team#player2"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="Player" location="300,60" size="112,58" id="/Player" runTimeClassModel="name">
+  <children xsi:type="editmodel:ClassEditModel" name="Player" location="300,60" size="112,58" id="general/Player" runTimeClassModel="name">
     <children xsi:type="editmodel:CompartmentEditModel" size="89,18">
-      <children xsi:type="editmodel:AttributeEditModel" name="name" id="/Player#name"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="general/Player#name"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="Board" location="525,60" size="98,104" id="/Board" runTimeClassModel="height,width,Board(II)">
+  <children xsi:type="editmodel:ClassEditModel" name="Board" location="525,60" size="98,104" id="general/Board" runTimeClassModel="height,width,Board(II)">
     <children xsi:type="editmodel:CompartmentEditModel" size="75,36">
-      <children xsi:type="editmodel:AttributeEditModel" name="width" id="/Board#width"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="height" id="/Board#height"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="width" id="general/Board#width"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="height" id="general/Board#height"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="62,18">
-      <children xsi:type="editmodel:MethodEditModel" name="Board" id="/Board#Board(II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Board" id="general/Board#Board(II)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="Gui" location="300,255" size="112,104" id="/Gui" runTimeClassModel="main([Ljava.lang.String;),drawBoard(Ljava.awt.Graphics;),g1,drawShips()">
+  <children xsi:type="editmodel:ClassEditModel" name="Gui" location="300,255" size="112,104" id="gui/Gui" runTimeClassModel="main([Ljava.lang.String;),drawBoard(Ljava.awt.Graphics;),g1,drawShips()">
     <children xsi:type="editmodel:CompartmentEditModel" size="88,18">
-      <children xsi:type="editmodel:AttributeEditModel" name="g1" id="/Gui#g1"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="g1" id="gui/Gui#g1"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="89,36">
-      <children xsi:type="editmodel:MethodEditModel" name="drawShips" id="/Gui#drawShips()"/>
-      <children xsi:type="editmodel:MethodEditModel" name="drawBoard" id="/Gui#drawBoard(Ljava.awt.Graphics;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="drawShips" id="gui/Gui#drawShips()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="drawBoard" id="gui/Gui#drawBoard(Ljava.awt.Graphics;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="SocketConnection" location="481,255" size="176,86" id="/SocketConnection" runTimeClassModel="connectToSocket(),createServer()">
+  <children xsi:type="editmodel:ClassEditModel" name="SocketConnection" location="481,255" size="176,86" id="general/SocketConnection" runTimeClassModel="connectToSocket(),createServer()">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="123,36">
-      <children xsi:type="editmodel:MethodEditModel" name="connectToSocket" id="/SocketConnection#connectToSocket()"/>
-      <children xsi:type="editmodel:MethodEditModel" name="createServer" id="/SocketConnection#createServer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="connectToSocket" id="general/SocketConnection#connectToSocket()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createServer" id="general/SocketConnection#createServer()"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
