@@ -41,6 +41,7 @@ import javax.swing.KeyStroke;
  */
 public class Gui extends JPanel implements Runnable, MouseListener {
 
+	private static final long serialVersionUID = 8491464846988855678L;
 	//global variables
 	private static Board board;
 	private String clickedSquare;
@@ -53,22 +54,17 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	private JMenuItem menuItem3;
 	private JMenuItem menuItem4;
 	private JMenuItem menuItem5;
-	private int cellWidth;
-	private int cellHeight;
 	
 	/**
 	 * Constructor.
 	 */
 	public Gui() {
 		 //set panel size
-		setSize(500, 500);
-		board = new Board(500, 500);
-		//set cell width and height
-		setCellWidth(20);
-		setCellHeight(20);
+//		setSize(200, 200);
+		board = new Board(30, 30);
 		//add mouse listener to the panel
 		addMouseListener(this);	
-		Dimension d = new Dimension(board.getBlockWidth(), board.getBlockHeight());
+		Dimension d = new Dimension(board.getBlockWidth()*board.getHorizontalBlocks(), board.getBlockHeight()*board.getVerticalBlocks());
 		setPreferredSize(d);
 		createMenubar();
 	}
@@ -161,30 +157,25 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		int menuHeight = menuBar.getHeight();
 		
 		//draw the background sea color
-		int width = board.getBlockWidth()*getCellWidth();
-		int height = board.getBlockHeight()*getCellHeight();
+		int width = board.getBlockWidth()*board.getHorizontalBlocks();
+		int height = board.getVerticalBlocks()*board.getVerticalBlocks();
 		Color seaColour = new Color(81,167,255);
 		g.setColor(seaColour);
-		int x=0, y=menuHeight;
+		int x=0, y=menuHeight; //take an account the height of the menubar
 		g.fillRect(x, y, width, height);
 		
 		//draw the horizontal lines
-		Color verticeColor = new Color(67,104, 142);
-		g.setColor(seaColour);
-		width = board.getBlockWidth()*getCellWidth();
-		height = 2;
-		//loop
-		x=0; y=0; //starting point
-		y=menuBar.getHeight();
-		g.fillRect(x, y, width, height);
-		
+		Color verticeColor = new Color(67,104, 142); //darker colour
+		g.setColor(verticeColor);
+		int lineHeight = 2;
+		for (int i=1; i<=board.getVerticalBlocks(); i++) {
+			g.fillRect(x, i*board.getBlockHeight()-lineHeight, width, lineHeight);
+		}
+
 		//draw the vertical lines
-		height = board.getBlockHeight()*getCellHeight();
-		width = 2;
-		//loop
-		x=0; y=0; //starting point
-		
-		
+		for (int i=1; i<=board.getHorizontalBlocks(); i++) {
+			g.fillRect(i*board.getBlockWidth()-lineHeight, x, lineHeight, width);
+		}
 	}
 
 	/**
@@ -200,22 +191,6 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 */
 	public void drawShips() {
 
-	}
-
-	public int getCellWidth() {
-		return cellWidth;
-	}
-
-	public void setCellWidth(int cellWidth) {
-		this.cellWidth = cellWidth;
-	}
-
-	public int getCellHeight() {
-		return cellHeight;
-	}
-
-	public void setCellHeight(int cellHeight) {
-		this.cellHeight = cellHeight;
 	}
 
 	/**
