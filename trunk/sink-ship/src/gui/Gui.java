@@ -17,6 +17,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package gui;
 
 import general.Board;
+import general.Coordinates;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -24,6 +26,7 @@ import java.awt.Graphics;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -44,7 +47,11 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	private static final long serialVersionUID = 8491464846988855678L;
 	//global variables
 	private static Board board;
-	private String clickedSquare;
+	private Coordinates clickedSquare;
+	private boolean squareSelected = false;
+	private Color seaColour = new Color(81,167,255);
+	private Color selectedSquareColor = new Color(159, 227, 126);
+	private Color verticeColor = new Color(67,104, 142);
 	private JFrame f;
 	private JMenuBar menuBar;
 	private JMenu menu;
@@ -159,13 +166,11 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//draw the background sea color
 		int width = board.getBlockWidth()*board.getHorizontalBlocks();
 		int height = board.getVerticalBlocks()*board.getVerticalBlocks();
-		Color seaColour = new Color(81,167,255);
 		g.setColor(seaColour);
 		int x=0, y=menuHeight; //take an account the height of the menubar
 		g.fillRect(x, y, width, height);
 		
 		//draw the horizontal lines
-		Color verticeColor = new Color(67,104, 142); //darker colour
 		g.setColor(verticeColor);
 		int lineHeight = 2;
 		for (int i=1; i<=board.getVerticalBlocks(); i++) {
@@ -185,6 +190,10 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	protected void paintComponent(Graphics g) {
 		setG1(g);
 		drawBoard(getG1());
+		if (isSquareSelected()) {
+			//paint the selected square
+			paintSelectedSquare();
+		}
 	}
 
 	/**
@@ -216,11 +225,35 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		this.g1 = g1;
 	}
 
+	public Color getSeaColour() {
+		return seaColour;
+	}
+
+	public void setSeaColour(Color seaColour) {
+		this.seaColour = seaColour;
+	}
+
+	public Color getSelectedSquareColor() {
+		return selectedSquareColor;
+	}
+
+	public void setSelectedSquareColor(Color selectedSquareColor) {
+		this.selectedSquareColor = selectedSquareColor;
+	}
+
+	public Color getVerticeColor() {
+		return verticeColor;
+	}
+
+	public void setVerticeColor(Color verticeColor) {
+		this.verticeColor = verticeColor;
+	}
+
 	/**
 	 * Get clicked square.
 	 * @return
 	 */
-	public String getClickedSquare() {
+	public Coordinates getClickedSquare() {
 		return clickedSquare;
 	}
 
@@ -228,14 +261,74 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * Set clicked square.
 	 * @param clickedSquare
 	 */
-	public void setClickedSquare(String clickedSquare) {
+	public void setClickedSquare(Coordinates clickedSquare) {
 		this.clickedSquare = clickedSquare;
 	}
 
-	@Override
-	public void mouseClicked(MouseEvent arg0) {
-		// TODO Auto-generated method stub
+	/**
+	 * Returns true if square is selected, false otherwise.
+	 * @return
+	 */
+	public boolean isSquareSelected() {
+		return squareSelected;
+	}
 
+	/**
+	 * Set selected square.
+	 * @param squareSelected
+	 */
+	public void setSquareSelected(boolean squareSelected) {
+		this.squareSelected = squareSelected;
+	}
+	
+	/**
+	 * Calculate the upper left corner cell coordinates.
+	 */
+	public Coordinates getUpperLeftCornerCoordinates(int x, int y) {
+		//calculate upper-left cell coordinates
+		int xPos = (x/board.getBlockWidth())*board.getBlockWidth();
+		int yPos = (y/board.getBlockHeight())*board.getBlockHeight();
+		return new Coordinates(xPos, yPos);
+	}
+	
+	/**
+	 * Paint defined square on the board.
+	 */
+	public void paintSquare(int x, int y, Color color) {
+		//redraw square color
+		getG1().setColor(color);
+		getG1().fillRect(x, y, board.getBlockWidth(), board.getBlockHeight());
+	}
+	
+	/**
+	 * Paint selected square on the board.
+	 */
+	public void paintSelectedSquare() {
+		Coordinates coords = getUpperLeftCornerCoordinates(getClickedSquare().getX(), getClickedSquare().getY());
+		paintSquare(coords.getX(), coords.getY(), getSelectedSquareColor());
+	}
+    
+	/**
+	 * Mouse event handler for clicked buttons.
+	 */
+	public void mouseClicked(MouseEvent e) {
+		//identify the mouse button pressed
+		switch(e.getModifiers()) {
+		//left mouse button pressed
+		case InputEvent.BUTTON1_MASK: {
+			//set the clicked square
+			setClickedSquare(new Coordinates(e.getX(), e.getY()));
+			setSquareSelected(true);
+			paintSelectedSquare();
+		}
+		//right mouse button pressed
+		case InputEvent.BUTTON3_MASK: {
+			//clear the square selection
+			setSquareSelected(false);
+			repaint();
+			break;
+		}
+		}
 	}
 
 	@Override

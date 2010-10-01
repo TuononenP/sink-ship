@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="class_diagram" size="1321,698" id="general" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D313030302073696E6B2D736869702F70657065">
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="class_diagram" size="1042,544" id="general" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D313030302073696E6B2D736869702F70657065">
   <children xsi:type="editmodel:ClassEditModel" name="Ship" location="60,30" size="113,130" id="general/Ship" runTimeClassModel="startX,startY,endX,endY,size">
     <children xsi:type="editmodel:CompartmentEditModel" size="90,90">
       <children xsi:type="editmodel:AttributeEditModel" name="endX" id="general/Ship#endX"/>
@@ -47,12 +47,16 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="Gui" location="315,30" size="158,315" id="gui/Gui" runTimeClassModel="main([Ljava.lang.String;),clickedSquare,Gui(),setClickedSquare(Ljava.lang.String;),mouseClicked(Ljava.awt.event.MouseEvent;),mouseEntered(Ljava.awt.event.MouseEvent;),mouseExited(Ljava.awt.event.MouseEvent;),drawShips(),createMenubar(),getClickedSquare(),drawBoard(Ljava.awt.Graphics;),run(),mousePressed(Ljava.awt.event.MouseEvent;),g1,mouseReleased(Ljava.awt.event.MouseEvent;)">
-    <children xsi:type="editmodel:CompartmentEditModel" size="135,72">
+  <children xsi:type="editmodel:ClassEditModel" name="Gui" location="315,30" size="227,585" id="gui/Gui" runTimeClassModel="main([Ljava.lang.String;),clickedSquare,Gui(),paintSquare(IILjava.awt.Color;),setClickedSquare(Lgeneral.Coordinates;),isSquareSelected(),seaColour,mouseEntered(Ljava.awt.event.MouseEvent;),getUpperLeftCornerCoordinates(II),getVerticeColor(),setSelectedSquareColor(Ljava.awt.Color;),setSquareSelected(Z),paintSelectedSquare(),run(),getSelectedSquareColor(),verticeColor,mouseReleased(Ljava.awt.event.MouseEvent;),setVerticeColor(Ljava.awt.Color;),selectedSquareColor,mouseClicked(Ljava.awt.event.MouseEvent;),mouseExited(Ljava.awt.event.MouseEvent;),squareSelected,drawShips(),createMenubar(),setSeaColour(Ljava.awt.Color;),getClickedSquare(),getSeaColour(),drawBoard(Ljava.awt.Graphics;),mousePressed(Ljava.awt.event.MouseEvent;),g1">
+    <children xsi:type="editmodel:CompartmentEditModel" size="169,108">
       <children xsi:type="editmodel:AttributeEditModel" name="g1" id="gui/Gui#g1"/>
       <children xsi:type="editmodel:AttributeEditModel" name="clickedSquare" id="gui/Gui#clickedSquare"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="squareSelected" id="gui/Gui#squareSelected"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="selectedSquareColor" id="gui/Gui#selectedSquareColor"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="seaColour" id="gui/Gui#seaColour"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="verticeColor" id="gui/Gui#verticeColor"/>
     </children>
-    <children xsi:type="editmodel:CompartmentEditModel" size="126,288">
+    <children xsi:type="editmodel:CompartmentEditModel" size="204,414">
       <children xsi:type="editmodel:MethodEditModel" name="drawShips" id="gui/Gui#drawShips()"/>
       <children xsi:type="editmodel:MethodEditModel" name="drawBoard" id="gui/Gui#drawBoard(Ljava.awt.Graphics;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="mouseEntered" id="gui/Gui#mouseEntered(Ljava.awt.event.MouseEvent;)"/>
@@ -61,16 +65,27 @@
       <children xsi:type="editmodel:MethodEditModel" name="mouseExited" id="gui/Gui#mouseExited(Ljava.awt.event.MouseEvent;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="mousePressed" id="gui/Gui#mousePressed(Ljava.awt.event.MouseEvent;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="run" id="gui/Gui#run()"/>
-      <children xsi:type="editmodel:MethodEditModel" name="setClickedSquare" id="gui/Gui#setClickedSquare(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setClickedSquare" id="gui/Gui#setClickedSquare(Lgeneral.Coordinates;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="getClickedSquare" id="gui/Gui#getClickedSquare()"/>
       <children xsi:type="editmodel:MethodEditModel" name="Gui" id="gui/Gui#Gui()"/>
       <children xsi:type="editmodel:MethodEditModel" name="createMenubar" id="gui/Gui#createMenubar()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isSquareSelected" id="gui/Gui#isSquareSelected()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSquareSelected" id="gui/Gui#setSquareSelected(Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getUpperLeftCornerCoordinates" id="gui/Gui#getUpperLeftCornerCoordinates(II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getSelectedSquareColor" id="gui/Gui#getSelectedSquareColor()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="paintSquare" id="gui/Gui#paintSquare(IILjava.awt.Color;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="paintSelectedSquare" id="gui/Gui#paintSelectedSquare()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSelectedSquareColor" id="gui/Gui#setSelectedSquareColor(Ljava.awt.Color;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getSeaColour" id="gui/Gui#getSeaColour()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setVerticeColor" id="gui/Gui#setVerticeColor(Ljava.awt.Color;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getVerticeColor" id="gui/Gui#getVerticeColor()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setSeaColour" id="gui/Gui#setSeaColour(Ljava.awt.Color;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="gui/Gui-Soyatec::Import->general/Board*gui/Gui-Standard::Call->general/Board*gui/Gui-Standard::Instantiate->general/Board" source="//@children.4" target="//@children.3" targetEnd="//@children.4/@sourceConnections.0/@children.2" label="//@children.4/@sourceConnections.0/@children.0" sourceEnd="//@children.4/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Call, Import, Instantiate»" size="140,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="158,69" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="0,69"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="227,70" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,70"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
@@ -79,6 +94,15 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="123,36">
       <children xsi:type="editmodel:MethodEditModel" name="connectToSocket" id="general/SocketConnection#connectToSocket()"/>
       <children xsi:type="editmodel:MethodEditModel" name="createServer" id="general/SocketConnection#createServer()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Game" location="690,315" size="127,86" id="general/Game" runTimeClassModel="createPlayers(),init()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="104,36">
+      <children xsi:type="editmodel:MethodEditModel" name="createPlayers" id="general/Game#createPlayers()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="init" id="general/Game#init()"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
