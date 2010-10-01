@@ -52,6 +52,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	private Color seaColour = new Color(81,167,255);
 	private Color selectedSquareColor = new Color(159, 227, 126);
 	private Color verticeColor = new Color(67,104, 142);
+	private int lineHeight = 2;
 	private JFrame f;
 	private JMenuBar menuBar;
 	private JMenu menu;
@@ -67,7 +68,6 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 */
 	public Gui() {
 		 //set panel size
-//		setSize(200, 200);
 		board = new Board(30, 30);
 		//add mouse listener to the panel
 		addMouseListener(this);	
@@ -172,7 +172,6 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		
 		//draw the horizontal lines
 		g.setColor(verticeColor);
-		int lineHeight = 2;
 		for (int i=1; i<=board.getVerticalBlocks(); i++) {
 			g.fillRect(x, i*board.getBlockHeight()-lineHeight, width, lineHeight);
 		}
@@ -223,6 +222,14 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 */
 	public void setG1(Graphics g1) {
 		this.g1 = g1;
+	}
+
+	public int getLineHeight() {
+		return lineHeight;
+	}
+
+	public void setLineHeight(int lineHeight) {
+		this.lineHeight = lineHeight;
 	}
 
 	public Color getSeaColour() {
@@ -297,7 +304,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	public void paintSquare(int x, int y, Color color) {
 		//redraw square color
 		getG1().setColor(color);
-		getG1().fillRect(x, y, board.getBlockWidth(), board.getBlockHeight());
+		getG1().fillRect(x, y, board.getBlockWidth()-getLineHeight(), board.getBlockHeight()-getLineHeight());
 	}
 	
 	/**
@@ -319,7 +326,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 			//set the clicked square
 			setClickedSquare(new Coordinates(e.getX(), e.getY()));
 			setSquareSelected(true);
-			paintSelectedSquare();
+			repaint();
+			break;
 		}
 		//right mouse button pressed
 		case InputEvent.BUTTON3_MASK: {
