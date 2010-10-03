@@ -49,10 +49,10 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	private static Board board;
 	private Coordinates clickedSquare;
 	private boolean squareSelected = false;
-	private Color seaColour = new Color(81,167,255);
+	private Color seaColor = new Color(81,167,255);
 	private Color selectedSquareColor = new Color(159, 227, 126);
 	private Color verticeColor = new Color(67,104, 142);
-	private int lineHeight = 2;
+	private int lineWidth = 2;
 	private JFrame f;
 	private JMenuBar menuBar;
 	private JMenu menu;
@@ -77,6 +77,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	}
 
 	/**
+	 * Main method.
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -157,8 +158,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	}
 
 	/**
-	 * Draws board.
-	 * @param g
+	 * Draws the board.
+	 * @param g Graphics
 	 */
 	public void drawBoard(Graphics g) {
 		int menuHeight = menuBar.getHeight();
@@ -166,25 +167,26 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//draw the background sea color
 		int width = board.getBlockWidth()*board.getHorizontalBlocks();
 		int height = board.getVerticalBlocks()*board.getVerticalBlocks();
-		g.setColor(seaColour);
+		g.setColor(seaColor);
 		int x=0, y=menuHeight; //take an account the height of the menubar
 		g.fillRect(x, y, width, height);
 		
 		//draw the horizontal lines
 		g.setColor(verticeColor);
 		for (int i=1; i<=board.getVerticalBlocks(); i++) {
-			g.fillRect(x, i*board.getBlockHeight()-lineHeight, width, lineHeight);
+			g.fillRect(x, i*board.getBlockHeight()-getLineWith(), width, getLineWith());
 		}
 
 		//draw the vertical lines
 		for (int i=1; i<=board.getHorizontalBlocks(); i++) {
-			g.fillRect(i*board.getBlockWidth()-lineHeight, x, lineHeight, width);
+			g.fillRect(i*board.getBlockWidth()-getLineWith(), x, getLineWith(), width);
 		}
 	}
 
 	/**
 	 * Responsible for drawing graphics on the screen.
 	 * Paint method is run every time repaint() is called.
+	 * @param g Graphics
 	 */
 	protected void paintComponent(Graphics g) {
 		setG1(g);
@@ -196,9 +198,19 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	}
 
 	/**
+	 * Draws ships.
+	 * @param g Graphics
 	 */
-	public void drawShips() {
+	public void drawShips(Graphics g) {
 
+	}
+	
+	/**
+	 * Draws a ship.
+	 * @param g Graphics
+	 */
+	public void drawShip(Graphics g) {
+		
 	}
 
 	/**
@@ -224,34 +236,66 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		this.g1 = g1;
 	}
 
-	public int getLineHeight() {
-		return lineHeight;
+	/**
+	 * Get width of the line.
+	 * @return lineWidth
+	 */
+	public int getLineWith() {
+		return lineWidth;
 	}
 
-	public void setLineHeight(int lineHeight) {
-		this.lineHeight = lineHeight;
+	/**
+	 * Set width of the line.
+	 * @param lineWidth
+	 */
+	public void setLineWidth(int lineWidth) {
+		this.lineWidth = lineWidth;
 	}
 
-	public Color getSeaColour() {
-		return seaColour;
+	/**
+	 * Get color of the sea.
+	 * @return seaColor Color
+	 */
+	public Color getSeaColor() {
+		return seaColor;
 	}
 
-	public void setSeaColour(Color seaColour) {
-		this.seaColour = seaColour;
+	/**
+	 * Set color of the sea.
+	 * @param seaColor Color
+	 */
+	public void setSeaColor(Color seaColor) {
+		this.seaColor = seaColor;
 	}
 
+	/**
+	 * Get color of the selected square.
+	 * @return selectedSquareColor Color
+	 */
 	public Color getSelectedSquareColor() {
 		return selectedSquareColor;
 	}
 
+	/**
+	 * Set color for the selected square.
+	 * @param selectedSquareColor
+	 */
 	public void setSelectedSquareColor(Color selectedSquareColor) {
 		this.selectedSquareColor = selectedSquareColor;
 	}
 
+	/**
+	 * Get color of the vertice.
+	 * @return verticeColor Color
+	 */
 	public Color getVerticeColor() {
 		return verticeColor;
 	}
 
+	/**
+	 * Set color of the vertice.
+	 * @param verticeColor Color
+	 */
 	public void setVerticeColor(Color verticeColor) {
 		this.verticeColor = verticeColor;
 	}
@@ -299,16 +343,16 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	}
 	
 	/**
-	 * Paint defined square on the board.
+	 * Paint the defined square on the board.
 	 */
 	public void paintSquare(int x, int y, Color color) {
 		//redraw square color
 		getG1().setColor(color);
-		getG1().fillRect(x, y, board.getBlockWidth()-getLineHeight(), board.getBlockHeight()-getLineHeight());
+		getG1().fillRect(x, y, board.getBlockWidth()-getLineWith(), board.getBlockHeight()-getLineWith());
 	}
 	
 	/**
-	 * Paint selected square on the board.
+	 * Paint the selected square on the board.
 	 */
 	public void paintSelectedSquare() {
 		Coordinates coords = getUpperLeftCornerCoordinates(getClickedSquare().getX(), getClickedSquare().getY());
