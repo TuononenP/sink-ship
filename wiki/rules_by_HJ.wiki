@@ -1,0 +1,32 @@
+I made some basic rules, and some option.
+ 
+I'll attach example about player board too.
+ 
+Firstly, I suggest about some basic rules.(in fact, we discussed and decided at last meeting.  Just i organized it.)
+ 
+* Basic rules
+ 
+1. 'n' players can play this game together.
+2. all players make their own team. (Individual team.  not together)
+3. player can attack whole palyers by one click of their turn.
+4. sunken ship will be announced when whole feature is revealed.(if you click some part of ship, and ship is already sunken, but you don't know about that, and when you click whole parts of ship, then you'll know you made a vain effort.)
+5. sunken ship will apperaed as different color or something.
+6. last surviver is winner(no additional point rule)
+7. ship-position and the number of ship will be decided at system.(not user's option)  -- because if we put this function to user, then i think it become too complex.
+8. weill fix maximum players. at each the number of players, the size of matrix, and the number of ships are already cosen.
+8(other option). we don't have some fixed guide about players, just host player can coose the size of players, map, and ship(i think it is quite difficult to make.;;)
+ 
+I think, if we announce some information about 'already-sunken-ships', we should send a information about other players' attack by real-time.
+ 
+And, secondly, i thought about user's graphical interface by two option,(based on our discussion too.)
+ 
+-just opponent sheets are offered, and any sheets can attack to all users.
+ 
+-offering distinguished attack sheets and user can attack all user by attack sheet.
+ 
+this example will be attached in ths mail.
+ 
+ 
+Plz comment about this.  Because i'm not good at java programming, i think, it is effort that i can do. 
+ 
+Thanks.
