@@ -22,11 +22,106 @@ package general;
 public class Board {
 
 	/**
+	 * The amount of different size of the ships on the boards.
+	 */
+	private int twoBlockShips;
+
+	/**
+	 * The amount of three block ships on the board
+	 */
+	private int threeBlockships;
+
+	/**
+	 * The amount of four block ships on the board.
+	 */
+	private int fourBlockShips;
+	
+	/**
+	 * The amount of five block ships on the board.
+	 */
+	private int fiveBlockships;
+	
+	/**
 	 * Constructor.
+	 * Withouth ships deployment.
 	 */
 	public Board(int horizontalBlocksAmount, int verticalBlocksAmount) {
 		horizontalBlocks = horizontalBlocksAmount;
 		verticalBlocks = verticalBlocksAmount;
+	}
+	
+	/**
+	 * Constructor.
+	 * Ships randomly deployed.
+	 */
+	public Board(int horizontalBlocksAmount, int verticalBlocksAmount, int twoBlockShips, int threeBlockShips, int fourBlockShips, int fiveBlockShips) {
+		horizontalBlocks = horizontalBlocksAmount;
+		verticalBlocks = verticalBlocksAmount;
+		setTwoBlockShips(twoBlockShips);
+		setThreeBlockships(threeBlockShips);
+		setFourBlockShips(fourBlockShips);
+		setFiveBlockships(fiveBlockShips);
+		
+	} 
+
+	/**
+	 * Get the amount of the block ships on the board.
+	 * @return
+	 */
+	public int getTwoBlockShips() {
+		return twoBlockShips;
+	}
+
+	/**
+	 * Set the amount of the block ships on the board.
+	 * @param twoBlockShips
+	 */
+	public void setTwoBlockShips(int twoBlockShips) {
+		this.twoBlockShips = twoBlockShips;
+	}
+
+	/**
+	 * Get the amount of three block ships on the board.
+	 * @return
+	 */
+	public int getThreeBlockships() {
+		return threeBlockships;
+	}
+
+	/**
+	 * Set the amount of three block ships son the board.
+	 * @param threeBlockShips
+	 */
+	public void setThreeBlockships(int threeBlockShips) {
+		this.threeBlockships = threeBlockShips;
+	}
+
+	/**
+	 * Get the amount of four block ships on the board.
+	 * @return fourBlockShips
+	 */
+	public int getFourBlockShips() {
+		return fourBlockShips;
+	}
+
+	/**
+	 * Set the amount of four block ships on the board.
+	 * @param fourBlockShips
+	 */
+	public void setFourBlockShips(int fourBlockShips) {
+		this.fourBlockShips = fourBlockShips;
+	}
+
+	/**
+	 * Get the amount of five block
+	 * @param fiveBlockships
+	 */
+	public void setFiveBlockships(int fiveBlockships) {
+		this.fiveBlockships = fiveBlockships;
+	}
+
+	public int getFiveBlockships() {
+		return fiveBlockships;
 	}
 
 	/**
@@ -168,17 +263,17 @@ public class Board {
 	}
 
 	/**
-	 * @uml.property  name="horizzontalShips"
+	 * @uml.property  name="horizontalShips"
 	 */
-	private String horizzontalShips;
+	private String horizontalShips;
 
 	/**
 	 * Getter of the property <tt>horizzontalShips</tt>
-	 * @return  Returns the horizzontalShips.
-	 * @uml.property  name="horizzontalShips"
+	 * @return  Returns the horzzontalShips.
+	 * @uml.property  name="horizontalShips"
 	 */
-	public String getHorizzontalShips() {
-		return horizzontalShips;
+	public String getHorizontalShips() {
+		return horizontalShips;
 	}
 
 	/**
@@ -186,8 +281,15 @@ public class Board {
 	 * @param horizzontalShips  The horizzontalShips to set.
 	 * @uml.property  name="horizzontalShips"
 	 */
-	public void setHorizzontalShips(String horizzontalShips) {
-		this.horizzontalShips = horizzontalShips;
+	public void setHorizontalShips(String horizontalShips) {
+		this.horizontalShips = horizontalShips;
+	}
+	
+	/**
+	 *  Deploy the ships randomly on the board.
+	 */
+	public void randomlyDeployShips() {
+		
 	}
 
 }
