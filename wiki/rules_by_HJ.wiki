@@ -24,7 +24,7 @@ And, secondly, i thought about user's graphical interface by two option,(based o
  
 -offering distinguished attack sheets and user can attack all user by attack sheet.
  
-this example will be attached in ths mail.
+this example will be attached in ths downloads
  
  
 Plz comment about this.  Because i'm not good at java programming, i think, it is effort that i can do. 
