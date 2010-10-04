@@ -121,4 +121,73 @@ public class Board {
 		Board.verticalBlocks = verticalBlocks;
 	}
 
+	/**
+	 * @uml.property  name="shipAmount"
+	 */
+	private String shipAmount;
+
+	/**
+	 * Getter of the property <tt>shipAmount</tt>
+	 * @return  Returns the shipAmount.
+	 * @uml.property  name="shipAmount"
+	 */
+	public String getShipAmount() {
+		return shipAmount;
+	}
+
+	/**
+	 * Setter of the property <tt>shipAmount</tt>
+	 * @param shipAmount  The shipAmount to set.
+	 * @uml.property  name="shipAmount"
+	 */
+	public void setShipAmount(String shipAmount) {
+		this.shipAmount = shipAmount;
+	}
+
+	/**
+	 * @uml.property  name="verticalShips"
+	 */
+	private String verticalShips;
+
+	/**
+	 * Getter of the property <tt>verticalShips</tt>
+	 * @return  Returns the verticalShips.
+	 * @uml.property  name="verticalShips"
+	 */
+	public String getVerticalShips() {
+		return verticalShips;
+	}
+
+	/**
+	 * Setter of the property <tt>verticalShips</tt>
+	 * @param verticalShips  The verticalShips to set.
+	 * @uml.property  name="verticalShips"
+	 */
+	public void setVerticalShips(String verticalShips) {
+		this.verticalShips = verticalShips;
+	}
+
+	/**
+	 * @uml.property  name="horizzontalShips"
+	 */
+	private String horizzontalShips;
+
+	/**
+	 * Getter of the property <tt>horizzontalShips</tt>
+	 * @return  Returns the horizzontalShips.
+	 * @uml.property  name="horizzontalShips"
+	 */
+	public String getHorizzontalShips() {
+		return horizzontalShips;
+	}
+
+	/**
+	 * Setter of the property <tt>horizzontalShips</tt>
+	 * @param horizzontalShips  The horizzontalShips to set.
+	 * @uml.property  name="horizzontalShips"
+	 */
+	public void setHorizzontalShips(String horizzontalShips) {
+		this.horizzontalShips = horizzontalShips;
+	}
+
 }
