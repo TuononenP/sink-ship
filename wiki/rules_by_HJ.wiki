@@ -1,4 +1,4 @@
-I made some basic rules, and some option.
+<pre>I made some basic rules, and some option.
  
 I'll attach example about player board too.
  
