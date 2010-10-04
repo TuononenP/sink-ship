@@ -18,9 +18,21 @@ package general;
 
 /**
  * @author Petri Tuononen
+ * 
+ * TODO: The play against AI or to debug the enemy ships could be placed using the random matrix placement.
  */
 public class Board {
 
+	/**
+	 * Size of the gaiming board.
+	 */
+	int[][] boardMatrix;
+	
+	/**
+	 * Matrix fot the enemy ships.
+	 */
+	int[][] enemyShipMatrix;
+	
 	/**
 	 * The amount of different size of the ships on the boards.
 	 */
@@ -43,11 +55,13 @@ public class Board {
 	
 	/**
 	 * Constructor.
-	 * Withouth ships deployment.
+	 * Without ships deployment.
 	 */
 	public Board(int horizontalBlocksAmount, int verticalBlocksAmount) {
-		horizontalBlocks = horizontalBlocksAmount;
-		verticalBlocks = verticalBlocksAmount;
+		setHorizontalBlocks(horizontalBlocksAmount);
+		setVerticalBlocks(verticalBlocksAmount);
+		//create a new board size
+		boardMatrix = new int[horizontalBlocks][verticalBlocks];
 	}
 	
 	/**
@@ -55,13 +69,12 @@ public class Board {
 	 * Ships randomly deployed.
 	 */
 	public Board(int horizontalBlocksAmount, int verticalBlocksAmount, int twoBlockShips, int threeBlockShips, int fourBlockShips, int fiveBlockShips) {
-		horizontalBlocks = horizontalBlocksAmount;
-		verticalBlocks = verticalBlocksAmount;
+		setHorizontalBlocks(horizontalBlocksAmount);
+		setVerticalBlocks(verticalBlocksAmount);
 		setTwoBlockShips(twoBlockShips);
 		setThreeBlockships(threeBlockShips);
 		setFourBlockShips(fourBlockShips);
 		setFiveBlockships(fiveBlockShips);
-		
 	} 
 
 	/**
