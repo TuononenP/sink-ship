@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="class_diagram" size="1042,544" id="general" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D313030302073696E6B2D736869702F70657065">
-  <children xsi:type="editmodel:ClassEditModel" name="Ship" location="60,30" size="113,130" id="general/Ship" runTimeClassModel="startX,startY,endX,endY,size">
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="class_diagram" size="1320,725" id="general" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D313030302073696E6B2D736869702F70657065">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.8/@sourceConnections.0 //@children.8/@sourceConnections.1 //@children.9/@sourceConnections.0 //@children.9/@sourceConnections.1" name="Ship" location="90,30" size="113,130" id="general/Ship" runTimeClassModel="size">
     <children xsi:type="editmodel:CompartmentEditModel" size="90,90">
-      <children xsi:type="editmodel:AttributeEditModel" name="endX" id="general/Ship#endX"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="endY" id="general/Ship#endY"/>
       <children xsi:type="editmodel:AttributeEditModel" name="size" id="general/Ship#size"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="startX" id="general/Ship#startX"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="startY" id="general/Ship#startY"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="Team" location="55,195" size="123,76" id="general/Team" runTimeClassModel="player1,player2">
+  <children xsi:type="editmodel:ClassEditModel" name="Team" location="1048,270" size="123,76" id="general/Team" runTimeClassModel="player1,player2">
     <children xsi:type="editmodel:CompartmentEditModel" size="100,36">
       <children xsi:type="editmodel:AttributeEditModel" name="player1" id="general/Team#player1"/>
       <children xsi:type="editmodel:AttributeEditModel" name="player2" id="general/Team#player2"/>
@@ -26,7 +22,7 @@
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="Player" location="61,339" size="112,58" id="general/Player" runTimeClassModel="name">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="Player" location="1054,390" size="112,58" id="general/Player" runTimeClassModel="name">
     <children xsi:type="editmodel:CompartmentEditModel" size="89,18">
       <children xsi:type="editmodel:AttributeEditModel" name="name" id="general/Player#name"/>
     </children>
@@ -34,8 +30,8 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0" name="Board" location="690,30" size="172,446" id="general/Board" runTimeClassModel="setThreeBlockships(I),threeBlockships,fiveBlockships,fourBlockShips,Board(II),getThreeBlockships(),getFourBlockShips(),randomlyDeployShips(),horizontalShips,verticalShips,setTwoBlockShips(I),Board(IIIIII),setFourBlockShips(I),getTwoBlockShips(),setFiveBlockships(I),shipAmount,getFiveBlockships(),twoBlockShips">
-    <children xsi:type="editmodel:CompartmentEditModel" size="149,198">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0" name="Board" location="810,30" size="202,482" id="general/Board" runTimeClassModel="setThreeBlockships(I),threeBlockships,fiveBlockships,fourBlockShips,Board(II),getThreeBlockships(),getFourBlockShips(),boardMatrix,randomlyDeployShips(),horizontalShips,verticalShips,setTwoBlockShips(I),Board(IIIIII),setFourBlockShips(I),setFiveBlockships(I),getTwoBlockShips(),shipAmount,enemyShipMatrix,getFiveBlockships(),twoBlockShips">
+    <children xsi:type="editmodel:CompartmentEditModel" size="179,234">
       <children xsi:type="editmodel:AttributeEditModel" name="blockWidth" id="general/Board#blockWidth"/>
       <children xsi:type="editmodel:AttributeEditModel" name="blockHeight" id="general/Board#blockHeight"/>
       <children xsi:type="editmodel:AttributeEditModel" name="HorizontalBlocks" id="general/Board#HorizontalBlocks"/>
@@ -47,6 +43,8 @@
       <children xsi:type="editmodel:AttributeEditModel" name="threeBlockships" id="general/Board#threeBlockships"/>
       <children xsi:type="editmodel:AttributeEditModel" name="fiveBlockships" id="general/Board#fiveBlockships"/>
       <children xsi:type="editmodel:AttributeEditModel" name="twoBlockShips" id="general/Board#twoBlockShips"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="boardMatrix" id="general/Board#boardMatrix"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="enemyShipMatrix" id="general/Board#enemyShipMatrix"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="149,198">
       <children xsi:type="editmodel:MethodEditModel" name="Board" id="general/Board#Board(II)"/>
@@ -64,7 +62,7 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="Gui" location="315,30" size="227,675" id="gui/Gui" runTimeClassModel="main([Ljava.lang.String;),Gui(),clickedSquare,paintSquare(IILjava.awt.Color;),setClickedSquare(Lgeneral.Coordinates;),getLineWith(),isSquareSelected(),getUpperLeftCornerCoordinates(II),mouseEntered(Ljava.awt.event.MouseEvent;),getVerticeColor(),drawVerticalShip(Ljava.awt.Graphics;IILjava.awt.Color;),setSelectedSquareColor(Ljava.awt.Color;),setSquareSelected(Z),drawShips(Ljava.awt.Graphics;),setLineWidth(I),paintSelectedSquare(),run(),getSeaColor(),getSelectedSquareColor(),verticeColor,mouseReleased(Ljava.awt.event.MouseEvent;),setVerticeColor(Ljava.awt.Color;),selectedSquareColor,drawHorizontalShip(Ljava.awt.Graphics;IILjava.awt.Color;),mouseClicked(Ljava.awt.event.MouseEvent;),mouseExited(Ljava.awt.event.MouseEvent;),lineWidth,squareSelected,createMenubar(),getClickedSquare(),setSeaColor(Ljava.awt.Color;),drawBoard(Ljava.awt.Graphics;),mousePressed(Ljava.awt.event.MouseEvent;),g1,seaColor">
+  <children xsi:type="editmodel:ClassEditModel" name="Gui" location="435,30" size="227,675" id="gui/Gui" runTimeClassModel="main([Ljava.lang.String;),Gui(),clickedSquare,paintSquare(IILjava.awt.Color;),setClickedSquare(Lgeneral.Coordinates;),getLineWith(),isSquareSelected(),getUpperLeftCornerCoordinates(II),mouseEntered(Ljava.awt.event.MouseEvent;),getVerticeColor(),drawVerticalShip(Ljava.awt.Graphics;IILjava.awt.Color;),setSelectedSquareColor(Ljava.awt.Color;),setSquareSelected(Z),drawShips(Ljava.awt.Graphics;),setLineWidth(I),paintSelectedSquare(),run(),getSeaColor(),getSelectedSquareColor(),verticeColor,mouseReleased(Ljava.awt.event.MouseEvent;),setVerticeColor(Ljava.awt.Color;),selectedSquareColor,drawHorizontalShip(Ljava.awt.Graphics;IILjava.awt.Color;),mouseClicked(Ljava.awt.event.MouseEvent;),mouseExited(Ljava.awt.event.MouseEvent;),lineWidth,squareSelected,createMenubar(),getClickedSquare(),setSeaColor(Ljava.awt.Color;),drawBoard(Ljava.awt.Graphics;),mousePressed(Ljava.awt.event.MouseEvent;),g1,seaColor">
     <children xsi:type="editmodel:CompartmentEditModel" size="169,126">
       <children xsi:type="editmodel:AttributeEditModel" name="g1" id="gui/Gui#g1"/>
       <children xsi:type="editmodel:AttributeEditModel" name="clickedSquare" id="gui/Gui#clickedSquare"/>
@@ -106,12 +104,12 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="gui/Gui-Standard::Call->general/Board*gui/Gui-Standard::Instantiate->general/Board*gui/Gui-Soyatec::Import->general/Board" source="//@children.4" target="//@children.3" targetEnd="//@children.4/@sourceConnections.0/@children.2" label="//@children.4/@sourceConnections.0/@children.0" sourceEnd="//@children.4/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Call, Import, Instantiate»" size="140,13" anchorKind="MiddlePart"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="227,223" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="0,223"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="227,240" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,240"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="SocketConnection" location="945,30" size="176,86" id="general/SocketConnection" runTimeClassModel="connectToSocket(),createServer()">
+  <children xsi:type="editmodel:ClassEditModel" name="SocketConnection" location="1020,30" size="176,86" id="general/SocketConnection" runTimeClassModel="connectToSocket(),createServer()">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="123,36">
       <children xsi:type="editmodel:MethodEditModel" name="connectToSocket" id="general/SocketConnection#connectToSocket()"/>
@@ -120,13 +118,64 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="Game" location="945,180" size="127,86" id="general/Game" runTimeClassModel="createPlayers(),init()">
+  <children xsi:type="editmodel:ClassEditModel" name="Game" location="1044,150" size="127,86" id="general/Game" runTimeClassModel="createPlayers(),init()">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="104,36">
       <children xsi:type="editmodel:MethodEditModel" name="createPlayers" id="general/Game#createPlayers()"/>
       <children xsi:type="editmodel:MethodEditModel" name="init" id="general/Game#init()"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Coordinates" location="285,30" size="133,176" id="general/Coordinates">
+    <children xsi:type="editmodel:CompartmentEditModel" size="46,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="x" id="general/Coordinates#x"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="y" id="general/Coordinates#y"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="96,90">
+      <children xsi:type="editmodel:MethodEditModel" name="Coordinates" id="general/Coordinates#Coordinates(II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getX" id="general/Coordinates#getX()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getY" id="general/Coordinates#getY()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setX" id="general/Coordinates#setX(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setY" id="general/Coordinates#setY(I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="HorizontalShip" location="15,285" size="154,76" id="general/HorizontalShip">
+    <children xsi:type="editmodel:CompartmentEditModel" size="90,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="endX" id="general/HorizontalShip#endX"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="startX" id="general/HorizontalShip#startX"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="general/Ship&lt;-general/HorizontalShip" source="//@children.8" target="//@children.0" targetEnd="//@children.8/@sourceConnections.0/@children.1" sourceEnd="//@children.8/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="114,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="39,130"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="general/HorizontalShip-Standard::Derive->general/Ship" source="//@children.8" target="//@children.0" targetEnd="//@children.8/@sourceConnections.1/@children.2" label="//@children.8/@sourceConnections.1/@children.0" sourceEnd="//@children.8/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Derive»" size="49,13" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="154,15" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="59,130"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="VerticalShip" location="240,285" size="134,76" id="general/VerticalShip">
+    <children xsi:type="editmodel:CompartmentEditModel" size="89,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="endY" id="general/VerticalShip#endY"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="startY" id="general/VerticalShip#startY"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="general/Ship&lt;-general/VerticalShip" source="//@children.9" target="//@children.0" targetEnd="//@children.9/@sourceConnections.0/@children.1" sourceEnd="//@children.9/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="40,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="102,130"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="general/VerticalShip-Standard::Derive->general/Ship" source="//@children.9" target="//@children.0" targetEnd="//@children.9/@sourceConnections.1/@children.2" label="//@children.9/@sourceConnections.1/@children.0" sourceEnd="//@children.9/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Derive»" location="239,222" size="49,13" automaticRelocationAllowed="false" locationOnWireFromSource="-33.488406298320385" distanceFromWire="-35.09311390570258" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="20,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="82,130"/>
+    </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
   <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=7;Product=eUML2" autoName="false"/>

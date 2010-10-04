@@ -22,97 +22,12 @@ package general;
 public class Ship {
 
 	/**
-	 * @uml.property  name="startX"
+	 * Constructor.
 	 */
-	private String startX;
-
-	/**
-	 * Getter of the property <tt>startX</tt>
-	 * @return  Returns the startX.
-	 * @uml.property  name="startX"
-	 */
-	public String getStartX() {
-		return startX;
+	public Ship(int size) {
+		this.size=size;
 	}
-
-	/**
-	 * Setter of the property <tt>startX</tt>
-	 * @param startX  The startX to set.
-	 * @uml.property  name="startX"
-	 */
-	public void setStartX(String startX) {
-		this.startX = startX;
-	}
-
-	/**
-	 * @uml.property  name="endX"
-	 */
-	private String endX;
-
-	/**
-	 * Getter of the property <tt>endX</tt>
-	 * @return  Returns the endX.
-	 * @uml.property  name="endX"
-	 */
-	public String getEndX() {
-		return endX;
-	}
-
-	/**
-	 * Setter of the property <tt>endX</tt>
-	 * @param endX  The endX to set.
-	 * @uml.property  name="endX"
-	 */
-	public void setEndX(String endX) {
-		this.endX = endX;
-	}
-
-	/**
-	 * @uml.property  name="startY"
-	 */
-	private String startY;
-
-	/**
-	 * Getter of the property <tt>startY</tt>
-	 * @return  Returns the startY.
-	 * @uml.property  name="startY"
-	 */
-	public String getStartY() {
-		return startY;
-	}
-
-	/**
-	 * Setter of the property <tt>startY</tt>
-	 * @param startY  The startY to set.
-	 * @uml.property  name="startY"
-	 */
-	public void setStartY(String startY) {
-		this.startY = startY;
-	}
-
-	/**
-	 * @uml.property  name="endY"
-	 */
-	private String endY;
-
-	/**
-	 * Getter of the property <tt>endY</tt>
-	 * @return  Returns the endY.
-	 * @uml.property  name="endY"
-	 */
-	public String getEndY() {
-		return endY;
-	}
-
-	/**
-	 * Setter of the property <tt>endY</tt>
-	 * @param endY  The endY to set.
-	 * @uml.property  name="endY"
-	 */
-	public void setEndY(String endY) {
-		this.endY = endY;
-	}
-
+	
 	/**
 	 * @uml.property  name="size"
 	 */
