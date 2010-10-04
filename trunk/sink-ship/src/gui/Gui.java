@@ -62,12 +62,12 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	private JMenuItem menuItem3;
 	private JMenuItem menuItem4;
 	private JMenuItem menuItem5;
-	
+
 	/**
 	 * Constructor.
 	 */
 	public Gui() {
-		 //set panel size
+		//set panel size
 		board = new Board(30, 30);
 		//add mouse listener to the panel
 		addMouseListener(this);	
@@ -163,14 +163,14 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 */
 	public void drawBoard(Graphics g) {
 		int menuHeight = menuBar.getHeight();
-		
+
 		//draw the background sea color
 		int width = board.getBlockWidth()*board.getHorizontalBlocks();
 		int height = board.getVerticalBlocks()*board.getVerticalBlocks();
 		g.setColor(seaColor);
 		int x=0, y=menuHeight; //take an account the height of the menubar
 		g.fillRect(x, y, width, height);
-		
+
 		//draw the horizontal lines
 		g.setColor(verticeColor);
 		for (int i=1; i<=board.getVerticalBlocks(); i++) {
@@ -204,14 +204,30 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	public void drawShips(Graphics g) {
 
 	}
-	
+
 	/**
-	 * Draws a ship.
+	 * Draws a horizontal aligned ship.
 	 * @param g Graphics
+	 * @param startX
+	 * @param endX
+	 * @param color
 	 */
-	public void drawShip(Graphics g) {
-		
-	}
+	public void drawHorizontalShip(Graphics g, int startX, int endX, Color color) {
+		//redraw square  color
+		paintSquare(startX, endX, color);
+	}	
+
+	/**
+	 * Draws a vertical aligned ship.
+	 * @param g Graphics
+	 * @param startY
+	 * @param endY
+	 * @param color Color
+	 */
+	public void drawVerticalShip(Graphics g, int startY, int endY, Color color) {
+		//redraw square  color
+		paintSquare(startY, endY, color);
+	}	
 
 	/**
 	 * @uml.property  name="g1"
@@ -331,7 +347,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	public void setSquareSelected(boolean squareSelected) {
 		this.squareSelected = squareSelected;
 	}
-	
+
 	/**
 	 * Calculate the upper left corner cell coordinates.
 	 */
@@ -341,7 +357,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		int yPos = (y/board.getBlockHeight())*board.getBlockHeight();
 		return new Coordinates(xPos, yPos);
 	}
-	
+
 	/**
 	 * Paint the defined square on the board.
 	 */
@@ -350,7 +366,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		getG1().setColor(color);
 		getG1().fillRect(x, y, board.getBlockWidth()-getLineWith(), board.getBlockHeight()-getLineWith());
 	}
-	
+
 	/**
 	 * Paint the selected square on the board.
 	 */
@@ -358,7 +374,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		Coordinates coords = getUpperLeftCornerCoordinates(getClickedSquare().getX(), getClickedSquare().getY());
 		paintSquare(coords.getX(), coords.getY(), getSelectedSquareColor());
 	}
-    
+
 	/**
 	 * Mouse event handler for clicked buttons.
 	 */
