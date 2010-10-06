@@ -15,6 +15,11 @@ Firstly, I suggest about some basic rules.(in fact, we discussed and decided at 
 7. ship-position and the number of ship will be decided at system.(not user's option)  -- because if we put this function to user, then i think it become too complex.
 8. weill fix maximum players. at each the number of players, the size of matrix, and the number of ships are already cosen.
 8(other option). we don't have some fixed guide about players, just host player can coose the size of players, map, and ship(i think it is quite difficult to make.;;)
+
+-addtion
+1. if hit a target, give a chance to hit more once.
+
+
  
 I think, if we announce some information about 'already-sunken-ships', we should send a information about other players' attack by real-time.
  
