@@ -1,4 +1,5 @@
-Graphical user interface.
+
+<pre>Graphical user interface.
 
 =Menu screen=
 Upon starting the application, the user is presented with a menu screen which is divided in two logical sections.
