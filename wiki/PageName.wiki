@@ -4,8 +4,8 @@ Graphical user interface.
 Upon starting the application, the user is presented with a menu screen which is divided in two logical sections.
 In the first the user can join an existing game by entering the IP address.
 In the other the user can create a new game and can see several settings.
-* Matrix dimensions (dx, dy)
-* number and size of ships
+  * Matrix dimensions (dx, dy)
+  * number and size of ships
 * maximum number of players
 * visibility of guesses
 * timeout for too long guesses
