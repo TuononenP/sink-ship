@@ -182,6 +182,14 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 			g.fillRect(i*board.getBlockWidth()-getLineWith(), x, getLineWith(), width);
 		}
 	}
+	
+	/**
+	 * Draws an x on top of the selected square.
+	 * @param g Graphics
+	 */
+	public void drawX(Graphics g) {
+		
+	}
 
 	/**
 	 * Responsible for drawing graphics on the screen.

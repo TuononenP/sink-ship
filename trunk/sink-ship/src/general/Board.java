@@ -19,19 +19,14 @@ package general;
 /**
  * @author Petri Tuononen
  * 
- * TODO: The play against AI or to debug the enemy ships could be placed using the random matrix placement.
+ * TODO: To play against AI or to debug the enemy ships could be placed using the random matrix placement.
  */
 public class Board {
 
 	/**
-	 * Size of the gaiming board.
+	 * Size of the gaming board.
 	 */
 	int[][] boardMatrix;
-	
-	/**
-	 * Matrix fot the enemy ships.
-	 */
-	int[][] enemyShipMatrix;
 	
 	/**
 	 * The amount of different size of the ships on the boards.
@@ -41,7 +36,7 @@ public class Board {
 	/**
 	 * The amount of three block ships on the board
 	 */
-	private int threeBlockships;
+	private int threeBlockShips;
 
 	/**
 	 * The amount of four block ships on the board.
@@ -51,11 +46,11 @@ public class Board {
 	/**
 	 * The amount of five block ships on the board.
 	 */
-	private int fiveBlockships;
+	private int fiveBlockShips;
 	
 	/**
 	 * Constructor.
-	 * Without ships deployment.
+	 * The amount of different sized ships are not initialized.
 	 */
 	public Board(int horizontalBlocksAmount, int verticalBlocksAmount) {
 		setHorizontalBlocks(horizontalBlocksAmount);
@@ -66,7 +61,7 @@ public class Board {
 	
 	/**
 	 * Constructor.
-	 * Ships randomly deployed.
+	 * The amount of different sized ships are set.
 	 */
 	public Board(int horizontalBlocksAmount, int verticalBlocksAmount, int twoBlockShips, int threeBlockShips, int fourBlockShips, int fiveBlockShips) {
 		setHorizontalBlocks(horizontalBlocksAmount);
@@ -98,7 +93,7 @@ public class Board {
 	 * @return
 	 */
 	public int getThreeBlockships() {
-		return threeBlockships;
+		return threeBlockShips;
 	}
 
 	/**
@@ -106,7 +101,7 @@ public class Board {
 	 * @param threeBlockShips
 	 */
 	public void setThreeBlockships(int threeBlockShips) {
-		this.threeBlockships = threeBlockShips;
+		this.threeBlockShips = threeBlockShips;
 	}
 
 	/**
@@ -126,15 +121,19 @@ public class Board {
 	}
 
 	/**
-	 * Get the amount of five block
+	 * Set the amount of five block ships on the board.
 	 * @param fiveBlockships
 	 */
 	public void setFiveBlockships(int fiveBlockships) {
-		this.fiveBlockships = fiveBlockships;
+		this.fiveBlockShips = fiveBlockships;
 	}
 
+	/**
+	 * Get the amount of five block ships on the board.
+	 * @return fiveBlockShips
+	 */
 	public int getFiveBlockships() {
-		return fiveBlockships;
+		return fiveBlockShips;
 	}
 
 	/**
@@ -227,75 +226,6 @@ public class Board {
 	 */
 	public void setVerticalBlocks(int verticalBlocks) {
 		Board.verticalBlocks = verticalBlocks;
-	}
-
-	/**
-	 * @uml.property  name="shipAmount"
-	 */
-	private String shipAmount;
-
-	/**
-	 * Getter of the property <tt>shipAmount</tt>
-	 * @return  Returns the shipAmount.
-	 * @uml.property  name="shipAmount"
-	 */
-	public String getShipAmount() {
-		return shipAmount;
-	}
-
-	/**
-	 * Setter of the property <tt>shipAmount</tt>
-	 * @param shipAmount  The shipAmount to set.
-	 * @uml.property  name="shipAmount"
-	 */
-	public void setShipAmount(String shipAmount) {
-		this.shipAmount = shipAmount;
-	}
-
-	/**
-	 * @uml.property  name="verticalShips"
-	 */
-	private String verticalShips;
-
-	/**
-	 * Getter of the property <tt>verticalShips</tt>
-	 * @return  Returns the verticalShips.
-	 * @uml.property  name="verticalShips"
-	 */
-	public String getVerticalShips() {
-		return verticalShips;
-	}
-
-	/**
-	 * Setter of the property <tt>verticalShips</tt>
-	 * @param verticalShips  The verticalShips to set.
-	 * @uml.property  name="verticalShips"
-	 */
-	public void setVerticalShips(String verticalShips) {
-		this.verticalShips = verticalShips;
-	}
-
-	/**
-	 * @uml.property  name="horizontalShips"
-	 */
-	private String horizontalShips;
-
-	/**
-	 * Getter of the property <tt>horizzontalShips</tt>
-	 * @return  Returns the horzzontalShips.
-	 * @uml.property  name="horizontalShips"
-	 */
-	public String getHorizontalShips() {
-		return horizontalShips;
-	}
-
-	/**
-	 * Setter of the property <tt>horizzontalShips</tt>
-	 * @param horizzontalShips  The horizzontalShips to set.
-	 * @uml.property  name="horizzontalShips"
-	 */
-	public void setHorizontalShips(String horizontalShips) {
-		this.horizontalShips = horizontalShips;
 	}
 	
 	/**
