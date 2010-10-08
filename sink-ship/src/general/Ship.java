@@ -18,6 +18,7 @@ package general;
 
 /**
  * @author Petri Tuononen
+ * @not to be instantiated 
  */
 public class Ship {
 

@@ -21,6 +21,7 @@ package general;
  */
 public class Player {
 
+	
 	/**
 	 * @uml.property  name="name"
 	 */

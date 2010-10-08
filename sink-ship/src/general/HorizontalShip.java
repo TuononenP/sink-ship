@@ -33,6 +33,27 @@ public class HorizontalShip extends Ship {
 	 * @uml.property  name="startX"
 	 */
 	private String startX;
+	
+	/**
+	 * @uml.property  name="y"
+	 */
+	private String y;
+
+	/**
+	 * Get y coordinate.
+	 * @return
+	 */
+	public String getY() {
+		return y;
+	}
+
+	/**
+	 * Set y coodinate.
+	 * @param y
+	 */
+	public void setY(String y) {
+		this.y = y;
+	}
 
 	/**
 	 * Getter of the property <tt>startX</tt>
