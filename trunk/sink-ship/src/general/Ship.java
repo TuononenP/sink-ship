@@ -31,14 +31,14 @@ public class Ship {
 	/**
 	 * @uml.property  name="size"
 	 */
-	private String size;
+	private int size;
 
 	/**
 	 * Getter of the property <tt>size</tt>
 	 * @return  Returns the size.
 	 * @uml.property  name="size"
 	 */
-	public String getSize() {
+	public int getSize() {
 		return size;
 	}
 
@@ -47,7 +47,7 @@ public class Ship {
 	 * @param size  The size to set.
 	 * @uml.property  name="size"
 	 */
-	public void setSize(String size) {
+	public void setSize(int size) {
 		this.size = size;
 	}
 
