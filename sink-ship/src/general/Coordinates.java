@@ -17,12 +17,19 @@
 package general;
 
 /**
- * @author Petri Tuononen
+ * @author  Petri Tuononen
  */
 public class Coordinates {
 
 	//global variables
-	private int x, y;
+	/**
+	 * @uml.property  name="x"
+	 */
+	private int x;
+	/**
+	 * @uml.property  name="y"
+	 */
+	private int y;
 	
 	/**
 	 * Constructor.
@@ -36,7 +43,8 @@ public class Coordinates {
 	
 	/**
 	 * Get value of x.
-	 * @return x
+	 * @return  x
+	 * @uml.property  name="x"
 	 */
 	public int getX() {
 		return x;
@@ -44,7 +52,8 @@ public class Coordinates {
 	
 	/**
 	 * Get value of y.
-	 * @return y
+	 * @return  y
+	 * @uml.property  name="y"
 	 */
 	public int getY() {
 		return y;
@@ -52,7 +61,8 @@ public class Coordinates {
 	
 	/**
 	 * Set value for x.
-	 * @param x
+	 * @param  x
+	 * @uml.property  name="x"
 	 */
 	public void setX(int x) {
 		this.x = x;
@@ -60,7 +70,8 @@ public class Coordinates {
 	
 	/**
 	 * Set value of y.
-	 * @param y
+	 * @param  y
+	 * @uml.property  name="y"
 	 */
 	public void setY(int y) {
 		this.y = y;

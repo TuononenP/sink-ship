@@ -17,9 +17,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package general;
 
 /**
- * @author Petri Tuononen
- * 
- * TODO: To play against AI or to debug the enemy ships could be placed using the random matrix placement.
+ * @author  Petri Tuononen  TODO: To play against AI or to debug the enemy ships could be placed using the random matrix placement.
  */
 public class Board {
 
@@ -30,6 +28,7 @@ public class Board {
 	
 	/**
 	 * The amount of different size of the ships on the boards.
+	 * @uml.property  name="twoBlockShips"
 	 */
 	private int twoBlockShips;
 
@@ -40,6 +39,7 @@ public class Board {
 
 	/**
 	 * The amount of four block ships on the board.
+	 * @uml.property  name="fourBlockShips"
 	 */
 	private int fourBlockShips;
 	
@@ -75,6 +75,7 @@ public class Board {
 	/**
 	 * Get the amount of the block ships on the board.
 	 * @return
+	 * @uml.property  name="twoBlockShips"
 	 */
 	public int getTwoBlockShips() {
 		return twoBlockShips;
@@ -82,7 +83,8 @@ public class Board {
 
 	/**
 	 * Set the amount of the block ships on the board.
-	 * @param twoBlockShips
+	 * @param  twoBlockShips
+	 * @uml.property  name="twoBlockShips"
 	 */
 	public void setTwoBlockShips(int twoBlockShips) {
 		this.twoBlockShips = twoBlockShips;
@@ -106,7 +108,8 @@ public class Board {
 
 	/**
 	 * Get the amount of four block ships on the board.
-	 * @return fourBlockShips
+	 * @return  fourBlockShips
+	 * @uml.property  name="fourBlockShips"
 	 */
 	public int getFourBlockShips() {
 		return fourBlockShips;
@@ -114,7 +117,8 @@ public class Board {
 
 	/**
 	 * Set the amount of four block ships on the board.
-	 * @param fourBlockShips
+	 * @param  fourBlockShips
+	 * @uml.property  name="fourBlockShips"
 	 */
 	public void setFourBlockShips(int fourBlockShips) {
 		this.fourBlockShips = fourBlockShips;
