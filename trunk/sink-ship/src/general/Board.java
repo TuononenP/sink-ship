@@ -227,6 +227,52 @@ public class Board {
 	public void setVerticalBlocks(int verticalBlocks) {
 		Board.verticalBlocks = verticalBlocks;
 	}
+
+//	/**
+//	 * @uml.property  name="verticalShips"
+//	 */
+//	private String verticalShips;
+//
+//	/**
+//	 * Getter of the property <tt>verticalShips</tt>
+//	 * @return  Returns the verticalShips.
+//	 * @uml.property  name="verticalShips"
+//	 */
+//	public String getVerticalShips() {
+//		return verticalShips;
+//	}
+//
+//	/**
+//	 * Setter of the property <tt>verticalShips</tt>
+//	 * @param verticalShips  The verticalShips to set.
+//	 * @uml.property  name="verticalShips"
+//	 */
+//	public void setVerticalShips(String verticalShips) {
+//		this.verticalShips = verticalShips;
+//	}
+//
+//	/**
+//	 * @uml.property  name="horizontalShips"
+//	 */
+//	private String horizontalShips;
+//
+//	/**
+//	 * Getter of the property <tt>horizzontalShips</tt>
+//	 * @return  Returns the horzzontalShips.
+//	 * @uml.property  name="horizontalShips"
+//	 */
+//	public String getHorizontalShips() {
+//		return horizontalShips;
+//	}
+//
+//	/**
+//	 * Setter of the property <tt>horizzontalShips</tt>
+//	 * @param horizzontalShips  The horizzontalShips to set.
+//	 * @uml.property  name="horizzontalShips"
+//	 */
+//	public void setHorizontalShips(String horizontalShips) {
+//		this.horizontalShips = horizontalShips;
+//	}
 	
 	/**
 	 *  Deploy the ships randomly on the board.
