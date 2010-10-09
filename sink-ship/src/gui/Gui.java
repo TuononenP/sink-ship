@@ -25,19 +25,13 @@ import java.awt.EventQueue;
 import java.awt.Graphics;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.KeyStroke;
 
 /**
  * @author Petri Tuononen
@@ -51,17 +45,18 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	private boolean squareSelected = false;
 	private Color seaColor = new Color(81,167,255);
 	private Color selectedSquareColor = new Color(159, 227, 126);
-	private Color verticeColor = new Color(67,104, 142);
+	private Color lineColor = new Color(67,104, 142);
+	private Color shipColor = new Color(217, 56, 56);
 	private int lineWidth = 2;
-	private JFrame f;
-	private JMenuBar menuBar;
-	private JMenu menu;
-	private JMenu menu2;
-	private JMenuItem menuItem;
-	private JMenuItem menuItem2;
-	private JMenuItem menuItem3;
-	private JMenuItem menuItem4;
-	private JMenuItem menuItem5;
+	public JFrame frame;
+	private static Menubar menuBar;
+//	private JMenu menu;
+//	private JMenu menu2;
+//	private JMenuItem menuItem;
+//	private JMenuItem menuItem2;
+//	private JMenuItem menuItem3;
+//	private JMenuItem menuItem4;
+//	private JMenuItem menuItem5;
 
 	/**
 	 * Constructor.
@@ -71,9 +66,12 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		board = new Board(30, 30);
 		//add mouse listener to the panel
 		addMouseListener(this);	
+		//set dimensions for the board.
 		Dimension d = new Dimension(board.getBlockWidth()*board.getHorizontalBlocks(), board.getBlockHeight()*board.getVerticalBlocks());
+		//set the size for the board.
 		setPreferredSize(d);
-		createMenubar();
+		//create a menubar
+		setMenubar(new Menubar());
 	}
 
 	/**
@@ -85,94 +83,21 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	}
 
 	/**
-	 * Menubar.
-	 */
-	public void createMenubar() {
-		//======== menuBar ========
-		{
-			menuBar = new JMenuBar();
-			//======== menu ========
-			{
-				menu = new JMenu("File");
-
-				//---- menuItem4 ----
-				menuItem4 = new JMenuItem("New Game");
-				menuItem4.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						//implement
-					}
-				});
-				menuItem4.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0));
-				menu.add(menuItem4);
-
-				//---- menuItem5 ----
-				menuItem5 = new JMenuItem("Settings");
-				menuItem5.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						//implement
-					}
-				});
-				menuItem5.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2, 0));
-				menu.add(menuItem5);
-
-				//---- menuItem ----
-				menuItem = new JMenuItem("Quit");
-				menuItem.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						quitMenuItemActionPerformed(e);
-					}
-				});
-				menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, 0));
-				menu.add(menuItem);
-
-				menuBar.add(menu);
-
-				//======== menu2 ========
-				{
-					menu2 = new JMenu("Info");
-
-					//---- menuItem2 ----
-					menuItem2 = new JMenuItem("Help");
-					menuItem2.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							helpMenuItemActionPerformed(e);
-						}
-					});
-					//shortcut for help F11
-					menuItem2.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F11, 0));
-					menu2.add(menuItem2);
-
-					//---- menuItem3 ----
-					menuItem3 = new JMenuItem("About");
-					menuItem3.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							aboutMenuItemActionPerformed(e);
-						}
-					});
-					menuItem3.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, 0));
-					menu2.add(menuItem3);
-				}
-				menuBar.add(menu2);
-			}
-		}
-	}
-
-	/**
 	 * Draws the board.
 	 * @param g Graphics
 	 */
 	public void drawBoard(Graphics g) {
-		int menuHeight = menuBar.getHeight();
-
+		int menuHeight = getMenubar().getHeight();
+		
 		//draw the background sea color
 		int width = board.getBlockWidth()*board.getHorizontalBlocks();
 		int height = board.getVerticalBlocks()*board.getVerticalBlocks();
-		g.setColor(seaColor);
+		g.setColor(getSeaColor());
 		int x=0, y=menuHeight; //take an account the height of the menubar
 		g.fillRect(x, y, width, height);
 
 		//draw the horizontal lines
-		g.setColor(verticeColor);
+		g.setColor(getLineColor());
 		for (int i=1; i<=board.getVerticalBlocks(); i++) {
 			g.fillRect(x, i*board.getBlockHeight()-getLineWith(), width, getLineWith());
 		}
@@ -199,6 +124,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	protected void paintComponent(Graphics g) {
 		setG1(g);
 		drawBoard(getG1());
+//		drawHorizontalShip(getG1(), 10, 30, getShipColor());
 		if (isSquareSelected()) {
 			//paint the selected square
 			paintSelectedSquare();
@@ -221,8 +147,9 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * @param color
 	 */
 	public void drawHorizontalShip(Graphics g, int startX, int endX, Color color) {
-		//redraw square  color
 		paintSquare(startX, endX, color);
+		Coordinates coords = getUpperLeftCornerCoordinates(startX, endX);
+		paintSquare(coords.getX(), coords.getY(), color);
 	}	
 
 	/**
@@ -236,6 +163,38 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//redraw square  color
 		paintSquare(startY, endY, color);
 	}	
+
+	/**
+	 * Get frame.
+	 * @return frame 
+	 */
+	public JFrame getFrame() {
+		return frame;
+	}
+	
+	/**
+	 * Set frame.
+	 * @return frame 
+	 */
+	public void setFrame(JFrame frame) {
+		this.frame = frame;
+	}
+
+	/**
+	 * Get the menubar.
+	 * @return
+	 */
+	public static Menubar getMenubar() {
+		return menuBar;
+	}
+
+	/**
+	 * Set the menubar.
+	 * @param menuBar
+	 */
+	public static void setMenubar(Menubar menuBar) {
+		Gui.menuBar = menuBar;
+	}
 
 	/**
 	 * @uml.property  name="g1"
@@ -309,19 +268,35 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	}
 
 	/**
-	 * Get color of the vertice.
-	 * @return verticeColor Color
+	 * Get the color of the ship.
+	 * @return shipColor
 	 */
-	public Color getVerticeColor() {
-		return verticeColor;
+	public Color getShipColor() {
+		return shipColor;
 	}
 
 	/**
-	 * Set color of the vertice.
-	 * @param verticeColor Color
+	 * Set the color for the ship.
+	 * @param shipColor
 	 */
-	public void setVerticeColor(Color verticeColor) {
-		this.verticeColor = verticeColor;
+	public void setShipColor(Color shipColor) {
+		this.shipColor = shipColor;
+	}
+
+	/**
+	 * Get color of the line.
+	 * @return verticeColor Color
+	 */
+	public Color getLineColor() {
+		return lineColor;
+	}
+
+	/**
+	 * Set color of the line..
+	 * @param lineColor Color
+	 */
+	public void setLineColor(Color lineColor) {
+		this.lineColor = lineColor;
 	}
 
 	/**
@@ -436,13 +411,15 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 */
 	public void run() {
 		//create new frame
-		f = new JFrame("Sink a Ship");
+		frame = new JFrame("Sink a Ship");
+		//set frame
+		setFrame(frame);
 		//close frame when pressing close button
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//add content pane to frame
-		f.getContentPane().add(new Gui());
+		getFrame().getContentPane().add(new Gui());
 		//add menubar to the frame
-		f.setJMenuBar(menuBar);
+		getFrame().setJMenuBar(getMenubar());
 		//        //try to load icon image
 		//        try {
 		//         f.setIconImage(new ImageIcon("./graphics/icon.jpg").getImage());
@@ -450,35 +427,108 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//         //icon load error
 		//        }
 		//make frame visible
-		f.setVisible(true);
+		getFrame().setVisible(true);
 		//great frame same size as panel and take menubar height into an account
 		Dimension d = new Dimension(board.getBlockWidth(), board.getBlockHeight()/*+menuBar.getHeight()*/);
 		//set the frame size
-		f.setSize(d);
+		getFrame().setSize(d);
 		//don't allow to change the frame size to keep it fixed
-		f.setResizable(false);
+		getFrame().setResizable(false);
 
 		// Get the size of the screen
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 
 		// Determine the new location of the frame
-		int w = f.getSize().width;
-		int h = f.getSize().height;
+		int w = getFrame().getSize().width;
+		int h = getFrame().getSize().height;
 		int x = (dim.width-w)/2;
 		int y = (dim.height-h)/2;
 
 		// Move the frame to the center of the screen
-		f.setLocation(x, y);
-		f.pack();
+		getFrame().setLocation(x, y);
+		getFrame().pack();
 	}
 
+//	/**
+//	 * Menubar.
+//	 */
+//	public void createMenubar() {
+//		//======== menuBar ========
+//		{
+//			menuBar = new JMenuBar();
+//			//======== menu ========
+//			{
+//				menu = new JMenu("File");
+//
+//				//---- menuItem4 ----
+//				menuItem4 = new JMenuItem("New Game");
+//				menuItem4.addActionListener(new ActionListener() {
+//					public void actionPerformed(ActionEvent e) {
+//						//implement
+//					}
+//				});
+//				menuItem4.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0));
+//				menu.add(menuItem4);
+//
+//				//---- menuItem5 ----
+//				menuItem5 = new JMenuItem("Settings");
+//				menuItem5.addActionListener(new ActionListener() {
+//					public void actionPerformed(ActionEvent e) {
+//						//implement
+//					}
+//				});
+//				menuItem5.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2, 0));
+//				menu.add(menuItem5);
+//
+//				//---- menuItem ----
+//				menuItem = new JMenuItem("Quit");
+//				menuItem.addActionListener(new ActionListener() {
+//					public void actionPerformed(ActionEvent e) {
+//						quitMenuItemActionPerformed(e);
+//					}
+//				});
+//				menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, 0));
+//				menu.add(menuItem);
+//
+//				menuBar.add(menu);
+//
+//				//======== menu2 ========
+//				{
+//					menu2 = new JMenu("Info");
+//
+//					//---- menuItem2 ----
+//					menuItem2 = new JMenuItem("Help");
+//					menuItem2.addActionListener(new ActionListener() {
+//						public void actionPerformed(ActionEvent e) {
+//							helpMenuItemActionPerformed(e);
+//						}
+//					});
+//					//shortcut for help F11
+//					menuItem2.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F11, 0));
+//					menu2.add(menuItem2);
+//
+//					//---- menuItem3 ----
+//					menuItem3 = new JMenuItem("About");
+//					menuItem3.addActionListener(new ActionListener() {
+//						public void actionPerformed(ActionEvent e) {
+//							aboutMenuItemActionPerformed(e);
+//						}
+//					});
+//					menuItem3.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, 0));
+//					menu2.add(menuItem3);
+//				}
+//				menuBar.add(menu2);
+//			}
+//		}
+//	}
+	
 	/**
 	 * 'Quit' File menu item pressed.
 	 * @param e
 	 */
 	private void quitMenuItemActionPerformed(ActionEvent e) {
-		f.setVisible(false);
-		f.dispose();
+		frame.setVisible(false);
+		frame.dispose();
 	}
 
 	/**
