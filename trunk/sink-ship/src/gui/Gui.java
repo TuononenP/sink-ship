@@ -34,21 +34,51 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
- * @author Petri Tuononen
+ * @author  Petri Tuononen
  */
 public class Gui extends JPanel implements Runnable, MouseListener {
 
 	private static final long serialVersionUID = 8491464846988855678L;
 	//global variables
+	/**
+	 * @uml.property  name="board"
+	 * @uml.associationEnd  
+	 */
 	private static Board board;
+	/**
+	 * @uml.property  name="clickedSquare"
+	 * @uml.associationEnd  
+	 */
 	private Coordinates clickedSquare;
+	/**
+	 * @uml.property  name="squareSelected"
+	 */
 	private boolean squareSelected = false;
+	/**
+	 * @uml.property  name="seaColor"
+	 */
 	private Color seaColor = new Color(81,167,255);
+	/**
+	 * @uml.property  name="selectedSquareColor"
+	 */
 	private Color selectedSquareColor = new Color(159, 227, 126);
+	/**
+	 * @uml.property  name="lineColor"
+	 */
 	private Color lineColor = new Color(67,104, 142);
+	/**
+	 * @uml.property  name="shipColor"
+	 */
 	private Color shipColor = new Color(217, 56, 56);
 	private int lineWidth = 2;
+	/**
+	 * @uml.property  name="frame"
+	 */
 	public JFrame frame;
+	/**
+	 * @uml.property  name="menuBar"
+	 * @uml.associationEnd  
+	 */
 	private static Menubar menuBar;
 //	private JMenu menu;
 //	private JMenu menu2;
@@ -166,7 +196,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 
 	/**
 	 * Get frame.
-	 * @return frame 
+	 * @return  frame
+	 * @uml.property  name="frame"
 	 */
 	public JFrame getFrame() {
 		return frame;
@@ -174,7 +205,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	
 	/**
 	 * Set frame.
-	 * @return frame 
+	 * @return  frame
+	 * @uml.property  name="frame"
 	 */
 	public void setFrame(JFrame frame) {
 		this.frame = frame;
@@ -229,7 +261,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 
 	/**
 	 * Set width of the line.
-	 * @param lineWidth
+	 * @param  lineWidth
+	 * @uml.property  name="lineWidth"
 	 */
 	public void setLineWidth(int lineWidth) {
 		this.lineWidth = lineWidth;
@@ -237,7 +270,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 
 	/**
 	 * Get color of the sea.
-	 * @return seaColor Color
+	 * @return  seaColor Color
+	 * @uml.property  name="seaColor"
 	 */
 	public Color getSeaColor() {
 		return seaColor;
@@ -245,7 +279,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 
 	/**
 	 * Set color of the sea.
-	 * @param seaColor Color
+	 * @param seaColor  Color
+	 * @uml.property  name="seaColor"
 	 */
 	public void setSeaColor(Color seaColor) {
 		this.seaColor = seaColor;
@@ -253,7 +288,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 
 	/**
 	 * Get color of the selected square.
-	 * @return selectedSquareColor Color
+	 * @return  selectedSquareColor Color
+	 * @uml.property  name="selectedSquareColor"
 	 */
 	public Color getSelectedSquareColor() {
 		return selectedSquareColor;
@@ -261,7 +297,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 
 	/**
 	 * Set color for the selected square.
-	 * @param selectedSquareColor
+	 * @param  selectedSquareColor
+	 * @uml.property  name="selectedSquareColor"
 	 */
 	public void setSelectedSquareColor(Color selectedSquareColor) {
 		this.selectedSquareColor = selectedSquareColor;
@@ -269,7 +306,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 
 	/**
 	 * Get the color of the ship.
-	 * @return shipColor
+	 * @return  shipColor
+	 * @uml.property  name="shipColor"
 	 */
 	public Color getShipColor() {
 		return shipColor;
@@ -277,7 +315,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 
 	/**
 	 * Set the color for the ship.
-	 * @param shipColor
+	 * @param  shipColor
+	 * @uml.property  name="shipColor"
 	 */
 	public void setShipColor(Color shipColor) {
 		this.shipColor = shipColor;
@@ -285,7 +324,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 
 	/**
 	 * Get color of the line.
-	 * @return verticeColor Color
+	 * @return  verticeColor Color
+	 * @uml.property  name="lineColor"
 	 */
 	public Color getLineColor() {
 		return lineColor;
@@ -293,7 +333,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 
 	/**
 	 * Set color of the line..
-	 * @param lineColor Color
+	 * @param lineColor  Color
+	 * @uml.property  name="lineColor"
 	 */
 	public void setLineColor(Color lineColor) {
 		this.lineColor = lineColor;
@@ -302,6 +343,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	/**
 	 * Get clicked square.
 	 * @return
+	 * @uml.property  name="clickedSquare"
 	 */
 	public Coordinates getClickedSquare() {
 		return clickedSquare;
@@ -309,7 +351,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 
 	/**
 	 * Set clicked square.
-	 * @param clickedSquare
+	 * @param  clickedSquare
+	 * @uml.property  name="clickedSquare"
 	 */
 	public void setClickedSquare(Coordinates clickedSquare) {
 		this.clickedSquare = clickedSquare;
@@ -318,6 +361,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	/**
 	 * Returns true if square is selected, false otherwise.
 	 * @return
+	 * @uml.property  name="squareSelected"
 	 */
 	public boolean isSquareSelected() {
 		return squareSelected;
@@ -325,7 +369,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 
 	/**
 	 * Set selected square.
-	 * @param squareSelected
+	 * @param  squareSelected
+	 * @uml.property  name="squareSelected"
 	 */
 	public void setSquareSelected(boolean squareSelected) {
 		this.squareSelected = squareSelected;

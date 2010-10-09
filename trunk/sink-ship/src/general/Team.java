@@ -23,6 +23,7 @@ public class Team {
 
 	/**
 	 * @uml.property  name="player1"
+	 * @uml.associationEnd  
 	 */
 	private Player player1;
 
@@ -46,6 +47,7 @@ public class Team {
 
 	/**
 	 * @uml.property  name="player2"
+	 * @uml.associationEnd  
 	 */
 	private Player player2;
 

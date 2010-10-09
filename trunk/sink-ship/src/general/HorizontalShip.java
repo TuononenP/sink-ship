@@ -17,7 +17,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package general;
 
 /**
- * @author Petri Tuononen
+ * @author  Petri Tuononen
  */
 public class HorizontalShip extends Ship {
 	
@@ -42,6 +42,7 @@ public class HorizontalShip extends Ship {
 	/**
 	 * Get y coordinate.
 	 * @return
+	 * @uml.property  name="y"
 	 */
 	public String getY() {
 		return y;
@@ -49,7 +50,8 @@ public class HorizontalShip extends Ship {
 
 	/**
 	 * Set y coodinate.
-	 * @param y
+	 * @param  y
+	 * @uml.property  name="y"
 	 */
 	public void setY(String y) {
 		this.y = y;
