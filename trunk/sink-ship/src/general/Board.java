@@ -21,10 +21,6 @@ package general;
  */
 public class Board {
 
-	/**
-	 * Size of the gaming board.
-	 */
-	int[][] boardMatrix;
 	private Ship[] ships;
 	private static int blockHeight=20;
 	private static int blockWidth=20;
@@ -38,8 +34,6 @@ public class Board {
 	public Board(int horizontalBlocksAmount, int verticalBlocksAmount) {
 		this.setHorizontalBlocks(horizontalBlocksAmount);
 		this.setVerticalBlocks(verticalBlocksAmount);
-		//create a new board size
-		boardMatrix = new int[horizontalBlocks][verticalBlocks];
 	}
 	
 	/**
