@@ -35,6 +35,8 @@ public class Ship {
 	private int size;
 	private Direction direction;
 	private Coordinates startingPoint;
+	private int[] hits;
+	private Boolean sunken;
 
 	/**
 	 * Getter of the property <tt>size</tt>
@@ -80,6 +82,34 @@ public class Ship {
 	 */
 	public Coordinates getStartingPoint() {
 		return startingPoint;
+	}
+
+	/**
+	 * @param hits the hits to set
+	 */
+	public void setHits(int[] hits) {
+		this.hits = hits;
+	}
+
+	/**
+	 * @return the hits
+	 */
+	public int[] getHits() {
+		return hits;
+	}
+
+	/**
+	 * @param sunken the sunken to set
+	 */
+	public void setSunken(Boolean sunken) {
+		this.sunken = sunken;
+	}
+
+	/**
+	 * @return the sunken
+	 */
+	public Boolean getSunken() {
+		return sunken;
 	}
 
 }

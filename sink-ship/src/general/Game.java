@@ -20,7 +20,10 @@ package general;
  * @author Petri Tuononen
  */
 public class Game {
-
+	
+	private Player[] players;
+	private Team[] teams;
+	
 	/**
 	 */
 	public void init(){
@@ -30,6 +33,34 @@ public class Game {
 	/**
 	 */
 	public void createPlayers(){
+	}
+
+	/**
+	 * @param players the players to set
+	 */
+	public void setPlayers(Player[] players) {
+		this.players = players;
+	}
+
+	/**
+	 * @return the players
+	 */
+	public Player[] getPlayers() {
+		return players;
+	}
+
+	/**
+	 * @param teams the teams to set
+	 */
+	public void setTeams(Team[] teams) {
+		this.teams = teams;
+	}
+
+	/**
+	 * @return the teams
+	 */
+	public Team[] getTeams() {
+		return teams;
 	}
 
 }
