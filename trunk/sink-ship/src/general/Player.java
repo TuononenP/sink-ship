@@ -18,29 +18,33 @@ package general;
 
 /**
  * @author Petri Tuononen
+ * @author Matej Pristak
  */
 public class Player {
 
 	
 	/**
-	 * @uml.property  name="name"
-	 */
-	private String name;
-	
-	/**
 	 * @param name
 	 * @param ip
 	 * @param board
+	 * @param connection
 	 */
-	protected Player(String name, String ip, Board board) {
+	protected Player(String name, String ip, Board board,
+			SocketConnection connection) {
 		super();
 		this.name = name;
 		this.ip = ip;
 		this.board = board;
+		this.connection = connection;
 	}
 
+	/**
+	 * @uml.property  name="name"
+	 */
+	private String name;
 	private String ip;
 	private Board board;
+	private SocketConnection connection;
 
 	/**
 	 * Getter of the property <tt>name</tt>
@@ -86,6 +90,20 @@ public class Player {
 	 */
 	public Board getBoard() {
 		return board;
+	}
+
+	/**
+	 * @param connection the connection to set
+	 */
+	public void setConnection(SocketConnection connection) {
+		this.connection = connection;
+	}
+
+	/**
+	 * @return the connection
+	 */
+	public SocketConnection getConnection() {
+		return connection;
 	}
 
 }

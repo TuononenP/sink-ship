@@ -18,6 +18,7 @@ package gui;
 
 import general.Board;
 import general.Coordinates;
+import general.Size;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -93,11 +94,11 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 */
 	public Gui() {
 		//set panel size
-		board = new Board(30, 30);
+		board = new Board(new Size(20,20), new Size(30,30));
 		//add mouse listener to the panel
 		addMouseListener(this);	
 		//set dimensions for the board.
-		Dimension d = new Dimension(board.getBlockWidth()*board.getHorizontalBlocks(), board.getBlockHeight()*board.getVerticalBlocks());
+		Dimension d = new Dimension(board.getMatrixSize().getWidth()*board.getBlockSize().getWidth(), board.getMatrixSize().getHeight()*board.getBlockSize().getHeight());
 		//set the size for the board.
 		setPreferredSize(d);
 		//create a menubar
@@ -120,21 +121,21 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		int menuHeight = getMenubar().getHeight();
 		
 		//draw the background sea color
-		int width = board.getBlockWidth()*board.getHorizontalBlocks();
-		int height = board.getVerticalBlocks()*board.getVerticalBlocks();
+		int width = board.getMatrixSize().getWidth()*board.getBlockSize().getWidth();
+		int height = board.getMatrixSize().getHeight()*board.getBlockSize().getHeight();
 		g.setColor(getSeaColor());
 		int x=0, y=menuHeight; //take an account the height of the menubar
 		g.fillRect(x, y, width, height);
 
 		//draw the horizontal lines
 		g.setColor(getLineColor());
-		for (int i=1; i<=board.getVerticalBlocks(); i++) {
-			g.fillRect(x, i*board.getBlockHeight()-getLineWith(), width, getLineWith());
+		for (int i=1; i<=board.getMatrixSize().getWidth(); i++) {
+			g.fillRect(x, i*board.getBlockSize().getHeight()-getLineWith(), width, getLineWith());
 		}
 
 		//draw the vertical lines
-		for (int i=1; i<=board.getHorizontalBlocks(); i++) {
-			g.fillRect(i*board.getBlockWidth()-getLineWith(), x, getLineWith(), width);
+		for (int i=1; i<=board.getMatrixSize().getHeight(); i++) {
+			g.fillRect(i*board.getBlockSize().getWidth()-getLineWith(), x, getLineWith(), width);
 		}
 	}
 	
@@ -381,8 +382,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 */
 	public Coordinates getUpperLeftCornerCoordinates(int x, int y) {
 		//calculate upper-left cell coordinates
-		int xPos = (x/board.getBlockWidth())*board.getBlockWidth();
-		int yPos = (y/board.getBlockHeight())*board.getBlockHeight();
+		int xPos = (x/board.getBlockSize().getWidth())*board.getBlockSize().getWidth();
+		int yPos = (y/board.getBlockSize().getHeight())*board.getBlockSize().getHeight();
 		return new Coordinates(xPos, yPos);
 	}
 
@@ -392,7 +393,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	public void paintSquare(int x, int y, Color color) {
 		//redraw square color
 		getG1().setColor(color);
-		getG1().fillRect(x, y, board.getBlockWidth()-getLineWith(), board.getBlockHeight()-getLineWith());
+		getG1().fillRect(x, y, board.getBlockSize().getWidth()-getLineWith(), board.getBlockSize().getHeight()-getLineWith());
 	}
 
 	/**
@@ -474,7 +475,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//make frame visible
 		getFrame().setVisible(true);
 		//great frame same size as panel and take menubar height into an account
-		Dimension d = new Dimension(board.getBlockWidth(), board.getBlockHeight()/*+menuBar.getHeight()*/);
+		Dimension d = new Dimension(board.getBlockSize().getWidth(), board.getBlockSize().getHeight()/*+menuBar.getHeight()*/);
 		//set the frame size
 		getFrame().setSize(d);
 		//don't allow to change the frame size to keep it fixed

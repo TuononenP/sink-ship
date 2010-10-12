@@ -18,17 +18,28 @@ package general;
 
 /**
  * @author Petri Tuononen
- * @not to be instantiated 
+ * @author Matej Pristak
  */
 public class Ship {
 
-	/**
-	 * Constructor.
-	 */
-	public Ship(int size) {
-		this.size=size;
-	}
 	
+	/**
+	 * @param size
+	 * @param direction
+	 * @param startingPoint
+	 * @param hits
+	 * @param sunken
+	 */
+	protected Ship(int size, Direction direction, Coordinates startingPoint,
+			int[] hits, Boolean sunken) {
+		super();
+		this.size = size;
+		this.direction = direction;
+		this.startingPoint = startingPoint;
+		this.hits = hits;
+		this.sunken = sunken;
+	}
+
 	/**
 	 * @uml.property  name="size"
 	 */

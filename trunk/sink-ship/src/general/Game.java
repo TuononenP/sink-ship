@@ -18,11 +18,13 @@ package general;
 
 /**
  * @author Petri Tuononen
+ * @author Matej Pristak
  */
 public class Game {
 	
 	private Player[] players;
 	private Team[] teams;
+	private int turn;
 	
 	/**
 	 */
@@ -61,6 +63,24 @@ public class Game {
 	 */
 	public Team[] getTeams() {
 		return teams;
+	}
+	
+	public void changeOrder(int[] order) {
+		
+	}
+
+	/**
+	 * @param turn the turn to set
+	 */
+	public void setTurn(int turn) {
+		this.turn = turn;
+	}
+
+	/**
+	 * @return the turn
+	 */
+	public int getTurn() {
+		return turn;
 	}
 
 }
