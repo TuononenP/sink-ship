@@ -21,52 +21,20 @@ package general;
   */
 public class Team {
 
+	private Player[] players;
+
 	/**
-	 * @uml.property  name="player1"
-	 * @uml.associationEnd  
+	 * @param players the players to set
 	 */
-	private Player player1;
-
-	/** 
-	 * Getter of the property <tt>team1</tt>
-	 * @return  Returns the team1.
-	 * @uml.property  name="player1"
-	 */
-	public Player getPlayer1() {
-		return player1;
-	}
-
-	/** 
-	 * Setter of the property <tt>team1</tt>
-	 * @param team1  The team1 to set.
-	 * @uml.property  name="player1"
-	 */
-	public void setPlayer1(Player player1) {
-		this.player1 = player1;
+	public void setPlayers(Player[] players) {
+		this.players = players;
 	}
 
 	/**
-	 * @uml.property  name="player2"
-	 * @uml.associationEnd  
+	 * @return the players
 	 */
-	private Player player2;
-
-	/** 
-	 * Getter of the property <tt>team2</tt>
-	 * @return  Returns the team2.
-	 * @uml.property  name="player2"
-	 */
-	public Player getPlayer2() {
-		return player2;
-	}
-
-	/** 
-	 * Setter of the property <tt>team2</tt>
-	 * @param team2  The team2 to set.
-	 * @uml.property  name="player2"
-	 */
-	public void setPlayer2(Player player2) {
-		this.player2 = player2;
+	public Player[] getPlayers() {
+		return players;
 	}
 
 }

@@ -26,6 +26,21 @@ public class Player {
 	 * @uml.property  name="name"
 	 */
 	private String name;
+	
+	/**
+	 * @param name
+	 * @param ip
+	 * @param board
+	 */
+	protected Player(String name, String ip, Board board) {
+		super();
+		this.name = name;
+		this.ip = ip;
+		this.board = board;
+	}
+
+	private String ip;
+	private Board board;
 
 	/**
 	 * Getter of the property <tt>name</tt>
@@ -43,6 +58,34 @@ public class Player {
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	/**
+	 * @param ip the ip to set
+	 */
+	public void setIp(String ip) {
+		this.ip = ip;
+	}
+
+	/**
+	 * @return the ip
+	 */
+	public String getIp() {
+		return ip;
+	}
+
+	/**
+	 * @param board the board to set
+	 */
+	public void setBoard(Board board) {
+		this.board = board;
+	}
+
+	/**
+	 * @return the board
+	 */
+	public Board getBoard() {
+		return board;
 	}
 
 }

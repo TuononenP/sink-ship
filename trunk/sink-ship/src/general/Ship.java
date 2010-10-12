@@ -33,6 +33,8 @@ public class Ship {
 	 * @uml.property  name="size"
 	 */
 	private int size;
+	private Direction direction;
+	private Coordinates startingPoint;
 
 	/**
 	 * Getter of the property <tt>size</tt>
@@ -50,6 +52,34 @@ public class Ship {
 	 */
 	public void setSize(int size) {
 		this.size = size;
+	}
+
+	/**
+	 * @param direction the direction to set
+	 */
+	public void setDirection(Direction direction) {
+		this.direction = direction;
+	}
+
+	/**
+	 * @return the direction
+	 */
+	public Direction getDirection() {
+		return direction;
+	}
+
+	/**
+	 * @param startingPoint the startingPoint to set
+	 */
+	public void setStartingPoint(Coordinates startingPoint) {
+		this.startingPoint = startingPoint;
+	}
+
+	/**
+	 * @return the startingPoint
+	 */
+	public Coordinates getStartingPoint() {
+		return startingPoint;
 	}
 
 }
