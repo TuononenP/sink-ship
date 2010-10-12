@@ -18,6 +18,7 @@ package general;
 
  /**
   * @author Petri Tuononen
+  * @author Matej Pristak
   */
 public class Team {
 
