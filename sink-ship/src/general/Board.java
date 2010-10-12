@@ -25,36 +25,19 @@ public class Board {
 	 * Size of the gaming board.
 	 */
 	int[][] boardMatrix;
-	
-	/**
-	 * The amount of different size of the ships on the boards.
-	 * @uml.property  name="twoBlockShips"
-	 */
-	private int twoBlockShips;
-
-	/**
-	 * The amount of three block ships on the board
-	 */
-	private int threeBlockShips;
-
-	/**
-	 * The amount of four block ships on the board.
-	 * @uml.property  name="fourBlockShips"
-	 */
-	private int fourBlockShips;
-	
-	/**
-	 * The amount of five block ships on the board.
-	 */
-	private int fiveBlockShips;
+	private Ship[] ships;
+	private static int blockHeight=20;
+	private static int blockWidth=20;
+	private static int horizontalBlocks;
+	private static int verticalBlocks;
 	
 	/**
 	 * Constructor.
 	 * The amount of different sized ships are not initialized.
 	 */
 	public Board(int horizontalBlocksAmount, int verticalBlocksAmount) {
-		setHorizontalBlocks(horizontalBlocksAmount);
-		setVerticalBlocks(verticalBlocksAmount);
+		this.setHorizontalBlocks(horizontalBlocksAmount);
+		this.setVerticalBlocks(verticalBlocksAmount);
 		//create a new board size
 		boardMatrix = new int[horizontalBlocks][verticalBlocks];
 	}
@@ -63,87 +46,12 @@ public class Board {
 	 * Constructor.
 	 * The amount of different sized ships are set.
 	 */
-	public Board(int horizontalBlocksAmount, int verticalBlocksAmount, int twoBlockShips, int threeBlockShips, int fourBlockShips, int fiveBlockShips) {
-		setHorizontalBlocks(horizontalBlocksAmount);
-		setVerticalBlocks(verticalBlocksAmount);
-		setTwoBlockShips(twoBlockShips);
-		setThreeBlockships(threeBlockShips);
-		setFourBlockShips(fourBlockShips);
-		setFiveBlockships(fiveBlockShips);
+	public Board(int horizontalBlocksAmount, int verticalBlocksAmount, Ship[] ships) {
+		this.setHorizontalBlocks(horizontalBlocksAmount);
+		this.setVerticalBlocks(verticalBlocksAmount);
+		this.setShips(ships);
+
 	} 
-
-	/**
-	 * Get the amount of the block ships on the board.
-	 * @return
-	 * @uml.property  name="twoBlockShips"
-	 */
-	public int getTwoBlockShips() {
-		return twoBlockShips;
-	}
-
-	/**
-	 * Set the amount of the block ships on the board.
-	 * @param  twoBlockShips
-	 * @uml.property  name="twoBlockShips"
-	 */
-	public void setTwoBlockShips(int twoBlockShips) {
-		this.twoBlockShips = twoBlockShips;
-	}
-
-	/**
-	 * Get the amount of three block ships on the board.
-	 * @return
-	 */
-	public int getThreeBlockships() {
-		return threeBlockShips;
-	}
-
-	/**
-	 * Set the amount of three block ships son the board.
-	 * @param threeBlockShips
-	 */
-	public void setThreeBlockships(int threeBlockShips) {
-		this.threeBlockShips = threeBlockShips;
-	}
-
-	/**
-	 * Get the amount of four block ships on the board.
-	 * @return  fourBlockShips
-	 * @uml.property  name="fourBlockShips"
-	 */
-	public int getFourBlockShips() {
-		return fourBlockShips;
-	}
-
-	/**
-	 * Set the amount of four block ships on the board.
-	 * @param  fourBlockShips
-	 * @uml.property  name="fourBlockShips"
-	 */
-	public void setFourBlockShips(int fourBlockShips) {
-		this.fourBlockShips = fourBlockShips;
-	}
-
-	/**
-	 * Set the amount of five block ships on the board.
-	 * @param fiveBlockships
-	 */
-	public void setFiveBlockships(int fiveBlockships) {
-		this.fiveBlockShips = fiveBlockships;
-	}
-
-	/**
-	 * Get the amount of five block ships on the board.
-	 * @return fiveBlockShips
-	 */
-	public int getFiveBlockships() {
-		return fiveBlockShips;
-	}
-
-	/**
-	 * @uml.property  name="blockHeight"
-	 */
-	private static int blockHeight=20;
 
 	/**
 	 * Getter of the property <tt>blockHeight</tt>
@@ -161,12 +69,7 @@ public class Board {
 	 */
 	public void setBlockHeight(int blockHeight) {
 		Board.blockHeight = blockHeight;
-	}
-
-	/**
-	 * @uml.property  name="blockWidth"
-	 */
-	private static int blockWidth=20;	
+	}	
 
 	/** 
 	 * Getter of the property <tt>blockWidth</tt>
@@ -186,11 +89,6 @@ public class Board {
 		Board.blockWidth = blockWidth;
 	}
 
-	/**
-	 * @uml.property  name="HorizontalBlocks"
-	 */
-	private static int horizontalBlocks;
-
 	/** 
 	 * Getter of the property <tt>horizontalSize</tt>
 	 * @return  Returns the horizontalSize.
@@ -208,11 +106,6 @@ public class Board {
 	public void setHorizontalBlocks(int horizontalBlocks) {
 		Board.horizontalBlocks = horizontalBlocks;
 	}
-
-	/**
-	 * @uml.property  name="VerticalBlocks"
-	 */
-	private static int verticalBlocks;
 
 	/** 
 	 * Getter of the property <tt>verticalSize</tt>
@@ -283,6 +176,20 @@ public class Board {
 	 */
 	public void randomlyDeployShips() {
 		
+	}
+
+	/**
+	 * @param ships the ships to set
+	 */
+	public void setShips(Ship[] ships) {
+		this.ships = ships;
+	}
+
+	/**
+	 * @return the ships
+	 */
+	public Ship[] getShips() {
+		return ships;
 	}
 
 }
