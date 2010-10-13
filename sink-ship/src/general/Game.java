@@ -25,16 +25,36 @@ public class Game {
 	private Player[] players;
 	private Team[] teams;
 	private int turn;
+	private Settings settings;
 	
 	/**
+	 * Initialize the game, structures and decide the order of players
 	 */
 	public void init(){
 		createPlayers();
+		//changeOrder(order);
 	}
 
 	/**
 	 */
 	public void createPlayers(){
+	}
+	
+	/**
+	 * guess
+	 * @param coordinates position to check for hit
+	 * @param player shooting player
+	 */
+	public FieldStatus shoot(Coordinates coordinates, Player player){
+		return null;
+		
+	}
+	
+	/**
+	 * do one turn
+	 */
+	public void doOneTurn(){
+		
 	}
 
 	/**
@@ -81,6 +101,20 @@ public class Game {
 	 */
 	public int getTurn() {
 		return turn;
+	}
+
+	/**
+	 * @param settings the settings to set
+	 */
+	public void setSettings(Settings settings) {
+		this.settings = settings;
+	}
+
+	/**
+	 * @return the settings
+	 */
+	public Settings getSettings() {
+		return settings;
 	}
 
 }
