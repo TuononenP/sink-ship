@@ -29,13 +29,11 @@ public class Player {
 	 * @param board
 	 * @param connection
 	 */
-	protected Player(String name, String ip, Board board,
-			SocketConnection connection) {
+	protected Player(String name, String ip, Board board) {
 		super();
 		this.name = name;
 		this.ip = ip;
 		this.board = board;
-		this.connection = connection;
 	}
 
 	/**
@@ -45,6 +43,8 @@ public class Player {
 	private String ip;
 	private Board board;
 	private SocketConnection connection;
+	private PlayerStatus status;
+	private FieldStatus[][] shots;
 
 	/**
 	 * Getter of the property <tt>name</tt>
@@ -105,5 +105,34 @@ public class Player {
 	public SocketConnection getConnection() {
 		return connection;
 	}
+
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(PlayerStatus status) {
+		this.status = status;
+	}
+
+	/**
+	 * @return the status
+	 */
+	public PlayerStatus getStatus() {
+		return status;
+	}
+
+	/**
+	 * @param shots the shots to set
+	 */
+	public void setShots(FieldStatus[][] shots) {
+		this.shots = shots;
+	}
+
+	/**
+	 * @return the shots
+	 */
+	public FieldStatus[][] getShots() {
+		return shots;
+	}
+
 
 }

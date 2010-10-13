@@ -19,6 +19,7 @@ package gui;
 import general.Board;
 import general.Coordinates;
 import general.Size;
+import general.FieldStatus;
 
 import java.awt.Color;
 import java.awt.Dimension;

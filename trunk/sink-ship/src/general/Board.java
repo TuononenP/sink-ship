@@ -101,5 +101,12 @@ public class Board {
 	public Size getBlockSize() {
 		return blockSize;
 	}
+	
+	/**
+	 * 
+	 */
+	public FieldStatus[][] toArray(){
+		return null;
+	}
 
 }

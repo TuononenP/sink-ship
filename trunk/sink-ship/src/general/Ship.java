@@ -31,12 +31,12 @@ public class Ship {
 	 * @param sunken
 	 */
 	protected Ship(int size, Direction direction, Coordinates startingPoint,
-			int[] hits, Boolean sunken) {
+			FieldStatus[] status, Boolean sunken) {
 		super();
 		this.size = size;
 		this.direction = direction;
 		this.startingPoint = startingPoint;
-		this.hits = hits;
+		this.status = status;
 		this.sunken = sunken;
 	}
 
@@ -46,7 +46,7 @@ public class Ship {
 	private int size;
 	private Direction direction;
 	private Coordinates startingPoint;
-	private int[] hits;
+	private FieldStatus[] status;
 	private Boolean sunken;
 
 	/**
@@ -98,15 +98,15 @@ public class Ship {
 	/**
 	 * @param hits the hits to set
 	 */
-	public void setHits(int[] hits) {
-		this.hits = hits;
+	public void setStatus(FieldStatus[] status) {
+		this.status = status;
 	}
 
 	/**
 	 * @return the hits
 	 */
-	public int[] getHits() {
-		return hits;
+	public FieldStatus[] getStatus() {
+		return status;
 	}
 
 	/**
