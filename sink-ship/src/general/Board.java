@@ -44,13 +44,13 @@ public class Board {
 		this.setBlockSize(blockSize);
 		this.matrixSize = matrixSize;
 	}
-
-	private Ship[] ships;
 	
+	
+	//server & client:
+	private Ship[] ships;	
+	private Size matrixSize;
 	//this should be in GUI:
 	private Size blockSize;
-	
-	private Size matrixSize; 
 	
 
 	/**
