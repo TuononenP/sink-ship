@@ -22,30 +22,51 @@ package general;
  */
 public class Game {
 	
+	/**
+	 * new game constructor, should init game with existing players and settings (either create new as a host or get existing from server)
+	 * call when creating game
+	 * @param players
+	 * @param settings
+	 */
+	protected Game(Player[] players, Settings settings) {
+		super();
+		this.players = players;
+		this.settings = settings;
+	}
+
+
+	//server & client:
 	private Player[] players;
-	private Team[] teams;
 	private int turn;
 	private Settings settings;
 	
-	/**
-	 * Initialize the game, structures and decide the order of players
-	 */
-	public void init(){
-		createPlayers();
-		//changeOrder(order);
-	}
-
+	//server only:
+	
+	//client only:
+	
+	
+	
 	/**
 	 */
 	public void createPlayers(){
 	}
 	
 	/**
-	 * guess
+	 * guess (server)
 	 * @param coordinates position to check for hit
 	 * @param player shooting player
 	 */
 	public FieldStatus shoot(Coordinates coordinates, Player player){
+		return null;
+		
+	}
+	
+	/**
+	 * guess (client)
+	 * @param coordinates position to check for hit
+	 * @param player shooting player
+	 */
+	public FieldStatus shoot(Coordinates coordinates){
 		return null;
 		
 	}
@@ -69,20 +90,6 @@ public class Game {
 	 */
 	public Player[] getPlayers() {
 		return players;
-	}
-
-	/**
-	 * @param teams the teams to set
-	 */
-	public void setTeams(Team[] teams) {
-		this.teams = teams;
-	}
-
-	/**
-	 * @return the teams
-	 */
-	public Team[] getTeams() {
-		return teams;
 	}
 	
 	public void changeOrder(int[] order) {
@@ -116,5 +123,39 @@ public class Game {
 	public Settings getSettings() {
 		return settings;
 	}
+
+		
+		/**
+		 * adds a player to this game
+		 */
+		public void addPlayer(Player player){
+		}
+		
+		/**
+		 * removes a player from this game
+		 */
+		public void removePlayer(Player player){
+		}
+
+			
+		/**
+		 * checks requirements to start the game (number of players, ready status etc.)
+		 */
+		public boolean checkRequirements(){
+			return false;	
+		}
+
+				
+		/**
+		 * starts the game (not lobby)
+		 * decides the player order
+		 */
+		public void startGame(){
+		}
+
+		
+		public Player[] getTeamMembers(int teamid){
+			return null;
+		 }
 
 }

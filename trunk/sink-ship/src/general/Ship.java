@@ -21,7 +21,6 @@ package general;
  * @author Matej Pristak
  */
 public class Ship {
-
 	
 	/**
 	 * @param size
@@ -30,7 +29,7 @@ public class Ship {
 	 * @param hits
 	 * @param sunken
 	 */
-	protected Ship(int size, Direction direction, Coordinates startingPoint,
+	public Ship(int size, Direction direction, Coordinates startingPoint,
 			FieldStatus[] status, Boolean sunken) {
 		super();
 		this.size = size;
@@ -39,10 +38,25 @@ public class Ship {
 		this.status = status;
 		this.sunken = sunken;
 	}
-
+	
+	
 	/**
-	 * @uml.property  name="size"
+	 * @param size
+	 * @param direction
+	 * @param startingPoint
 	 */
+	public Ship(int size, Direction direction, Coordinates startingPoint) {
+		super();
+		this.size = size;
+		this.direction = direction;
+		this.startingPoint = startingPoint;
+		
+		//defaults:
+		//this.status = status;
+		this.sunken = false;
+	}
+
+	//server & client:
 	private int size;
 	private Direction direction;
 	private Coordinates startingPoint;

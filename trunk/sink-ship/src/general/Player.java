@@ -35,21 +35,26 @@ public class Player {
 		this.ip = ip;
 		this.board = board;
 	}
-
-	/**
-	 * @uml.property  name="name"
-	 */
+	
+//server & client:
 	private String name;
-	private String ip;
 	private Board board;
+	//guesses of this player in a matrix
+	private FieldStatus[][] guesses;
+	//chat
+	private String[] messages;
+	private int teamid;
+	
+//server only:
+	private String ip;
 	private SocketConnection connection;
 	private PlayerStatus status;
-	private FieldStatus[][] shots;
+	
+//client only:
 
 	/**
 	 * Getter of the property <tt>name</tt>
 	 * @return  Returns the name.
-	 * @uml.property  name="name"
 	 */
 	public String getName() {
 		return name;
@@ -58,7 +63,6 @@ public class Player {
 	/**
 	 * Setter of the property <tt>name</tt>
 	 * @param name  The name to set.
-	 * @uml.property  name="name"
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -123,15 +127,43 @@ public class Player {
 	/**
 	 * @param shots the shots to set
 	 */
-	public void setShots(FieldStatus[][] shots) {
-		this.shots = shots;
+	public void setGuesses(FieldStatus[][] shots) {
+		this.guesses = shots;
 	}
 
 	/**
 	 * @return the shots
 	 */
-	public FieldStatus[][] getShots() {
-		return shots;
+	public FieldStatus[][] getGuesses() {
+		return guesses;
+	}
+
+	/**
+	 * @param messages the messages to set
+	 */
+	public void setMessages(String[] messages) {
+		this.messages = messages;
+	}
+
+	/**
+	 * @return the messages
+	 */
+	public String[] getMessages() {
+		return messages;
+	}
+
+	/**
+	 * @param teamid the teamid to set
+	 */
+	public void setTeamid(int teamid) {
+		this.teamid = teamid;
+	}
+
+	/**
+	 * @return the teamid
+	 */
+	public int getTeamid() {
+		return teamid;
 	}
 
 
