@@ -19,7 +19,7 @@ package general;
 import player.Player;
 
 /**
- * example executable class (I was lazy to draw a sequence diagram)
+ * Example executable class
  * @author Matej Pristak
  *
  */

@@ -21,6 +21,9 @@ package general;
  */
 public class Size {
 
+	private int width;
+	private int height;
+	
 	/**
 	 * @param width
 	 * @param height
@@ -30,8 +33,7 @@ public class Size {
 		this.width = width;
 		this.height = height;
 	}
-	private int width;
-	private int height;
+
 	/**
 	 * @param width  the width to set
 	 * @uml.property  name="width"
