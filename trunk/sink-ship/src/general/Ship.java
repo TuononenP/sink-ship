@@ -17,17 +17,19 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package general;
 
 /**
- * @author Petri Tuononen
- * @not to be instantiated 
+ * @author  Petri Tuononen
+ * 
  */
 public class Ship {
 
 	/**
 	 * @uml.property  name="direc"
+	 * @uml.associationEnd  
 	 */
 	Direction direc;
 	/**
 	 * @uml.property  name="coords"
+	 * @uml.associationEnd  
 	 */
 	Coordinates coords;
 	/**
@@ -76,7 +78,8 @@ public class Ship {
 
 	/**
 	 * Get direction of the ship.
-	 * @return Direction
+	 * @return  Direction
+	 * @uml.property  name="direc"
 	 */
 	public Direction getDirec() {
 		return direc;
@@ -84,7 +87,8 @@ public class Ship {
 
 	/**
 	 * Set direction of the ship.
-	 * @param direc
+	 * @param  direc
+	 * @uml.property  name="direc"
 	 */
 	public void setDirec(Direction direc) {
 		this.direc = direc;
@@ -92,7 +96,8 @@ public class Ship {
 
 	/**
 	 * Get coordinates of the ship.
-	 * @return Coordinates
+	 * @return  Coordinates
+	 * @uml.property  name="coords"
 	 */
 	public Coordinates getCoords() {
 		return coords;
@@ -100,7 +105,8 @@ public class Ship {
 
 	/**
 	 * Set coordinates of the ship.
-	 * @param coords
+	 * @param  coords
+	 * @uml.property  name="coords"
 	 */
 	public void setCoords(Coordinates coords) {
 		this.coords = coords;

@@ -23,7 +23,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 /**
- * @author Petri Tuononen
+ * @author  Petri Tuononen
  */
 public class Menubar extends JMenuBar {
 
@@ -45,6 +45,7 @@ public class Menubar extends JMenuBar {
 	
 	/**
 	 * Menubar.
+	 * @uml.property  name="menuBar"
 	 */
 	public JMenuBar getMenuBar() {
 		//======== menuBar ========

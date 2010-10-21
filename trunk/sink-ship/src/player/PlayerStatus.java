@@ -17,12 +17,26 @@
 package player;
 
 /**
- * 
- * @author Matej Pristak
- *
+ * @author  Matej Pristak
  */
 public enum PlayerStatus {
+	
+	/**
+	 * @uml.property  name="wAITING"
+	 * @uml.associationEnd  
+	 */
 	WAITING,
+	
+	/**
+	 * @uml.property  name="rEADY"
+	 * @uml.associationEnd  
+	 */
 	READY,
+	
+	/**
+	 * @uml.property  name="dEAD"
+	 * @uml.associationEnd  
+	 */
 	DEAD
+	
 }

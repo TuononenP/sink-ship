@@ -21,8 +21,8 @@ import general.FieldStatus;
 import socket.SocketConnection;
 
 /**
- * @author Petri Tuononen
- * @author Matej Pristak
+ * @author  Petri Tuononen
+ * @author  Matej Pristak
  */
 public class Player {
 
@@ -41,8 +41,16 @@ public class Player {
 
 	//server & client:
 	private String name;
+	/**
+	 * @uml.property  name="board"
+	 * @uml.associationEnd  
+	 */
 	private Board board;
 	//guesses of this player in a matrix
+	/**
+	 * @uml.property  name="guesses"
+	 * @uml.associationEnd  multiplicity="(0 -1)"
+	 */
 	private FieldStatus[][] guesses;
 	//chat
 	private String[] messages;
@@ -50,14 +58,23 @@ public class Player {
 
 	//server only:
 	private String ip;
+	/**
+	 * @uml.property  name="connection"
+	 * @uml.associationEnd  
+	 */
 	private SocketConnection connection;
+	/**
+	 * @uml.property  name="status"
+	 * @uml.associationEnd  
+	 */
 	private PlayerStatus status;
 
 	//client only:
 
 	/**
 	 * Getter of the property <tt>name</tt>
-	 * @return  Returns the name.
+	 * @return   Returns the name.
+	 * @uml.property  name="name"
 	 */
 	public String getName() {
 		return name;
@@ -65,105 +82,120 @@ public class Player {
 
 	/**
 	 * Setter of the property <tt>name</tt>
-	 * @param name  The name to set.
+	 * @param name   The name to set.
+	 * @uml.property  name="name"
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
 	/**
-	 * @param ip the ip to set
+	 * @param ip  the ip to set
+	 * @uml.property  name="ip"
 	 */
 	public void setIp(String ip) {
 		this.ip = ip;
 	}
 
 	/**
-	 * @return the ip
+	 * @return  the ip
+	 * @uml.property  name="ip"
 	 */
 	public String getIp() {
 		return ip;
 	}
 
 	/**
-	 * @param board the board to set
+	 * @param board  the board to set
+	 * @uml.property  name="board"
 	 */
 	public void setBoard(Board board) {
 		this.board = board;
 	}
 
 	/**
-	 * @return the board
+	 * @return  the board
+	 * @uml.property  name="board"
 	 */
 	public Board getBoard() {
 		return board;
 	}
 
 	/**
-	 * @param connection the connection to set
+	 * @param connection  the connection to set
+	 * @uml.property  name="connection"
 	 */
 	public void setConnection(SocketConnection connection) {
 		this.connection = connection;
 	}
 
 	/**
-	 * @return the connection
+	 * @return  the connection
+	 * @uml.property  name="connection"
 	 */
 	public SocketConnection getConnection() {
 		return connection;
 	}
 
 	/**
-	 * @param status the status to set
+	 * @param status  the status to set
+	 * @uml.property  name="status"
 	 */
 	public void setStatus(PlayerStatus status) {
 		this.status = status;
 	}
 
 	/**
-	 * @return the status
+	 * @return  the status
+	 * @uml.property  name="status"
 	 */
 	public PlayerStatus getStatus() {
 		return status;
 	}
 
 	/**
-	 * @param shots the shots to set
+	 * @param shots  the shots to set
+	 * @uml.property  name="guesses"
 	 */
 	public void setGuesses(FieldStatus[][] shots) {
 		this.guesses = shots;
 	}
 
 	/**
-	 * @return the shots
+	 * @return  the shots
+	 * @uml.property  name="guesses"
 	 */
 	public FieldStatus[][] getGuesses() {
 		return guesses;
 	}
 
 	/**
-	 * @param messages the messages to set
+	 * @param messages  the messages to set
+	 * @uml.property  name="messages"
 	 */
 	public void setMessages(String[] messages) {
 		this.messages = messages;
 	}
 
 	/**
-	 * @return the messages
+	 * @return  the messages
+	 * @uml.property  name="messages"
 	 */
 	public String[] getMessages() {
 		return messages;
 	}
 
 	/**
-	 * @param teamid the teamid to set
+	 * @param teamid  the teamid to set
+	 * @uml.property  name="teamid"
 	 */
 	public void setTeamid(int teamid) {
 		this.teamid = teamid;
 	}
 
 	/**
-	 * @return the teamid
+	 * @return  the teamid
+	 * @uml.property  name="teamid"
 	 */
 	public int getTeamid() {
 		return teamid;

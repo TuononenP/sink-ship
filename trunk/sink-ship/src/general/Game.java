@@ -20,11 +20,10 @@ import player.Player;
 import socket.SocketListenerWorker;
 
 /**
- * @author Petri Tuononen
- * @author Matej Pristak
+ * @author  Petri Tuononen
+ * @author  Matej Pristak
  */
 public class Game {
-
 
 	/**
 	 * server constructor, should set the settings and start listening on port $port
@@ -47,17 +46,32 @@ public class Game {
 
 	}
 
-
 	//server & client:
+	/**
+	 * @uml.property  name="players"
+	 * @uml.associationEnd  multiplicity="(0 -1)"
+	 */
 	private Player[] players;
+	
+	/**
+	 * @uml.property  name="turn"
+	 */ 
 	private int turn;
+	
+	/**
+	 * @uml.property  name="settings"
+	 * @uml.associationEnd  
+	 */
 	private Settings settings;
 
 	//server only:
+	/**
+	 * @uml.property  name="listener"
+	 * @uml.associationEnd  
+	 */
 	private SocketListenerWorker listener;
 
 	//client only:
-
 	/**
 	 * guess (server)
 	 * @param coordinates position to check for hit
@@ -82,18 +96,20 @@ public class Game {
 	 * do one turn
 	 */
 	public void doOneTurn(){
-
+//		TODO: Implement
 	}
 
 	/**
-	 * @param players the players to set
+	 * @param players  the players to set
+	 * @uml.property  name="players"
 	 */
 	public void setPlayers(Player[] players) {
 		this.players = players;
 	}
 
 	/**
-	 * @return the players
+	 * @return  the players
+	 * @uml.property  name="players"
 	 */
 	public Player[] getPlayers() {
 		return players;
@@ -108,28 +124,32 @@ public class Game {
 	}
 
 	/**
-	 * @param turn the turn to set
+	 * @param turn  the turn to set
+	 * @uml.property  name="turn"
 	 */
 	public void setTurn(int turn) {
 		this.turn = turn;
 	}
 
 	/**
-	 * @return the turn
+	 * @return  the turn
+	 * @uml.property  name="turn"
 	 */
 	public int getTurn() {
 		return turn;
 	}
 
 	/**
-	 * @param settings the settings to set
+	 * @param settings  the settings to set
+	 * @uml.property  name="settings"
 	 */
 	public void setSettings(Settings settings) {
 		this.settings = settings;
 	}
 
 	/**
-	 * @return the settings
+	 * @return  the settings
+	 * @uml.property  name="settings"
 	 */
 	public Settings getSettings() {
 		return settings;
@@ -140,14 +160,15 @@ public class Game {
 	 * adds a player to this game
 	 */
 	public void addPlayer(Player player){
+		//TODO: Implement
 	}
 
 	/**
 	 * removes a player from this game
 	 */
 	public void removePlayer(Player player){
+		//TODO: Implement
 	}
-
 
 	/**
 	 * checks requirements to start the game (number of players, ready status etc.)
@@ -156,28 +177,35 @@ public class Game {
 		return false;	
 	}
 
-
 	/**
 	 * starts the game (not lobby)
 	 * decides the player order
 	 */
 	public void startGame(){
+		//TODO: Implement
 	}
 
-
+	/**
+	 * Get team members.
+	 * 
+	 * @param teamid
+	 * @return
+	 */
 	public Player[] getTeamMembers(int teamid){
 		return null;
 	}
 
 	/**
-	 * @param listener the listener to set
+	 * @param listener  the listener to set
+	 * @uml.property  name="listener"
 	 */
 	public void setListener(SocketListenerWorker listener) {
 		this.listener = listener;
 	}
 
 	/**
-	 * @return the listener
+	 * @return  the listener
+	 * @uml.property  name="listener"
 	 */
 	public SocketListenerWorker getListener() {
 		return listener;

@@ -17,13 +17,32 @@
 package general;
 
 /**
- * 
- * @author Matej Pristak
- *
+ * @author  Matej Pristak
  */
 public enum FieldStatus {
+	
+	/**
+	 * @uml.property  name="fREE"
+	 * @uml.associationEnd  
+	 */
 	FREE,
+	
+	/**
+	 * @uml.property  name="sHIP"
+	 * @uml.associationEnd  
+	 */
 	SHIP,
+	
+	/**
+	 * @uml.property  name="hIT"
+	 * @uml.associationEnd  
+	 */
 	HIT,
+	
+	/**
+	 * @uml.property  name="sUNKEN"
+	 * @uml.associationEnd  
+	 */
 	SUNKEN
+	
 }

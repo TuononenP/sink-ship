@@ -17,14 +17,23 @@
 package general;
 
 /**
- * 
- * @author Matej Pristak
- *
+ * @author  Matej Pristak
  */
 public class Settings {
 	
+	/**
+	 * @uml.property  name="serverIp"
+	 */
 	private String serverIp;
+	
+	/**
+	 * @uml.property  name="shipCount"
+	 */
 	private int[]  shipCount;
+	
+	/**
+	 * @uml.property  name="playerCount"
+	 */
 	private int playerCount;
 	
 	/**
@@ -40,42 +49,48 @@ public class Settings {
 	}
 	
 	/**
-	 * @param serverIp the serverIp to set
+	 * @param serverIp  the serverIp to set
+	 * @uml.property  name="serverIp"
 	 */
 	public void setServerIp(String serverIp) {
 		this.serverIp = serverIp;
 	}
 	
 	/**
-	 * @return the serverIp
+	 * @return  the serverIp
+	 * @uml.property  name="serverIp"
 	 */
 	public String getServerIp() {
 		return serverIp;
 	}
 	
 	/**
-	 * @param shipCount the shipCount to set
+	 * @param shipCount  the shipCount to set
+	 * @uml.property  name="shipCount"
 	 */
 	public void setShipCount(int[] shipCount) {
 		this.shipCount = shipCount;
 	}
 	
 	/**
-	 * @return the shipCount
+	 * @return  the shipCount
+	 * @uml.property  name="shipCount"
 	 */
 	public int[] getShipCount() {
 		return shipCount;
 	}
 	
 	/**
-	 * @param playerCount the playerCount to set
+	 * @param playerCount  the playerCount to set
+	 * @uml.property  name="playerCount"
 	 */
 	public void setPlayerCount(int playerCount) {
 		this.playerCount = playerCount;
 	}
 	
 	/**
-	 * @return the playerCount
+	 * @return  the playerCount
+	 * @uml.property  name="playerCount"
 	 */
 	public int getPlayerCount() {
 		return playerCount;
