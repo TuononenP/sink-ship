@@ -16,6 +16,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package general;
 
+import socket.SocketListenerWorker;
+
 /**
  * @author Petri Tuononen
  * @author Matej Pristak
