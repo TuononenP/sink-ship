@@ -94,14 +94,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * @uml.property  name="menuBar"
 	 * @uml.associationEnd  
 	 */
-	private JMenuBar menuBar;
-	//	private JMenu menu;
-	//	private JMenu menu2;
-	//	private JMenuItem menuItem;
-	//	private JMenuItem menuItem2;
-	//	private JMenuItem menuItem3;
-	//	private JMenuItem menuItem4;
-	//	private JMenuItem menuItem5;
+	private JMenuBar menuBar = new JMenuBar();
 
 	/**
 	 * Constructor.
@@ -116,7 +109,6 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//set the size for the board.
 		setPreferredSize(d);
 		//create a menubar
-//		Menubar menuBar = new Menubar();
 		setMenubar(new Menubar().getMenuBar());
 	}
 
@@ -476,7 +468,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		getFrame().getContentPane().add(new Gui());
 		//add menubar to the frame
 		getFrame().setJMenuBar(getMenubar());
-		//        //try to load icon image
+		//        //try to load an icon image
 		//        try {
 		//         f.setIconImage(new ImageIcon("./graphics/icon.jpg").getImage());
 		//        }catch (Exception e) {
@@ -505,116 +497,43 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		getFrame().pack();
 	}
 
-	//	/**
-	//	 * Menubar.
-	//	 */
-	//	public void createMenubar() {
-	//		//======== menuBar ========
-	//		{
-	//			menuBar = new JMenuBar();
-	//			//======== menu ========
-	//			{
-	//				menu = new JMenu("File");
-	//
-	//				//---- menuItem4 ----
-	//				menuItem4 = new JMenuItem("New Game");
-	//				menuItem4.addActionListener(new ActionListener() {
-	//					public void actionPerformed(ActionEvent e) {
-	//						//implement
-	//					}
-	//				});
-	//				menuItem4.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0));
-	//				menu.add(menuItem4);
-	//
-	//				//---- menuItem5 ----
-	//				menuItem5 = new JMenuItem("Settings");
-	//				menuItem5.addActionListener(new ActionListener() {
-	//					public void actionPerformed(ActionEvent e) {
-	//						//implement
-	//					}
-	//				});
-	//				menuItem5.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2, 0));
-	//				menu.add(menuItem5);
-	//
-	//				//---- menuItem ----
-	//				menuItem = new JMenuItem("Quit");
-	//				menuItem.addActionListener(new ActionListener() {
-	//					public void actionPerformed(ActionEvent e) {
-	//						quitMenuItemActionPerformed(e);
-	//					}
-	//				});
-	//				menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, 0));
-	//				menu.add(menuItem);
-	//
-	//				menuBar.add(menu);
-	//
-	//				//======== menu2 ========
-	//				{
-	//					menu2 = new JMenu("Info");
-	//
-	//					//---- menuItem2 ----
-	//					menuItem2 = new JMenuItem("Help");
-	//					menuItem2.addActionListener(new ActionListener() {
-	//						public void actionPerformed(ActionEvent e) {
-	//							helpMenuItemActionPerformed(e);
-	//						}
-	//					});
-	//					//shortcut for help F11
-	//					menuItem2.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F11, 0));
-	//					menu2.add(menuItem2);
-	//
-	//					//---- menuItem3 ----
-	//					menuItem3 = new JMenuItem("About");
-	//					menuItem3.addActionListener(new ActionListener() {
-	//						public void actionPerformed(ActionEvent e) {
-	//							aboutMenuItemActionPerformed(e);
-	//						}
-	//					});
-	//					menuItem3.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, 0));
-	//					menu2.add(menuItem3);
-	//				}
-	//				menuBar.add(menu2);
-	//			}
-	//		}
-	//	}
-
-	/**
-	 * 'Quit' File menu item pressed.
-	 * @param e
-	 */
-	private void quitMenuItemActionPerformed(ActionEvent e) {
-		frame.setVisible(false);
-		frame.dispose();
-	}
-
-	/**
-	 * 'Help' menu item pressed.
-	 * @param e
-	 */
-	private void helpMenuItemActionPerformed(ActionEvent e) {
-		new Help().toFront();
-	}
-
-	/**
-	 * 'About' menu item pressed.
-	 * @param e
-	 */
-	private void aboutMenuItemActionPerformed(ActionEvent e) {
-		showAbout();
-	}
-
-	/**
-	 * Shows about screen.
-	 */
-	private void showAbout() {
-		JOptionPane.showMessageDialog(this,
-				"Author: Petri Tuononen\n" +
-				"Date: 10/2010\n" +
-				"Version: 1.0\n" +
-				"Info: This software is a part of Advanced Software Engineering " +
-				"course at Sungkyunkwan University.\n" +
-				"Feedback: petri.tuononen@gmail.com", "About",
-				JOptionPane.PLAIN_MESSAGE);
-	}
+//	/**
+//	 * 'Quit' File menu item pressed.
+//	 * @param e
+//	 */
+//	private void quitMenuItemActionPerformed(ActionEvent e) {
+//		frame.setVisible(false);
+//		frame.dispose();
+//	}
+//
+//	/**
+//	 * 'Help' menu item pressed.
+//	 * @param e
+//	 */
+//	private void helpMenuItemActionPerformed(ActionEvent e) {
+//		new Help().toFront();
+//	}
+//
+//	/**
+//	 * 'About' menu item pressed.
+//	 * @param e
+//	 */
+//	private void aboutMenuItemActionPerformed(ActionEvent e) {
+//		showAbout();
+//	}
+//
+//	/**
+//	 * Shows about screen.
+//	 */
+//	private void showAbout() {
+//		JOptionPane.showMessageDialog(this,
+//				"Author: Petri Tuononen\n" +
+//				"Date: 10/2010\n" +
+//				"Version: 1.0\n" +
+//				"Info: This software is a part of Advanced Software Engineering " +
+//				"course at Sungkyunkwan University.\n" +
+//				"Feedback: petri.tuononen@gmail.com", "About",
+//				JOptionPane.PLAIN_MESSAGE);
+//	}
 
 }
