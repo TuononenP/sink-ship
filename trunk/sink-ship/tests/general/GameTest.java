@@ -5,13 +5,14 @@ import static org.hamcrest.CoreMatchers.*;
 
 import general.Board;
 import general.Game;
-import general.Player;
 import general.Settings;
 import general.Size;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import player.Player;
 
 public class GameTest {
 	Player player1;
