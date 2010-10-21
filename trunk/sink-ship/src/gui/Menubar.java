@@ -39,7 +39,7 @@ public class Menubar extends JMenuBar {
 	private JMenuItem menuItem3;
 	private JMenuItem menuItem4;
 	private JMenuItem menuItem5;
-	
+
 	/**
 	 * Menubar.
 	 */
@@ -112,5 +112,5 @@ public class Menubar extends JMenuBar {
 			}
 		}
 	}
-	
+
 }

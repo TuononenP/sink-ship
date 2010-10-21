@@ -63,5 +63,5 @@ public class MenuActions {
 //				"Feedback: petri.tuononen@gmail.com", "About",
 //				JOptionPane.PLAIN_MESSAGE);
 	}
-	
+
 }

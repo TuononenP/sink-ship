@@ -18,50 +18,43 @@ package general;
 
 /**
  * @author Petri Tuononen
- * @author Matej Pristak
+ * @not to be instantiated 
  */
 public class Ship {
-	
+
 	/**
-	 * @param size
-	 * @param direction
-	 * @param startingPoint
-	 * @param hits
-	 * @param sunken
+	 * @uml.property  name="direc"
 	 */
-	public Ship(int size, Direction direction, Coordinates startingPoint,
-			FieldStatus[] status, Boolean sunken) {
-		super();
-		this.size = size;
-		this.direction = direction;
-		this.startingPoint = startingPoint;
-		this.status = status;
-		this.sunken = sunken;
-	}
-	
-	
+	Direction direc;
 	/**
-	 * @param size
-	 * @param direction
-	 * @param startingPoint
+	 * @uml.property  name="coords"
 	 */
-	public Ship(int size, Direction direction, Coordinates startingPoint) {
-		super();
-		this.size = size;
-		this.direction = direction;
-		this.startingPoint = startingPoint;
-		
-		//defaults:
-		//this.status = status;
-		this.sunken = false;
+	Coordinates coords;
+	/**
+	 * @uml.property  name="size"
+	 */
+	private int size;
+
+	/**
+	 * Constructor.
+	 * @param size
+	 */
+	public Ship(int size) {
+		this.size=size;
 	}
 
-	//server & client:
-	private int size;
-	private Direction direction;
-	private Coordinates startingPoint;
-	private FieldStatus[] status;
-	private Boolean sunken;
+	/**
+	 * Constructor.
+	 * 
+	 * @param size
+	 * @param direc
+	 * @param coords
+	 */
+	public Ship(int size, Direction direc, Coordinates coords) {
+		this.size = size;
+		this.direc = direc;
+		this.coords = coords;
+	}
 
 	/**
 	 * Getter of the property <tt>size</tt>
@@ -82,59 +75,35 @@ public class Ship {
 	}
 
 	/**
-	 * @param direction the direction to set
+	 * Get direction of the ship.
+	 * @return Direction
 	 */
-	public void setDirection(Direction direction) {
-		this.direction = direction;
+	public Direction getDirec() {
+		return direc;
 	}
 
 	/**
-	 * @return the direction
+	 * Set direction of the ship.
+	 * @param direc
 	 */
-	public Direction getDirection() {
-		return direction;
+	public void setDirec(Direction direc) {
+		this.direc = direc;
 	}
 
 	/**
-	 * @param startingPoint the startingPoint to set
+	 * Get coordinates of the ship.
+	 * @return Coordinates
 	 */
-	public void setStartingPoint(Coordinates startingPoint) {
-		this.startingPoint = startingPoint;
+	public Coordinates getCoords() {
+		return coords;
 	}
 
 	/**
-	 * @return the startingPoint
+	 * Set coordinates of the ship.
+	 * @param coords
 	 */
-	public Coordinates getStartingPoint() {
-		return startingPoint;
-	}
-
-	/**
-	 * @param hits the hits to set
-	 */
-	public void setStatus(FieldStatus[] status) {
-		this.status = status;
-	}
-
-	/**
-	 * @return the hits
-	 */
-	public FieldStatus[] getStatus() {
-		return status;
-	}
-
-	/**
-	 * @param sunken the sunken to set
-	 */
-	public void setSunken(Boolean sunken) {
-		this.sunken = sunken;
-	}
-
-	/**
-	 * @return the sunken
-	 */
-	public Boolean getSunken() {
-		return sunken;
+	public void setCoords(Coordinates coords) {
+		this.coords = coords;
 	}
 
 }
