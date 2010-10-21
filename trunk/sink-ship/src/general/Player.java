@@ -27,9 +27,8 @@ public class Player {
 	 * @param name
 	 * @param ip
 	 * @param board
-	 * @param connection
 	 */
-	protected Player(String name, String ip, Board board) {
+	public Player(String name, String ip, Board board) {
 		super();
 		this.name = name;
 		this.ip = ip;

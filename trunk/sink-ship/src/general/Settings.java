@@ -6,7 +6,7 @@ public class Settings {
 	 * @param shipCount
 	 * @param playerCount
 	 */
-	protected Settings(String serverIp, int[] shipCount, int playerCount) {
+	public Settings(String serverIp, int[] shipCount, int playerCount) {
 		super();
 		this.serverIp = serverIp;
 		this.shipCount = shipCount;

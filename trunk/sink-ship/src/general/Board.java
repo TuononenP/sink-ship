@@ -23,12 +23,22 @@ package general;
 public class Board {
 
 	/**
+	 * for backwards compatibility, don't use!
 	 * @param blockSize
 	 * @param matrixSize
 	 */
 	public Board(Size blockSize, Size matrixSize) {
 		super();
 		this.blockSize = blockSize;
+		this.matrixSize = matrixSize;
+	}
+	
+	/**
+	 * creates an empty board
+	 * @param matrixSize size of the board
+	 */
+	public Board(Size matrixSize) {
+		super();
 		this.matrixSize = matrixSize;
 	}
 
@@ -38,7 +48,7 @@ public class Board {
 	 * @param blockWidth
 	 * @param matrixSize
 	 */
-	protected Board(Ship[] ships, Size blockSize, Size matrixSize) {
+	public Board(Ship[] ships, Size blockSize, Size matrixSize) {
 		super();
 		this.ships = ships;
 		this.setBlockSize(blockSize);
@@ -103,7 +113,7 @@ public class Board {
 	}
 	
 	/**
-	 * 
+	 * @return the board as an array
 	 */
 	public FieldStatus[][] toArray(){
 		return null;

@@ -22,16 +22,26 @@ package general;
  */
 public class Game {
 	
+	
 	/**
-	 * new game constructor, should init game with existing players and settings (either create new as a host or get existing from server)
-	 * call when creating game
+	 * server constructor, should set the settings and start listening on port $port
+	 * @param port
+	 * @param settings
+	 */
+	public Game(int port, Settings settings) {
+		super();
+		
+		this.settings = settings;
+	}
+	
+	/**
+	 * client constructor, should send data to server on ip:port and gets all the data to initialize the structure
 	 * @param players
 	 * @param settings
 	 */
-	protected Game(Player[] players, Settings settings) {
+	public Game(String ip, int port, Player player) {
 		super();
-		this.players = players;
-		this.settings = settings;
+
 	}
 
 
@@ -41,15 +51,9 @@ public class Game {
 	private Settings settings;
 	
 	//server only:
+	private SocketListenerWorker listener;
 	
 	//client only:
-	
-	
-	
-	/**
-	 */
-	public void createPlayers(){
-	}
 	
 	/**
 	 * guess (server)
@@ -92,6 +96,10 @@ public class Game {
 		return players;
 	}
 	
+	/**
+	 * 
+	 * @param order old position as index, new one as value
+	 */
 	public void changeOrder(int[] order) {
 		
 	}
@@ -157,5 +165,19 @@ public class Game {
 		public Player[] getTeamMembers(int teamid){
 			return null;
 		 }
+
+		/**
+		 * @param listener the listener to set
+		 */
+		public void setListener(SocketListenerWorker listener) {
+			this.listener = listener;
+		}
+
+		/**
+		 * @return the listener
+		 */
+		public SocketListenerWorker getListener() {
+			return listener;
+		}
 
 }
