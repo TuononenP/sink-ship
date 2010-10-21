@@ -41,9 +41,15 @@ public class Menubar extends JMenuBar {
 	private JMenuItem menuItem5;
 
 	/**
+	 * Constructor.
+	 */
+	public Menubar() {
+	}
+	
+	/**
 	 * Menubar.
 	 */
-	public void createMenuBar() {
+	public JMenuBar getMenuBar() {
 		//======== menuBar ========
 		{
 			menuBar = new JMenuBar();
@@ -111,6 +117,7 @@ public class Menubar extends JMenuBar {
 				menuBar.add(menu2);
 			}
 		}
+		return menuBar;
 	}
 
 }

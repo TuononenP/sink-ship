@@ -32,6 +32,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
+import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -41,47 +42,59 @@ import javax.swing.JPanel;
 public class Gui extends JPanel implements Runnable, MouseListener {
 
 	private static final long serialVersionUID = 8491464846988855678L;
-	//global variables
+	
 	/**
 	 * @uml.property  name="board"
 	 * @uml.associationEnd  
 	 */
 	private static Board board;
+	
 	/**
 	 * @uml.property  name="clickedSquare"
 	 * @uml.associationEnd  
 	 */
 	private Coordinates clickedSquare;
+	
 	/**
 	 * @uml.property  name="squareSelected"
 	 */
 	private boolean squareSelected = false;
+	
 	/**
 	 * @uml.property  name="seaColor"
 	 */
 	private Color seaColor = new Color(81,167,255);
+	
 	/**
 	 * @uml.property  name="selectedSquareColor"
 	 */
 	private Color selectedSquareColor = new Color(159, 227, 126);
+	
 	/**
 	 * @uml.property  name="lineColor"
 	 */
 	private Color lineColor = new Color(67,104, 142);
+	
 	/**
 	 * @uml.property  name="shipColor"
 	 */
 	private Color shipColor = new Color(217, 56, 56);
+	
+	/**
+	 * @uml.property  name="lineWidth"
+	 */
 	private int lineWidth = 2;
+	
 	/**
 	 * @uml.property  name="frame"
 	 */
 	public JFrame frame;
+	
 	/**
 	 * @uml.property  name="menuBar"
 	 * @uml.associationEnd  
 	 */
-	private static Menubar menuBar;
+	private JMenuBar menuBar;
 	//	private JMenu menu;
 	//	private JMenu menu2;
 	//	private JMenuItem menuItem;
@@ -103,7 +116,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//set the size for the board.
 		setPreferredSize(d);
 		//create a menubar
-		setMenubar(new Menubar());
+//		Menubar menuBar = new Menubar();
+		setMenubar(new Menubar().getMenuBar());
 	}
 
 	/**
@@ -216,9 +230,9 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 
 	/**
 	 * Get the menubar.
-	 * @return
+	 * @return menuBar
 	 */
-	public static Menubar getMenubar() {
+	public JMenuBar getMenubar() {
 		return menuBar;
 	}
 
@@ -226,8 +240,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * Set the menubar.
 	 * @param menuBar
 	 */
-	public static void setMenubar(Menubar menuBar) {
-		Gui.menuBar = menuBar;
+	public void setMenubar(JMenuBar menuBar) {
+		this.menuBar = menuBar;
 	}
 
 	/**
@@ -392,8 +406,9 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * Paint the defined square on the board.
 	 */
 	public void paintSquare(int x, int y, Color color) {
-		//redraw square color
+		//set color
 		getG1().setColor(color);
+		//redraw square color
 		getG1().fillRect(x, y, board.getBlockSize().getWidth()-getLineWith(), board.getBlockSize().getHeight()-getLineWith());
 	}
 
@@ -401,7 +416,9 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * Paint the selected square on the board.
 	 */
 	public void paintSelectedSquare() {
+		//get the coordinates of the upper left corner of the clicked square
 		Coordinates coords = getUpperLeftCornerCoordinates(getClickedSquare().getX(), getClickedSquare().getY());
+		//paint the clicked square
 		paintSquare(coords.getX(), coords.getY(), getSelectedSquareColor());
 	}
 
@@ -431,26 +448,18 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-
 	}
 
 	/**
