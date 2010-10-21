@@ -24,7 +24,7 @@ import socket.SocketConnection;
  */
 public class Player {
 
-	
+
 	/**
 	 * @param name
 	 * @param ip
@@ -36,8 +36,8 @@ public class Player {
 		this.ip = ip;
 		this.board = board;
 	}
-	
-//server & client:
+
+	//server & client:
 	private String name;
 	private Board board;
 	//guesses of this player in a matrix
@@ -45,13 +45,13 @@ public class Player {
 	//chat
 	private String[] messages;
 	private int teamid;
-	
-//server only:
+
+	//server only:
 	private String ip;
 	private SocketConnection connection;
 	private PlayerStatus status;
-	
-//client only:
+
+	//client only:
 
 	/**
 	 * Getter of the property <tt>name</tt>

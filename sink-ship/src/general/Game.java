@@ -23,8 +23,8 @@ import socket.SocketListenerWorker;
  * @author Matej Pristak
  */
 public class Game {
-	
-	
+
+
 	/**
 	 * server constructor, should set the settings and start listening on port $port
 	 * @param port
@@ -32,10 +32,10 @@ public class Game {
 	 */
 	public Game(int port, Settings settings) {
 		super();
-		
+
 		this.settings = settings;
 	}
-	
+
 	/**
 	 * client constructor, should send data to server on ip:port and gets all the data to initialize the structure
 	 * @param players
@@ -51,12 +51,12 @@ public class Game {
 	private Player[] players;
 	private int turn;
 	private Settings settings;
-	
+
 	//server only:
 	private SocketListenerWorker listener;
-	
+
 	//client only:
-	
+
 	/**
 	 * guess (server)
 	 * @param coordinates position to check for hit
@@ -64,9 +64,9 @@ public class Game {
 	 */
 	public FieldStatus shoot(Coordinates coordinates, Player player){
 		return null;
-		
+
 	}
-	
+
 	/**
 	 * guess (client)
 	 * @param coordinates position to check for hit
@@ -74,14 +74,14 @@ public class Game {
 	 */
 	public FieldStatus shoot(Coordinates coordinates){
 		return null;
-		
+
 	}
-	
+
 	/**
 	 * do one turn
 	 */
 	public void doOneTurn(){
-		
+
 	}
 
 	/**
@@ -97,13 +97,13 @@ public class Game {
 	public Player[] getPlayers() {
 		return players;
 	}
-	
+
 	/**
 	 * 
 	 * @param order old position as index, new one as value
 	 */
 	public void changeOrder(int[] order) {
-		
+
 	}
 
 	/**
@@ -134,52 +134,52 @@ public class Game {
 		return settings;
 	}
 
-		
-		/**
-		 * adds a player to this game
-		 */
-		public void addPlayer(Player player){
-		}
-		
-		/**
-		 * removes a player from this game
-		 */
-		public void removePlayer(Player player){
-		}
 
-			
-		/**
-		 * checks requirements to start the game (number of players, ready status etc.)
-		 */
-		public boolean checkRequirements(){
-			return false;	
-		}
+	/**
+	 * adds a player to this game
+	 */
+	public void addPlayer(Player player){
+	}
 
-				
-		/**
-		 * starts the game (not lobby)
-		 * decides the player order
-		 */
-		public void startGame(){
-		}
+	/**
+	 * removes a player from this game
+	 */
+	public void removePlayer(Player player){
+	}
 
-		
-		public Player[] getTeamMembers(int teamid){
-			return null;
-		 }
 
-		/**
-		 * @param listener the listener to set
-		 */
-		public void setListener(SocketListenerWorker listener) {
-			this.listener = listener;
-		}
+	/**
+	 * checks requirements to start the game (number of players, ready status etc.)
+	 */
+	public boolean checkRequirements(){
+		return false;	
+	}
 
-		/**
-		 * @return the listener
-		 */
-		public SocketListenerWorker getListener() {
-			return listener;
-		}
+
+	/**
+	 * starts the game (not lobby)
+	 * decides the player order
+	 */
+	public void startGame(){
+	}
+
+
+	public Player[] getTeamMembers(int teamid){
+		return null;
+	}
+
+	/**
+	 * @param listener the listener to set
+	 */
+	public void setListener(SocketListenerWorker listener) {
+		this.listener = listener;
+	}
+
+	/**
+	 * @return the listener
+	 */
+	public SocketListenerWorker getListener() {
+		return listener;
+	}
 
 }

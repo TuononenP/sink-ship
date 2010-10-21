@@ -13,7 +13,7 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 package general;
 
 /**
@@ -30,7 +30,7 @@ public class Coordinates {
 	 * @uml.property  name="y"
 	 */
 	private int y;
-	
+
 	/**
 	 * Constructor.
 	 * @param x
@@ -40,7 +40,7 @@ public class Coordinates {
 		this.x = x;
 		this.y = y;
 	}
-	
+
 	/**
 	 * Get value of x.
 	 * @return  x
@@ -49,7 +49,7 @@ public class Coordinates {
 	public int getX() {
 		return x;
 	}
-	
+
 	/**
 	 * Get value of y.
 	 * @return  y
@@ -58,7 +58,7 @@ public class Coordinates {
 	public int getY() {
 		return y;
 	}
-	
+
 	/**
 	 * Set value for x.
 	 * @param  x
@@ -67,7 +67,7 @@ public class Coordinates {
 	public void setX(int x) {
 		this.x = x;
 	}
-	
+
 	/**
 	 * Set value of y.
 	 * @param  y
@@ -76,5 +76,5 @@ public class Coordinates {
 	public void setY(int y) {
 		this.y = y;
 	}
-	
+
 }

@@ -32,7 +32,7 @@ public class Board {
 		this.blockSize = blockSize;
 		this.matrixSize = matrixSize;
 	}
-	
+
 	/**
 	 * creates an empty board
 	 * @param matrixSize size of the board
@@ -54,20 +54,20 @@ public class Board {
 		this.setBlockSize(blockSize);
 		this.matrixSize = matrixSize;
 	}
-	
-	
+
+
 	//server & client:
 	private Ship[] ships;	
 	private Size matrixSize;
 	//this should be in GUI:
 	private Size blockSize;
-	
+
 
 	/**
 	 *  Deploy the ships randomly on the board.
 	 */
 	public void randomlyDeployShips() {
-		
+
 	}
 
 	/**
@@ -111,7 +111,7 @@ public class Board {
 	public Size getBlockSize() {
 		return blockSize;
 	}
-	
+
 	/**
 	 * @return the board as an array
 	 */

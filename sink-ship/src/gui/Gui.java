@@ -82,13 +82,13 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * @uml.associationEnd  
 	 */
 	private static Menubar menuBar;
-//	private JMenu menu;
-//	private JMenu menu2;
-//	private JMenuItem menuItem;
-//	private JMenuItem menuItem2;
-//	private JMenuItem menuItem3;
-//	private JMenuItem menuItem4;
-//	private JMenuItem menuItem5;
+	//	private JMenu menu;
+	//	private JMenu menu2;
+	//	private JMenuItem menuItem;
+	//	private JMenuItem menuItem2;
+	//	private JMenuItem menuItem3;
+	//	private JMenuItem menuItem4;
+	//	private JMenuItem menuItem5;
 
 	/**
 	 * Constructor.
@@ -120,7 +120,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 */
 	public void drawBoard(Graphics g) {
 		int menuHeight = getMenubar().getHeight();
-		
+
 		//draw the background sea color
 		int width = board.getMatrixSize().getWidth()*board.getBlockSize().getWidth();
 		int height = board.getMatrixSize().getHeight()*board.getBlockSize().getHeight();
@@ -139,13 +139,13 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 			g.fillRect(i*board.getBlockSize().getWidth()-getLineWith(), x, getLineWith(), width);
 		}
 	}
-	
+
 	/**
 	 * Draws an x on top of the selected square.
 	 * @param g Graphics
 	 */
 	public void drawX(Graphics g) {
-		
+
 	}
 
 	/**
@@ -156,7 +156,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	protected void paintComponent(Graphics g) {
 		setG1(g);
 		drawBoard(getG1());
-//		drawHorizontalShip(getG1(), 10, 30, getShipColor());
+		//		drawHorizontalShip(getG1(), 10, 30, getShipColor());
 		if (isSquareSelected()) {
 			//paint the selected square
 			paintSelectedSquare();
@@ -204,7 +204,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	public JFrame getFrame() {
 		return frame;
 	}
-	
+
 	/**
 	 * Set frame.
 	 * @return  frame
@@ -496,79 +496,79 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		getFrame().pack();
 	}
 
-//	/**
-//	 * Menubar.
-//	 */
-//	public void createMenubar() {
-//		//======== menuBar ========
-//		{
-//			menuBar = new JMenuBar();
-//			//======== menu ========
-//			{
-//				menu = new JMenu("File");
-//
-//				//---- menuItem4 ----
-//				menuItem4 = new JMenuItem("New Game");
-//				menuItem4.addActionListener(new ActionListener() {
-//					public void actionPerformed(ActionEvent e) {
-//						//implement
-//					}
-//				});
-//				menuItem4.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0));
-//				menu.add(menuItem4);
-//
-//				//---- menuItem5 ----
-//				menuItem5 = new JMenuItem("Settings");
-//				menuItem5.addActionListener(new ActionListener() {
-//					public void actionPerformed(ActionEvent e) {
-//						//implement
-//					}
-//				});
-//				menuItem5.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2, 0));
-//				menu.add(menuItem5);
-//
-//				//---- menuItem ----
-//				menuItem = new JMenuItem("Quit");
-//				menuItem.addActionListener(new ActionListener() {
-//					public void actionPerformed(ActionEvent e) {
-//						quitMenuItemActionPerformed(e);
-//					}
-//				});
-//				menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, 0));
-//				menu.add(menuItem);
-//
-//				menuBar.add(menu);
-//
-//				//======== menu2 ========
-//				{
-//					menu2 = new JMenu("Info");
-//
-//					//---- menuItem2 ----
-//					menuItem2 = new JMenuItem("Help");
-//					menuItem2.addActionListener(new ActionListener() {
-//						public void actionPerformed(ActionEvent e) {
-//							helpMenuItemActionPerformed(e);
-//						}
-//					});
-//					//shortcut for help F11
-//					menuItem2.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F11, 0));
-//					menu2.add(menuItem2);
-//
-//					//---- menuItem3 ----
-//					menuItem3 = new JMenuItem("About");
-//					menuItem3.addActionListener(new ActionListener() {
-//						public void actionPerformed(ActionEvent e) {
-//							aboutMenuItemActionPerformed(e);
-//						}
-//					});
-//					menuItem3.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, 0));
-//					menu2.add(menuItem3);
-//				}
-//				menuBar.add(menu2);
-//			}
-//		}
-//	}
-	
+	//	/**
+	//	 * Menubar.
+	//	 */
+	//	public void createMenubar() {
+	//		//======== menuBar ========
+	//		{
+	//			menuBar = new JMenuBar();
+	//			//======== menu ========
+	//			{
+	//				menu = new JMenu("File");
+	//
+	//				//---- menuItem4 ----
+	//				menuItem4 = new JMenuItem("New Game");
+	//				menuItem4.addActionListener(new ActionListener() {
+	//					public void actionPerformed(ActionEvent e) {
+	//						//implement
+	//					}
+	//				});
+	//				menuItem4.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0));
+	//				menu.add(menuItem4);
+	//
+	//				//---- menuItem5 ----
+	//				menuItem5 = new JMenuItem("Settings");
+	//				menuItem5.addActionListener(new ActionListener() {
+	//					public void actionPerformed(ActionEvent e) {
+	//						//implement
+	//					}
+	//				});
+	//				menuItem5.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2, 0));
+	//				menu.add(menuItem5);
+	//
+	//				//---- menuItem ----
+	//				menuItem = new JMenuItem("Quit");
+	//				menuItem.addActionListener(new ActionListener() {
+	//					public void actionPerformed(ActionEvent e) {
+	//						quitMenuItemActionPerformed(e);
+	//					}
+	//				});
+	//				menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, 0));
+	//				menu.add(menuItem);
+	//
+	//				menuBar.add(menu);
+	//
+	//				//======== menu2 ========
+	//				{
+	//					menu2 = new JMenu("Info");
+	//
+	//					//---- menuItem2 ----
+	//					menuItem2 = new JMenuItem("Help");
+	//					menuItem2.addActionListener(new ActionListener() {
+	//						public void actionPerformed(ActionEvent e) {
+	//							helpMenuItemActionPerformed(e);
+	//						}
+	//					});
+	//					//shortcut for help F11
+	//					menuItem2.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F11, 0));
+	//					menu2.add(menuItem2);
+	//
+	//					//---- menuItem3 ----
+	//					menuItem3 = new JMenuItem("About");
+	//					menuItem3.addActionListener(new ActionListener() {
+	//						public void actionPerformed(ActionEvent e) {
+	//							aboutMenuItemActionPerformed(e);
+	//						}
+	//					});
+	//					menuItem3.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, 0));
+	//					menu2.add(menuItem3);
+	//				}
+	//				menuBar.add(menu2);
+	//			}
+	//		}
+	//	}
+
 	/**
 	 * 'Quit' File menu item pressed.
 	 * @param e
