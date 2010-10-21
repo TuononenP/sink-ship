@@ -17,18 +17,56 @@
 package general;
 
 /**
- * 
- * @author Matej Pristak
- *
+ * @author  Matej Pristak
  */
 public enum Direction {
+	
+	/**
+	 * @uml.property  name="nORTH"
+	 * @uml.associationEnd  
+	 */
 	NORTH,
+	
+	/**
+	 * @uml.property  name="sOUTH"
+	 * @uml.associationEnd  
+	 */
 	SOUTH,
+	
+	/**
+	 * @uml.property  name="wEST"
+	 * @uml.associationEnd  
+	 */
 	WEST,
+	
+	/**
+	 * @uml.property  name="eAST"
+	 * @uml.associationEnd  
+	 */
 	EAST,
+	
+	/**
+	 * @uml.property  name="nE"
+	 * @uml.associationEnd  
+	 */
 	NE,
+	
+	/**
+	 * @uml.property  name="nW"
+	 * @uml.associationEnd  
+	 */
 	NW,
+	
+	/**
+	 * @uml.property  name="sE"
+	 * @uml.associationEnd  
+	 */
 	SE,
+	
+	/**
+	 * @uml.property  name="sW"
+	 * @uml.associationEnd  
+	 */
 	SW
 
 }

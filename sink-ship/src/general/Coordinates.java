@@ -26,6 +26,7 @@ public class Coordinates {
 	 * @uml.property  name="x"
 	 */
 	private int x;
+	
 	/**
 	 * @uml.property  name="y"
 	 */

@@ -17,8 +17,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package general;
 
 /**
- * @author  Petri Tuononen  TODO: To play against AI or to debug the enemy ships could be placed using the random matrix placement.
- * @author Matej Pristak
+ * @author   Petri Tuononen  TODO: To play against AI or to debug the enemy ships could be placed using the random matrix placement.
+ * @author  Matej Pristak
  */
 public class Board {
 
@@ -57,11 +57,24 @@ public class Board {
 
 
 	//server & client:
+	/**
+	 * @uml.property  name="ships"
+	 * @uml.associationEnd  multiplicity="(0 -1)"
+	 */
 	private Ship[] ships;	
+	
+	/**
+	 * @uml.property  name="matrixSize"
+	 * @uml.associationEnd  
+	 */
 	private Size matrixSize;
+	
 	//this should be in GUI:
+	/**
+	 * @uml.property  name="blockSize"
+	 * @uml.associationEnd  
+	 */
 	private Size blockSize;
-
 
 	/**
 	 *  Deploy the ships randomly on the board.
@@ -71,42 +84,48 @@ public class Board {
 	}
 
 	/**
-	 * @param ships the ships to set
+	 * @param ships  the ships to set
+	 * @uml.property  name="ships"
 	 */
 	public void setShips(Ship[] ships) {
 		this.ships = ships;
 	}
 
 	/**
-	 * @return the ships
+	 * @return  the ships
+	 * @uml.property  name="ships"
 	 */
 	public Ship[] getShips() {
 		return ships;
 	}
 
 	/**
-	 * @param matrixSize the matrixSize to set
+	 * @param matrixSize  the matrixSize to set
+	 * @uml.property  name="matrixSize"
 	 */
 	public void setMatrixSize(Size matrixSize) {
 		this.matrixSize = matrixSize;
 	}
 
 	/**
-	 * @return the matrixSize
+	 * @return  the matrixSize
+	 * @uml.property  name="matrixSize"
 	 */
 	public Size getMatrixSize() {
 		return matrixSize;
 	}
 
 	/**
-	 * @param blockSize the blockSize to set
+	 * @param blockSize  the blockSize to set
+	 * @uml.property  name="blockSize"
 	 */
 	public void setBlockSize(Size blockSize) {
 		this.blockSize = blockSize;
 	}
 
 	/**
-	 * @return the blockSize
+	 * @return  the blockSize
+	 * @uml.property  name="blockSize"
 	 */
 	public Size getBlockSize() {
 		return blockSize;

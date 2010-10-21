@@ -23,12 +23,14 @@ public class SocketConnection {
 
 	/**
 	 */
-	public void createServer(){
+	public void createServer() {
+		//TODO: Implement
 	}
-
+			
 	/**
 	 */
-	public void connectToSocket(){
+	public void connectToSocket() {
+		//TODO: Implement
 	}
 
 }

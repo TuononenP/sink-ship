@@ -1,3 +1,19 @@
+/*
+	Copyright (C) 2010 Matej Pristak
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 package general;
 
 import static org.junit.Assert.*;
@@ -14,17 +30,69 @@ import org.junit.Test;
 
 import player.Player;
 
+/**
+ * @author  Matej Pristak
+ */
 public class GameTest {
+	/**
+	 * @uml.property  name="player1"
+	 * @uml.associationEnd  
+	 */
 	Player player1;
+	
+	/**
+	 * @uml.property  name="player2"
+	 * @uml.associationEnd  
+	 */
 	Player player2;
+	
+	/**
+	 * @uml.property  name="player3"
+	 * @uml.associationEnd  
+	 */
 	Player player3;
+	
+	/**
+	 * @uml.property  name="player4"
+	 * @uml.associationEnd  
+	 */
 	Player player4;
+	
+	/**
+	 * @uml.property  name="players"
+	 * @uml.associationEnd  multiplicity="(0 -1)"
+	 */
 	Player[] players;
+	
+	/**
+	 * @uml.property  name="players1"
+	 * @uml.associationEnd  multiplicity="(0 -1)"
+	 */
 	Player[] players1;
+	
+	/**
+	 * @uml.property  name="players2"
+	 * @uml.associationEnd  multiplicity="(0 -1)"
+	 */
 	Player[] players2;
+	
+	/**
+	 * @uml.property  name="players3"
+	 * @uml.associationEnd  multiplicity="(0 -1)"
+	 */
 	Player[] players3;
+	
 	int[] shipcounts;
+	/**
+	 * @uml.property  name="game"
+	 * @uml.associationEnd  
+	 */
 	Game game;
+	
+	/**
+	 * @uml.property  name="game2"
+	 * @uml.associationEnd  
+	 */
 	Game game2;
 	
 	@Before

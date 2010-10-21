@@ -17,8 +17,7 @@
 package general;
 
 /**
- * @author Matej Pristak
- * 
+ * @author  Matej Pristak
  */
 public class Size {
 
@@ -34,25 +33,29 @@ public class Size {
 	private int width;
 	private int height;
 	/**
-	 * @param width the width to set
+	 * @param width  the width to set
+	 * @uml.property  name="width"
 	 */
 	public void setWidth(int width) {
 		this.width = width;
 	}
 	/**
-	 * @return the width
+	 * @return  the width
+	 * @uml.property  name="width"
 	 */
 	public int getWidth() {
 		return width;
 	}
 	/**
-	 * @param height the height to set
+	 * @param height  the height to set
+	 * @uml.property  name="height"
 	 */
 	public void setHeight(int height) {
 		this.height = height;
 	}
 	/**
-	 * @return the height
+	 * @return  the height
+	 * @uml.property  name="height"
 	 */
 	public int getHeight() {
 		return height;
