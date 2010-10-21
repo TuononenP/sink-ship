@@ -32,7 +32,6 @@ public class Game {
 	 */
 	public Game(int port, Settings settings) {
 		super();
-
 		this.settings = settings;
 	}
 
@@ -79,7 +78,6 @@ public class Game {
 	 */
 	public FieldStatus shoot(Coordinates coordinates, Player player){
 		return null;
-
 	}
 
 	/**
@@ -89,7 +87,6 @@ public class Game {
 	 */
 	public FieldStatus shoot(Coordinates coordinates){
 		return null;
-
 	}
 
 	/**

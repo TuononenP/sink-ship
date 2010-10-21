@@ -27,11 +27,13 @@ public class Ship {
 	 * @uml.associationEnd  
 	 */
 	Direction direc;
+	
 	/**
 	 * @uml.property  name="coords"
 	 * @uml.associationEnd  
 	 */
 	Coordinates coords;
+	
 	/**
 	 * @uml.property  name="size"
 	 */

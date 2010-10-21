@@ -21,7 +21,6 @@ package general;
  */
 public class Coordinates {
 
-	//global variables
 	/**
 	 * @uml.property  name="x"
 	 */
