@@ -16,14 +16,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.KeyStroke;
 
 /**
  * @author Petri Tuononen
@@ -41,7 +38,7 @@ public class Menubar extends JMenuBar {
 	private JMenuItem menuItem5;
 
 	/**
-	 * Constructor.
+	 * Default constructor.
 	 */
 	public Menubar() {
 	}
@@ -58,33 +55,18 @@ public class Menubar extends JMenuBar {
 				menu = new JMenu("File");
 
 				//---- menuItem4 ----
-				menuItem4 = new JMenuItem("New Game");
-				menuItem4.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						//implement
-					}
-				});
-				menuItem4.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0));
+				NewGameMenuAction newGameAction = new NewGameMenuAction("New Game", KeyEvent.VK_F1);
+				menuItem4 = new JMenuItem(newGameAction);
 				menu.add(menuItem4);
 
 				//---- menuItem5 ----
-				menuItem5 = new JMenuItem("Settings");
-				menuItem5.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						//implement
-					}
-				});
-				menuItem5.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2, 0));
+				SettingsMenuAction settingsAction = new SettingsMenuAction("Settings", KeyEvent.VK_F2);
+				menuItem5 = new JMenuItem(settingsAction);
 				menu.add(menuItem5);
 
 				//---- menuItem ----
-				menuItem = new JMenuItem("Quit");
-				menuItem.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						MenuActions.quitMenuItemActionPerformed(e);
-					}
-				});
-				menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, 0));
+				QuitMenuAction quitAction = new QuitMenuAction("Quit", KeyEvent.VK_Q);
+				menuItem = new JMenuItem(quitAction);
 				menu.add(menuItem);
 
 				menuBar.add(menu);
@@ -94,24 +76,13 @@ public class Menubar extends JMenuBar {
 					menu2 = new JMenu("Info");
 
 					//---- menuItem2 ----
-					menuItem2 = new JMenuItem("Help");
-					menuItem2.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							MenuActions.helpMenuItemActionPerformed(e);
-						}
-					});
-					//shortcut for help F11
-					menuItem2.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F11, 0));
+					HelpMenuAction helpAction = new HelpMenuAction("Help", KeyEvent.VK_F11);
+					menuItem2 = new JMenuItem(helpAction);
 					menu2.add(menuItem2);
 
 					//---- menuItem3 ----
-					menuItem3 = new JMenuItem("About");
-					menuItem3.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							MenuActions.aboutMenuItemActionPerformed(e);
-						}
-					});
-					menuItem3.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, 0));
+					AboutMenuAction aboutAction = new AboutMenuAction("About", KeyEvent.VK_A);
+					menuItem3 = new JMenuItem(aboutAction);
 					menu2.add(menuItem3);
 				}
 				menuBar.add(menu2);

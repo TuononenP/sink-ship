@@ -88,7 +88,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	/**
 	 * @uml.property  name="frame"
 	 */
-	public JFrame frame;
+	public static JFrame frame;
 	
 	/**
 	 * @uml.property  name="menuBar"
@@ -207,7 +207,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * @return  frame
 	 * @uml.property  name="frame"
 	 */
-	public JFrame getFrame() {
+	public static JFrame getFrame() {
 		return frame;
 	}
 
@@ -216,8 +216,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * @return  frame
 	 * @uml.property  name="frame"
 	 */
-	public void setFrame(JFrame frame) {
-		this.frame = frame;
+	public static void setFrame(JFrame frame) {
+		Gui.frame = frame;
 	}
 
 	/**
@@ -496,44 +496,5 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		getFrame().setLocation(x, y);
 		getFrame().pack();
 	}
-
-//	/**
-//	 * 'Quit' File menu item pressed.
-//	 * @param e
-//	 */
-//	private void quitMenuItemActionPerformed(ActionEvent e) {
-//		frame.setVisible(false);
-//		frame.dispose();
-//	}
-//
-//	/**
-//	 * 'Help' menu item pressed.
-//	 * @param e
-//	 */
-//	private void helpMenuItemActionPerformed(ActionEvent e) {
-//		new Help().toFront();
-//	}
-//
-//	/**
-//	 * 'About' menu item pressed.
-//	 * @param e
-//	 */
-//	private void aboutMenuItemActionPerformed(ActionEvent e) {
-//		showAbout();
-//	}
-//
-//	/**
-//	 * Shows about screen.
-//	 */
-//	private void showAbout() {
-//		JOptionPane.showMessageDialog(this,
-//				"Author: Petri Tuononen\n" +
-//				"Date: 10/2010\n" +
-//				"Version: 1.0\n" +
-//				"Info: This software is a part of Advanced Software Engineering " +
-//				"course at Sungkyunkwan University.\n" +
-//				"Feedback: petri.tuononen@gmail.com", "About",
-//				JOptionPane.PLAIN_MESSAGE);
-//	}
 
 }
