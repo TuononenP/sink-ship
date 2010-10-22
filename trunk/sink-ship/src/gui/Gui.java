@@ -25,9 +25,6 @@ import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Graphics;
 import java.awt.Toolkit;
-import java.awt.event.InputEvent;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
@@ -36,7 +33,7 @@ import javax.swing.JPanel;
 /**
  * @author  Petri Tuononen
  */
-public class Gui extends JPanel implements Runnable, MouseListener {
+public class Gui extends JPanel implements Runnable {
 
 	private static final long serialVersionUID = 8491464846988855678L;
 	
@@ -50,12 +47,12 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * @uml.property  name="clickedSquare"
 	 * @uml.associationEnd  
 	 */
-	private Coordinates clickedSquare;
+	private static Coordinates clickedSquare;
 	
 	/**
 	 * @uml.property  name="squareSelected"
 	 */
-	private boolean squareSelected = false;
+	private static boolean squareSelected = false;
 	
 	/**
 	 * @uml.property  name="lineWidth"
@@ -100,7 +97,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//set panel size
 		board = new Board(new Size(20,20), new Size(30,30));
 		//add mouse listener to the panel
-		addMouseListener(this);	
+		addMouseListener(new MouseActions());	
 		//set dimensions for the board.
 		d = new Dimension(board.getMatrixSize().getWidth()*board.getBlockSize().getWidth(), board.getMatrixSize().getHeight()*board.getBlockSize().getHeight());
 		//set the size for the board.
@@ -287,8 +284,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * @param  clickedSquare
 	 * @uml.property  name="clickedSquare"
 	 */
-	public void setClickedSquare(Coordinates clickedSquare) {
-		this.clickedSquare = clickedSquare;
+	public static void setClickedSquare(Coordinates clickedSquare) {
+		Gui.clickedSquare = clickedSquare;
 	}
 
 	/**
@@ -305,8 +302,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * @param  squareSelected
 	 * @uml.property  name="squareSelected"
 	 */
-	public void setSquareSelected(boolean squareSelected) {
-		this.squareSelected = squareSelected;
+	public static void setSquareSelected(boolean squareSelected) {
+		Gui.squareSelected = squareSelected;
 	}
 
 	/**
@@ -362,22 +359,22 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		}
 		}
 	}
-
-	@Override
-	public void mouseEntered(MouseEvent arg0) {
-	}
-
-	@Override
-	public void mouseExited(MouseEvent arg0) {
-	}
-
-	@Override
-	public void mousePressed(MouseEvent arg0) {
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent arg0) {
-	}
+//
+//	@Override
+//	public void mouseEntered(MouseEvent arg0) {
+//	}
+//
+//	@Override
+//	public void mouseExited(MouseEvent arg0) {
+//	}
+//
+//	@Override
+//	public void mousePressed(MouseEvent arg0) {
+//	}
+//
+//	@Override
+//	public void mouseReleased(MouseEvent arg0) {
+//	}
 
 	/**
 	 * This method is run automatically when the object is created.

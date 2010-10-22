@@ -39,21 +39,20 @@ public class MouseActions implements MouseListener {
 		//left mouse button pressed
 		case InputEvent.BUTTON1_MASK: {
 			//set the clicked square
-//			setClickedSquare(new Coordinates(e.getX(), e.getY()));
-//			setSquareSelected(true);
-//			repaint();
-			break;
+			Gui.setClickedSquare(new Coordinates(e.getX(), e.getY()));
+			Gui.setSquareSelected(true);
+			Gui.getFrame().repaint();
 		}
 		//right mouse button pressed
 		case InputEvent.BUTTON3_MASK: {
 			//clear the square selection
-//			setSquareSelected(false);
-//			repaint();
+			Gui.setSquareSelected(false);
+			Gui.getFrame().repaint();
 			break;
 		}
 		}
 	}
-
+	
 	@Override
 	public void mouseEntered(MouseEvent e) {
 	}
