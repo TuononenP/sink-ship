@@ -20,13 +20,11 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
-/**
+/** 
  * Customized action class for this project's purposes.
- * 
  * @author Petri Tuononen
- *
  */
-public class MenuAction extends AbstractAction {
+abstract class MenuAction extends AbstractAction {
 
 	private static final long serialVersionUID = -3533127027966807015L;
 
@@ -45,7 +43,6 @@ public class MenuAction extends AbstractAction {
 	/**
 	 * This method needs to be implemented by a inheriting class.
 	 */
-	public void actionPerformed(ActionEvent e) {
-	}
+	public abstract void actionPerformed(ActionEvent e);
 	
 }
