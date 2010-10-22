@@ -44,7 +44,12 @@ public class AboutMenuAction extends MenuAction {
      */
     public void actionPerformed(ActionEvent e) {
 		JOptionPane.showMessageDialog(Gui.getFrame(),
-		"Author: Petri Tuononen\n" +
+		"Authors:\n" +
+			     "Petri Tuononen\n" +
+				 "Matej Pristak\n" +
+				 "Andre Wagner\n" +
+				 "Kim, Hyuk-joong\n" +
+				 "Yu, Hyun-chul\n" +
 		"Date: 10/2010\n" +
 		"Version: 1.0\n" +
 		"Info: This software is a part of Advanced Software Engineering " +
