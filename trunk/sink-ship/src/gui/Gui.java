@@ -58,26 +58,6 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	private boolean squareSelected = false;
 	
 	/**
-	 * @uml.property  name="seaColor"
-	 */
-	private Color seaColor = new Color(81,167,255);
-	
-	/**
-	 * @uml.property  name="selectedSquareColor"
-	 */
-	private Color selectedSquareColor = new Color(159, 227, 126);
-	
-	/**
-	 * @uml.property  name="lineColor"
-	 */
-	private Color lineColor = new Color(67,104, 142);
-	
-	/**
-	 * @uml.property  name="shipColor"
-	 */
-	private Color shipColor = new Color(217, 56, 56);
-	
-	/**
 	 * @uml.property  name="lineWidth"
 	 */
 	private int lineWidth = 2;
@@ -86,6 +66,26 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * @uml.property  name="frame"
 	 */
 	public static JFrame frame;
+	
+	/**
+	 * @uml.property  name="d"
+	 */
+	private Dimension d;
+	
+	/**
+	 * @uml.property  name="menuHeight"
+	 */
+	int menuHeight;
+	
+	/**
+	 * @uml.property  name="boardWidth"
+	 */
+	int boardWidth;
+	
+	/**
+	 * @uml.property  name="boardHeight"
+	 */
+	int boardHeight;
 	
 	/**
 	 * @uml.property  name="menuBar"
@@ -102,7 +102,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//add mouse listener to the panel
 		addMouseListener(this);	
 		//set dimensions for the board.
-		Dimension d = new Dimension(board.getMatrixSize().getWidth()*board.getBlockSize().getWidth(), board.getMatrixSize().getHeight()*board.getBlockSize().getHeight());
+		d = new Dimension(board.getMatrixSize().getWidth()*board.getBlockSize().getWidth(), board.getMatrixSize().getHeight()*board.getBlockSize().getHeight());
 		//set the size for the board.
 		setPreferredSize(d);
 		//create a menubar
@@ -122,24 +122,24 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * @param g Graphics
 	 */
 	public void drawBoard(Graphics g) {
-		int menuHeight = getMenubar().getHeight();
+		menuHeight = getMenubar().getHeight();
 
 		//draw the background sea color
-		int width = board.getMatrixSize().getWidth()*board.getBlockSize().getWidth();
-		int height = board.getMatrixSize().getHeight()*board.getBlockSize().getHeight();
-		g.setColor(getSeaColor());
+		boardWidth = board.getMatrixSize().getWidth()*board.getBlockSize().getWidth();
+		boardHeight = board.getMatrixSize().getHeight()*board.getBlockSize().getHeight();
+		g.setColor(ColorSettings.getSeaColor());
 		int x=0, y=menuHeight; //take an account the height of the menubar
-		g.fillRect(x, y, width, height);
+		g.fillRect(x, y, boardWidth, boardHeight);
 
 		//draw the horizontal lines
-		g.setColor(getLineColor());
+		g.setColor(ColorSettings.getLineColor());
 		for (int i=1; i<=board.getMatrixSize().getWidth(); i++) {
-			g.fillRect(x, i*board.getBlockSize().getHeight()-getLineWith(), width, getLineWith());
+			g.fillRect(x, i*board.getBlockSize().getHeight()-getLineWith(), boardWidth, getLineWith());
 		}
 
 		//draw the vertical lines
 		for (int i=1; i<=board.getMatrixSize().getHeight(); i++) {
-			g.fillRect(i*board.getBlockSize().getWidth()-getLineWith(), x, getLineWith(), width);
+			g.fillRect(i*board.getBlockSize().getWidth()-getLineWith(), x, getLineWith(), boardWidth);
 		}
 	}
 
@@ -274,78 +274,6 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	}
 
 	/**
-	 * Get color of the sea.
-	 * @return  seaColor Color
-	 * @uml.property  name="seaColor"
-	 */
-	public Color getSeaColor() {
-		return seaColor;
-	}
-
-	/**
-	 * Set color of the sea.
-	 * @param seaColor  Color
-	 * @uml.property  name="seaColor"
-	 */
-	public void setSeaColor(Color seaColor) {
-		this.seaColor = seaColor;
-	}
-
-	/**
-	 * Get color of the selected square.
-	 * @return  selectedSquareColor Color
-	 * @uml.property  name="selectedSquareColor"
-	 */
-	public Color getSelectedSquareColor() {
-		return selectedSquareColor;
-	}
-
-	/**
-	 * Set color for the selected square.
-	 * @param  selectedSquareColor
-	 * @uml.property  name="selectedSquareColor"
-	 */
-	public void setSelectedSquareColor(Color selectedSquareColor) {
-		this.selectedSquareColor = selectedSquareColor;
-	}
-
-	/**
-	 * Get the color of the ship.
-	 * @return  shipColor
-	 * @uml.property  name="shipColor"
-	 */
-	public Color getShipColor() {
-		return shipColor;
-	}
-
-	/**
-	 * Set the color for the ship.
-	 * @param  shipColor
-	 * @uml.property  name="shipColor"
-	 */
-	public void setShipColor(Color shipColor) {
-		this.shipColor = shipColor;
-	}
-
-	/**
-	 * Get color of the line.
-	 * @return  verticeColor Color
-	 * @uml.property  name="lineColor"
-	 */
-	public Color getLineColor() {
-		return lineColor;
-	}
-
-	/**
-	 * Set color of the line..
-	 * @param lineColor  Color
-	 * @uml.property  name="lineColor"
-	 */
-	public void setLineColor(Color lineColor) {
-		this.lineColor = lineColor;
-	}
-
-	/**
 	 * Get clicked square.
 	 * @return
 	 * @uml.property  name="clickedSquare"
@@ -408,7 +336,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//get the coordinates of the upper left corner of the clicked square
 		Coordinates coords = getUpperLeftCornerCoordinates(getClickedSquare().getX(), getClickedSquare().getY());
 		//paint the clicked square
-		paintSquare(coords.getX(), coords.getY(), getSelectedSquareColor());
+		paintSquare(coords.getX(), coords.getY(), ColorSettings.getSelectedSquareColor());
 	}
 
 	/**
