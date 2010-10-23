@@ -16,6 +16,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package general;
 
+import types.Coordinates;
+import types.Direction;
+
 /**
  * Defines a ship.
  * 

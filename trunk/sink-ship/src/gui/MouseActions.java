@@ -16,11 +16,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui;
 
-import general.Coordinates;
 
 import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+
+import types.Coordinates;
 
 /**
  * Mouse actions that happens inside the frame.

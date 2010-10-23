@@ -14,38 +14,62 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package general;
+package types;
 
 /**
- * Defines the status of each field.
+ * Defines a Direction class that contains cardinal directions.
  * 
  * @author  Matej Pristak
  * 
  */
-public enum FieldStatus {
+public enum Direction {
 	
 	/**
-	 * @uml.property  name="fREE"
+	 * @uml.property  name="nORTH"
 	 * @uml.associationEnd  
 	 */
-	FREE,
+	NORTH,
 	
 	/**
-	 * @uml.property  name="sHIP"
+	 * @uml.property  name="sOUTH"
 	 * @uml.associationEnd  
 	 */
-	SHIP,
+	SOUTH,
 	
 	/**
-	 * @uml.property  name="hIT"
+	 * @uml.property  name="wEST"
 	 * @uml.associationEnd  
 	 */
-	HIT,
+	WEST,
 	
 	/**
-	 * @uml.property  name="sUNKEN"
+	 * @uml.property  name="eAST"
 	 * @uml.associationEnd  
 	 */
-	SUNKEN
+	EAST,
 	
+	/**
+	 * @uml.property  name="nE"
+	 * @uml.associationEnd  
+	 */
+	NE,
+	
+	/**
+	 * @uml.property  name="nW"
+	 * @uml.associationEnd  
+	 */
+	NW,
+	
+	/**
+	 * @uml.property  name="sE"
+	 * @uml.associationEnd  
+	 */
+	SE,
+	
+	/**
+	 * @uml.property  name="sW"
+	 * @uml.associationEnd  
+	 */
+	SW
+
 }

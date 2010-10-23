@@ -17,8 +17,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package player;
 
 import general.Board;
-import general.FieldStatus;
 import socket.SocketConnection;
+import types.FieldStatus;
 
 /**
  * Player of the game.

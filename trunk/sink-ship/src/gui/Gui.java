@@ -17,8 +17,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package gui;
 
 import general.Board;
-import general.Coordinates;
-import general.Size;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -32,6 +30,9 @@ import java.awt.event.MouseListener;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
+
+import types.Coordinates;
+import types.Size;
 
 /**
  * The Graphical User Interface of the application.
