@@ -14,36 +14,37 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package gui;
+package gui.menuActions;
+
+import gui.Help;
 
 import java.awt.event.ActionEvent;
 
-import javax.swing.AbstractAction;
-
-/** 
- * Abstract action class for the menubar.
+/**
+ * Action that happens when user clicks help menu item.
  * 
  * @author Petri Tuononen
+ *
  */
-abstract class MenuAction extends AbstractAction {
-
-	private static final long serialVersionUID = -3533127027966807015L;
+public class HelpMenuAction extends MenuAction {
+	
+	private static final long serialVersionUID = 6677074166635893059L;
 
 	/**
-	 * Constructor for a menu action.
+	 * Constructor for help menu action.
 	 * 
 	 * @param text
-	 * @param mnemonic
+	 * @param mnem
 	 */
-    public MenuAction(String text, Integer mnemonic) {
-        super(text);
-        putValue(MNEMONIC_KEY, mnemonic);
+    public HelpMenuAction(String text, Integer mnem) {
+        super(text, mnem);
     }
     
-	@Override
-	/**
-	 * This method needs to be implemented by a inheriting class.
-	 */
-	public abstract void actionPerformed(ActionEvent e);
-	
+    /**
+     * Perform action.
+     */
+    public void actionPerformed(ActionEvent e) {
+    	new Help().toFront();
+    }
+    
 }

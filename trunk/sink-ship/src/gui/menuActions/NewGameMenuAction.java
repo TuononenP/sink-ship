@@ -14,27 +14,27 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package gui;
+package gui.menuActions;
 
 import java.awt.event.ActionEvent;
 
 /**
- * Action that happens when user clicks quit menu item.
+ * Action that happens when user clicks new game menu item.
  * 
  * @author Petri Tuononen
  *
  */
-public class QuitMenuAction extends MenuAction {
+public class NewGameMenuAction extends MenuAction {
 	
 	private static final long serialVersionUID = -7763645382675659277L;
 
 	/**
-	 * Constructor for quit menu action.
+	 * Constructor for new game menu action.
 	 * 
 	 * @param text
 	 * @param mnem
 	 */
-    public QuitMenuAction(String text, Integer mnem) {
+    public NewGameMenuAction(String text, Integer mnem) {
         super(text, mnem);
     }
     
@@ -42,8 +42,7 @@ public class QuitMenuAction extends MenuAction {
      * Perform action.
      */
     public void actionPerformed(ActionEvent e) {
-		Gui.getFrame().setVisible(false);
-		Gui.getFrame().dispose();
+    	//TODO: Implement
     }
     
 }

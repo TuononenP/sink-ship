@@ -14,29 +14,27 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package gui;
+package gui.menuActions;
 
 import java.awt.event.ActionEvent;
 
-import javax.swing.JOptionPane;
-
 /**
- * Action that happens when user clicks about menu item.
+ * Action that happens when user clicks settings menu item.
  * 
  * @author Petri Tuononen
  *
  */
-public class AboutMenuAction extends MenuAction {
+public class SettingsMenuAction extends MenuAction {
 	
-	private static final long serialVersionUID = 8750638352780743718L;
+	private static final long serialVersionUID = 5787011487797522591L;
 
 	/**
-	 * Constructor for about menu action.
+	 * Constructor for settings menu action.
 	 * 
 	 * @param text
 	 * @param mnem
 	 */
-    public AboutMenuAction(String text, Integer mnem) {
+    public SettingsMenuAction(String text, Integer mnem) {
         super(text, mnem);
     }
     
@@ -44,19 +42,7 @@ public class AboutMenuAction extends MenuAction {
      * Perform action.
      */
     public void actionPerformed(ActionEvent e) {
-		JOptionPane.showMessageDialog(Gui.getFrame(),
-		"Authors:\n" +
-			     "Petri Tuononen\n" +
-				 "Matej Pristak\n" +
-				 "Andre Wagner\n" +
-				 "Kim, Hyuk-joong\n" +
-				 "Yu, Hyun-chul\n" +
-		"Date: 10/2010\n" +
-		"Version: 1.0\n" +
-		"Info: This software is a part of Advanced Software Engineering " +
-		"course at Sungkyunkwan University.\n" +
-		"Feedback: petri.tuononen@gmail.com", "About",
-		JOptionPane.PLAIN_MESSAGE);
+    	//TODO: Implement
     }
     
 }
