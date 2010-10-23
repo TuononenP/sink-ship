@@ -103,7 +103,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//set panel size
 		board = new Board(new Size(20,20), new Size(30,30));
 		//add mouse listener to the panel
-		addMouseListener(new MouseActions());	
+//		addMouseListener(new MouseActions());	
+		addMouseListener(this);
 		//set dimensions for the board.
 		d = new Dimension(board.getMatrixSize().getWidth()*board.getBlockSize().getWidth(), board.getMatrixSize().getHeight()*board.getBlockSize().getHeight());
 		//set the size for the board.
