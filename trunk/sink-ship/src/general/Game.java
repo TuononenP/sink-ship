@@ -41,9 +41,11 @@ public class Game {
 	}
 
 	/**
-	 * client constructor, should send data to server on ip:port and gets all the data to initialize the structure
-	 * @param players
-	 * @param settings
+	 * client constructor, should send data to server on ip:port and gets all the data to initialize the structure.
+	 * 
+	 * @param ip
+	 * @param port
+	 * @param player
 	 */
 	public Game(String ip, int port, Player player) {
 		super();
@@ -88,7 +90,6 @@ public class Game {
 	/**
 	 * guess (client)
 	 * @param coordinates position to check for hit
-	 * @param player shooting player
 	 */
 	public FieldStatus shoot(Coordinates coordinates){
 		return null;
@@ -191,7 +192,7 @@ public class Game {
 	 * Get team members.
 	 * 
 	 * @param teamid
-	 * @return
+	 * @return null
 	 */
 	public Player[] getTeamMembers(int teamid){
 		return null;

@@ -43,7 +43,8 @@ public class QuitMenuAction extends MenuAction {
     /**
      * Perform action.
      */
-    public void actionPerformed(ActionEvent e) {
+    @Override
+	public void actionPerformed(ActionEvent e) {
 		Gui.getFrame().setVisible(false);
 		Gui.getFrame().dispose();
     }

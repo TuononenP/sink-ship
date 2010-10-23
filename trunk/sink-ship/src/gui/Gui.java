@@ -159,6 +159,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * Paint method is run every time repaint() is called.
 	 * @param g Graphics
 	 */
+	@Override
 	protected void paintComponent(Graphics g) {
 		setG1(g);
 		drawBoard(getG1());
@@ -213,7 +214,6 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 
 	/**
 	 * Set frame.
-	 * @return  frame
 	 * @uml.property  name="frame"
 	 */
 	public static void setFrame(JFrame frame) {
@@ -278,7 +278,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 
 	/**
 	 * Get clicked square.
-	 * @return
+	 * @return clickedSquare
 	 * @uml.property  name="clickedSquare"
 	 */
 	public Coordinates getClickedSquare() {
@@ -296,7 +296,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 
 	/**
 	 * Returns true if square is selected, false otherwise.
-	 * @return
+	 * @return squareSelected
 	 * @uml.property  name="squareSelected"
 	 */
 	public boolean isSquareSelected() {
@@ -345,6 +345,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	/**
 	 * Mouse event handler for clicked buttons.
 	 */
+	@Override
 	public void mouseClicked(MouseEvent e) {
 		//identify the mouse button pressed
 		switch(e.getModifiers()) {
@@ -385,6 +386,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	/**
 	 * This method is run automatically when the object is created.
 	 */
+	@Override
 	public void run() {
 		//create new frame
 		frame = new JFrame("Sink a Ship");
