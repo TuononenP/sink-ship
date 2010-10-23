@@ -28,6 +28,7 @@ public class Size {
 	 * @uml.property  name="width"
 	 */ 
 	private int width;
+	
 	/**
 	 * @uml.property  name="height"
 	 */
