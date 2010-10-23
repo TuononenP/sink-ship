@@ -73,7 +73,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	/**
 	 * @uml.property  name="d"
 	 */
-	private Dimension d;
+	private Dimension dim;
 	
 	/**
 	 * @uml.property  name="menuHeight"
@@ -105,9 +105,9 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//add mouse listener to the panel
 		addMouseListener(this);	
 		//set dimensions for the board.
-		d = new Dimension(board.getMatrixSize().getWidth()*board.getBlockSize().getWidth(), board.getMatrixSize().getHeight()*board.getBlockSize().getHeight());
+		dim = new Dimension(board.getMatrixSize().getWidth()*board.getBlockSize().getWidth(), board.getMatrixSize().getHeight()*board.getBlockSize().getHeight());
 		//set the size for the board.
-		setPreferredSize(d);
+		setPreferredSize(dim);
 		//create a menubar
 		setMenubar(new Menubar().getMenuBar());
 	}
