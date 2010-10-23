@@ -22,7 +22,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Graphics;
-import java.awt.Toolkit;
 import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -105,7 +104,6 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		board = new Board(new Size(20,20), new Size(30,30));
 		//add mouse listener to the panel
 		addMouseListener(this);	
-//		addMouseListener(this);
 		//set dimensions for the board.
 		d = new Dimension(board.getMatrixSize().getWidth()*board.getBlockSize().getWidth(), board.getMatrixSize().getHeight()*board.getBlockSize().getHeight());
 		//set the size for the board.

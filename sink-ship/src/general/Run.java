@@ -62,7 +62,7 @@ public class Run {
 	//client-side:
 		//join a game (send data to server)
 		player1 = new Player("Player1", "123.123.132.123", new Board(new Size(30,30)));
-		Game game2 = new Game("1.1.1.1",2334,player1);
+//		Game game2 = new Game("1.1.1.1",2334,player1);
 		
 		//get data from server		
 		game.addPlayer(player2);
