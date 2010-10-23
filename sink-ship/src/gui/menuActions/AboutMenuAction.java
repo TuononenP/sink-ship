@@ -14,27 +14,31 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package gui;
+package gui.menuActions;
+
+import gui.Gui;
 
 import java.awt.event.ActionEvent;
 
+import javax.swing.JOptionPane;
+
 /**
- * Action that happens when user clicks help menu item.
+ * Action that happens when user clicks about menu item.
  * 
  * @author Petri Tuononen
  *
  */
-public class HelpMenuAction extends MenuAction {
+public class AboutMenuAction extends MenuAction {
 	
-	private static final long serialVersionUID = 6677074166635893059L;
+	private static final long serialVersionUID = 8750638352780743718L;
 
 	/**
-	 * Constructor for help menu action.
+	 * Constructor for about menu action.
 	 * 
 	 * @param text
 	 * @param mnem
 	 */
-    public HelpMenuAction(String text, Integer mnem) {
+    public AboutMenuAction(String text, Integer mnem) {
         super(text, mnem);
     }
     
@@ -42,7 +46,19 @@ public class HelpMenuAction extends MenuAction {
      * Perform action.
      */
     public void actionPerformed(ActionEvent e) {
-    	new Help().toFront();
+		JOptionPane.showMessageDialog(Gui.getFrame(),
+		"Authors:\n" +
+			     "Petri Tuononen\n" +
+				 "Matej Pristak\n" +
+				 "Andre Wagner\n" +
+				 "Kim, Hyuk-joong\n" +
+				 "Yu, Hyun-chul\n" +
+		"Date: 10/2010\n" +
+		"Version: 1.0\n" +
+		"Info: This software is a part of Advanced Software Engineering " +
+		"course at Sungkyunkwan University.\n" +
+		"Feedback: petri.tuononen@gmail.com", "About",
+		JOptionPane.PLAIN_MESSAGE);
     }
     
 }

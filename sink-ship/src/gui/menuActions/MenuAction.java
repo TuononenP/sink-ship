@@ -14,35 +14,36 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package gui;
+package gui.menuActions;
 
 import java.awt.event.ActionEvent;
 
-/**
- * Action that happens when user clicks new game menu item.
+import javax.swing.AbstractAction;
+
+/** 
+ * Abstract action class for the menubar.
  * 
  * @author Petri Tuononen
- *
  */
-public class NewGameMenuAction extends MenuAction {
-	
-	private static final long serialVersionUID = -7763645382675659277L;
+abstract class MenuAction extends AbstractAction {
+
+	private static final long serialVersionUID = -3533127027966807015L;
 
 	/**
-	 * Constructor for new game menu action.
+	 * Constructor for a menu action.
 	 * 
 	 * @param text
-	 * @param mnem
+	 * @param mnemonic
 	 */
-    public NewGameMenuAction(String text, Integer mnem) {
-        super(text, mnem);
+    public MenuAction(String text, Integer mnemonic) {
+        super(text);
+        putValue(MNEMONIC_KEY, mnemonic);
     }
     
-    /**
-     * Perform action.
-     */
-    public void actionPerformed(ActionEvent e) {
-    	//TODO: Implement
-    }
-    
+	@Override
+	/**
+	 * This method needs to be implemented by a inheriting class.
+	 */
+	public abstract void actionPerformed(ActionEvent e);
+	
 }

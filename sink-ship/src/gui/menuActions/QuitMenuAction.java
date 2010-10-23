@@ -14,27 +14,29 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package gui;
+package gui.menuActions;
+
+import gui.Gui;
 
 import java.awt.event.ActionEvent;
 
 /**
- * Action that happens when user clicks settings menu item.
+ * Action that happens when user clicks quit menu item.
  * 
  * @author Petri Tuononen
  *
  */
-public class SettingsMenuAction extends MenuAction {
+public class QuitMenuAction extends MenuAction {
 	
-	private static final long serialVersionUID = 5787011487797522591L;
+	private static final long serialVersionUID = -7763645382675659277L;
 
 	/**
-	 * Constructor for settings menu action.
+	 * Constructor for quit menu action.
 	 * 
 	 * @param text
 	 * @param mnem
 	 */
-    public SettingsMenuAction(String text, Integer mnem) {
+    public QuitMenuAction(String text, Integer mnem) {
         super(text, mnem);
     }
     
@@ -42,7 +44,8 @@ public class SettingsMenuAction extends MenuAction {
      * Perform action.
      */
     public void actionPerformed(ActionEvent e) {
-    	//TODO: Implement
+		Gui.getFrame().setVisible(false);
+		Gui.getFrame().dispose();
     }
     
 }

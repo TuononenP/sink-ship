@@ -16,6 +16,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui;
 
+import gui.menuActions.AboutMenuAction;
+import gui.menuActions.HelpMenuAction;
+import gui.menuActions.NewGameMenuAction;
+import gui.menuActions.QuitMenuAction;
+import gui.menuActions.SettingsMenuAction;
+
 import java.awt.event.KeyEvent;
 
 import javax.swing.JMenu;
