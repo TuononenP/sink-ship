@@ -18,6 +18,8 @@ package general;
 
 import player.Player;
 import socket.SocketListenerWorker;
+import types.Coordinates;
+import types.FieldStatus;
 
 /**
  * Contains general game related constraints.

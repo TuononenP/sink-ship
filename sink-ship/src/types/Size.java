@@ -14,62 +14,66 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package general;
+package types;
 
 /**
- * Defines a Direction class that contains cardinal directions.
+ * Defines the size.
  * 
  * @author  Matej Pristak
  * 
  */
-public enum Direction {
+public class Size {
+
+	/**
+	 * @uml.property  name="width"
+	 */ 
+	private int width;
 	
 	/**
-	 * @uml.property  name="nORTH"
-	 * @uml.associationEnd  
+	 * @uml.property  name="height"
 	 */
-	NORTH,
+	private int height;
 	
 	/**
-	 * @uml.property  name="sOUTH"
-	 * @uml.associationEnd  
+	 * @param width
+	 * @param height
 	 */
-	SOUTH,
+	public Size(int width, int height) {
+		super();
+		this.width = width;
+		this.height = height;
+	}
+
+	/**
+	 * @param width  the width to set
+	 * @uml.property  name="width"
+	 */
+	public void setWidth(int width) {
+		this.width = width;
+	}
 	
 	/**
-	 * @uml.property  name="wEST"
-	 * @uml.associationEnd  
+	 * @return  the width
+	 * @uml.property  name="width"
 	 */
-	WEST,
+	public int getWidth() {
+		return width;
+	}
 	
 	/**
-	 * @uml.property  name="eAST"
-	 * @uml.associationEnd  
+	 * @param height  the height to set
+	 * @uml.property  name="height"
 	 */
-	EAST,
+	public void setHeight(int height) {
+		this.height = height;
+	}
 	
 	/**
-	 * @uml.property  name="nE"
-	 * @uml.associationEnd  
+	 * @return  the height
+	 * @uml.property  name="height"
 	 */
-	NE,
-	
-	/**
-	 * @uml.property  name="nW"
-	 * @uml.associationEnd  
-	 */
-	NW,
-	
-	/**
-	 * @uml.property  name="sE"
-	 * @uml.associationEnd  
-	 */
-	SE,
-	
-	/**
-	 * @uml.property  name="sW"
-	 * @uml.associationEnd  
-	 */
-	SW
+	public int getHeight() {
+		return height;
+	}
 
 }

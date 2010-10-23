@@ -18,10 +18,14 @@ package general;
 
 import static org.junit.Assert.*;
 
-import general.FieldStatus;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import types.Coordinates;
+import types.Direction;
+import types.FieldStatus;
+import types.Size;
 
 /**
  * @author  Matej Pristak

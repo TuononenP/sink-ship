@@ -22,13 +22,13 @@ import static org.hamcrest.CoreMatchers.*;
 import general.Board;
 import general.Game;
 import general.Settings;
-import general.Size;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import player.Player;
+import types.Size;
 
 /**
  * @author  Matej Pristak

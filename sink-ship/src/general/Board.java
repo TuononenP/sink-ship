@@ -16,6 +16,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package general;
 
+import types.FieldStatus;
+import types.Size;
+
 /**
  * Defines a game board that is basically a matrix.
  * 

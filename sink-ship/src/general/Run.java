@@ -17,6 +17,9 @@
 package general;
 
 import player.Player;
+import types.Coordinates;
+import types.Direction;
+import types.Size;
 
 /**
  * Example executable class.
