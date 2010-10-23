@@ -45,7 +45,8 @@ public class AboutMenuAction extends MenuAction {
     /**
      * Perform action.
      */
-    public void actionPerformed(ActionEvent e) {
+    @Override
+	public void actionPerformed(ActionEvent e) {
 		JOptionPane.showMessageDialog(Gui.getFrame(),
 		"Authors:\n" +
 			     "Petri Tuononen\n" +

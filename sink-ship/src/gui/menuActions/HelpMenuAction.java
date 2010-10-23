@@ -43,7 +43,8 @@ public class HelpMenuAction extends MenuAction {
     /**
      * Perform action.
      */
-    public void actionPerformed(ActionEvent e) {
+    @Override
+	public void actionPerformed(ActionEvent e) {
     	new Help().toFront();
     }
     

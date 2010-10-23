@@ -90,6 +90,7 @@ public class Help extends JFrame {
 		//---- button1 ----
 		button1.setText("Close");
 		button1.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				closeButtonActionPerformed(e);
 			}
@@ -116,6 +117,7 @@ public class Help extends JFrame {
 	 */
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				JFrame.setDefaultLookAndFeelDecorated(false);
 				new Help();

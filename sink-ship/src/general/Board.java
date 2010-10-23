@@ -51,8 +51,7 @@ public class Board {
 
 	/**
 	 * @param ships
-	 * @param blockHeight
-	 * @param blockWidth
+	 * @param blockSize
 	 * @param matrixSize
 	 */
 	public Board(Ship[] ships, Size blockSize, Size matrixSize) {
