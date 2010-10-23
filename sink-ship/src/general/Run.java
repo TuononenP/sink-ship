@@ -19,7 +19,8 @@ package general;
 import player.Player;
 
 /**
- * Example executable class
+ * Example executable class.
+ * 
  * @author Matej Pristak
  *
  */

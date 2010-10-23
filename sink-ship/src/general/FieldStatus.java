@@ -17,7 +17,10 @@
 package general;
 
 /**
+ * Defines the status of each field.
+ * 
  * @author  Matej Pristak
+ * 
  */
 public enum FieldStatus {
 	

@@ -25,15 +25,21 @@ import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Graphics;
 import java.awt.Toolkit;
+import java.awt.event.InputEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 
 /**
+ * The Graphical User Interface of the application.
+ * 
  * @author  Petri Tuononen
+ * 
  */
-public class Gui extends JPanel implements Runnable {
+public class Gui extends JPanel implements Runnable, MouseListener {
 
 	private static final long serialVersionUID = 8491464846988855678L;
 	
@@ -359,22 +365,22 @@ public class Gui extends JPanel implements Runnable {
 		}
 		}
 	}
-//
-//	@Override
-//	public void mouseEntered(MouseEvent arg0) {
-//	}
-//
-//	@Override
-//	public void mouseExited(MouseEvent arg0) {
-//	}
-//
-//	@Override
-//	public void mousePressed(MouseEvent arg0) {
-//	}
-//
-//	@Override
-//	public void mouseReleased(MouseEvent arg0) {
-//	}
+
+	@Override
+	public void mouseEntered(MouseEvent arg0) {
+	}
+
+	@Override
+	public void mouseExited(MouseEvent arg0) {
+	}
+
+	@Override
+	public void mousePressed(MouseEvent arg0) {
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent arg0) {
+	}
 
 	/**
 	 * This method is run automatically when the object is created.

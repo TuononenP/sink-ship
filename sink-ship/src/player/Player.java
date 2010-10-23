@@ -21,8 +21,11 @@ import general.FieldStatus;
 import socket.SocketConnection;
 
 /**
+ * Player of the game.
+ * 
  * @author  Petri Tuononen
  * @author  Matej Pristak
+ * 
  */
 public class Player {
 
@@ -41,28 +44,33 @@ public class Player {
 
 	//server & client:
 	private String name;
+	
 	/**
 	 * @uml.property  name="board"
 	 * @uml.associationEnd  
 	 */
 	private Board board;
+	
 	//guesses of this player in a matrix
 	/**
 	 * @uml.property  name="guesses"
 	 * @uml.associationEnd  multiplicity="(0 -1)"
 	 */
 	private FieldStatus[][] guesses;
+	
 	//chat
 	private String[] messages;
 	private int teamid;
 
 	//server only:
 	private String ip;
+	
 	/**
 	 * @uml.property  name="connection"
 	 * @uml.associationEnd  
 	 */
 	private SocketConnection connection;
+	
 	/**
 	 * @uml.property  name="status"
 	 * @uml.associationEnd  
@@ -70,7 +78,6 @@ public class Player {
 	private PlayerStatus status;
 
 	//client only:
-
 	/**
 	 * Getter of the property <tt>name</tt>
 	 * @return   Returns the name.
@@ -200,6 +207,5 @@ public class Player {
 	public int getTeamid() {
 		return teamid;
 	}
-
 
 }

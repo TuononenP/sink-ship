@@ -19,6 +19,7 @@ package gui;
 import java.awt.event.ActionEvent;
 
 /**
+ * Action that happens when user clicks help menu item.
  * 
  * @author Petri Tuononen
  *

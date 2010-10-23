@@ -17,7 +17,10 @@
 package player;
 
 /**
+ * Status of the player.
+ * 
  * @author  Matej Pristak
+ * 
  */
 public enum PlayerStatus {
 	

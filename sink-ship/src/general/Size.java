@@ -17,11 +17,20 @@
 package general;
 
 /**
+ * Defines the size.
+ * 
  * @author  Matej Pristak
+ * 
  */
 public class Size {
 
+	/**
+	 * @uml.property  name="width"
+	 */ 
 	private int width;
+	/**
+	 * @uml.property  name="height"
+	 */
 	private int height;
 	
 	/**
@@ -41,6 +50,7 @@ public class Size {
 	public void setWidth(int width) {
 		this.width = width;
 	}
+	
 	/**
 	 * @return  the width
 	 * @uml.property  name="width"
@@ -48,6 +58,7 @@ public class Size {
 	public int getWidth() {
 		return width;
 	}
+	
 	/**
 	 * @param height  the height to set
 	 * @uml.property  name="height"
@@ -55,6 +66,7 @@ public class Size {
 	public void setHeight(int height) {
 		this.height = height;
 	}
+	
 	/**
 	 * @return  the height
 	 * @uml.property  name="height"

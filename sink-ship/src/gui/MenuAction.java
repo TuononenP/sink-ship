@@ -21,7 +21,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 
 /** 
- * Customized action class for this project's purposes.
+ * Abstract action class for the menubar.
+ * 
  * @author Petri Tuononen
  */
 abstract class MenuAction extends AbstractAction {
