@@ -17,7 +17,10 @@
 package general;
 
 /**
+ * Defines a Direction class that contains cardinal directions.
+ * 
  * @author  Matej Pristak
+ * 
  */
 public enum Direction {
 	

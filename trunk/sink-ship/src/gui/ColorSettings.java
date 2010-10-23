@@ -19,6 +19,7 @@ package gui;
 import java.awt.Color;
 
 /**
+ * Color settings for the Gui.
  * 
  * @author Petri Tuononen
  *

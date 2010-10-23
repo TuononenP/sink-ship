@@ -17,7 +17,10 @@
 package general;
 
 /**
+ * Defines a coordinates class that contains x and y attributes.
+ * 
  * @author  Petri Tuononen
+ * 
  */
 public class Coordinates {
 

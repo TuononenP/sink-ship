@@ -21,6 +21,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 
 /**
+ * Action that happens when user clicks about menu item.
  * 
  * @author Petri Tuononen
  *

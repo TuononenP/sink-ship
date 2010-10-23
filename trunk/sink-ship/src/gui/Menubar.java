@@ -23,7 +23,10 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 /**
+ * Contains the menubar.
+ * 
  * @author  Petri Tuononen
+ * 
  */
 public class Menubar extends JMenuBar {
 

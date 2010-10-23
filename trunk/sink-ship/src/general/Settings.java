@@ -17,7 +17,10 @@
 package general;
 
 /**
+ * Contains settings for the game.
+ * 
  * @author  Matej Pristak
+ * 
  */
 public class Settings {
 	

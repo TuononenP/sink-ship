@@ -23,6 +23,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /**
+ * Mouse actions that happens inside the frame.
  * 
  * @author Petri Tuononen
  *

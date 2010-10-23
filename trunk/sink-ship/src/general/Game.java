@@ -20,8 +20,11 @@ import player.Player;
 import socket.SocketListenerWorker;
 
 /**
+ * Contains general game related constraints.
+ * 
  * @author  Petri Tuononen
  * @author  Matej Pristak
+ * 
  */
 public class Game {
 

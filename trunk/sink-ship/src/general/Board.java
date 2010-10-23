@@ -17,8 +17,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package general;
 
 /**
- * @author   Petri Tuononen  TODO: To play against AI or to debug the enemy ships could be placed using the random matrix placement.
+ * Defines a game board that is basically a matrix.
+ * 
+ * @author	Petri Tuononen  
  * @author  Matej Pristak
+ * 
+ * TODO: To play against AI or to debug the enemy ships could be placed using the random matrix placement.
  */
 public class Board {
 
@@ -55,7 +59,6 @@ public class Board {
 		this.matrixSize = matrixSize;
 	}
 
-
 	//server & client:
 	/**
 	 * @uml.property  name="ships"
@@ -69,7 +72,7 @@ public class Board {
 	 */
 	private Size matrixSize;
 	
-	//this should be in GUI:
+	//TODO:this should be in GUI:
 	/**
 	 * @uml.property  name="blockSize"
 	 * @uml.associationEnd  
