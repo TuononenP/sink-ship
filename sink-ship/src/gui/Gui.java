@@ -59,7 +59,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	/**
 	 * @uml.property  name="squareSelected"
 	 */
-	private static boolean squareSelected = false;
+	private boolean squareSelected = false;
 	
 	/**
 	 * @uml.property  name="lineWidth"
@@ -104,8 +104,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//set panel size
 		board = new Board(new Size(20,20), new Size(30,30));
 		//add mouse listener to the panel
-//		addMouseListener(new MouseActions());	
-		addMouseListener(this);
+		addMouseListener(this);	
+//		addMouseListener(this);
 		//set dimensions for the board.
 		d = new Dimension(board.getMatrixSize().getWidth()*board.getBlockSize().getWidth(), board.getMatrixSize().getHeight()*board.getBlockSize().getHeight());
 		//set the size for the board.
@@ -292,7 +292,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * @param  clickedSquare
 	 * @uml.property  name="clickedSquare"
 	 */
-	public static void setClickedSquare(Coordinates clickedSquare) {
+	public void setClickedSquare(Coordinates clickedSquare) {
 		Gui.clickedSquare = clickedSquare;
 	}
 
@@ -310,8 +310,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * @param  squareSelected
 	 * @uml.property  name="squareSelected"
 	 */
-	public static void setSquareSelected(boolean squareSelected) {
-		Gui.squareSelected = squareSelected;
+	public void setSquareSelected(boolean squareSelected) {
+		this.squareSelected = squareSelected;
 	}
 
 	/**
@@ -413,17 +413,18 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//don't allow to change the frame size to keep it fixed
 		getFrame().setResizable(false);
 
-		// Get the size of the screen
-		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-
-		// Determine the new location of the frame
-		int w = getFrame().getSize().width;
-		int h = getFrame().getSize().height;
-		int x = (dim.width-w)/2;
-		int y = (dim.height-h)/2;
-
-		// Move the frame to the center of the screen
-		getFrame().setLocation(x, y);
+		//TODO: Doesn't work as indented
+//		// Get the size of the screen
+//		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+//
+//		// Determine the new location of the frame
+//		int w = getFrame().getSize().width;
+//		int h = getFrame().getSize().height;
+//		int x = (dim.width-w)/2;
+//		int y = (dim.height-h)/2;
+//
+//		// Move the frame to the center of the screen
+//		getFrame().setLocation(x, y);
 		getFrame().pack();
 	}
 
