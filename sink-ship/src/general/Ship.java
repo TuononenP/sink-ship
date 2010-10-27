@@ -43,6 +43,11 @@ public class Ship {
 	 * @uml.property  name="size"
 	 */
 	private int size;
+	
+	/**
+	 * @uml.property  name="status"
+	 */
+	types.FieldStatus[] status;
 
 	/**
 	 * Constructor.
@@ -58,6 +63,7 @@ public class Ship {
 	 * @param size
 	 * @param direc
 	 * @param coords
+	 * @param status
 	 */
 	public Ship(int size, Direction direc, Coordinates coords) {
 		this.size = size;
