@@ -47,6 +47,11 @@ public class ColorSettings {
 	private static Color shipColor = new Color(217, 56, 56);
 	
 	/**
+	 * @uml.property  name="xColor"
+	 */	
+	private static Color xColor = new Color(0, 0, 0);
+	
+	/**
 	 * Get color of the sea.
 	 * @return  seaColor Color
 	 * @uml.property  name="seaColor"
@@ -110,12 +115,29 @@ public class ColorSettings {
 	}
 
 	/**
-	 * Set color of the line..
+	 * Set color of the line.
 	 * @param lineColor  Color
 	 * @uml.property  name="lineColor"
 	 */
 	public static void setLineColor(Color lineColor) {
 		ColorSettings.lineColor = lineColor;
+	}
+
+	/**
+	 * Get color of the x.
+	 * @uml.property  name="xColor"
+	 */
+	public static Color getxColor() {
+		return xColor;
+	}
+
+	/**
+	 * Set color of the x.
+	 * @param xColor  Color
+	 * @uml.property  name="xColor"
+	 */
+	public static void setxColor(Color xColor) {
+		ColorSettings.xColor = xColor;
 	}
 
 }

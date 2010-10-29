@@ -122,27 +122,29 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 
 	/**
 	 * Draws the board.
+	 * 
 	 * @param g Graphics
 	 */
 	public void drawBoard(Graphics g) {
+		//get menubar height
 		menuHeight = getMenubar().getHeight();
 
 		//draw the background sea color
 		boardWidth = board.getMatrixSize().getWidth()*board.getBlockSize().getWidth();
 		boardHeight = board.getMatrixSize().getHeight()*board.getBlockSize().getHeight();
 		g.setColor(ColorSettings.getSeaColor());
-		int x=0, y=menuHeight; //take an account the height of the menubar
+		int x=0, y=menuHeight; //take into an account the height of the menubar
 		g.fillRect(x, y, boardWidth, boardHeight);
 
 		//draw the horizontal lines
 		g.setColor(ColorSettings.getLineColor());
 		for (int i=1; i<=board.getMatrixSize().getWidth(); i++) {
-			g.fillRect(x, i*board.getBlockSize().getHeight()-getLineWith(), boardWidth, getLineWith());
+			g.fillRect(x, i*board.getBlockSize().getHeight()-getLineWidth(), boardWidth, getLineWidth());
 		}
 
 		//draw the vertical lines
 		for (int i=1; i<=board.getMatrixSize().getHeight(); i++) {
-			g.fillRect(i*board.getBlockSize().getWidth()-getLineWith(), x, getLineWith(), boardWidth);
+			g.fillRect(i*board.getBlockSize().getWidth()-getLineWidth(), x, getLineWidth(), boardWidth);
 		}
 	}
 
@@ -150,8 +152,13 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * Draws an x on top of the selected square.
 	 * @param g Graphics
 	 */
-	public void drawX(Graphics g) {
-
+	public void drawX() {
+		//get the coordinates of the upper left corner of the clicked square
+		Coordinates coords = getUpperLeftCornerCoordinates(getClickedSquare().getX(), getClickedSquare().getY());
+		//paint diagonal line starting from upper-left corner to bottom-right corner
+		getG1().drawLine(coords.getX(), coords.getY(), coords.getX()+board.getBlockSize().getWidth()-getLineWidth(), coords.getY()+board.getBlockSize().getHeight()-getLineWidth());
+		//paint diagonal line starting from upper-right corner to bottom-left corner
+		getG1().drawLine(coords.getX()-getLineWidth()+board.getBlockSize().getWidth()-getLineWidth(), coords.getY(), coords.getX()-getLineWidth(), coords.getY()+board.getBlockSize().getHeight()-getLineWidth());
 	}
 
 	/**
@@ -166,7 +173,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//		drawHorizontalShip(getG1(), 10, 30, getShipColor());
 		if (isSquareSelected()) {
 			//paint the selected square
-			paintSelectedSquare();
+//			paintSelectedSquare();
+			drawX();
 		}
 	}
 
@@ -185,10 +193,11 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * @param endX
 	 * @param color
 	 */
-	public void drawHorizontalShip(Graphics g, int startX, int endX, Color color) {
-		paintSquare(startX, endX, color);
-		Coordinates coords = getUpperLeftCornerCoordinates(startX, endX);
-		paintSquare(coords.getX(), coords.getY(), color);
+	public void drawHorizontalShip(int startX, int endX, Color color) {
+		//TODO: Implement
+//		paintSquare(startX, endX, color);
+//		Coordinates coords = getUpperLeftCornerCoordinates(startX, endX);
+//		paintSquare(coords.getX(), coords.getY(), color);
 	}	
 
 	/**
@@ -198,9 +207,9 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * @param endY
 	 * @param color Color
 	 */
-	public void drawVerticalShip(Graphics g, int startY, int endY, Color color) {
-		//redraw square  color
-		paintSquare(startY, endY, color);
+	public void drawVerticalShip(int startY, int endY, Color color) {
+		//TODO: Implement
+//		paintSquare(startY, endY, color);
 	}	
 
 	/**
@@ -263,7 +272,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * Get width of the line.
 	 * @return lineWidth
 	 */
-	public int getLineWith() {
+	public int getLineWidth() {
 		return lineWidth;
 	}
 
@@ -323,16 +332,6 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	}
 
 	/**
-	 * Paint the defined square on the board.
-	 */
-	public void paintSquare(int x, int y, Color color) {
-		//set color
-		getG1().setColor(color);
-		//redraw square color
-		getG1().fillRect(x, y, board.getBlockSize().getWidth()-getLineWith(), board.getBlockSize().getHeight()-getLineWith());
-	}
-
-	/**
 	 * Paint the selected square on the board.
 	 */
 	public void paintSelectedSquare() {
@@ -340,6 +339,16 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		Coordinates coords = getUpperLeftCornerCoordinates(getClickedSquare().getX(), getClickedSquare().getY());
 		//paint the clicked square
 		paintSquare(coords.getX(), coords.getY(), ColorSettings.getSelectedSquareColor());
+	}
+	
+	/**
+	 * Paint the defined square on the board.
+	 */
+	public void paintSquare(int x, int y, Color color) {
+		//set color
+		getG1().setColor(color);
+		//redraw square color
+		getG1().fillRect(x, y, board.getBlockSize().getWidth()-getLineWidth(), board.getBlockSize().getHeight()-getLineWidth());
 	}
 
 	/**
