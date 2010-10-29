@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="gui_package_class_diagram" size="1914,1594" id="gui" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D313030302073696E6B2D736869702F70657065">
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.0 //@children.6/@sourceConnections.0" name="Gui" location="30,30" size="227,536" id="gui/Gui" runTimeClassModel="main([Ljava.lang.String;),shipColor,Gui(),paintSquare(IILjava.awt.Color;),getLineWith(),getUpperLeftCornerCoordinates(II),mouseEntered(Ljava.awt.event.MouseEvent;),setMenubar(Ljavax.swing.JMenuBar;),drawVerticalShip(Ljava.awt.Graphics;IILjava.awt.Color;),getFrame(),drawShips(Ljava.awt.Graphics;),lineColor,paintSelectedSquare(),run(),mouseReleased(Ljava.awt.event.MouseEvent;),setFrame(Ljavax.swing.JFrame;),getMenubar(),selectedSquareColor,drawHorizontalShip(Ljava.awt.Graphics;IILjava.awt.Color;),mouseClicked(Ljava.awt.event.MouseEvent;),lineWidth,mouseExited(Ljava.awt.event.MouseEvent;),squareSelected,drawX(Ljava.awt.Graphics;),frame,drawBoard(Ljava.awt.Graphics;),mousePressed(Ljava.awt.event.MouseEvent;),g1,seaColor">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.0 //@children.6/@sourceConnections.0" name="Gui" location="30,30" size="227,536" id="gui/Gui" runTimeClassModel="main([Ljava.lang.String;),shipColor,Gui(),paintSquare(IILjava.awt.Color;),getLineWith(),mouseEntered(Ljava.awt.event.MouseEvent;),getUpperLeftCornerCoordinates(II),setMenubar(Ljavax.swing.JMenuBar;),getFrame(),drawVerticalShip(Ljava.awt.Graphics;IILjava.awt.Color;),drawShips(Ljava.awt.Graphics;),paintSelectedSquare(),lineColor,run(),mouseReleased(Ljava.awt.event.MouseEvent;),setFrame(Ljavax.swing.JFrame;),getMenubar(),selectedSquareColor,drawHorizontalShip(Ljava.awt.Graphics;IILjava.awt.Color;),mouseClicked(Ljava.awt.event.MouseEvent;),lineWidth,mouseExited(Ljava.awt.event.MouseEvent;),squareSelected,drawX(Ljava.awt.Graphics;),frame,drawBoard(Ljava.awt.Graphics;),mousePressed(Ljava.awt.event.MouseEvent;),g1,seaColor">
     <children xsi:type="editmodel:CompartmentEditModel" size="168,144">
       <children xsi:type="editmodel:AttributeEditModel" name="frame" id="gui/Gui#frame"/>
       <children xsi:type="editmodel:AttributeEditModel" name="g1" id="gui/Gui#g1"/>
@@ -14,11 +14,11 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="204,342">
       <children xsi:type="editmodel:MethodEditModel" name="Gui" id="gui/Gui#Gui()"/>
       <children xsi:type="editmodel:MethodEditModel" name="drawBoard" id="gui/Gui#drawBoard(Ljava.awt.Graphics;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="drawHorizontalShip" id="gui/Gui#drawHorizontalShip(Ljava.awt.Graphics;IILjava.awt.Color;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="drawHorizontalShip" id="gui/Gui#drawHorizontalShip(IILjava.awt.Color;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="drawShips" id="gui/Gui#drawShips(Ljava.awt.Graphics;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="drawVerticalShip" id="gui/Gui#drawVerticalShip(Ljava.awt.Graphics;IILjava.awt.Color;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="drawX" id="gui/Gui#drawX(Ljava.awt.Graphics;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="getLineWith" id="gui/Gui#getLineWith()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="drawVerticalShip" id="gui/Gui#drawVerticalShip(IILjava.awt.Color;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="drawX" id="gui/Gui#drawX()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getLineWith" id="gui/Gui#getLineWidth()"/>
       <children xsi:type="editmodel:MethodEditModel" name="getMenubar" id="gui/Gui#getMenubar()"/>
       <children xsi:type="editmodel:MethodEditModel" name="getUpperLeftCornerCoordinates" id="gui/Gui#getUpperLeftCornerCoordinates(II)"/>
       <children xsi:type="editmodel:MethodEditModel" name="main" id="gui/Gui#main([Ljava.lang.String;)"/>
@@ -114,7 +114,7 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.1 //@children.0/@sourceConnections.2" name="Board" location="510,630" size="172,315" id="general/Board" runTimeClassModel="toArray(),Board([Lgeneral.Ship;Lgeneral.Size;Lgeneral.Size;),randomlyDeployShips(),Board(Lgeneral.Size;),Board(Lgeneral.Size;Lgeneral.Size;)">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.1 //@children.0/@sourceConnections.2" name="Board" location="510,630" size="172,315" id="general/Board" runTimeClassModel="Board([Lgeneral.Ship;Lgeneral.Size;Lgeneral.Size;),toArray(),randomlyDeployShips(),Board(Lgeneral.Size;),Board(Lgeneral.Size;Lgeneral.Size;)">
     <children xsi:type="editmodel:CompartmentEditModel" size="116,54"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="149,198">
       <children xsi:type="editmodel:MethodEditModel" name="Board" id="general/Board#Board(Lgeneral.Size;Lgeneral.Size;)"/>
