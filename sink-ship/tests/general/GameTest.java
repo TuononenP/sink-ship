@@ -97,10 +97,14 @@ public class GameTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		player1 = new Player("Player1", "123.123.132.123", new Board(new Size(30,30)));
-		player2 = new Player("Player2", "123.123.132.124", new Board(new Size(30,30)));
-		player3 = new Player("Player3", "123.123.132.125", new Board(new Size(30,30)));
-		player4 = new Player("Player4", "123.123.132.126", new Board(new Size(30,30)));
+		player1 = new Player("Player1", "123.123.132.123",
+				new Board(new Size(30,30)));
+		player2 = new Player("Player2", "123.123.132.124",
+				new Board(new Size(30,30)));
+		player3 = new Player("Player3", "123.123.132.125",
+				new Board(new Size(30,30)));
+		player4 = new Player("Player4", "123.123.132.126",
+				new Board(new Size(30,30)));
 		shipcounts = new int[]{0,0,2};
 		players = null;
 		players1 = new Player[]{player1,player2,player3,player4};
@@ -145,7 +149,8 @@ public class GameTest {
 		game.addPlayer(player3);
 		game.addPlayer(player4);
 		game.changeOrder(new int[]{3,4,2,1});
-		assertArrayEquals(new Player[]{player4,player3,player1,player2},game.getPlayers());
+		assertArrayEquals(new Player[]{player4,player3,player1,player2},
+				game.getPlayers());
 	}
 
 	@Test
@@ -155,7 +160,8 @@ public class GameTest {
 		game.addPlayer(player2);
 		assertThat(player1, not(game.getPlayers()[1]));
 		game.addPlayer(player3);
-		assertArrayEquals(new Player[]{player1,player2,player3},game.getPlayers());
+		assertArrayEquals(new Player[]{player1,player2,player3},
+				game.getPlayers());
 	}
 
 	@Test
@@ -165,7 +171,8 @@ public class GameTest {
 		game.addPlayer(player3);
 		game.addPlayer(player4);
 		game.removePlayer(player1);
-		assertArrayEquals(new Player[]{player2,player3,player4},game.getPlayers());
+		assertArrayEquals(new Player[]{player2,player3,player4},
+				game.getPlayers());
 		game.removePlayer(player4);
 		assertArrayEquals(new Player[]{player2,player3},game.getPlayers());
 		game.removePlayer(player2);
@@ -196,7 +203,8 @@ public class GameTest {
 		assertArrayEquals(new Player[]{player1,player4},game.getTeamMembers(42));
 		game.getPlayers()[1].setTeamid(42);
 		game.getPlayers()[2].setTeamid(42);
-		assertArrayEquals(new Player[]{player1,player2,player3,player4},game.getTeamMembers(42));
+		assertArrayEquals(new Player[]{player1,player2,player3,player4},
+				game.getTeamMembers(42));
 		game.getPlayers()[0].setTeamid(43);
 		game.getPlayers()[1].setTeamid(43);
 		assertArrayEquals(new Player[]{player1,player2},game.getTeamMembers(43));

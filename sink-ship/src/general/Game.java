@@ -31,7 +31,8 @@ import types.FieldStatus;
 public class Game {
 
 	/**
-	 * server constructor, should set the settings and start listening on port $port
+	 * server constructor, should set the settings and start listening on
+	 * port $port
 	 * @param port
 	 * @param settings
 	 */
@@ -41,7 +42,8 @@ public class Game {
 	}
 
 	/**
-	 * client constructor, should send data to server on ip:port and gets all the data to initialize the structure.
+	 * client constructor, should send data to server on ip:port and gets all
+	 * the data to initialize the structure.
 	 * 
 	 * @param ip
 	 * @param port
@@ -174,7 +176,8 @@ public class Game {
 	}
 
 	/**
-	 * checks requirements to start the game (number of players, ready status etc.)
+	 * checks requirements to start the game (number of players,
+	 * ready status etc.)
 	 */
 	public boolean checkRequirements(){
 		return false;	

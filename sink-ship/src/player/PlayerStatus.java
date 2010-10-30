@@ -25,19 +25,19 @@ package player;
 public enum PlayerStatus {
 	
 	/**
-	 * @uml.property  name="wAITING"
+	 * @uml.property  name="WAITING"
 	 * @uml.associationEnd  
 	 */
 	WAITING,
 	
 	/**
-	 * @uml.property  name="rEADY"
+	 * @uml.property  name="READY"
 	 * @uml.associationEnd  
 	 */
 	READY,
 	
 	/**
-	 * @uml.property  name="dEAD"
+	 * @uml.property  name="DEAD"
 	 * @uml.associationEnd  
 	 */
 	DEAD

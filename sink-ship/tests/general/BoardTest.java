@@ -56,9 +56,9 @@ public class BoardTest {
 	@Test
 	public void testToArray() {
 		FieldStatus[][] array = new FieldStatus[][]{
-				new FieldStatus[]{FieldStatus.FREE,FieldStatus.FREE,FieldStatus.FREE},
-				new FieldStatus[]{FieldStatus.FREE,FieldStatus.FREE,FieldStatus.FREE},
-				new FieldStatus[]{FieldStatus.FREE,FieldStatus.FREE,FieldStatus.FREE}};
+			new FieldStatus[]{FieldStatus.FREE,FieldStatus.FREE,FieldStatus.FREE},
+			new FieldStatus[]{FieldStatus.FREE,FieldStatus.FREE,FieldStatus.FREE},
+			new FieldStatus[]{FieldStatus.FREE,FieldStatus.FREE,FieldStatus.FREE}};
 		assertArrayEquals("free 3x3 board test",array,board.toArray());
 		array[0][1] = FieldStatus.SHIP;
 		array[1][1] = FieldStatus.SHIP;
@@ -67,7 +67,6 @@ public class BoardTest {
 		Ship ship2 = new Ship(2, Direction.NE, new Coordinates(2, 0));
 		board.setShips(new Ship[]{ship1,ship2});
 		assertArrayEquals("board with 2 ships test", array,board.toArray());
-
 	}
 
 }
