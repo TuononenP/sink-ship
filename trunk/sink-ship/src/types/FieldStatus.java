@@ -25,25 +25,25 @@ package types;
 public enum FieldStatus {
 	
 	/**
-	 * @uml.property  name="fREE"
+	 * @uml.property  name="FREE"
 	 * @uml.associationEnd  
 	 */
 	FREE,
 	
 	/**
-	 * @uml.property  name="sHIP"
+	 * @uml.property  name="SHIP"
 	 * @uml.associationEnd  
 	 */
 	SHIP,
 	
 	/**
-	 * @uml.property  name="hIT"
+	 * @uml.property  name="HIT"
 	 * @uml.associationEnd  
 	 */
 	HIT,
 	
 	/**
-	 * @uml.property  name="sUNKEN"
+	 * @uml.property  name="SUNKEN"
 	 * @uml.associationEnd  
 	 */
 	SUNKEN

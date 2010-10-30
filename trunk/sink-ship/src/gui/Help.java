@@ -40,9 +40,9 @@ public class Help extends JFrame {
 	}
 
 	//Variables declaration
-	private JScrollPane scrollPane1;
-	private JEditorPane editorPane1;
-	private JButton button1;
+	private JScrollPane scrollPane;
+	private JEditorPane editorPane;
+	private JButton button;
 
 	ClassLoader cl = Thread.currentThread().getContextClassLoader();
 	URL urlHelp = cl.getResource("Help.html");
@@ -52,55 +52,65 @@ public class Help extends JFrame {
 	 */
 	private void initComponents() {
 		if (urlHelp==null) {
+			//Help file not found
 			System.out.println("NULL");
 		}
-		scrollPane1 = new JScrollPane();
-		editorPane1 = new JEditorPane();
-		button1 = new JButton();
+		scrollPane = new JScrollPane();
+		editorPane = new JEditorPane();
+		button = new JButton();
 
 		//======== container ========
 		setVisible(true);
 		setTitle("Help - Sink a Ship");
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		Container contentPane = getContentPane();
+		//set layout
 		contentPane.setLayout(new GridBagLayout());
-		((GridBagLayout)contentPane.getLayout()).columnWidths = new int[] {10, 0, 65, 5, 0};
-		((GridBagLayout)contentPane.getLayout()).rowHeights = new int[] {10, 0, 30, 5, 0};
-		((GridBagLayout)contentPane.getLayout()).columnWeights = new double[] {0.0, 1.0, 0.0, 0.0, 1.0E-4};
-		((GridBagLayout)contentPane.getLayout()).rowWeights = new double[] {0.0, 1.0, 0.0, 0.0, 1.0E-4};
+		((GridBagLayout)contentPane.getLayout()).columnWidths =
+			new int[] {10, 0, 65, 5, 0};
+		((GridBagLayout)contentPane.getLayout()).rowHeights = 
+			new int[] {10, 0, 30, 5, 0};
+		((GridBagLayout)contentPane.getLayout()).columnWeights = 
+			new double[] {0.0, 1.0, 0.0, 0.0, 1.0E-4};
+		((GridBagLayout)contentPane.getLayout()).rowWeights = 
+			new double[] {0.0, 1.0, 0.0, 0.0, 1.0E-4};
 
-		//======== scrollPane1 ========
+		//======== scrollPane ========
 		{
-			//---- editorPane1 ----
-			editorPane1.setEditable(false);
-			editorPane1.setContentType("text/html");
-			scrollPane1.setViewportView(editorPane1);
+			//---- editorPane ----
+			editorPane.setEditable(false);
+			editorPane.setContentType("text/html");
+			scrollPane.setViewportView(editorPane);
 
 			try {
-				editorPane1.setPage(urlHelp);
+				editorPane.setPage(urlHelp);
 
 			} catch (IOException e) {
-				editorPane1.setText("Help file not found");
+				editorPane.setText("Help file not found");
 			}
 		}
-		contentPane.add(scrollPane1, new GridBagConstraints(1, 1, 2, 1, 0.0, 0.0,
+		//add scrollPane
+		contentPane.add(scrollPane, new GridBagConstraints(1, 1, 2, 1, 0.0, 0.0,
 				GridBagConstraints.CENTER, GridBagConstraints.BOTH,
 				new Insets(0, 0, 5, 5), 0, 0));
 
-		//---- button1 ----
-		button1.setText("Close");
-		button1.addActionListener(new ActionListener() {
+		//---- button ----
+		button.setText("Close");
+		button.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				closeButtonActionPerformed(e);
 			}
 		});
-		contentPane.add(button1, new GridBagConstraints(2, 2, 1, 1, 0.0, 0.0,
+		//add button
+		contentPane.add(button, new GridBagConstraints(2, 2, 1, 1, 0.0, 0.0,
 				GridBagConstraints.CENTER, GridBagConstraints.BOTH,
 				new Insets(0, 0, 5, 5), 0, 0));
 
+		//set size of the dialog
 		setSize(900, 650);
-		setLocationRelativeTo(null);
+		//set the dialog to center of the screen
+		setLocationRelativeTo(null); 
 	}
 
 	/**

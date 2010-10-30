@@ -38,11 +38,13 @@ public class Run {
 		int[] shipcounts = {0,0,1};
 		Game game = new Game(2334,new Settings("1.1.1.1", shipcounts, 2));
 		
-		Player player1 = new Player("Player1", "123.123.132.123", new Board(new Size(30,30)));
+		Player player1 = new Player("Player1", "123.123.132.123",
+				new Board(new Size(30,30)));
 		game.addPlayer(player1);
 		
 		//new player joins a game
-		Player player2 = new Player("Player2", "123.123.132.123", new Board(new Size(30,30)));
+		Player player2 = new Player("Player2", "123.123.132.123",
+				new Board(new Size(30,30)));
 		game.addPlayer(player2);
 		//new thread for handling each player's socket...
 		
@@ -61,7 +63,8 @@ public class Run {
 	
 	//client-side:
 		//join a game (send data to server)
-		player1 = new Player("Player1", "123.123.132.123", new Board(new Size(30,30)));
+		player1 = new Player("Player1", "123.123.132.123",
+				new Board(new Size(30,30)));
 //		Game game2 = new Game("1.1.1.1",2334,player1);
 		
 		//get data from server		

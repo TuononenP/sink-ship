@@ -47,12 +47,6 @@ public class Menubar extends JMenuBar {
 	private JMenuItem menuItem5;
 
 	/**
-	 * Default constructor.
-	 */
-	public Menubar() {
-	}
-	
-	/**
 	 * Menubar.
 	 * @uml.property  name="menuBar"
 	 */
@@ -65,17 +59,20 @@ public class Menubar extends JMenuBar {
 				menu = new JMenu("File");
 
 				//---- menuItem4 ----
-				NewGameMenuAction newGameAction = new NewGameMenuAction("New Game", KeyEvent.VK_F1);
+				NewGameMenuAction newGameAction =
+					new NewGameMenuAction("New Game", KeyEvent.VK_F1);
 				menuItem4 = new JMenuItem(newGameAction);
 				menu.add(menuItem4);
 
 				//---- menuItem5 ----
-				SettingsMenuAction settingsAction = new SettingsMenuAction("Settings", KeyEvent.VK_F2);
+				SettingsMenuAction settingsAction = 
+					new SettingsMenuAction("Settings", KeyEvent.VK_F2);
 				menuItem5 = new JMenuItem(settingsAction);
 				menu.add(menuItem5);
 
 				//---- menuItem ----
-				QuitMenuAction quitAction = new QuitMenuAction("Quit", KeyEvent.VK_Q);
+				QuitMenuAction quitAction = 
+					new QuitMenuAction("Quit", KeyEvent.VK_Q);
 				menuItem = new JMenuItem(quitAction);
 				menu.add(menuItem);
 
@@ -86,12 +83,14 @@ public class Menubar extends JMenuBar {
 					menu2 = new JMenu("Info");
 
 					//---- menuItem2 ----
-					HelpMenuAction helpAction = new HelpMenuAction("Help", KeyEvent.VK_F11);
+					HelpMenuAction helpAction = 
+						new HelpMenuAction("Help", KeyEvent.VK_F11);
 					menuItem2 = new JMenuItem(helpAction);
 					menu2.add(menuItem2);
 
 					//---- menuItem3 ----
-					AboutMenuAction aboutAction = new AboutMenuAction("About", KeyEvent.VK_A);
+					AboutMenuAction aboutAction = 
+						new AboutMenuAction("About", KeyEvent.VK_A);
 					menuItem3 = new JMenuItem(aboutAction);
 					menu2.add(menuItem3);
 				}

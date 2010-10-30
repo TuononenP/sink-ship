@@ -25,7 +25,8 @@ import types.Size;
  * @author	Petri Tuononen  
  * @author  Matej Pristak
  * 
- * TODO: To play against AI or to debug the enemy ships could be placed using the random matrix placement.
+ * TODO: To play against AI or to debug the enemy ships could be placed
+ * 		 using the random matrix placement.
  */
 public class Board {
 

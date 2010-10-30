@@ -105,7 +105,9 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//add mouse listener to the panel
 		addMouseListener(this);	
 		//set dimensions for the board.
-		dim = new Dimension(board.getMatrixSize().getWidth()*board.getBlockSize().getWidth(), board.getMatrixSize().getHeight()*board.getBlockSize().getHeight());
+		dim = new Dimension(
+				board.getMatrixSize().getWidth()*board.getBlockSize().getWidth(),
+				board.getMatrixSize().getHeight()*board.getBlockSize().getHeight());
 		//set the size for the board.
 		setPreferredSize(dim);
 		//create a menubar
@@ -139,12 +141,14 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//draw the horizontal lines
 		g.setColor(ColorSettings.getLineColor());
 		for (int i=1; i<=board.getMatrixSize().getWidth(); i++) {
-			g.fillRect(x, i*board.getBlockSize().getHeight()-getLineWidth(), boardWidth, getLineWidth());
+			g.fillRect(x, i*board.getBlockSize().getHeight()-getLineWidth(),
+					boardWidth, getLineWidth());
 		}
 
 		//draw the vertical lines
 		for (int i=1; i<=board.getMatrixSize().getHeight(); i++) {
-			g.fillRect(i*board.getBlockSize().getWidth()-getLineWidth(), x, getLineWidth(), boardWidth);
+			g.fillRect(i*board.getBlockSize().getWidth()-getLineWidth(), x,
+					getLineWidth(), boardWidth);
 		}
 	}
 
@@ -154,11 +158,23 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 */
 	public void drawX() {
 		//get the coordinates of the upper left corner of the clicked square
-		Coordinates coords = getUpperLeftCornerCoordinates(getClickedSquare().getX(), getClickedSquare().getY());
+		Coordinates coords = getUpperLeftCornerCoordinates(
+				getClickedSquare().getX(), getClickedSquare().getY()
+				);
 		//paint diagonal line starting from upper-left corner to bottom-right corner
-		getG1().drawLine(coords.getX(), coords.getY(), coords.getX()+board.getBlockSize().getWidth()-getLineWidth(), coords.getY()+board.getBlockSize().getHeight()-getLineWidth());
+		getG1().drawLine(
+				coords.getX(),
+				coords.getY(),
+				coords.getX()+board.getBlockSize().getWidth()-getLineWidth(),
+				coords.getY()+board.getBlockSize().getHeight()-getLineWidth()
+				);
 		//paint diagonal line starting from upper-right corner to bottom-left corner
-		getG1().drawLine(coords.getX()-getLineWidth()+board.getBlockSize().getWidth()-getLineWidth(), coords.getY(), coords.getX()-getLineWidth(), coords.getY()+board.getBlockSize().getHeight()-getLineWidth());
+		getG1().drawLine(
+				coords.getX()-getLineWidth()+board.getBlockSize().getWidth()-getLineWidth(),
+				coords.getY(),
+				coords.getX()-getLineWidth(),
+				coords.getY()+board.getBlockSize().getHeight()-getLineWidth()
+				);
 	}
 
 	/**
@@ -326,8 +342,10 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 */
 	public Coordinates getUpperLeftCornerCoordinates(int x, int y) {
 		//calculate upper-left cell coordinates
-		int xPos = (x/board.getBlockSize().getWidth())*board.getBlockSize().getWidth();
-		int yPos = (y/board.getBlockSize().getHeight())*board.getBlockSize().getHeight();
+		int xPos = (x/board.getBlockSize().getWidth())*
+			board.getBlockSize().getWidth();
+		int yPos = (y/board.getBlockSize().getHeight())*
+			board.getBlockSize().getHeight();
 		return new Coordinates(xPos, yPos);
 	}
 
@@ -336,9 +354,13 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 */
 	public void paintSelectedSquare() {
 		//get the coordinates of the upper left corner of the clicked square
-		Coordinates coords = getUpperLeftCornerCoordinates(getClickedSquare().getX(), getClickedSquare().getY());
+		Coordinates coords = getUpperLeftCornerCoordinates(
+				getClickedSquare().getX(), getClickedSquare().getY());
 		//paint the clicked square
-		paintSquare(coords.getX(), coords.getY(), ColorSettings.getSelectedSquareColor());
+		paintSquare(
+				coords.getX(), coords.getY(),
+				ColorSettings.getSelectedSquareColor()
+				);
 	}
 	
 	/**
@@ -348,7 +370,12 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//set color
 		getG1().setColor(color);
 		//redraw square color
-		getG1().fillRect(x, y, board.getBlockSize().getWidth()-getLineWidth(), board.getBlockSize().getHeight()-getLineWidth());
+		getG1().fillRect(
+				x,
+				y, 
+				board.getBlockSize().getWidth()-getLineWidth(),
+				board.getBlockSize().getHeight()-getLineWidth()
+				);
 	}
 
 	/**
@@ -416,7 +443,10 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//make frame visible
 		getFrame().setVisible(true);
 		//great frame same size as panel and take menubar height into an account
-		Dimension d = new Dimension(board.getBlockSize().getWidth(), board.getBlockSize().getHeight()/*+menuBar.getHeight()*/);
+		Dimension d = new Dimension(
+				board.getBlockSize().getWidth(),
+				board.getBlockSize().getHeight()
+				);
 		//set the frame size
 		getFrame().setSize(d);
 		//don't allow to change the frame size to keep it fixed
