@@ -14,7 +14,9 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package gui;
+package gui.actionListeners;
+
+import gui.Gui;
 
 import java.awt.event.InputEvent;
 import java.awt.event.MouseAdapter;
