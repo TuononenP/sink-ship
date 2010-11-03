@@ -38,6 +38,9 @@ import types.Size;
  * 
  * @author  Petri Tuononen
  * 
+ * TODO: Deploy ships
+ * TODO: Pass Ship objects
+ * 
  */
 public class Gui extends JPanel implements Runnable, MouseListener {
 
