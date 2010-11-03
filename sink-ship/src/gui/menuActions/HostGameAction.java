@@ -18,32 +18,32 @@ package gui.menuActions;
 
 import java.awt.event.ActionEvent;
 
-import javax.swing.AbstractAction;
-
-/** 
- * Abstract action class.
+/**
+ * Action that happens when the user hosts a game.
  * 
  * @author Petri Tuononen
+ *
  */
-abstract class MenuAction extends AbstractAction {
-
-	private static final long serialVersionUID = -3533127027966807015L;
+public class HostGameAction extends MenuAction {
+	
+	private static final long serialVersionUID = -130966815144668743L;
 
 	/**
-	 * Constructor for a menu action.
+	 * Constructor for the host a game action.
 	 * 
 	 * @param text
-	 * @param mnemonic
+	 * @param mnem
 	 */
-    public MenuAction(String text, Integer mnemonic) {
-        super(text);
-        putValue(MNEMONIC_KEY, mnemonic);
+    public HostGameAction(String text, Integer mnem) {
+        super(text, mnem);
     }
     
-	@Override
-	/**
-	 * This method needs to be implemented by a inheriting class.
-	 */
-	public abstract void actionPerformed(ActionEvent e);
-	
+    /**
+     * Perform action.
+     */
+    @Override
+	public void actionPerformed(ActionEvent e) {
+    	//TODO: Implement
+    }
+    
 }
