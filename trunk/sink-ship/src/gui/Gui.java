@@ -22,9 +22,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Graphics;
-import java.awt.event.InputEvent;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
@@ -42,7 +39,7 @@ import types.Size;
  * TODO: Pass Ship objects
  * 
  */
-public class Gui extends JPanel implements Runnable, MouseListener {
+public class Gui extends JPanel implements Runnable {
 
 	private static final long serialVersionUID = 8491464846988855678L;
 	
@@ -61,7 +58,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	/**
 	 * @uml.property  name="squareSelected"
 	 */
-	private boolean squareSelected = false;
+	private static boolean squareSelected = false;
 	
 	/**
 	 * @uml.property  name="lineWidth"
@@ -106,7 +103,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 		//set panel size
 		board = new Board(new Size(20,20), new Size(30,30));
 		//add mouse listener to the panel
-		addMouseListener(this);	
+		addMouseListener(new BoardMouseActionListeners());	
 		//set dimensions for the board.
 		dim = new Dimension(
 				board.getMatrixSize().getWidth()*board.getBlockSize().getWidth(),
@@ -318,7 +315,7 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * @param  clickedSquare
 	 * @uml.property  name="clickedSquare"
 	 */
-	public void setClickedSquare(Coordinates clickedSquare) {
+	public static void setClickedSquare(Coordinates clickedSquare) {
 		Gui.clickedSquare = clickedSquare;
 	}
 
@@ -336,8 +333,8 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 	 * @param  squareSelected
 	 * @uml.property  name="squareSelected"
 	 */
-	public void setSquareSelected(boolean squareSelected) {
-		this.squareSelected = squareSelected;
+	public static void setSquareSelected(boolean squareSelected) {
+		Gui.squareSelected = squareSelected;
 	}
 
 	/**
@@ -379,47 +376,6 @@ public class Gui extends JPanel implements Runnable, MouseListener {
 				board.getBlockSize().getWidth()-getLineWidth(),
 				board.getBlockSize().getHeight()-getLineWidth()
 				);
-	}
-
-	/**
-	 * Mouse event handler for clicked buttons.
-	 */
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		//identify the mouse button pressed
-		switch(e.getModifiers()) {
-		//left mouse button pressed
-		case InputEvent.BUTTON1_MASK: {
-			//set the clicked square
-			setClickedSquare(new Coordinates(e.getX(), e.getY()));
-			setSquareSelected(true);
-			repaint();
-			break;
-		}
-		//right mouse button pressed
-		case InputEvent.BUTTON3_MASK: {
-			//clear the square selection
-			setSquareSelected(false);
-			repaint();
-			break;
-		}
-		}
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent arg0) {
-	}
-
-	@Override
-	public void mouseExited(MouseEvent arg0) {
-	}
-
-	@Override
-	public void mousePressed(MouseEvent arg0) {
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent arg0) {
 	}
 
 	/**
