@@ -98,11 +98,31 @@ public class Gui extends JPanel implements Runnable {
 	private JMenuBar menuBar = new JMenuBar();
 
 	/**
-	 * Constructor.
+	 * Default Constructor.
+	 * 'Factory set' board and block sizes.
 	 */
 	public Gui() {
 		//set panel size
 		board = new Board(new Size(20,20), new Size(30,30));
+		//initialize the gui components
+		init();
+	}
+	
+	/**
+	 * Constructor.
+	 * Set size of the board and block size.
+	 */
+	public Gui(Size s1, Size s2) {
+		//set panel size
+		board = new Board(s1, s2);
+		//initialize the gui components
+		init();
+	}
+	
+	/**
+	 * Initializes the Gui components.
+	 */
+	private void init() {
 		//add mouse listener to the panel
 		addMouseListener(new BoardMouseActionListeners());	
 		//set dimensions for the board.
@@ -112,7 +132,7 @@ public class Gui extends JPanel implements Runnable {
 		//set the size for the board.
 		setPreferredSize(dim);
 		//create a menubar
-		setMenubar(new Menubar().getMenuBar());
+		setMenubar(new Menubar().getMenuBar());		
 	}
 
 	/**
