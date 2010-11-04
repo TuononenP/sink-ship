@@ -14,26 +14,28 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package socket;
+package gui;
+
+import types.Coordinates;
 
 /**
- * 
+ * Mathematical calculations related to the GUI.
  * 
  * @author Petri Tuononen
- * 
+ *
  */
-public class SocketConnection {
+public class Calculations {
 
 	/**
+	 * Calculate the upper left corner cell coordinates.
 	 */
-	public void createServer() {
-		//TODO: Implement create server for socket connection.
+	public static Coordinates getUpperLeftCornerCoordinates(int x, int y) {
+		//calculate upper-left cell coordinates
+		int xPos = (x/Gui.getBoard().getBlockSize().getWidth())*
+		Gui.getBoard().getBlockSize().getWidth();
+		int yPos = (y/Gui.getBoard().getBlockSize().getHeight())*
+		Gui.getBoard().getBlockSize().getHeight();
+		return new Coordinates(xPos, yPos);
 	}
-			
-	/**
-	 */
-	public void connectToSocket() {
-		//TODO: Implement connect to socket.
-	}
-
+	
 }

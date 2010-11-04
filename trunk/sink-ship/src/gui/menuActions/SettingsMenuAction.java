@@ -43,7 +43,7 @@ public class SettingsMenuAction extends MenuAction {
      */
     @Override
 	public void actionPerformed(ActionEvent e) {
-    	//TODO: Implement
+    	//TODO: Implement actrion performed for settings menu action.
     }
     
 }

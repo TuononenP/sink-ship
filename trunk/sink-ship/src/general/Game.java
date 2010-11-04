@@ -101,7 +101,7 @@ public class Game {
 	 * do one turn
 	 */
 	public void doOneTurn(){
-//		TODO: Implement
+//		TODO: Implement one turn
 	}
 
 	/**
@@ -165,14 +165,14 @@ public class Game {
 	 * adds a player to this game
 	 */
 	public void addPlayer(Player player){
-		//TODO: Implement
+		//TODO: Implement add player
 	}
 
 	/**
 	 * removes a player from this game
 	 */
 	public void removePlayer(Player player){
-		//TODO: Implement
+		//TODO: Implement remove player
 	}
 
 	/**
@@ -188,7 +188,7 @@ public class Game {
 	 * decides the player order
 	 */
 	public void startGame(){
-		//TODO: Implement
+		//TODO: Implement start game
 	}
 
 	/**
