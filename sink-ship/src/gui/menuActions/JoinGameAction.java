@@ -43,7 +43,7 @@ public class JoinGameAction extends MenuAction {
      */
     @Override
 	public void actionPerformed(ActionEvent e) {
-    	//TODO: Implement
+    	//TODO: Implement action performed for join game
     }
     
 }

@@ -64,7 +64,7 @@ public class Gui extends JPanel implements Runnable {
 	/**
 	 * @uml.property  name="lineWidth"
 	 */
-	private int lineWidth = 2;
+	private static int lineWidth = 2;
 	
 	/**
 	 * @uml.property  name="frame"
@@ -76,26 +76,13 @@ public class Gui extends JPanel implements Runnable {
 	 */
 	private Dimension dim;
 	
-	/**
-	 * @uml.property  name="menuHeight"
-	 */
-	int menuHeight;
-	
-	/**
-	 * @uml.property  name="boardWidth"
-	 */
-	int boardWidth;
-	
-	/**
-	 * @uml.property  name="boardHeight"
-	 */
-	int boardHeight;
+	private DrawComponents components = new DrawComponents();
 	
 	/**
 	 * @uml.property  name="menuBar"
 	 * @uml.associationEnd  
 	 */
-	private JMenuBar menuBar = new JMenuBar();
+	private static JMenuBar menuBar = new JMenuBar();
 
 	/**
 	 * Default Constructor.
@@ -110,7 +97,7 @@ public class Gui extends JPanel implements Runnable {
 	
 	/**
 	 * Constructor.
-	 * Set size of the board and block size.
+	 * Manual size of the board and block size.
 	 */
 	public Gui(Size s1, Size s2) {
 		//set panel size
@@ -144,63 +131,6 @@ public class Gui extends JPanel implements Runnable {
 	}
 
 	/**
-	 * Draws the board.
-	 * 
-	 * @param g Graphics
-	 */
-	public void drawBoard(Graphics g) {
-		//get menubar height
-		menuHeight = getMenubar().getHeight();
-
-		//draw the background sea color
-		boardWidth = board.getMatrixSize().getWidth()*
-					 board.getBlockSize().getWidth();
-		boardHeight = board.getMatrixSize().getHeight()*
-					  board.getBlockSize().getHeight();
-		g.setColor(ColorSettings.getSeaColor());
-		int x=0, y=menuHeight; //take into an account the height of the menubar
-		g.fillRect(x, y, boardWidth, boardHeight);
-
-		//draw the horizontal lines
-		g.setColor(ColorSettings.getLineColor());
-		for (int i=1; i<=board.getMatrixSize().getWidth(); i++) {
-			g.fillRect(x, i*board.getBlockSize().getHeight()-getLineWidth(),
-					boardWidth, getLineWidth());
-		}
-
-		//draw the vertical lines
-		for (int i=1; i<=board.getMatrixSize().getHeight(); i++) {
-			g.fillRect(i*board.getBlockSize().getWidth()-getLineWidth(), x,
-					getLineWidth(), boardWidth);
-		}
-	}
-
-	/**
-	 * Draws an x on top of the selected square.
-	 * @param g Graphics
-	 */
-	public void drawX() {
-		//get the coordinates of the upper left corner of the clicked square
-		Coordinates coords = getUpperLeftCornerCoordinates(
-				getClickedSquare().getX(), getClickedSquare().getY()
-				);
-		//paint diagonal line starting from upper-left corner to bottom-right corner
-		getG1().drawLine(
-				coords.getX(),
-				coords.getY(),
-				coords.getX()+board.getBlockSize().getWidth()-getLineWidth(),
-				coords.getY()+board.getBlockSize().getHeight()-getLineWidth()
-				);
-		//paint diagonal line starting from upper-right corner to bottom-left corner
-		getG1().drawLine(
-				coords.getX()-getLineWidth()+board.getBlockSize().getWidth()-getLineWidth(),
-				coords.getY(),
-				coords.getX()-getLineWidth(),
-				coords.getY()+board.getBlockSize().getHeight()-getLineWidth()
-				);
-	}
-
-	/**
 	 * Responsible for drawing graphics on the screen.
 	 * Paint method is run every time repaint() is called.
 	 * @param g Graphics
@@ -208,46 +138,14 @@ public class Gui extends JPanel implements Runnable {
 	@Override
 	protected void paintComponent(Graphics g) {
 		setG1(g);
-		drawBoard(getG1());
+		components.drawBoard(getG1());
 		//		drawHorizontalShip(getG1(), 10, 30, getShipColor());
 		if (isSquareSelected()) {
 			//paint the selected square
 //			paintSelectedSquare();
-			drawX();
+			components.drawX();
 		}
 	}
-
-	/**
-	 * Draws ships.
-	 * @param g Graphics
-	 */
-	public void drawShips(Graphics g) {
-
-	}
-
-	/**
-	 * Draws a horizontal aligned ship.
-	 * @param startX
-	 * @param endX
-	 * @param color
-	 */
-	public void drawHorizontalShip(int startX, int endX, Color color) {
-		//TODO: Implement
-//		paintSquare(startX, endX, color);
-//		Coordinates coords = getUpperLeftCornerCoordinates(startX, endX);
-//		paintSquare(coords.getX(), coords.getY(), color);
-	}	
-
-	/**
-	 * Draws a vertical aligned ship.
-	 * @param startY
-	 * @param endY
-	 * @param color Color
-	 */
-	public void drawVerticalShip(int startY, int endY, Color color) {
-		//TODO: Implement
-//		paintSquare(startY, endY, color);
-	}	
 
 	/**
 	 * Get frame.
@@ -270,7 +168,7 @@ public class Gui extends JPanel implements Runnable {
 	 * Get the menubar.
 	 * @return menuBar
 	 */
-	public JMenuBar getMenubar() {
+	public static JMenuBar getMenubar() {
 		return menuBar;
 	}
 
@@ -279,20 +177,20 @@ public class Gui extends JPanel implements Runnable {
 	 * @param menuBar
 	 */
 	public void setMenubar(JMenuBar menuBar) {
-		this.menuBar = menuBar;
+		Gui.menuBar = menuBar;
 	}
 
 	/**
 	 * @uml.property  name="g1"
 	 */
-	private Graphics g1;
+	private static Graphics g1;
 
 	/**
 	 * Getter of the property <tt>g1</tt>
 	 * @return  Returns the g1.
 	 * @uml.property  name="g1"
 	 */
-	public Graphics getG1() {
+	public static Graphics getG1() {
 		return g1;
 	}
 
@@ -302,14 +200,30 @@ public class Gui extends JPanel implements Runnable {
 	 * @uml.property  name="g1"
 	 */
 	public void setG1(Graphics g1) {
-		this.g1 = g1;
+		Gui.g1 = g1;
+	}
+
+	/**
+	 * Get Board.
+	 * @return
+	 */
+	public static Board getBoard() {
+		return board;
+	}
+
+	/**
+	 * Set Board.
+	 * @param board
+	 */
+	public static void setBoard(Board board) {
+		Gui.board = board;
 	}
 
 	/**
 	 * Get width of the line.
 	 * @return lineWidth
 	 */
-	public int getLineWidth() {
+	public static int getLineWidth() {
 		return lineWidth;
 	}
 
@@ -319,7 +233,7 @@ public class Gui extends JPanel implements Runnable {
 	 * @uml.property  name="lineWidth"
 	 */
 	public void setLineWidth(int lineWidth) {
-		this.lineWidth = lineWidth;
+		Gui.lineWidth = lineWidth;
 	}
 
 	/**
@@ -327,7 +241,7 @@ public class Gui extends JPanel implements Runnable {
 	 * @return clickedSquare
 	 * @uml.property  name="clickedSquare"
 	 */
-	public Coordinates getClickedSquare() {
+	public static Coordinates getClickedSquare() {
 		return clickedSquare;
 	}
 
@@ -359,23 +273,11 @@ public class Gui extends JPanel implements Runnable {
 	}
 
 	/**
-	 * Calculate the upper left corner cell coordinates.
-	 */
-	public Coordinates getUpperLeftCornerCoordinates(int x, int y) {
-		//calculate upper-left cell coordinates
-		int xPos = (x/board.getBlockSize().getWidth())*
-			board.getBlockSize().getWidth();
-		int yPos = (y/board.getBlockSize().getHeight())*
-			board.getBlockSize().getHeight();
-		return new Coordinates(xPos, yPos);
-	}
-
-	/**
 	 * Paint the selected square on the board.
 	 */
 	public void paintSelectedSquare() {
 		//get the coordinates of the upper left corner of the clicked square
-		Coordinates coords = getUpperLeftCornerCoordinates(
+		Coordinates coords = Calculations.getUpperLeftCornerCoordinates(
 				getClickedSquare().getX(), getClickedSquare().getY());
 		//paint the clicked square
 		paintSquare(

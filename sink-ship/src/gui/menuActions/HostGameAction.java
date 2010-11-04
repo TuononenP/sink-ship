@@ -43,7 +43,7 @@ public class HostGameAction extends MenuAction {
      */
     @Override
 	public void actionPerformed(ActionEvent e) {
-    	//TODO: Implement
+    	//TODO: Implement action performed for host game
     }
     
 }

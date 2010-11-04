@@ -43,7 +43,7 @@ public class NewGameMenuAction extends MenuAction {
      */
     @Override
 	public void actionPerformed(ActionEvent e) {
-    	//TODO: Implement
+    	//TODO: Implement action performed for new game menu action
     }
     
 }

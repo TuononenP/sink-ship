@@ -75,7 +75,6 @@ public class Board {
 	 */
 	private Size matrixSize;
 	
-	//TODO:this should be in GUI:
 	/**
 	 * @uml.property  name="blockSize"
 	 * @uml.associationEnd  
