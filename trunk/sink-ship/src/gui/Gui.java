@@ -153,8 +153,10 @@ public class Gui extends JPanel implements Runnable {
 		menuHeight = getMenubar().getHeight();
 
 		//draw the background sea color
-		boardWidth = board.getMatrixSize().getWidth()*board.getBlockSize().getWidth();
-		boardHeight = board.getMatrixSize().getHeight()*board.getBlockSize().getHeight();
+		boardWidth = board.getMatrixSize().getWidth()*
+					 board.getBlockSize().getWidth();
+		boardHeight = board.getMatrixSize().getHeight()*
+					  board.getBlockSize().getHeight();
 		g.setColor(ColorSettings.getSeaColor());
 		int x=0, y=menuHeight; //take into an account the height of the menubar
 		g.fillRect(x, y, boardWidth, boardHeight);
@@ -225,7 +227,6 @@ public class Gui extends JPanel implements Runnable {
 
 	/**
 	 * Draws a horizontal aligned ship.
-	 * @param g Graphics
 	 * @param startX
 	 * @param endX
 	 * @param color
@@ -239,7 +240,6 @@ public class Gui extends JPanel implements Runnable {
 
 	/**
 	 * Draws a vertical aligned ship.
-	 * @param g Graphics
 	 * @param startY
 	 * @param endY
 	 * @param color Color
@@ -398,6 +398,38 @@ public class Gui extends JPanel implements Runnable {
 				board.getBlockSize().getHeight()-getLineWidth()
 				);
 	}
+	
+	/**
+	 * Centers the panel to the center of the screen.
+	 */
+	public void centerPanelToScreen() {
+		//TODO: Doesn't work as indented
+//		// Get the size of the screen
+//		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+//
+//		// Determine the new location of the frame
+//		int w = getFrame().getSize().width;
+//		int h = getFrame().getSize().height;
+//		int x = (dim.width-w)/2;
+//		int y = (dim.height-h)/2;
+//
+//		// Move the frame to the center of the screen
+//		getFrame().setLocation(x, y);
+	}
+	
+	/**
+	 * Loads an image to menubar.
+	 * 
+	 * @param loc Destination of the image.
+	 */
+	public void loadIconImage(String loc) {
+		//TODO: try to load an icon image
+//		try {
+//			getFrame().setIconImage(new ImageIcon(loc).getImage());
+//		}catch (Exception e) {
+//			//icon load error
+//		}
+	}
 
 	/**
 	 * This method is run automatically when the object is created.
@@ -414,15 +446,13 @@ public class Gui extends JPanel implements Runnable {
 		getFrame().getContentPane().add(new Gui());
 		//add menubar to the frame
 		getFrame().setJMenuBar(getMenubar());
-		//        //try to load an icon image
-		//        try {
-		//         f.setIconImage(new ImageIcon("./graphics/icon.jpg").getImage());
-		//        }catch (Exception e) {
-		//         //icon load error
-		//        }
+		loadIconImage("./graphics/icon.jpg");
 		//make frame visible
 		getFrame().setVisible(true);
-		//great frame same size as panel and take menubar height into an account
+		/*
+		 * create frame same size same as panel and take menubar height
+		 * into an account
+		 */
 		Dimension d = new Dimension(
 				board.getBlockSize().getWidth(),
 				board.getBlockSize().getHeight()
@@ -431,19 +461,8 @@ public class Gui extends JPanel implements Runnable {
 		getFrame().setSize(d);
 		//don't allow to change the frame size to keep it fixed
 		getFrame().setResizable(false);
-
-		//TODO: Doesn't work as indented
-//		// Get the size of the screen
-//		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-//
-//		// Determine the new location of the frame
-//		int w = getFrame().getSize().width;
-//		int h = getFrame().getSize().height;
-//		int x = (dim.width-w)/2;
-//		int y = (dim.height-h)/2;
-//
-//		// Move the frame to the center of the screen
-//		getFrame().setLocation(x, y);
+		centerPanelToScreen();
+		//pack frame
 		getFrame().pack();
 	}
 
