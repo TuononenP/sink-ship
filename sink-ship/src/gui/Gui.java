@@ -51,17 +51,6 @@ public class Gui extends JPanel implements Runnable {
 	private static Board board;
 	
 	/**
-	 * @uml.property  name="clickedSquare"
-	 * @uml.associationEnd  
-	 */
-	private static Coordinates clickedSquare;
-	
-	/**
-	 * @uml.property  name="squareSelected"
-	 */
-	private static boolean squareSelected = false;
-	
-	/**
 	 * @uml.property  name="lineWidth"
 	 */
 	private static int lineWidth = 2;
@@ -140,7 +129,7 @@ public class Gui extends JPanel implements Runnable {
 		setG1(g);
 		components.drawBoard(getG1());
 		//		drawHorizontalShip(getG1(), 10, 30, getShipColor());
-		if (isSquareSelected()) {
+		if (Square.isSquareSelected()) {
 			//paint the selected square
 //			paintSelectedSquare();
 			components.drawX();
@@ -237,48 +226,13 @@ public class Gui extends JPanel implements Runnable {
 	}
 
 	/**
-	 * Get clicked square.
-	 * @return clickedSquare
-	 * @uml.property  name="clickedSquare"
-	 */
-	public static Coordinates getClickedSquare() {
-		return clickedSquare;
-	}
-
-	/**
-	 * Set clicked square.
-	 * @param  clickedSquare
-	 * @uml.property  name="clickedSquare"
-	 */
-	public static void setClickedSquare(Coordinates clickedSquare) {
-		Gui.clickedSquare = clickedSquare;
-	}
-
-	/**
-	 * Returns true if square is selected, false otherwise.
-	 * @return squareSelected
-	 * @uml.property  name="squareSelected"
-	 */
-	public boolean isSquareSelected() {
-		return squareSelected;
-	}
-
-	/**
-	 * Set selected square.
-	 * @param  squareSelected
-	 * @uml.property  name="squareSelected"
-	 */
-	public static void setSquareSelected(boolean squareSelected) {
-		Gui.squareSelected = squareSelected;
-	}
-
-	/**
 	 * Paint the selected square on the board.
 	 */
 	public void paintSelectedSquare() {
 		//get the coordinates of the upper left corner of the clicked square
 		Coordinates coords = Calculations.getUpperLeftCornerCoordinates(
-				getClickedSquare().getX(), getClickedSquare().getY());
+				Square.getClickedSquare().getX(),
+				Square.getClickedSquare().getY());
 		//paint the clicked square
 		paintSquare(
 				coords.getX(), coords.getY(),
