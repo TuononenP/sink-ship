@@ -61,10 +61,13 @@ public class Gui extends JPanel implements Runnable {
 	public static JFrame frame;
 	
 	/**
-	 * @uml.property  name="d"
+	 * @uml.property  name="dim"
 	 */
 	private Dimension dim;
 	
+	/**
+	 * @uml.property  name="components"
+	 */
 	private DrawComponents components = new DrawComponents();
 	
 	/**
@@ -259,7 +262,7 @@ public class Gui extends JPanel implements Runnable {
 	 * Centers the panel to the center of the screen.
 	 */
 	public void centerPanelToScreen() {
-		//TODO: Doesn't work as indented
+		//TODO: Center Gui to the screen
 //		// Get the size of the screen
 //		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 //
@@ -302,6 +305,7 @@ public class Gui extends JPanel implements Runnable {
 		getFrame().getContentPane().add(new Gui());
 		//add menubar to the frame
 		getFrame().setJMenuBar(getMenubar());
+		//load icon image
 		loadIconImage("./graphics/icon.jpg");
 		//make frame visible
 		getFrame().setVisible(true);
@@ -317,6 +321,7 @@ public class Gui extends JPanel implements Runnable {
 		getFrame().setSize(d);
 		//don't allow to change the frame size to keep it fixed
 		getFrame().setResizable(false);
+		//center frame to the screen
 		centerPanelToScreen();
 		//pack frame
 		getFrame().pack();
