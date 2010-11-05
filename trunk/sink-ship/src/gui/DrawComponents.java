@@ -82,7 +82,7 @@ public class DrawComponents {
 	public void drawX() {
 		//get the coordinates of the upper left corner of the clicked square
 		Coordinates coords = Calculations.getUpperLeftCornerCoordinates(
-				Gui.getClickedSquare().getX(), Gui.getClickedSquare().getY()
+				Square.getClickedSquare().getX(), Square.getClickedSquare().getY()
 				);
 		//paint diagonal line starting from upper-left corner to bottom-right corner
 		Gui.getG1().drawLine(
