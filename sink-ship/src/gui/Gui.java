@@ -32,6 +32,8 @@ import javax.swing.JMenuBar;
  *
  * TODO: Layout for the Gui component panels.
  * TODO: Place every component to layout.
+ * TODO: Create a layout
+ * TODO: Add Chat window to the layout
  */
 public class Gui extends JFrame implements Runnable {
 	
