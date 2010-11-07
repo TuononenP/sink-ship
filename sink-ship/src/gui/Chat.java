@@ -16,9 +16,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui;
 
-import java.awt.Container;
+import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
 
 import javax.swing.JPanel;
@@ -53,9 +52,6 @@ public class Chat extends JPanel {
 	 * Constructor.
 	 */
 	public Chat() {
-		Container container = getRootPane();
-		container.setLayout(new FlowLayout());
-		
 		//TODO: Change the text to "" later
 		String text = "Some sample text just to demonstrate that the" +
 				"text area works as intended.";
@@ -65,14 +61,15 @@ public class Chat extends JPanel {
 		JScrollPane scrollPane = new JScrollPane(textArea,
 				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
 				JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-//		scrollPane.setPreferredSize(new Dimension(250, 250)); //TODO check size later
+		scrollPane.setPreferredSize(new Dimension(250, 250)); //TODO check size later
 		//wraps lines that are too long for the display area
 		textArea.setLineWrap(true);
 		//wrap line after a word
 		textArea.setWrapStyleWord(true);
-
-		container.add(textArea); 
-		container.add(scrollPane);
+		add(textArea); 
+		add(scrollPane);
+        setLayout(new BorderLayout());
+        add(scrollPane, BorderLayout.CENTER);
 	}
 
 	/**
