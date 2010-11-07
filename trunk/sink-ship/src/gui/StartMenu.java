@@ -52,7 +52,6 @@ public class StartMenu extends JFrame implements Runnable {
 		setVisible(true);
 		setTitle("Start Menu");
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-		//set size
 		setSize(500, 300);
 		//set center of the screen
 		setLocationRelativeTo(null);

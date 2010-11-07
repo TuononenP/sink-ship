@@ -16,7 +16,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui.actionListeners;
 
-import gui.BoardPanel;
+import gui.Gui;
 import gui.Square;
 
 import java.awt.event.InputEvent;
@@ -45,14 +45,14 @@ public class BoardMouseActionListeners extends MouseAdapter {
 			//set the clicked square
 			Square.setClickedSquare(new Coordinates(e.getX(), e.getY()));
 			Square.setSquareSelected(true);
-//			BoardPanel.getFrame().repaint(); //TODO: Correct later
+			Gui.getFrame().repaint(); //TODO: Correct later
 			break;
 		}
 		//right mouse button pressed
 		case InputEvent.BUTTON3_MASK: {
 			//clear the square selection
 			Square.setSquareSelected(false);
-//			BoardPanel.getFrame().repaint(); //TODO: Correct later
+			Gui.getFrame().repaint(); //TODO: Correct later
 			break;
 		}
 		}

@@ -35,7 +35,6 @@ import types.Size;
  * 
  * TODO: Deploy ships
  * TODO: Pass Ship objects
- * 
  */
 public class BoardPanel extends JPanel {
 
@@ -51,11 +50,6 @@ public class BoardPanel extends JPanel {
 	 * @uml.property  name="lineWidth"
 	 */
 	private static int lineWidth = 2;
-	
-//	/**
-//	 * @uml.property  name="frame"
-//	 */
-//	public static JFrame frame;
 	
 	/**
 	 * @uml.property  name="dim"
@@ -101,17 +95,7 @@ public class BoardPanel extends JPanel {
 				board.getMatrixSize().getHeight()*board.getBlockSize().getHeight());
 		//set the size for the board.
 		setPreferredSize(dim);
-		//create a menubar
-//		setMenubar(new Menubar().getMenuBar());		
 	}
-
-//	/**
-//	 * Main method.
-//	 * @param args
-//	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new BoardGui());
-//	}
 
 	/**
 	 * Responsible for drawing graphics on the screen.
@@ -129,23 +113,6 @@ public class BoardPanel extends JPanel {
 			components.drawX();
 		}
 	}
-
-//	/**
-//	 * Get frame.
-//	 * @return  frame
-//	 * @uml.property  name="frame"
-//	 */
-//	public static JFrame getFrame() {
-//		return frame;
-//	}
-//
-//	/**
-//	 * Set frame.
-//	 * @uml.property  name="frame"
-//	 */
-//	public static void setFrame(JFrame frame) {
-//		BoardGui.frame = frame;
-//	}
 
 	/**
 	 * @uml.property  name="g1"
@@ -249,41 +216,4 @@ public class BoardPanel extends JPanel {
 				);
 	}
 	
-//	/**
-//	 * This method is run automatically when the object is created.
-//	 */
-//	@Override
-//	public void run() {
-//		//create new frame
-//		frame = new JFrame("Sink a Ship");
-//		//set frame
-//		setFrame(frame);
-//		//close frame when pressing close button
-//		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		//add content pane to frame
-//		getFrame().getContentPane().add(new BoardGui());
-//		//add menubar to the frame
-////		getFrame().setJMenuBar(getMenubar());
-//		//load icon image
-////		loadIconImage("./graphics/icon.jpg");
-//		//make frame visible
-//		getFrame().setVisible(true);
-//		/*
-//		 * create frame same size same as panel and take menubar height
-//		 * into an account
-//		 */
-//		Dimension d = new Dimension(
-//				board.getBlockSize().getWidth(),
-//				board.getBlockSize().getHeight()
-//				);
-//		//set the frame size
-//		getFrame().setSize(d);
-//		//don't allow to change the frame size to keep it fixed
-//		getFrame().setResizable(false);
-//		//center frame to the screen
-////		centerPanelToScreen();
-//		//pack frame
-//		getFrame().pack();
-//	}
-
 }

@@ -79,7 +79,7 @@ public class Board {
 	 * @uml.property  name="blockSize"
 	 * @uml.associationEnd  
 	 */
-	private static Size blockSize;
+	private Size blockSize;
 
 	/**
 	 *  Deploy the ships randomly on the board.
@@ -124,15 +124,15 @@ public class Board {
 	 * @param blockSize  the blockSize to set
 	 * @uml.property  name="blockSize"
 	 */
-	public static void setBlockSize(Size blockSize) {
-		Board.blockSize = blockSize;
+	public void setBlockSize(Size blockSize) {
+		this.blockSize = blockSize;
 	}
 
 	/**
 	 * @return  the blockSize
 	 * @uml.property  name="blockSize"
 	 */
-	public static Size getBlockSize() {
+	public Size getBlockSize() {
 		return blockSize;
 	}
 
