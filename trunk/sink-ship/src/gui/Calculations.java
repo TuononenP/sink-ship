@@ -29,7 +29,7 @@ public class Calculations {
 	/**
 	 * Calculate the upper left corner cell coordinates.
 	 */
-	public static Coordinates getUpperLeftCornerCoordinates(int x, int y) {
+	public static Coordinates getUpperLeftSquareCornerCoordinates(int x, int y) {
 		//calculate upper-left cell coordinates
 		int xPos = (x/BoardPanel.getBoard().getBlockSize().getWidth())*
 		BoardPanel.getBoard().getBlockSize().getWidth();
