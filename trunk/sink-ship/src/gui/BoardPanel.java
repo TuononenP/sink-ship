@@ -21,11 +21,8 @@ import gui.actionListeners.BoardMouseActionListeners;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.Graphics;
 
-import javax.swing.JFrame;
-import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 
 import types.Coordinates;
@@ -40,7 +37,7 @@ import types.Size;
  * TODO: Pass Ship objects
  * 
  */
-public class BoardGui extends JPanel implements Runnable {
+public class BoardPanel extends JPanel {
 
 	private static final long serialVersionUID = 8491464846988855678L;
 	
@@ -55,32 +52,26 @@ public class BoardGui extends JPanel implements Runnable {
 	 */
 	private static int lineWidth = 2;
 	
-	/**
-	 * @uml.property  name="frame"
-	 */
-	public static JFrame frame;
+//	/**
+//	 * @uml.property  name="frame"
+//	 */
+//	public static JFrame frame;
 	
 	/**
 	 * @uml.property  name="dim"
 	 */
-	private Dimension dim;
+	private static Dimension dim;
 	
 	/**
 	 * @uml.property  name="components"
 	 */
-	private DrawComponents components = new DrawComponents();
+	private DrawBoardComponents components = new DrawBoardComponents();
 	
-	/**
-	 * @uml.property  name="menuBar"
-	 * @uml.associationEnd  
-	 */
-	private static JMenuBar menuBar = new JMenuBar();
-
 	/**
 	 * Default Constructor.
 	 * 'Factory set' board and block sizes.
 	 */
-	public BoardGui() {
+	public BoardPanel() {
 		//set panel size
 		board = new Board(new Size(20,20), new Size(30,30));
 		//initialize the gui components
@@ -91,7 +82,7 @@ public class BoardGui extends JPanel implements Runnable {
 	 * Constructor.
 	 * Manual size of the board and block size.
 	 */
-	public BoardGui(Size s1, Size s2) {
+	public BoardPanel(Size s1, Size s2) {
 		//set panel size
 		board = new Board(s1, s2);
 		//initialize the gui components
@@ -111,16 +102,16 @@ public class BoardGui extends JPanel implements Runnable {
 		//set the size for the board.
 		setPreferredSize(dim);
 		//create a menubar
-		setMenubar(new Menubar().getMenuBar());		
+//		setMenubar(new Menubar().getMenuBar());		
 	}
 
-	/**
-	 * Main method.
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new BoardGui());
-	}
+//	/**
+//	 * Main method.
+//	 * @param args
+//	 */
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new BoardGui());
+//	}
 
 	/**
 	 * Responsible for drawing graphics on the screen.
@@ -139,38 +130,22 @@ public class BoardGui extends JPanel implements Runnable {
 		}
 	}
 
-	/**
-	 * Get frame.
-	 * @return  frame
-	 * @uml.property  name="frame"
-	 */
-	public static JFrame getFrame() {
-		return frame;
-	}
-
-	/**
-	 * Set frame.
-	 * @uml.property  name="frame"
-	 */
-	public static void setFrame(JFrame frame) {
-		BoardGui.frame = frame;
-	}
-
-	/**
-	 * Get the menubar.
-	 * @return menuBar
-	 */
-	public static JMenuBar getMenubar() {
-		return menuBar;
-	}
-
-	/**
-	 * Set the menubar.
-	 * @param menuBar
-	 */
-	public void setMenubar(JMenuBar menuBar) {
-		BoardGui.menuBar = menuBar;
-	}
+//	/**
+//	 * Get frame.
+//	 * @return  frame
+//	 * @uml.property  name="frame"
+//	 */
+//	public static JFrame getFrame() {
+//		return frame;
+//	}
+//
+//	/**
+//	 * Set frame.
+//	 * @uml.property  name="frame"
+//	 */
+//	public static void setFrame(JFrame frame) {
+//		BoardGui.frame = frame;
+//	}
 
 	/**
 	 * @uml.property  name="g1"
@@ -192,7 +167,7 @@ public class BoardGui extends JPanel implements Runnable {
 	 * @uml.property  name="g1"
 	 */
 	public void setG1(Graphics g1) {
-		BoardGui.g1 = g1;
+		BoardPanel.g1 = g1;
 	}
 
 	/**
@@ -208,7 +183,7 @@ public class BoardGui extends JPanel implements Runnable {
 	 * @param board
 	 */
 	public static void setBoard(Board board) {
-		BoardGui.board = board;
+		BoardPanel.board = board;
 	}
 
 	/**
@@ -225,7 +200,23 @@ public class BoardGui extends JPanel implements Runnable {
 	 * @uml.property  name="lineWidth"
 	 */
 	public void setLineWidth(int lineWidth) {
-		BoardGui.lineWidth = lineWidth;
+		BoardPanel.lineWidth = lineWidth;
+	}
+
+	/**
+	 * Get dimension of the board.
+	 * @return
+	 */
+	public static Dimension getDim() {
+		return dim;
+	}
+
+	/**
+	 * Set dimension of the board.
+	 * @param dim
+	 */
+	public static void setDim(Dimension dim) {
+		BoardPanel.dim = dim;
 	}
 
 	/**
@@ -258,73 +249,41 @@ public class BoardGui extends JPanel implements Runnable {
 				);
 	}
 	
-	/**
-	 * Centers the panel to the center of the screen.
-	 */
-	public void centerPanelToScreen() {
-		//TODO: Center Gui to the screen
-//		// Get the size of the screen
-//		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-//
-//		// Determine the new location of the frame
-//		int w = getFrame().getSize().width;
-//		int h = getFrame().getSize().height;
-//		int x = (dim.width-w)/2;
-//		int y = (dim.height-h)/2;
-//
-//		// Move the frame to the center of the screen
-//		getFrame().setLocation(x, y);
-	}
-	
-	/**
-	 * Loads an image to menubar.
-	 * 
-	 * @param loc Destination of the image.
-	 */
-	public void loadIconImage(String loc) {
-		//TODO: try to load an icon image
-//		try {
-//			getFrame().setIconImage(new ImageIcon(loc).getImage());
-//		}catch (Exception e) {
-//			//icon load error
-//		}
-	}
-
-	/**
-	 * This method is run automatically when the object is created.
-	 */
-	@Override
-	public void run() {
-		//create new frame
-		frame = new JFrame("Sink a Ship");
-		//set frame
-		setFrame(frame);
-		//close frame when pressing close button
-		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//add content pane to frame
-		getFrame().getContentPane().add(new BoardGui());
-		//add menubar to the frame
-		getFrame().setJMenuBar(getMenubar());
-		//load icon image
-		loadIconImage("./graphics/icon.jpg");
-		//make frame visible
-		getFrame().setVisible(true);
-		/*
-		 * create frame same size same as panel and take menubar height
-		 * into an account
-		 */
-		Dimension d = new Dimension(
-				board.getBlockSize().getWidth(),
-				board.getBlockSize().getHeight()
-				);
-		//set the frame size
-		getFrame().setSize(d);
-		//don't allow to change the frame size to keep it fixed
-		getFrame().setResizable(false);
-		//center frame to the screen
-		centerPanelToScreen();
-		//pack frame
-		getFrame().pack();
-	}
+//	/**
+//	 * This method is run automatically when the object is created.
+//	 */
+//	@Override
+//	public void run() {
+//		//create new frame
+//		frame = new JFrame("Sink a Ship");
+//		//set frame
+//		setFrame(frame);
+//		//close frame when pressing close button
+//		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		//add content pane to frame
+//		getFrame().getContentPane().add(new BoardGui());
+//		//add menubar to the frame
+////		getFrame().setJMenuBar(getMenubar());
+//		//load icon image
+////		loadIconImage("./graphics/icon.jpg");
+//		//make frame visible
+//		getFrame().setVisible(true);
+//		/*
+//		 * create frame same size same as panel and take menubar height
+//		 * into an account
+//		 */
+//		Dimension d = new Dimension(
+//				board.getBlockSize().getWidth(),
+//				board.getBlockSize().getHeight()
+//				);
+//		//set the frame size
+//		getFrame().setSize(d);
+//		//don't allow to change the frame size to keep it fixed
+//		getFrame().setResizable(false);
+//		//center frame to the screen
+////		centerPanelToScreen();
+//		//pack frame
+//		getFrame().pack();
+//	}
 
 }

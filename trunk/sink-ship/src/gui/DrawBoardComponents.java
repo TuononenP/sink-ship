@@ -26,7 +26,7 @@ import types.Coordinates;
  * @author Petri Tuononen
  *
  */
-public class DrawComponents {
+public class DrawBoardComponents {
 
 	/**
 	 * @uml.property  name="menuHeight"
@@ -53,25 +53,25 @@ public class DrawComponents {
 		menuHeight = 0; //Gui.getMenubar().getHeight();
 
 		//draw the background sea color
-		boardWidth = BoardGui.getBoard().getMatrixSize().getWidth()*
-				     BoardGui.getBoard().getBlockSize().getWidth();
-		boardHeight = BoardGui.getBoard().getMatrixSize().getHeight()*
-					  BoardGui.getBoard().getBlockSize().getHeight();
+		boardWidth = BoardPanel.getBoard().getMatrixSize().getWidth()*
+				     BoardPanel.getBoard().getBlockSize().getWidth();
+		boardHeight = BoardPanel.getBoard().getMatrixSize().getHeight()*
+					  BoardPanel.getBoard().getBlockSize().getHeight();
 		g.setColor(ColorSettings.getSeaColor());
 		int x=0, y=menuHeight; //take into an account the height of the menubar
 		g.fillRect(x, y, boardWidth, boardHeight);
 
 		//draw the horizontal lines
 		g.setColor(ColorSettings.getLineColor());
-		for (int i=1; i<=BoardGui.getBoard().getMatrixSize().getWidth(); i++) {
-			g.fillRect(x, i*BoardGui.getBoard().getBlockSize().getHeight()-BoardGui.getLineWidth(),
-					boardWidth, BoardGui.getLineWidth());
+		for (int i=1; i<=BoardPanel.getBoard().getMatrixSize().getWidth(); i++) {
+			g.fillRect(x, i*BoardPanel.getBoard().getBlockSize().getHeight()-BoardPanel.getLineWidth(),
+					boardWidth, BoardPanel.getLineWidth());
 		}
 
 		//draw the vertical lines
-		for (int i=1; i<=BoardGui.getBoard().getMatrixSize().getHeight(); i++) {
-			g.fillRect(i*BoardGui.getBoard().getBlockSize().getWidth()-BoardGui.getLineWidth(), x,
-					BoardGui.getLineWidth(), boardWidth);
+		for (int i=1; i<=BoardPanel.getBoard().getMatrixSize().getHeight(); i++) {
+			g.fillRect(i*BoardPanel.getBoard().getBlockSize().getWidth()-BoardPanel.getLineWidth(), x,
+					BoardPanel.getLineWidth(), boardWidth);
 		}
 	}
 	
@@ -85,18 +85,18 @@ public class DrawComponents {
 				Square.getClickedSquare().getX(), Square.getClickedSquare().getY()
 				);
 		//paint diagonal line starting from upper-left corner to bottom-right corner
-		BoardGui.getG1().drawLine(
+		BoardPanel.getG1().drawLine(
 				coords.getX(),
 				coords.getY(),
-				coords.getX()+BoardGui.getBoard().getBlockSize().getWidth()-BoardGui.getLineWidth(),
-				coords.getY()+BoardGui.getBoard().getBlockSize().getHeight()-BoardGui.getLineWidth()
+				coords.getX()+BoardPanel.getBoard().getBlockSize().getWidth()-BoardPanel.getLineWidth(),
+				coords.getY()+BoardPanel.getBoard().getBlockSize().getHeight()-BoardPanel.getLineWidth()
 				);
 		//paint diagonal line starting from upper-right corner to bottom-left corner
-		BoardGui.getG1().drawLine(
-				coords.getX()-BoardGui.getLineWidth()+BoardGui.getBoard().getBlockSize().getWidth()-BoardGui.getLineWidth(),
+		BoardPanel.getG1().drawLine(
+				coords.getX()-BoardPanel.getLineWidth()+BoardPanel.getBoard().getBlockSize().getWidth()-BoardPanel.getLineWidth(),
 				coords.getY(),
-				coords.getX()-BoardGui.getLineWidth(),
-				coords.getY()+BoardGui.getBoard().getBlockSize().getHeight()-BoardGui.getLineWidth()
+				coords.getX()-BoardPanel.getLineWidth(),
+				coords.getY()+BoardPanel.getBoard().getBlockSize().getHeight()-BoardPanel.getLineWidth()
 				);
 	}
 	
