@@ -53,25 +53,25 @@ public class DrawComponents {
 		menuHeight = 0; //Gui.getMenubar().getHeight();
 
 		//draw the background sea color
-		boardWidth = Gui.getBoard().getMatrixSize().getWidth()*
-				     Gui.getBoard().getBlockSize().getWidth();
-		boardHeight = Gui.getBoard().getMatrixSize().getHeight()*
-					  Gui.getBoard().getBlockSize().getHeight();
+		boardWidth = BoardGui.getBoard().getMatrixSize().getWidth()*
+				     BoardGui.getBoard().getBlockSize().getWidth();
+		boardHeight = BoardGui.getBoard().getMatrixSize().getHeight()*
+					  BoardGui.getBoard().getBlockSize().getHeight();
 		g.setColor(ColorSettings.getSeaColor());
 		int x=0, y=menuHeight; //take into an account the height of the menubar
 		g.fillRect(x, y, boardWidth, boardHeight);
 
 		//draw the horizontal lines
 		g.setColor(ColorSettings.getLineColor());
-		for (int i=1; i<=Gui.getBoard().getMatrixSize().getWidth(); i++) {
-			g.fillRect(x, i*Gui.getBoard().getBlockSize().getHeight()-Gui.getLineWidth(),
-					boardWidth, Gui.getLineWidth());
+		for (int i=1; i<=BoardGui.getBoard().getMatrixSize().getWidth(); i++) {
+			g.fillRect(x, i*BoardGui.getBoard().getBlockSize().getHeight()-BoardGui.getLineWidth(),
+					boardWidth, BoardGui.getLineWidth());
 		}
 
 		//draw the vertical lines
-		for (int i=1; i<=Gui.getBoard().getMatrixSize().getHeight(); i++) {
-			g.fillRect(i*Gui.getBoard().getBlockSize().getWidth()-Gui.getLineWidth(), x,
-					Gui.getLineWidth(), boardWidth);
+		for (int i=1; i<=BoardGui.getBoard().getMatrixSize().getHeight(); i++) {
+			g.fillRect(i*BoardGui.getBoard().getBlockSize().getWidth()-BoardGui.getLineWidth(), x,
+					BoardGui.getLineWidth(), boardWidth);
 		}
 	}
 	
@@ -85,18 +85,18 @@ public class DrawComponents {
 				Square.getClickedSquare().getX(), Square.getClickedSquare().getY()
 				);
 		//paint diagonal line starting from upper-left corner to bottom-right corner
-		Gui.getG1().drawLine(
+		BoardGui.getG1().drawLine(
 				coords.getX(),
 				coords.getY(),
-				coords.getX()+Gui.getBoard().getBlockSize().getWidth()-Gui.getLineWidth(),
-				coords.getY()+Gui.getBoard().getBlockSize().getHeight()-Gui.getLineWidth()
+				coords.getX()+BoardGui.getBoard().getBlockSize().getWidth()-BoardGui.getLineWidth(),
+				coords.getY()+BoardGui.getBoard().getBlockSize().getHeight()-BoardGui.getLineWidth()
 				);
 		//paint diagonal line starting from upper-right corner to bottom-left corner
-		Gui.getG1().drawLine(
-				coords.getX()-Gui.getLineWidth()+Gui.getBoard().getBlockSize().getWidth()-Gui.getLineWidth(),
+		BoardGui.getG1().drawLine(
+				coords.getX()-BoardGui.getLineWidth()+BoardGui.getBoard().getBlockSize().getWidth()-BoardGui.getLineWidth(),
 				coords.getY(),
-				coords.getX()-Gui.getLineWidth(),
-				coords.getY()+Gui.getBoard().getBlockSize().getHeight()-Gui.getLineWidth()
+				coords.getX()-BoardGui.getLineWidth(),
+				coords.getY()+BoardGui.getBoard().getBlockSize().getHeight()-BoardGui.getLineWidth()
 				);
 	}
 	

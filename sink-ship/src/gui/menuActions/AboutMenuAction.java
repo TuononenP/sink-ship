@@ -16,7 +16,7 @@
  */
 package gui.menuActions;
 
-import gui.Gui;
+import gui.BoardGui;
 
 import java.awt.event.ActionEvent;
 
@@ -47,7 +47,7 @@ public class AboutMenuAction extends MenuAction {
      */
     @Override
 	public void actionPerformed(ActionEvent e) {
-		JOptionPane.showMessageDialog(Gui.getFrame(),
+		JOptionPane.showMessageDialog(BoardGui.getFrame(),
 		"Authors:\n" +
 			     "Petri Tuononen\n" +
 				 "Matej Pristak\n" +
