@@ -16,7 +16,7 @@
  */
 package gui.menuActions;
 
-import gui.BoardGui;
+import gui.BoardPanel;
 
 import java.awt.event.ActionEvent;
 
@@ -45,8 +45,9 @@ public class QuitMenuAction extends MenuAction {
      */
     @Override
 	public void actionPerformed(ActionEvent e) {
-		BoardGui.getFrame().setVisible(false);
-		BoardGui.getFrame().dispose();
+    	//TODO: Correct later
+//		BoardPanel.getFrame().setVisible(false);
+//		BoardPanel.getFrame().dispose();
     }
     
 }

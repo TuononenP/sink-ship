@@ -16,7 +16,7 @@
  */
 package gui.menuActions;
 
-import gui.BoardGui;
+import gui.BoardPanel;
 
 import java.awt.event.ActionEvent;
 
@@ -47,19 +47,20 @@ public class AboutMenuAction extends MenuAction {
      */
     @Override
 	public void actionPerformed(ActionEvent e) {
-		JOptionPane.showMessageDialog(BoardGui.getFrame(),
-		"Authors:\n" +
-			     "Petri Tuononen\n" +
-				 "Matej Pristak\n" +
-				 "Andre Wagner\n" +
-				 "Kim, Hyuk-joong\n" +
-				 "Yu, Hyun-chul\n" +
-		"Date: 10/2010\n" +
-		"Version: 1.0\n" +
-		"Info: This software is a part of Advanced Software Engineering " +
-		"course at Sungkyunkwan University.\n" +
-		"Feedback: petri.tuononen@gmail.com", "About",
-		JOptionPane.PLAIN_MESSAGE);
+    	//TODO: Correct later
+//		JOptionPane.showMessageDialog(BoardPanel.getFrame(),
+//		"Authors:\n" +
+//			     "Petri Tuononen\n" +
+//				 "Matej Pristak\n" +
+//				 "Andre Wagner\n" +
+//				 "Kim, Hyuk-joong\n" +
+//				 "Yu, Hyun-chul\n" +
+//		"Date: 10/2010\n" +
+//		"Version: 1.0\n" +
+//		"Info: This software is a part of Advanced Software Engineering " +
+//		"course at Sungkyunkwan University.\n" +
+//		"Feedback: petri.tuononen@gmail.com", "About",
+//		JOptionPane.PLAIN_MESSAGE);
     }
     
 }

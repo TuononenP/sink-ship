@@ -31,10 +31,10 @@ public class Calculations {
 	 */
 	public static Coordinates getUpperLeftCornerCoordinates(int x, int y) {
 		//calculate upper-left cell coordinates
-		int xPos = (x/BoardGui.getBoard().getBlockSize().getWidth())*
-		BoardGui.getBoard().getBlockSize().getWidth();
-		int yPos = (y/BoardGui.getBoard().getBlockSize().getHeight())*
-		BoardGui.getBoard().getBlockSize().getHeight();
+		int xPos = (x/BoardPanel.getBoard().getBlockSize().getWidth())*
+		BoardPanel.getBoard().getBlockSize().getWidth();
+		int yPos = (y/BoardPanel.getBoard().getBlockSize().getHeight())*
+		BoardPanel.getBoard().getBlockSize().getHeight();
 		return new Coordinates(xPos, yPos);
 	}
 	
