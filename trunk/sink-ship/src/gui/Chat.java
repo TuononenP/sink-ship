@@ -65,7 +65,7 @@ public class Chat extends JPanel {
 		JScrollPane scrollPane = new JScrollPane(textArea,
 				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
 				JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-//		scrollPane.setPreferredSize(new Dimension(250, 250));
+//		scrollPane.setPreferredSize(new Dimension(250, 250)); //TODO check size later
 		//wraps lines that are too long for the display area
 		textArea.setLineWrap(true);
 		//wrap line after a word
@@ -88,7 +88,7 @@ public class Chat extends JPanel {
 	 * @param text
 	 */
 	public void setText(String add) {
-		this.text = text+newline+add;
+		text = text+newline+add;
 		//scroll automatically to the bottom of the conversation
 		textArea.setCaretPosition(textArea.getDocument().getLength());
 	}	

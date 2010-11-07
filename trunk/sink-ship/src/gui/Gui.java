@@ -43,7 +43,7 @@ public class Gui extends JFrame implements Runnable {
 	
 	private static JMenuBar menuBar = new JMenuBar();
 	
-	private Chat chat = new Chat();
+//	private Chat chat = new Chat();
 	
 	/**
 	 * Constructor.
@@ -54,13 +54,13 @@ public class Gui extends JFrame implements Runnable {
 
 		addWindowListener(new WindowAdapter() {
 			public void windowClosed(WindowEvent e) {
-			System.exit(0);
+				System.exit(0);
 			}
 
 			public void windowClosing(WindowEvent e) {
-			System.exit(0);
+				System.exit(0);
 			}
-			});
+		});
 
 	}
 
@@ -121,7 +121,7 @@ public class Gui extends JFrame implements Runnable {
 		//add board panel to the content pane
 		getContentPane().add(new BoardPanel());
 		//add chat window
-		getContentPane().add(new Chat());
+//		getContentPane().add(new Chat());
 		//add menubar to the frame
 		setJMenuBar(getMenubar());
 		//load icon image
