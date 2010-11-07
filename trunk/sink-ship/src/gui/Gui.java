@@ -24,6 +24,8 @@ import javax.swing.JFrame;
  * 
  * @author Petri Tuononen
  *
+ * TODO: Layout for the Gui component panels.
+ * TODO: Place every component to layout.
  */
 public class Gui extends JFrame implements Runnable {
 	
