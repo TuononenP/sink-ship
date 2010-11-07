@@ -19,6 +19,7 @@ package gui;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -36,43 +37,60 @@ public class Chat extends JPanel {
 
 	private static final long serialVersionUID = 3263760057578866398L;
 	
+	JTextArea textArea;
+	
+	private String text;
+	
+	private final static String newline = "\n";
+	
 	/**
 	 * Constructor.
 	 */
 	public Chat(Size size) {
-		//set panel size
-//		chat = new Chat(size);
 	}
 	
 	/**
 	 * Constructor.
 	 */
 	public Chat() {
-		//set panel size
-//		chat = new Chat(new Size(100, 100));
-		
 		Container container = getRootPane();
 		container.setLayout(new FlowLayout());
 		
+		//TODO: Change the text to "" later
 		String text = "Some sample text just to demonstrate that the" +
 				"text area works as intended.";
-		JTextArea textArea = new JTextArea(text, 5, 10);
+		JTextArea textArea = new JTextArea(text, 5, 20);
 		textArea.setPreferredSize(new Dimension(100, 100));
+		textArea.setFont(new Font("Arial", Font.ITALIC, 12));
 		JScrollPane scrollPane = new JScrollPane(textArea,
 				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
 				JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+//		scrollPane.setPreferredSize(new Dimension(250, 250));
+		//wraps lines that are too long for the display area
 		textArea.setLineWrap(true);
+		//wrap line after a word
+		textArea.setWrapStyleWord(true);
 
-		container.add(textArea);
+		container.add(textArea); 
 		container.add(scrollPane);
+	}
+
+	/**
+	 * Get text from the chat window.
+	 * @return
+	 */
+	public String getText() {
+		return text;
+	}
+
+	/**
+	 * Add a new line to the chat window.
+	 * @param text
+	 */
+	public void setText(String add) {
+		this.text = text+newline+add;
+		//scroll automatically to the bottom of the conversation
+		textArea.setCaretPosition(textArea.getDocument().getLength());
 	}	
-	
-//	/**
-//	 * Main method.
-//	 * @param args
-//	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Chat());
-//	}
 	
 }

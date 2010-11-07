@@ -18,6 +18,8 @@ package gui;
 
 import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
@@ -41,12 +43,25 @@ public class Gui extends JFrame implements Runnable {
 	
 	private static JMenuBar menuBar = new JMenuBar();
 	
+	private Chat chat = new Chat();
+	
 	/**
 	 * Constructor.
 	 */
 	public Gui() {
 		//create and set the menubar
 		setMenubar(new Menubar().getMenuBar());	
+
+		addWindowListener(new WindowAdapter() {
+			public void windowClosed(WindowEvent e) {
+			System.exit(0);
+			}
+
+			public void windowClosing(WindowEvent e) {
+			System.exit(0);
+			}
+			});
+
 	}
 
 	/**
@@ -105,6 +120,8 @@ public class Gui extends JFrame implements Runnable {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//add board panel to the content pane
 		getContentPane().add(new BoardPanel());
+		//add chat window
+		getContentPane().add(new Chat());
 		//add menubar to the frame
 		setJMenuBar(getMenubar());
 		//load icon image
