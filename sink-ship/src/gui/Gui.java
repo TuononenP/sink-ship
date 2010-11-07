@@ -16,8 +16,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui;
 
-import general.Board;
-
 import java.awt.Dimension;
 import java.awt.EventQueue;
 
@@ -47,8 +45,8 @@ public class Gui extends JFrame implements Runnable {
 	 * Constructor.
 	 */
 	public Gui() {
-		//create a Gui instance.
-		gui = new Gui();
+		//create and set the menubar
+		setMenubar(new Menubar().getMenuBar());	
 	}
 
 	/**
@@ -68,6 +66,22 @@ public class Gui extends JFrame implements Runnable {
 	}
 	
 	/**
+	 * Get JFrame.
+	 * @return
+	 */
+	public static JFrame getFrame() {
+		return frame;
+	}
+
+	/**
+	 * Set JFrame.
+	 * @param frame
+	 */
+	public static void setFrame(JFrame frame) {
+		Gui.frame = frame;
+	}
+
+	/**
 	 * Get the menubar.
 	 * @return menuBar
 	 */
@@ -85,13 +99,11 @@ public class Gui extends JFrame implements Runnable {
 
 	@Override
 	public void run() {
-		//create new frame
+		//create a new frame
 		frame = new JFrame("Sink a Ship");
-		//set frame
-//		setFrame(frame);
-		//close frame when pressing close button
+		//close frame when pressing the close button
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//add content pane to frame
+		//add board panel to the content pane
 		getContentPane().add(new BoardPanel());
 		//add menubar to the frame
 		setJMenuBar(getMenubar());
@@ -100,12 +112,15 @@ public class Gui extends JFrame implements Runnable {
 		//make frame visible
 		setVisible(true);
 		/*
-		 * create frame same size same as panel and take menubar height
+		 * create frame same size same as the board panel and take menubar height
 		 * into an account
 		 */
+		/*
+		 * TODO: Modify later when another panels exists other than Board panel.
+		 */
 		Dimension d = new Dimension(
-				Board.getBlockSize().getWidth(),
-				Board.getBlockSize().getHeight()
+				BoardPanel.getBoard().getBlockSize().getWidth(),
+				BoardPanel.getBoard().getBlockSize().getHeight()
 				);
 		//set the frame size
 		setSize(d);
@@ -133,7 +148,7 @@ public class Gui extends JFrame implements Runnable {
 	public void loadIconImage(String loc) {
 		//TODO: try to load an icon image
 //		try {
-//			getFrame().setIconImage(new ImageIcon(loc).getImage());
+//			setIconImage(new ImageIcon(loc).getImage());
 //		}catch (Exception e) {
 //			//icon load error
 //		}
@@ -148,13 +163,13 @@ public class Gui extends JFrame implements Runnable {
 //		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 //
 //		// Determine the new location of the frame
-//		int w = getFrame().getSize().width;
-//		int h = getFrame().getSize().height;
+//		int w = getSize().width;
+//		int h = getSize().height;
 //		int x = (dim.width-w)/2;
 //		int y = (dim.height-h)/2;
 //
 //		// Move the frame to the center of the screen
-//		getFrame().setLocation(x, y);
+//		setLocation(x, y);
 	}
 	
 }

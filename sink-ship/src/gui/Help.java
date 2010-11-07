@@ -51,7 +51,7 @@ public class Help extends JFrame {
 	 * Initializes graphical user interface components.
 	 */
 	private void initComponents() {
-		if (urlHelp==null) {
+		if (urlHelp == null) {
 			//Help file not found
 			System.out.println("NULL");
 		}
