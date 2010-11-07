@@ -19,13 +19,11 @@ package gui;
 import general.Board;
 import gui.actionListeners.BoardMouseActionListeners;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
-import types.Coordinates;
 import types.Size;
 
 /**
@@ -33,8 +31,6 @@ import types.Size;
  * 
  * @author  Petri Tuononen
  * 
- * TODO: Deploy ships
- * TODO: Pass Ship objects
  */
 public class BoardPanel extends JPanel {
 
@@ -50,6 +46,16 @@ public class BoardPanel extends JPanel {
 	 * @uml.property  name="lineWidth"
 	 */
 	private static int lineWidth = 2;
+	
+	/**
+	 * @uml.property  name="boardWidth"
+	 */
+	private static int boardWidth;
+	
+	/**
+	 * @uml.property  name="boardHeight"
+	 */
+	private static int boardHeight;
 	
 	/**
 	 * @uml.property  name="dim"
@@ -104,37 +110,14 @@ public class BoardPanel extends JPanel {
 	 */
 	@Override
 	protected void paintComponent(Graphics g) {
-		setG1(g);
-		components.drawBoard(getG1());
+		components.setG1(g);
+		components.drawBoard(DrawBoardComponents.getG1());
 		//		drawHorizontalShip(getG1(), 10, 30, getShipColor());
 		if (Square.isSquareSelected()) {
 			//paint the selected square
-//			paintSelectedSquare();
+//			components.paintSelectedSquare();
 			components.drawX();
 		}
-	}
-
-	/**
-	 * @uml.property  name="g1"
-	 */
-	private static Graphics g1;
-
-	/**
-	 * Getter of the property <tt>g1</tt>
-	 * @return  Returns the g1.
-	 * @uml.property  name="g1"
-	 */
-	public static Graphics getG1() {
-		return g1;
-	}
-
-	/**
-	 * Setter of the property <tt>g1</tt>
-	 * @param g1  The g1 to set.
-	 * @uml.property  name="g1"
-	 */
-	public void setG1(Graphics g1) {
-		BoardPanel.g1 = g1;
 	}
 
 	/**
@@ -187,33 +170,35 @@ public class BoardPanel extends JPanel {
 	}
 
 	/**
-	 * Paint the selected square on the board.
+	 * Get the width of the board panel.
+	 * @return
 	 */
-	public void paintSelectedSquare() {
-		//get the coordinates of the upper left corner of the clicked square
-		Coordinates coords = Calculations.getUpperLeftCornerCoordinates(
-				Square.getClickedSquare().getX(),
-				Square.getClickedSquare().getY());
-		//paint the clicked square
-		paintSquare(
-				coords.getX(), coords.getY(),
-				ColorSettings.getSelectedSquareColor()
-				);
+	public static int getBoardWidth() {
+		return boardWidth;
 	}
-	
+
 	/**
-	 * Paint the defined square on the board.
+	 * Set the width of the board panel.
+	 * @param boardWidth
 	 */
-	public void paintSquare(int x, int y, Color color) {
-		//set color
-		getG1().setColor(color);
-		//redraw square color
-		getG1().fillRect(
-				x,
-				y, 
-				board.getBlockSize().getWidth()-getLineWidth(),
-				board.getBlockSize().getHeight()-getLineWidth()
-				);
+	public static void setBoardWidth(int boardWidth) {
+		BoardPanel.boardWidth = boardWidth;
 	}
-	
+
+	/**
+	 * Get the height of the board panel.
+	 * @return
+	 */
+	public static int getBoardHeight() {
+		return boardHeight;
+	}
+
+	/**
+	 * Set the height of the board panel.
+	 * @param boardHeight
+	 */
+	public static void setBoardHeight(int boardHeight) {
+		BoardPanel.boardHeight = boardHeight;
+	}
+
 }
