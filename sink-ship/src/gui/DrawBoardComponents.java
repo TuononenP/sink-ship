@@ -78,7 +78,7 @@ public class DrawBoardComponents {
 	 */
 	public void drawX() {
 		//get the coordinates of the upper left corner of the clicked square
-		Coordinates coords = Calculations.getUpperLeftCornerCoordinates(
+		Coordinates coords = Calculations.getUpperLeftSquareCornerCoordinates(
 				Square.getClickedSquare().getX(), Square.getClickedSquare().getY()
 		);
 		//paint diagonal line starting from upper-left corner to bottom-right corner
@@ -151,7 +151,7 @@ public class DrawBoardComponents {
 	 */
 	public void paintSelectedSquare() {
 		//get the coordinates of the upper left corner of the clicked square
-		Coordinates coords = Calculations.getUpperLeftCornerCoordinates(
+		Coordinates coords = Calculations.getUpperLeftSquareCornerCoordinates(
 				Square.getClickedSquare().getX(),
 				Square.getClickedSquare().getY());
 		//paint the clicked square
