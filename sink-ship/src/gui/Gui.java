@@ -18,6 +18,7 @@ package gui;
 
 import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -32,8 +33,7 @@ import javax.swing.JMenuBar;
  *
  * TODO: Layout for the Gui component panels.
  * TODO: Place every component to layout.
- * TODO: Create a layout
- * TODO: Add Chat window to the layout
+ * TODO: 	-Add Chat window to the layout
  */
 public class Gui extends JFrame implements Runnable {
 	
@@ -119,17 +119,22 @@ public class Gui extends JFrame implements Runnable {
 		//create a new frame
 		frame = new JFrame("Sink a Ship");
 		//close frame when pressing the close button
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//set look based on the OS settings
+		JFrame.setDefaultLookAndFeelDecorated(false);
+		//set layout
+		frame.setLayout(new FlowLayout());
 		//add board panel to the content pane
-		getContentPane().add(new BoardPanel());
+//		getContentPane().add(new BoardPanel());
+		//add Board panel to layout
+		frame.add(new BoardPanel());
 		//add chat window
-//		getContentPane().add(new Chat());
+//		frame.add(new Chat());
+//		frame.getContentPane().add(new Chat());
 		//add menubar to the frame
-		setJMenuBar(getMenubar());
+		frame.setJMenuBar(getMenubar());
 		//load icon image
 		loadIconImage("./graphics/icon.jpg");
-		//make frame visible
-		setVisible(true);
 		/*
 		 * create frame same size same as the board panel and take menubar height
 		 * into an account
@@ -141,14 +146,17 @@ public class Gui extends JFrame implements Runnable {
 				BoardPanel.getBoard().getBlockSize().getWidth(),
 				BoardPanel.getBoard().getBlockSize().getHeight()
 				);
+//		Dimension d = new Dimension(500, 500);
 		//set the frame size
-		setSize(d);
+		frame.setSize(d);
 		//don't allow to change the frame size to keep it fixed
-		setResizable(false);
+		frame.setResizable(false);
 		//center frame to the screen
 		centerPanelToScreen();
 		//pack frame
-		pack();
+		frame.pack();
+		//make frame visible
+		frame.setVisible(true);
 	}
 	
 	/**
@@ -188,7 +196,7 @@ public class Gui extends JFrame implements Runnable {
 //		int y = (dim.height-h)/2;
 //
 //		// Move the frame to the center of the screen
-//		setLocation(x, y);
+//		frame.setLocation(x, y);
 	}
 	
 }
