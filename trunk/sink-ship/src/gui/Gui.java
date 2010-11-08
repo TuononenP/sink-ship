@@ -16,6 +16,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
@@ -123,7 +124,7 @@ public class Gui extends JFrame implements Runnable {
 		//set look based on the OS settings
 		JFrame.setDefaultLookAndFeelDecorated(false);
 		//set layout
-		frame.setLayout(new FlowLayout());
+		frame.setLayout(new BorderLayout());
 		//add board panel to the content pane
 //		getContentPane().add(new BoardPanel());
 		//add Board panel to layout
