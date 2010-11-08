@@ -50,15 +50,25 @@ public class DrawBoardComponents {
 		menuHeight = 0; //Gui.getMenubar().getHeight();
 
 		//draw the background sea color
+		//##############################
+		//set board width
 		BoardPanel.setBoardWidth(BoardPanel.getBoard().getMatrixSize().getWidth()*
 				BoardPanel.getBoard().getBlockSize().getWidth());
+		//set board height
 		BoardPanel.setBoardHeight(BoardPanel.getBoard().getMatrixSize().getHeight()*
 				BoardPanel.getBoard().getBlockSize().getHeight());
+		//set sea color
 		g.setColor(ColorSettings.getSeaColor());
+		//set upper-left corner coordinates
 		int x=0, y=menuHeight; //take into an account the height of the menubar
+		/*
+		 * paint a rectangle from upper-left corner to bottom-right corner
+		 * with sea color.
+		 */
 		g.fillRect(x, y, BoardPanel.getBoardWidth(), BoardPanel.getBoardHeight());
 
 		//draw the horizontal lines
+		//##########################
 		g.setColor(ColorSettings.getLineColor());
 		for (int i=1; i<=BoardPanel.getBoard().getMatrixSize().getWidth(); i++) {
 			g.fillRect(x, i*BoardPanel.getBoard().getBlockSize().getHeight()-BoardPanel.getLineWidth(),
@@ -66,6 +76,7 @@ public class DrawBoardComponents {
 		}
 
 		//draw the vertical lines
+		//#########################
 		for (int i=1; i<=BoardPanel.getBoard().getMatrixSize().getHeight(); i++) {
 			g.fillRect(i*BoardPanel.getBoard().getBlockSize().getWidth()-BoardPanel.getLineWidth(), x,
 					BoardPanel.getLineWidth(), BoardPanel.getBoardWidth());
