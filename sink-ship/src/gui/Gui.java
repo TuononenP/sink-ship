@@ -18,6 +18,7 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -30,7 +31,7 @@ import javax.swing.JMenuBar;
  * Contains all the common parts for all windows.
  * 
  * @author Petri Tuononen
- *
+ * 
  */
 public abstract class Gui extends JFrame implements Runnable {
 	
@@ -45,6 +46,8 @@ public abstract class Gui extends JFrame implements Runnable {
 	
 	//default location for the application icon
 	private static String iconImg = "./graphics/icon.jpg";
+	
+	private static Graphics g1;
 	
 	/**
 	 * Constructor.
@@ -129,8 +132,22 @@ public abstract class Gui extends JFrame implements Runnable {
 		Gui.iconImg = iconImg;
 	}
 
-	@Override
-	abstract public void run();
+	//get Graphics object.
+	public static Graphics getG1() {
+		return g1;
+	}
+
+	//set Graphics object.
+	public static void setG1(Graphics g1) {
+		Gui.g1 = g1;
+	}
+
+	/**
+	 * Run method starts the executing of the object.
+	 */
+	public void run() {
+		init(new Dimension(500, 500));
+	}
 	
 	/**
 	 * Initializes the frame.

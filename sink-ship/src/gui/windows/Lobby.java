@@ -16,11 +16,15 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui.windows;
 
+import javax.swing.JFrame;
+
 /**
  * 
  * @author Petri Tuononen
  *
  */
-public class Lobby {
+public class Lobby extends JFrame {
+
+	private static final long serialVersionUID = -3724064331232258848L;
 
 }

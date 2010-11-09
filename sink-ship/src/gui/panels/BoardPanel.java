@@ -18,6 +18,7 @@ package gui.panels;
 
 import general.Board;
 import gui.DrawBoardComponents;
+import gui.Gui;
 import gui.Square;
 import gui.actionListeners.BoardMouseActionListeners;
 
@@ -67,7 +68,7 @@ public class BoardPanel extends JPanel {
 	/**
 	 * @uml.property  name="components"
 	 */
-	private DrawBoardComponents components = new DrawBoardComponents(getGraphics());
+	private DrawBoardComponents components = new DrawBoardComponents(Gui.getG1());
 	
 	/**
 	 * Default Constructor.
