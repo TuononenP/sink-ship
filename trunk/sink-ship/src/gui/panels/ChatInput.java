@@ -16,11 +16,46 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui.panels;
 
+import java.awt.BorderLayout;
+
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 /**
  * 
  * @author Petri Tuononen
  *
  */
-public class ChatInput {
+public class ChatInput extends JPanel {
+	
+	private static final long serialVersionUID = -7760630614307106453L;
+	
+	private JTextField input;
+	
+	/**
+	 * Constructor.
+	 */
+	public ChatInput() {
+		//create an input field
+		input = new JTextField();
+		//add input field to the panel
+	    add(input, BorderLayout.EAST);
+	}
 
+	/**
+	 * Get input.
+	 * @return
+	 */
+	public JTextField getInput() {
+		return input;
+	}
+
+	/**
+	 * Set input.
+	 * @param input
+	 */
+	public void setInput(JTextField input) {
+		this.input = input;
+	}
+	
 }
