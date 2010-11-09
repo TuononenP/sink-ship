@@ -67,7 +67,7 @@ public class BoardPanel extends JPanel {
 	/**
 	 * @uml.property  name="components"
 	 */
-	private DrawBoardComponents components = new DrawBoardComponents();
+	private DrawBoardComponents components = new DrawBoardComponents(getGraphics());
 	
 	/**
 	 * Default Constructor.
@@ -76,7 +76,7 @@ public class BoardPanel extends JPanel {
 	public BoardPanel() {
 		//set panel size
 		board = new Board(new Size(20,20), new Size(30,30));
-		//initialize the gui components
+		//initialize the panel
 		init();
 	}
 	
@@ -87,7 +87,7 @@ public class BoardPanel extends JPanel {
 	public BoardPanel(Size s1, Size s2) {
 		//set panel size
 		board = new Board(s1, s2);
-		//initialize the gui components
+		//initialize the panel
 		init();
 	}
 	
@@ -112,9 +112,7 @@ public class BoardPanel extends JPanel {
 	 */
 	@Override
 	protected void paintComponent(Graphics g) {
-		components.setG1(g);
-		components.drawBoard(DrawBoardComponents.getG1());
-		//		drawHorizontalShip(getG1(), 10, 30, getShipColor());
+		components.drawBoard(g);
 		if (Square.isSquareSelected()) {
 			//paint the selected square
 //			components.paintSelectedSquare();
