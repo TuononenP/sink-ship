@@ -16,7 +16,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui.windows;
 
-import javax.swing.JPanel;
+import javax.swing.JFrame;
 
 /**
  * 
@@ -26,7 +26,7 @@ import javax.swing.JPanel;
  *   -Change ship color
  *
  */
-public class Settings extends JPanel {
+public class Settings extends JFrame {
 
 	private static final long serialVersionUID = -3265365399291149661L;
 
