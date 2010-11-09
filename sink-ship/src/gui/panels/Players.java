@@ -50,8 +50,8 @@ public class Players extends JPanel {
 			//draw horizontal line
 			getG1().drawLine(0, 20, size.getWidth(), 20);
 			//draw "Players" text
-			drawString(getG1(), "Players", new Font("Arial", Font.BOLD, 30), Color.BLACK,
-					new Coordinates(10, 10));
+			drawString(getG1(), "Players", new Font("Arial", Font.BOLD, 30),
+					Color.BLACK, new Coordinates(10, 10));
 		} catch (Exception e) {
 			// TODO: handle exception
 			//Size not set
