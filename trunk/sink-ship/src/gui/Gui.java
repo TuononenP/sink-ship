@@ -16,38 +16,35 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui;
 
-import gui.panels.BoardPanel;
-import gui.panels.Chat;
-
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 
 /**
- * The main GUI component that contains the whole layout
- * for every panel.
+ * Abstract representation of the GUI.
+ * Contains all the common parts for all windows.
  * 
  * @author Petri Tuononen
  *
- * TODO: Make Gui class abstract.
- * TODO: Layout for the Gui component panels.
- * TODO: Place every component to layout.
- * TODO: 	-Add Chat window to the layout
  */
-public class Gui extends JFrame implements Runnable {
+public abstract class Gui extends JFrame implements Runnable {
 	
-	private static final long serialVersionUID = -8877116975203133901L;
+	private static final long serialVersionUID = 4122243646246419246L;
 
 	public static JFrame frame;
 	
 	private static Gui gui;
 	
+	//instantiate the menubar
 	private static JMenuBar menuBar = new JMenuBar();
+	
+	//default location for the application icon
+	private static String iconImg = "./graphics/icon.jpg";
 	
 	/**
 	 * Constructor.
@@ -56,6 +53,7 @@ public class Gui extends JFrame implements Runnable {
 		//create and set the menubar
 		setMenubar(new Menubar().getMenuBar());	
 
+		//add a window listener
 		addWindowListener(new WindowAdapter() {
 			public void windowClosed(WindowEvent e) {
 				System.exit(0);
@@ -65,7 +63,6 @@ public class Gui extends JFrame implements Runnable {
 				System.exit(0);
 			}
 		});
-
 	}
 
 	/**
@@ -116,8 +113,30 @@ public class Gui extends JFrame implements Runnable {
 		Gui.menuBar = menuBar;
 	}
 
+	/**
+	 * Get icon image.
+	 * @return
+	 */
+	public static String getIconImg() {
+		return iconImg;
+	}
+
+	/**
+	 * Set icon image.
+	 * @param iconImg
+	 */
+	public static void setIconImg(String iconImg) {
+		Gui.iconImg = iconImg;
+	}
+
 	@Override
-	public void run() {
+	abstract public void run();
+	
+	/**
+	 * Initializes the frame.
+	 * @param d Dimension
+	 */
+	public void init(Dimension d) {
 		//create a new frame
 		frame = new JFrame("Sink a Ship");
 		//close frame when pressing the close button
@@ -125,28 +144,15 @@ public class Gui extends JFrame implements Runnable {
 		//set look based on the OS settings
 		JFrame.setDefaultLookAndFeelDecorated(false);
 		//set layout
-		frame.setLayout(new BorderLayout());
-		//add Board panel to layout
-		frame.add(new BoardPanel());
-		//add chat window
-//		frame.add(new Chat());
+		frame.setLayout(new BorderLayout()); //TODO: Change this later to GridBadLayout
 		//add menubar to the frame
 		frame.setJMenuBar(getMenubar());
-		//load icon image
-		loadIconImage("./graphics/icon.jpg");
-		/*
-		 * create frame same size same as the board panel and take menubar height
-		 * into an account
-		 */
-		/*
-		 * TODO: Modify later when another panels exists other than Board panel.
-		 */
-//		Dimension d = new Dimension(
-//				BoardPanel.getBoard().getBlockSize().getWidth(),
-//				BoardPanel.getBoard().getBlockSize().getHeight()
-//				);
-		Dimension d = new Dimension(500, 500);
-		//set the frame size
+		//set icon image
+		try {
+			setIconImage(new ImageIcon(getIconImage()).getImage());
+		}catch (Exception e) {
+			//icon load error
+		}
 		frame.setSize(d);
 		//don't allow to change the frame size to keep it fixed
 		frame.setResizable(false);
@@ -156,28 +162,6 @@ public class Gui extends JFrame implements Runnable {
 		frame.pack();
 		//make frame visible
 		frame.setVisible(true);
-	}
-	
-	/**
-	 * Main method.
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Gui());
-	}
-
-	/**
-	 * Loads an image to menubar.
-	 * 
-	 * @param loc Destination of the image.
-	 */
-	public void loadIconImage(String loc) {
-		//TODO: try to load an icon image
-//		try {
-//			setIconImage(new ImageIcon(loc).getImage());
-//		}catch (Exception e) {
-//			//icon load error
-//		}
 	}
 	
 	/**
