@@ -24,8 +24,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import types.Size;
-
 /**
  * A chat text area with a scroll panel.
  * 
@@ -41,12 +39,6 @@ public class Chat extends JPanel {
 	private String text;
 	
 	private final static String newline = "\n";
-	
-	/**
-	 * Constructor.
-	 */
-	public Chat(Size size) {
-	}
 	
 	/**
 	 * Constructor.
