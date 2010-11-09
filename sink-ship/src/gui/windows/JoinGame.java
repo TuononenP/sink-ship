@@ -14,29 +14,13 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package gui;
-
-import gui.panels.BoardPanel;
-import types.Coordinates;
+package gui.windows;
 
 /**
- * Mathematical calculations related to the GUI.
  * 
  * @author Petri Tuononen
  *
  */
-public class Calculations {
+public class JoinGame {
 
-	/**
-	 * Calculate the upper left corner cell coordinates.
-	 */
-	public static Coordinates getUpperLeftSquareCornerCoordinates(int x, int y) {
-		//calculate upper-left cell coordinates
-		int xPos = (x/BoardPanel.getBoard().getBlockSize().getWidth())*
-		BoardPanel.getBoard().getBlockSize().getWidth();
-		int yPos = (y/BoardPanel.getBoard().getBlockSize().getHeight())*
-		BoardPanel.getBoard().getBlockSize().getHeight();
-		return new Coordinates(xPos, yPos);
-	}
-	
 }

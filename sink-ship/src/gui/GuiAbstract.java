@@ -28,19 +28,14 @@ import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 
 /**
- * The main GUI component that contains the whole layout
- * for every panel.
+ * Abstract representation of the GUI.
  * 
  * @author Petri Tuononen
  *
- * TODO: Make Gui class abstract.
- * TODO: Layout for the Gui component panels.
- * TODO: Place every component to layout.
- * TODO: 	-Add Chat window to the layout
  */
-public class Gui extends JFrame implements Runnable {
+abstract class GuiAbstract extends JFrame implements Runnable {
 	
-	private static final long serialVersionUID = -8877116975203133901L;
+	private static final long serialVersionUID = 4122243646246419246L;
 
 	public static JFrame frame;
 	
@@ -51,7 +46,7 @@ public class Gui extends JFrame implements Runnable {
 	/**
 	 * Constructor.
 	 */
-	public Gui() {
+	public GuiAbstract() {
 		//create and set the menubar
 		setMenubar(new Menubar().getMenuBar());	
 
@@ -80,7 +75,7 @@ public class Gui extends JFrame implements Runnable {
 	 * @param gui
 	 */
 	public static void setGui(Gui gui) {
-		Gui.gui = gui;
+		GuiAbstract.gui = gui;
 	}
 	
 	/**
@@ -112,7 +107,7 @@ public class Gui extends JFrame implements Runnable {
 	 * @param menuBar
 	 */
 	public void setMenubar(JMenuBar menuBar) {
-		Gui.menuBar = menuBar;
+		GuiAbstract.menuBar = menuBar;
 	}
 
 	@Override
