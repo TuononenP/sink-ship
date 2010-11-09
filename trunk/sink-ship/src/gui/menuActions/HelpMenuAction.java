@@ -16,7 +16,7 @@
  */
 package gui.menuActions;
 
-import gui.Help;
+import gui.windows.Help;
 
 import java.awt.event.ActionEvent;
 

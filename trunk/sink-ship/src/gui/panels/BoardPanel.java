@@ -14,9 +14,11 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package gui;
+package gui.panels;
 
 import general.Board;
+import gui.DrawBoardComponents;
+import gui.Square;
 import gui.actionListeners.BoardMouseActionListeners;
 
 import java.awt.Dimension;
@@ -26,8 +28,8 @@ import javax.swing.JPanel;
 
 import types.Size;
 
-/**
- * The Graphical User Interface of the application.
+/** 
+ * Board panel.
  * 
  * @author  Petri Tuononen
  * 

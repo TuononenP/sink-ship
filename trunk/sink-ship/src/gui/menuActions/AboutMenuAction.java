@@ -16,7 +16,7 @@
  */
 package gui.menuActions;
 
-import gui.BoardPanel;
+import gui.panels.BoardPanel;
 
 import java.awt.event.ActionEvent;
 

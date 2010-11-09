@@ -14,7 +14,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package gui;
+package gui.panels;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -27,7 +27,7 @@ import javax.swing.JTextArea;
 import types.Size;
 
 /**
- * A chat textarea with a scrollpanel.
+ * A chat text area with a scroll panel.
  * 
  * @author Petri Tuononen
  *
@@ -36,7 +36,7 @@ public class Chat extends JPanel {
 
 	private static final long serialVersionUID = 3263760057578866398L;
 	
-	JTextArea textArea;
+	private JTextArea textArea;
 	
 	private String text;
 	

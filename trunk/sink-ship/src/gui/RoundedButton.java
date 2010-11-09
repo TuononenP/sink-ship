@@ -39,7 +39,7 @@ public class RoundedButton implements Border {
      * 
      * @param radius
      */
-    RoundedButton(int radius) {
+    public RoundedButton(int radius) {
         this.radius = radius;
     }
     
