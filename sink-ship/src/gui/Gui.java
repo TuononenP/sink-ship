@@ -17,6 +17,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package gui;
 
 import gui.panels.BoardPanel;
+import gui.panels.Chat;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -125,13 +126,10 @@ public class Gui extends JFrame implements Runnable {
 		JFrame.setDefaultLookAndFeelDecorated(false);
 		//set layout
 		frame.setLayout(new BorderLayout());
-		//add board panel to the content pane
-//		getContentPane().add(new BoardPanel());
 		//add Board panel to layout
 		frame.add(new BoardPanel());
 		//add chat window
 //		frame.add(new Chat());
-//		frame.getContentPane().add(new Chat());
 		//add menubar to the frame
 		frame.setJMenuBar(getMenubar());
 		//load icon image
@@ -143,11 +141,11 @@ public class Gui extends JFrame implements Runnable {
 		/*
 		 * TODO: Modify later when another panels exists other than Board panel.
 		 */
-		Dimension d = new Dimension(
-				BoardPanel.getBoard().getBlockSize().getWidth(),
-				BoardPanel.getBoard().getBlockSize().getHeight()
-				);
-//		Dimension d = new Dimension(500, 500);
+//		Dimension d = new Dimension(
+//				BoardPanel.getBoard().getBlockSize().getWidth(),
+//				BoardPanel.getBoard().getBlockSize().getHeight()
+//				);
+		Dimension d = new Dimension(500, 500);
 		//set the frame size
 		frame.setSize(d);
 		//don't allow to change the frame size to keep it fixed

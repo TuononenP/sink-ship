@@ -45,11 +45,11 @@ public class Chat extends JPanel {
 	 */
 	public Chat() {
 		//TODO: Change the text to "" later
-		String text = "Some sample text just to demonstrate that the" +
+		String text = "Some sample text just to demonstrate that the " +
 				"text area works as intended.";
 		JTextArea textArea = new JTextArea(text, 20, 40);
 		textArea.setPreferredSize(new Dimension(100, 100));
-		textArea.setFont(new Font("Arial", Font.ITALIC, 12));
+		textArea.setFont(new Font("Arial", Font.PLAIN, 14));
 		JScrollPane scrollPane = new JScrollPane(textArea,
 				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
 				JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
@@ -60,7 +60,6 @@ public class Chat extends JPanel {
 		textArea.setLineWrap(true);
 		//wrap line after a word
 		textArea.setWrapStyleWord(true);
-		add(textArea); 
 		add(scrollPane);
         setLayout(new BorderLayout());
         add(scrollPane, BorderLayout.CENTER);
