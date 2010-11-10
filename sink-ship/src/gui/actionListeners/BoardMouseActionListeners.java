@@ -45,14 +45,14 @@ public class BoardMouseActionListeners extends MouseAdapter {
 			//set the clicked square
 			Square.setClickedSquare(new Coordinates(e.getX(), e.getY()));
 			Square.setSquareSelected(true);
-			Gui.getFrame().repaint();
+			Gui.getFrame().repaint(); //TODO: Correct later
 			break;
 		}
 		//right mouse button pressed
 		case InputEvent.BUTTON3_MASK: {
 			//clear the square selection
 			Square.setSquareSelected(false);
-			Gui.getFrame().repaint();
+			Gui.getFrame().repaint(); //TODO: Correct later
 			break;
 		}
 		}

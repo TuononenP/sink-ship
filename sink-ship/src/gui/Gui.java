@@ -16,42 +16,40 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui;
 
+import gui.panels.BoardPanel;
+
+import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.Graphics;
+import java.awt.EventQueue;
 import java.awt.LayoutManager;
-import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 
 /**
- * Contains all the common parts for all windows.
+ * The main GUI component that contains the whole layout
+ * for every panel.
  * 
  * @author Petri Tuononen
- * 
+ *
+ * TODO: Make Gui class abstract.
+ * TODO: Layout for the Gui component panels.
+ * TODO: Place every component to layout.
+ * TODO: 	-Add Chat window to the layout
  */
-public class Gui extends JFrame implements Runnable {
+public class Gui extends JFrame {
 	
-	private static final long serialVersionUID = 4122243646246419246L;
+	private static final long serialVersionUID = -8877116975203133901L;
 
 	public static JFrame frame;
 	
 	private static Gui gui;
 	
-	//instantiate the menubar
 	private static JMenuBar menuBar = new JMenuBar();
 	
-	//default location for the application icon
-	private static String iconImg = "./graphics/icon.jpg";
-	
-	private static Graphics g1;
-	
-	private static Dimension d;
-	
-	private static LayoutManager layout;
+	private static Dimension dim = new Dimension();
 	
 	/**
 	 * Constructor.
@@ -59,14 +57,10 @@ public class Gui extends JFrame implements Runnable {
 	public Gui(Dimension d, LayoutManager layout) {
 		//create and set the menubar
 		setMenubar(new Menubar().getMenuBar());	
-		
-		//set dimension
-		Gui.d=d;
-		
-		//set layout
-		Gui.layout=layout;
 
-		//add a window listener
+		setDim(d);
+		init(d, layout);
+		
 		addWindowListener(new WindowAdapter() {
 			public void windowClosed(WindowEvent e) {
 				System.exit(0);
@@ -106,7 +100,7 @@ public class Gui extends JFrame implements Runnable {
 	 * Set JFrame.
 	 * @param frame
 	 */
-	public static void setFrame(JFrame frame) {
+	public void setFrame(JFrame frame) {
 		Gui.frame = frame;
 	}
 
@@ -126,122 +120,67 @@ public class Gui extends JFrame implements Runnable {
 		Gui.menuBar = menuBar;
 	}
 
-	/**
-	 * Get icon image.
-	 * @return
-	 */
-	public static String getIconImg() {
-		return iconImg;
+	public static Dimension getDim() {
+		return dim;
 	}
 
-	/**
-	 * Set icon image.
-	 * @param iconImg
-	 */
-	public static void setIconImg(String iconImg) {
-		Gui.iconImg = iconImg;
+	public static void setDim(Dimension dim) {
+		Gui.dim = dim;
 	}
 
-	/**
-	 * Get Graphics object.
-	 * @return Graphics
-	 */
-	public static Graphics getG1() {
-		return g1;
-	}
-
-	/**
-	 * Set Graphics object.
-	 * 
-	 * @param g1
-	 */
-	public static void setG1(Graphics g1) {
-		Gui.g1 = g1;
-	}
-
-	/**
-	 * get Dimension object.
-	 * @return Dimension
-	 */
-	public static Dimension getDimension() {
-		return d;
-	}
-
-	/**
-	 * Set Dimension object.
-	 * @param d Dimension
-	 */
-	public static void setDimension(Dimension d) {
-		Gui.d = d;
-	}
-
-	/**
-	 * Get Layout.
-	 * @return layout
-	 */
-	public LayoutManager getLayout() {
-		return layout;
-	}
-
-	/**
-	 * Set Layout.
-	 * @param LayoutManager
-	 */
-	public void setLayout(LayoutManager layout) {
-		Gui.layout = layout;
-	}
-
-	/**
-	 * Run method starts the executing of the object.
-	 */
-	public void run() {
-		init(getDimension(), getLayout());
-	}
-	
-	/**
-	 * Initializes the frame.
-	 * @param d Dimension
-	 */
 	public void init(Dimension d, LayoutManager layout) {
 		//create a new frame
-		setFrame(new JFrame("Sink a Ship"));
+		frame = new JFrame("Sink a Ship");
 		//close frame when pressing the close button
-		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//set look based on the OS settings
 		JFrame.setDefaultLookAndFeelDecorated(false);
 		//set layout
-		getFrame().setLayout(layout);
+		frame.setLayout(layout);
 		//add menubar to the frame
-		getFrame().setJMenuBar(getMenubar());
-		//set icon image
-		try {
-			setIconImage(new ImageIcon(getIconImage()).getImage());
-		}catch (Exception e) {
-			//icon load error
-		}
-		getFrame().setSize(d);
+		frame.setJMenuBar(getMenubar());
+		//load icon image
+		loadIconImage("./graphics/icon.jpg");
+		//set the frame size
+		frame.setSize(d);
 		//don't allow to change the frame size to keep it fixed
-		getFrame().setResizable(false);
+		frame.setResizable(false);
 		//center frame to the screen
 		centerPanelToScreen();
 		//make frame visible
-		getFrame().setVisible(true);
+		frame.setVisible(true);
+	}
+	
+	/**
+	 * Loads an image to menubar.
+	 * 
+	 * @param loc Destination of the image.
+	 */
+	public void loadIconImage(String loc) {
+		//TODO: try to load an icon image
+//		try {
+//			setIconImage(new ImageIcon(loc).getImage());
+//		}catch (Exception e) {
+//			//icon load error
+//		}
 	}
 	
 	/**
 	 * Centers the panel to the center of the screen.
 	 */
 	public void centerPanelToScreen() {
-		// Get the size of the screen
-		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-		//Determine the new location of the frame
-		int w = getFrame().getSize().width;
-		int h = getFrame().getSize().height;
-		int x = (dim.width-w)/2;
-		int y = (dim.height-h)/2;
-
-		// Move the frame to the center of the screen
-		getFrame().setLocation(x, y);
+		//TODO: Center Gui to the screen
+//		// Get the size of the screen
+//		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+//
+//		// Determine the new location of the frame
+//		int w = getSize().width;
+//		int h = getSize().height;
+//		int x = (dim.width-w)/2;
+//		int y = (dim.height-h)/2;
+//
+//		// Move the frame to the center of the screen
+//		frame.setLocation(x, y);
 	}
 	
 }

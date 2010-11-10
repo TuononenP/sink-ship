@@ -33,40 +33,24 @@ import types.Coordinates;
 public class DrawBoardComponents {
 
 	/**
-	 * @uml.property  name="g"
+	 * @uml.property  name="g1"
 	 */
-	private static Graphics g;
+	private static Graphics g1;
 
 	/**
-	 * Constructor.
-	 * @param g Graphics.
+	 * @uml.property  name="menuHeight"
 	 */
-	public DrawBoardComponents(Graphics g) {
-		DrawBoardComponents.g=g;
-	}
-	
-	/**
-	 * Set graphics object.
-	 * @return
-	 */
-	public static Graphics getG() {
-		return g;
-	}
+	int menuHeight;
 
-	/**
-	 * Get graphics object.
-	 * @param g
-	 */
-	public static void setG(Graphics g) {
-		DrawBoardComponents.g = g;
-	}
-	
 	/**
 	 * Draws the board.
 	 * 
 	 * @param g Graphics
 	 */
 	public void drawBoard(Graphics g) {
+		//get menubar height
+		menuHeight = 0; //Gui.getMenubar().getHeight();
+
 		//draw the background sea color
 		//##############################
 		//set board width
@@ -76,27 +60,27 @@ public class DrawBoardComponents {
 		BoardPanel.setBoardHeight(BoardPanel.getBoard().getMatrixSize().getHeight()*
 				BoardPanel.getBoard().getBlockSize().getHeight());
 		//set sea color
-		getG().setColor(ColorSettings.getSeaColor());
+		g.setColor(ColorSettings.getSeaColor());
 		//set upper-left corner coordinates
-		int x=0, y=Gui.getMenubar().getHeight(); //take into an account the height of the menubar
+		int x=0, y=menuHeight; //take into an account the height of the menubar
 		/*
 		 * paint a rectangle from upper-left corner to bottom-right corner
 		 * with sea color.
 		 */
-		getG().fillRect(x, y, BoardPanel.getBoardWidth(), BoardPanel.getBoardHeight());
+		g.fillRect(x, y, BoardPanel.getBoardWidth(), BoardPanel.getBoardHeight());
 
 		//draw the horizontal lines
 		//##########################
-		getG().setColor(ColorSettings.getLineColor());
+		g.setColor(ColorSettings.getLineColor());
 		for (int i=1; i<=BoardPanel.getBoard().getMatrixSize().getWidth(); i++) {
-			getG().fillRect(x, i*BoardPanel.getBoard().getBlockSize().getHeight()-BoardPanel.getLineWidth(),
+			g.fillRect(x, i*BoardPanel.getBoard().getBlockSize().getHeight()-BoardPanel.getLineWidth(),
 					BoardPanel.getBoardWidth(), BoardPanel.getLineWidth());
 		}
 
 		//draw the vertical lines
 		//#########################
 		for (int i=1; i<=BoardPanel.getBoard().getMatrixSize().getHeight(); i++) {
-			getG().fillRect(i*BoardPanel.getBoard().getBlockSize().getWidth()-BoardPanel.getLineWidth(), x,
+			g.fillRect(i*BoardPanel.getBoard().getBlockSize().getWidth()-BoardPanel.getLineWidth(), x,
 					BoardPanel.getLineWidth(), BoardPanel.getBoardWidth());
 		}
 	}
@@ -111,14 +95,14 @@ public class DrawBoardComponents {
 				Square.getClickedSquare().getX(), Square.getClickedSquare().getY()
 		);
 		//paint diagonal line starting from upper-left corner to bottom-right corner
-		getG().drawLine(
+		getG1().drawLine(
 				coords.getX(),
 				coords.getY(),
 				coords.getX()+BoardPanel.getBoard().getBlockSize().getWidth()-BoardPanel.getLineWidth(),
 				coords.getY()+BoardPanel.getBoard().getBlockSize().getHeight()-BoardPanel.getLineWidth()
 		);
 		//paint diagonal line starting from upper-right corner to bottom-left corner
-		getG().drawLine(
+		getG1().drawLine(
 				coords.getX()-BoardPanel.getLineWidth()+BoardPanel.getBoard().getBlockSize().getWidth()-BoardPanel.getLineWidth(),
 				coords.getY(),
 				coords.getX()-BoardPanel.getLineWidth(),
@@ -158,6 +142,24 @@ public class DrawBoardComponents {
 	}	
 
 	/**
+	 * Getter of the property <tt>g1</tt>
+	 * @return  Returns the g1.
+	 * @uml.property  name="g1"
+	 */
+	public static Graphics getG1() {
+		return g1;
+	}
+
+	/**
+	 * Setter of the property <tt>g1</tt>
+	 * @param g1  The g1 to set.
+	 * @uml.property  name="g1"
+	 */
+	public void setG1(Graphics g1) {
+		DrawBoardComponents.g1 = g1;
+	}
+
+	/**
 	 * Paint the selected square on the board.
 	 */
 	public void paintSelectedSquare() {
@@ -177,9 +179,9 @@ public class DrawBoardComponents {
 	 */
 	public void paintSquare(int x, int y, Color color) {
 		//set color
-		getG().setColor(color);
+		getG1().setColor(color);
 		//redraw square color
-		getG().fillRect(
+		getG1().fillRect(
 				x,
 				y, 
 				BoardPanel.getBoard().getBlockSize().getWidth()-BoardPanel.getLineWidth(),

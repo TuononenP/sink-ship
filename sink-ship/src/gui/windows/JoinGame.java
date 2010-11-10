@@ -16,15 +16,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui.windows;
 
-import javax.swing.JFrame;
-
 /**
  * 
  * @author Petri Tuononen
  *
  */
-public class JoinGame extends JFrame {
-
-	private static final long serialVersionUID = 774976258560771941L;
+public class JoinGame {
 
 }

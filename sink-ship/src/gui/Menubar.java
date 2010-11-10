@@ -20,6 +20,7 @@ import gui.menuActions.AboutMenuAction;
 import gui.menuActions.HelpMenuAction;
 import gui.menuActions.NewGameMenuAction;
 import gui.menuActions.QuitMenuAction;
+//import gui.menuActions.QuitMenuAction;
 import gui.menuActions.SettingsMenuAction;
 
 import java.awt.event.KeyEvent;

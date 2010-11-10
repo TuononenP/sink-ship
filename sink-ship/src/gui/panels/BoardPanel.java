@@ -18,7 +18,6 @@ package gui.panels;
 
 import general.Board;
 import gui.DrawBoardComponents;
-import gui.Gui;
 import gui.Square;
 import gui.actionListeners.BoardMouseActionListeners;
 
@@ -68,7 +67,7 @@ public class BoardPanel extends JPanel {
 	/**
 	 * @uml.property  name="components"
 	 */
-	private DrawBoardComponents components = new DrawBoardComponents(Gui.getG1());
+	private DrawBoardComponents components = new DrawBoardComponents();
 	
 	/**
 	 * Default Constructor.
@@ -77,7 +76,7 @@ public class BoardPanel extends JPanel {
 	public BoardPanel() {
 		//set panel size
 		board = new Board(new Size(20,20), new Size(30,30));
-		//initialize the panel
+		//initialize the gui components
 		init();
 	}
 	
@@ -88,7 +87,7 @@ public class BoardPanel extends JPanel {
 	public BoardPanel(Size s1, Size s2) {
 		//set panel size
 		board = new Board(s1, s2);
-		//initialize the panel
+		//initialize the gui components
 		init();
 	}
 	
@@ -113,7 +112,9 @@ public class BoardPanel extends JPanel {
 	 */
 	@Override
 	protected void paintComponent(Graphics g) {
-		components.drawBoard(g);
+		components.setG1(g);
+		components.drawBoard(DrawBoardComponents.getG1());
+		//		drawHorizontalShip(getG1(), 10, 30, getShipColor());
 		if (Square.isSquareSelected()) {
 			//paint the selected square
 //			components.paintSelectedSquare();
