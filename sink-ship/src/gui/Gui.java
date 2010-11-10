@@ -16,11 +16,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui;
 
-import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.Graphics;
 import java.awt.LayoutManager;
+import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -29,7 +28,6 @@ import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 
 /**
- * Abstract representation of the GUI.
  * Contains all the common parts for all windows.
  * 
  * @author Petri Tuononen
@@ -53,7 +51,7 @@ public class Gui extends JFrame implements Runnable {
 	
 	private static Dimension d;
 	
-	private LayoutManager layout;
+	private static LayoutManager layout;
 	
 	/**
 	 * Constructor.
@@ -66,7 +64,7 @@ public class Gui extends JFrame implements Runnable {
 		Gui.d=d;
 		
 		//set layout
-		this.layout=layout;
+		Gui.layout=layout;
 
 		//add a window listener
 		addWindowListener(new WindowAdapter() {
@@ -190,7 +188,7 @@ public class Gui extends JFrame implements Runnable {
 	 * @param LayoutManager
 	 */
 	public void setLayout(LayoutManager layout) {
-		this.layout = layout;
+		Gui.layout = layout;
 	}
 
 	/**
@@ -230,26 +228,20 @@ public class Gui extends JFrame implements Runnable {
 		getFrame().setVisible(true);
 	}
 	
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Gui(new Dimension(500, 500), new BorderLayout()));
-	}
-	
 	/**
 	 * Centers the panel to the center of the screen.
 	 */
 	public void centerPanelToScreen() {
-		//TODO: Center Gui to the screen
-//		// Get the size of the screen
-//		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-//
-//		// Determine the new location of the frame
-//		int w = getSize().width;
-//		int h = getSize().height;
-//		int x = (dim.width-w)/2;
-//		int y = (dim.height-h)/2;
-//
-//		// Move the frame to the center of the screen
-//		frame.setLocation(x, y);
+		// Get the size of the screen
+		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+		//Determine the new location of the frame
+		int w = getFrame().getSize().width;
+		int h = getFrame().getSize().height;
+		int x = (dim.width-w)/2;
+		int y = (dim.height-h)/2;
+
+		// Move the frame to the center of the screen
+		getFrame().setLocation(x, y);
 	}
 	
 }
