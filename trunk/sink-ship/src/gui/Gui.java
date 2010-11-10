@@ -18,7 +18,9 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.EventQueue;
 import java.awt.Graphics;
+import java.awt.LayoutManager;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -33,7 +35,7 @@ import javax.swing.JMenuBar;
  * @author Petri Tuononen
  * 
  */
-public abstract class Gui extends JFrame implements Runnable {
+public class Gui extends JFrame implements Runnable {
 	
 	private static final long serialVersionUID = 4122243646246419246L;
 
@@ -49,12 +51,22 @@ public abstract class Gui extends JFrame implements Runnable {
 	
 	private static Graphics g1;
 	
+	private static Dimension d;
+	
+	private LayoutManager layout;
+	
 	/**
 	 * Constructor.
 	 */
-	public Gui() {
+	public Gui(Dimension d, LayoutManager layout) {
 		//create and set the menubar
 		setMenubar(new Menubar().getMenuBar());	
+		
+		//set dimension
+		Gui.d=d;
+		
+		//set layout
+		this.layout=layout;
 
 		//add a window listener
 		addWindowListener(new WindowAdapter() {
@@ -132,53 +144,94 @@ public abstract class Gui extends JFrame implements Runnable {
 		Gui.iconImg = iconImg;
 	}
 
-	//get Graphics object.
+	/**
+	 * Get Graphics object.
+	 * @return Graphics
+	 */
 	public static Graphics getG1() {
 		return g1;
 	}
 
-	//set Graphics object.
+	/**
+	 * Set Graphics object.
+	 * 
+	 * @param g1
+	 */
 	public static void setG1(Graphics g1) {
 		Gui.g1 = g1;
+	}
+
+	/**
+	 * get Dimension object.
+	 * @return Dimension
+	 */
+	public static Dimension getDimension() {
+		return d;
+	}
+
+	/**
+	 * Set Dimension object.
+	 * @param d Dimension
+	 */
+	public static void setDimension(Dimension d) {
+		Gui.d = d;
+	}
+
+	/**
+	 * Get Layout.
+	 * @return layout
+	 */
+	public LayoutManager getLayout() {
+		return layout;
+	}
+
+	/**
+	 * Set Layout.
+	 * @param LayoutManager
+	 */
+	public void setLayout(LayoutManager layout) {
+		this.layout = layout;
 	}
 
 	/**
 	 * Run method starts the executing of the object.
 	 */
 	public void run() {
-		init(new Dimension(500, 500));
+		init(getDimension(), getLayout());
 	}
 	
 	/**
 	 * Initializes the frame.
 	 * @param d Dimension
 	 */
-	public void init(Dimension d) {
+	public void init(Dimension d, LayoutManager layout) {
 		//create a new frame
-		frame = new JFrame("Sink a Ship");
+		setFrame(new JFrame("Sink a Ship"));
 		//close frame when pressing the close button
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//set look based on the OS settings
 		JFrame.setDefaultLookAndFeelDecorated(false);
 		//set layout
-		frame.setLayout(new BorderLayout()); //TODO: Change this later to GridBadLayout
+		getFrame().setLayout(layout);
 		//add menubar to the frame
-		frame.setJMenuBar(getMenubar());
+		getFrame().setJMenuBar(getMenubar());
 		//set icon image
 		try {
 			setIconImage(new ImageIcon(getIconImage()).getImage());
 		}catch (Exception e) {
 			//icon load error
 		}
-		frame.setSize(d);
+		getFrame().setSize(d);
 		//don't allow to change the frame size to keep it fixed
-		frame.setResizable(false);
+		getFrame().setResizable(false);
 		//center frame to the screen
 		centerPanelToScreen();
-		//pack frame
-		frame.pack();
 		//make frame visible
-		frame.setVisible(true);
+		getFrame().setVisible(true);
+	}
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Gui(new Dimension(500, 500), new BorderLayout()));
 	}
 	
 	/**
