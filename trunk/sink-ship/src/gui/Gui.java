@@ -224,7 +224,7 @@ public class Gui extends JFrame {
 	/**
 	 * Centers the panel to the center of the screen.
 	 */
-	public void centerPanelToScreen() {
+	public static void centerPanelToScreen() {
 		// Get the size of the screen
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 		//Determine the new location of the frame
@@ -234,7 +234,7 @@ public class Gui extends JFrame {
 		int y = (dim.height-h)/2;
 
 		// Move the frame to the center of the screen
-		getFrame().setLocation(x, y);
+		Gui.getFrame().setLocation(x, y);
 	}
 	
 //	/**

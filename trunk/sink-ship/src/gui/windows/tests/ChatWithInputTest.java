@@ -44,6 +44,7 @@ public class ChatWithInputTest extends Gui {
 		inputField.addKeyListener(new TextFieldActionListener());
 		getFrame().add(inputField, BorderLayout.SOUTH);
 		getFrame().pack();
+		Gui.centerPanelToScreen();
 	}
 
 	public static void main(String[] args) {
