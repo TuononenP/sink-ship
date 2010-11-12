@@ -16,6 +16,9 @@
  */
 package gui.menuActions;
 
+import gui.Gui;
+import gui.windows.StartMenu;
+
 import java.awt.event.ActionEvent;
 
 /**
@@ -43,7 +46,10 @@ public class NewGameMenuAction extends MenuAction {
      */
     @Override
 	public void actionPerformed(ActionEvent e) {
-    	//TODO: Implement action performed for new game menu action
+    	//close the current frame
+    	Gui.getFrame().dispose();
+    	//show a start menu
+    	new StartMenu();
     }
     
 }

@@ -80,7 +80,7 @@ public class StartMenu extends JFrame implements Runnable {
         hostBtn.addActionListener(
         		new HostGameAction("Host a game", KeyEvent.VK_H));
 		
-		//create a container
+		//get a container
 		Container contentPane = getContentPane();
 		
 		//add buttons to the container
