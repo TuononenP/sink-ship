@@ -31,7 +31,7 @@ import types.Coordinates;
  * @author Petri Tuononen
  *
  */
-public class BoardMouseActionListeners extends MouseAdapter {
+public class BoardMouseActionListener extends MouseAdapter {
 	
 	/**
 	 * Mouse event handler for clicked buttons.

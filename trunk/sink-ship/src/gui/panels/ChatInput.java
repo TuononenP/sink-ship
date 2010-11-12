@@ -16,7 +16,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui.panels;
 
-import java.awt.BorderLayout;
+import java.awt.Dimension;
 
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -30,32 +30,52 @@ public class ChatInput extends JPanel {
 	
 	private static final long serialVersionUID = -7760630614307106453L;
 	
-	private JTextField input;
+	private JTextField inputField;
+	
+	private static String text;
 	
 	/**
 	 * Constructor.
 	 */
 	public ChatInput() {
 		//create an input field
-		input = new JTextField();
+		inputField = new JTextField();
+		//set preferred size for the text field
+		inputField.setPreferredSize(new Dimension(500, 20));
 		//add input field to the panel
-	    add(input, BorderLayout.EAST);
+	    add(inputField);
 	}
 
 	/**
-	 * Get input.
-	 * @return
+	 * Get input field.
+	 * @return JTextField
 	 */
-	public JTextField getInput() {
-		return input;
+	public JTextField getInputField() {
+		return inputField;
 	}
 
 	/**
-	 * Set input.
+	 * Set input field.
 	 * @param input
 	 */
-	public void setInput(JTextField input) {
-		this.input = input;
+	public void setInputField(JTextField input) {
+		this.inputField = input;
+	}
+
+	/**
+	 * Get text from the JTextField.
+	 * @return String
+	 */
+	public static String getText() {
+		return text;
+	}
+
+	/**
+	 * Set text for the JTextField.
+	 * @param text
+	 */
+	public static void setText(String text) {
+		ChatInput.text = text;
 	}
 	
 }

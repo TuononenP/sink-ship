@@ -34,9 +34,9 @@ public class Chat extends JPanel {
 
 	private static final long serialVersionUID = 3263760057578866398L;
 	
-	private JTextArea textArea;
+	private static JTextArea textArea;
 	
-	private String text;
+	private static String text;
 	
 	private final static String newline = "\n";
 	
@@ -69,7 +69,7 @@ public class Chat extends JPanel {
 	 * Get text from the chat window.
 	 * @return
 	 */
-	public String getText() {
+	public static String getText() {
 		return text;
 	}
 
@@ -77,10 +77,10 @@ public class Chat extends JPanel {
 	 * Add a new line to the chat window.
 	 * @param text
 	 */
-	public void setText(String add) {
-		text = text+newline+add;
+	public static void setText(String add) {
+		Chat.text = text+newline+add;
 		//scroll automatically to the bottom of the conversation
-		textArea.setCaretPosition(textArea.getDocument().getLength());
+		Chat.textArea.setCaretPosition(textArea.getDocument().getLength());
 	}	
 
 	/**
