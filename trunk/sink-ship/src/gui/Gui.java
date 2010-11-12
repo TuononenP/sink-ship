@@ -33,7 +33,7 @@ import javax.swing.JMenuBar;
  * @author Petri Tuononen
  * 
  */
-public class Gui extends JFrame implements Runnable {
+public class Gui extends JFrame {
 	
 	private static final long serialVersionUID = 4122243646246419246L;
 
@@ -57,8 +57,8 @@ public class Gui extends JFrame implements Runnable {
 	 * Constructor.
 	 */
 	public Gui(Dimension d, LayoutManager layout) {
-		//create and set the menubar
-		setMenubar(new Menubar().getMenuBar());	
+		//initialize
+		init(d, layout);
 		
 		//set dimension
 		Gui.d=d;
@@ -192,13 +192,6 @@ public class Gui extends JFrame implements Runnable {
 	}
 
 	/**
-	 * Run method starts the executing of the object.
-	 */
-	public void run() {
-		init(getDimension(), getLayout());
-	}
-	
-	/**
 	 * Initializes the frame.
 	 * @param d Dimension
 	 */
@@ -212,7 +205,7 @@ public class Gui extends JFrame implements Runnable {
 		//set layout
 		getFrame().setLayout(layout);
 		//add menubar to the frame
-		getFrame().setJMenuBar(getMenubar());
+		getFrame().setJMenuBar(new Menubar().getMenuBar());
 		//set icon image
 		try {
 			setIconImage(new ImageIcon(getIconImage()).getImage());
@@ -243,5 +236,13 @@ public class Gui extends JFrame implements Runnable {
 		// Move the frame to the center of the screen
 		getFrame().setLocation(x, y);
 	}
+	
+//	/**
+//	 * Main method.
+//	 * @param args
+//	 */
+//	public static void main(String[] args) {
+//		 new Gui(new Dimension(800, 800), new BorderLayout());
+//	}
 	
 }

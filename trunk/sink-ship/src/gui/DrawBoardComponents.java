@@ -38,14 +38,6 @@ public class DrawBoardComponents {
 	private static Graphics g;
 
 	/**
-	 * Constructor.
-	 * @param g Graphics.
-	 */
-	public DrawBoardComponents(Graphics g) {
-		DrawBoardComponents.g=g;
-	}
-	
-	/**
 	 * Set graphics object.
 	 * @return
 	 */
@@ -63,10 +55,8 @@ public class DrawBoardComponents {
 	
 	/**
 	 * Draws the board.
-	 * 
-	 * @param g Graphics
 	 */
-	public void drawBoard(Graphics g) {
+	public void drawBoard() {
 		//draw the background sea color
 		//##############################
 		//set board width

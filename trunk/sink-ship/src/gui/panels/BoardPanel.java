@@ -18,7 +18,6 @@ package gui.panels;
 
 import general.Board;
 import gui.DrawBoardComponents;
-import gui.Gui;
 import gui.Square;
 import gui.actionListeners.BoardMouseActionListeners;
 
@@ -68,7 +67,7 @@ public class BoardPanel extends JPanel {
 	/**
 	 * @uml.property  name="components"
 	 */
-	private DrawBoardComponents components = new DrawBoardComponents(Gui.getG1());
+	private DrawBoardComponents components = new DrawBoardComponents();
 	
 	/**
 	 * Default Constructor.
@@ -113,7 +112,8 @@ public class BoardPanel extends JPanel {
 	 */
 	@Override
 	protected void paintComponent(Graphics g) {
-		components.drawBoard(g);
+		DrawBoardComponents.setG(g);
+		components.drawBoard();
 		if (Square.isSquareSelected()) {
 			//paint the selected square
 //			components.paintSelectedSquare();
@@ -123,7 +123,7 @@ public class BoardPanel extends JPanel {
 
 	/**
 	 * Get Board.
-	 * @return
+	 * @return Board
 	 */
 	public static Board getBoard() {
 		return board;
