@@ -19,7 +19,7 @@ package gui.panels;
 import general.Board;
 import gui.DrawBoardComponents;
 import gui.Square;
-import gui.actionListeners.BoardMouseActionListeners;
+import gui.actionListeners.BoardMouseActionListener;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -96,7 +96,7 @@ public class BoardPanel extends JPanel {
 	 */
 	private void init() {
 		//add mouse listener to the panel
-		addMouseListener(new BoardMouseActionListeners());	
+		addMouseListener(new BoardMouseActionListener());	
 		//set dimensions for the board.
 		dim = new Dimension(
 				board.getMatrixSize().getWidth()*board.getBlockSize().getWidth(),
