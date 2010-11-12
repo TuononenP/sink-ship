@@ -39,6 +39,7 @@ public class ChatTest extends Gui {
 		ChatTest.layout=layout;
 		getFrame().add(new Chat());
 		getFrame().pack();
+		Gui.centerPanelToScreen();
 	}
 
 	public static void main(String[] args) {
