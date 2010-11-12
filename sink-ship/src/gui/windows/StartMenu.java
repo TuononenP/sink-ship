@@ -22,18 +22,17 @@ import gui.menuActions.JoinGameAction;
 
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
 /**
  * The start screen of the application.
- * Uses a layout of one row and two columns.
  * 
  * @author  Petri Tuononen
  * 
@@ -67,7 +66,7 @@ public class StartMenu extends JFrame implements Runnable {
         JButton joinBtn = new JButton("Join a game");
         joinBtn.setFont(font);
         joinBtn.setForeground(Color.BLACK);
-        joinBtn.setBorder(new RoundedButton(100)); 
+        joinBtn.setBorder(new RoundedButton(0)); 
         //add action listener for the button
         joinBtn.addActionListener(
         		new JoinGameAction("Join a game", KeyEvent.VK_J));
@@ -76,7 +75,7 @@ public class StartMenu extends JFrame implements Runnable {
         JButton hostBtn = new JButton("Host a game");
         hostBtn.setFont(font);
         hostBtn.setForeground(Color.BLACK);
-        hostBtn.setBorder(new RoundedButton(100)); 
+        hostBtn.setBorder(new RoundedButton(0)); 
         //add action listener for the button
         hostBtn.addActionListener(
         		new HostGameAction("Host a game", KeyEvent.VK_H));
@@ -95,17 +94,12 @@ public class StartMenu extends JFrame implements Runnable {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		SwingUtilities.invokeLater(new Runnable() {
-			@Override
-			public void run() {
-				JFrame.setDefaultLookAndFeelDecorated(false);
-				new StartMenu();
-			}
-		});
+		EventQueue.invokeLater(new StartMenu());
 	}
 
 	@Override
 	public void run() {
+		JFrame.setDefaultLookAndFeelDecorated(false);
 	}
 
 }
