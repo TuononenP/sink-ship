@@ -14,35 +14,35 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package gui.windows;
+package gui.windows.tests;
 
 import java.awt.Dimension;
 import java.awt.BorderLayout;
 import java.awt.LayoutManager;
 
 import gui.Gui;
-import gui.panels.BoardPanel;
+import gui.panels.Chat;
 
 /**
- * Shows the board.
+ * Shows Chat window.
  * 
  * @author Petri Tuononen
  */
-public class BoardTest extends Gui {
+public class ChatTest extends Gui {
 
-	private static final long serialVersionUID = 6307653912816584540L;
+	private static final long serialVersionUID = -4041907827100787890L;
 	
 	private static LayoutManager layout;
 	
-	public BoardTest(Dimension d, LayoutManager layout) {
+	public ChatTest(Dimension d, LayoutManager layout) {
 		super(new Dimension(800, 800), new BorderLayout());
-		BoardTest.layout=layout;
-		getFrame().add(new BoardPanel());
+		ChatTest.layout=layout;
+		getFrame().add(new Chat());
 		getFrame().pack();
 	}
 
 	public static void main(String[] args) {
-		new BoardTest(getDimension(), layout);
+		new ChatTest(getDimension(), layout);
 	}
 
 }
