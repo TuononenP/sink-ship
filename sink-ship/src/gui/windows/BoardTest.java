@@ -16,7 +16,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui.windows;
 
-import java.awt.EventQueue;
 import java.awt.Dimension;
 import java.awt.BorderLayout;
 import java.awt.LayoutManager;
@@ -24,8 +23,9 @@ import java.awt.LayoutManager;
 import gui.Gui;
 import gui.panels.BoardPanel;
 
-//should show the board
 /**
+ * Shows the board.
+ * 
  * @author Petri Tuononen
  */
 public class BoardTest extends Gui {
@@ -35,13 +35,14 @@ public class BoardTest extends Gui {
 	private static LayoutManager layout;
 	
 	public BoardTest(Dimension d, LayoutManager layout) {
-		super(new Dimension(500, 500), new BorderLayout());
+		super(new Dimension(800, 800), new BorderLayout());
 		BoardTest.layout=layout;
-		add(new BoardPanel());
+		getFrame().add(new BoardPanel());
+		getFrame().pack();
 	}
 
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new BoardTest(getDimension(), layout));
+		new BoardTest(getDimension(), layout);
 	}
 
 }
