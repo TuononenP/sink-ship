@@ -16,11 +16,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui.actionListeners;
 
-import gui.panels.Chat;
-import gui.panels.ChatInput;
-
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 /**
  * Key listener for a text field.
@@ -30,13 +30,32 @@ import java.awt.event.KeyListener;
  */
 public class TextFieldActionListener implements KeyListener {
 
+	//global variables
+	private JTextField jtf;
+	private JTextArea jta;
+
+	/**
+	 * Constructor.
+	 * @param jtf JTextField
+	 * @param jta JTextArea
+	 */
+	public TextFieldActionListener(JTextField jtf, JTextArea jta)
+	{
+		this.jtf = jtf;
+		this.jta = jta;
+	}
+
 	@Override
 	public void keyPressed(KeyEvent e) {
-		int key = e.getKeyCode();
+		int key = e.getModifiers();
 		//if Enter key pressed
 		if (key == KeyEvent.VK_ENTER) {
-			Chat.setText(ChatInput.getText());
+			//add a new line from text field to text area
+			jta.setText(jta.getText() + "\n" + jtf.getSelectedText());
+			//clear text field
+			jtf.setText("");
 		}
+		
 	}
 
 	@Override

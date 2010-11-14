@@ -34,11 +34,11 @@ public class Chat extends JPanel {
 
 	private static final long serialVersionUID = 3263760057578866398L;
 	
-	private static JTextArea textArea;
+	private JTextArea textArea;
 	
 	private static String text;
 	
-	private final static String newline = "\n";
+//	private final static String newline = "\n";
 	
 	/**
 	 * Constructor.
@@ -66,6 +66,22 @@ public class Chat extends JPanel {
 	}
 
 	/**
+	 * Get JTextArea.
+	 * @return
+	 */
+	public JTextArea getTextArea() {
+		return textArea;
+	}
+
+	/**
+	 * Set JTextArea.
+	 * @param textArea
+	 */
+	public void setTextArea(JTextArea textArea) {
+		this.textArea = textArea;
+	}
+
+	/**
 	 * Get text from the chat window.
 	 * @return
 	 */
@@ -73,15 +89,15 @@ public class Chat extends JPanel {
 		return text;
 	}
 
-	/**
-	 * Add a new line to the chat window.
-	 * @param text
-	 */
-	public static void setText(String add) {
-		Chat.text = text+newline+add;
-		//scroll automatically to the bottom of the conversation
-		Chat.textArea.setCaretPosition(textArea.getDocument().getLength());
-	}	
+//	/**
+//	 * Add a new line to the chat window.
+//	 * @param text
+//	 */
+//	public static void setText(String add) {
+//		Chat.text = text+newline+add;
+//		//scroll automatically to the bottom of the conversation
+//		Chat.textArea.setCaretPosition(textArea.getDocument().getLength());
+//	}	
 
 	/**
 	 * Erase everything on the chat window.
