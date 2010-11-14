@@ -39,9 +39,10 @@ public class ChatWithInputTest extends Gui {
 	public ChatWithInputTest(Dimension d, LayoutManager layout) {
 		super(new Dimension(800, 800), new BorderLayout());
 		ChatWithInputTest.layout=layout;
-		getFrame().add(new Chat(), BorderLayout.NORTH);
+		Chat chat = new Chat();
+		getFrame().add(chat, BorderLayout.NORTH);
 		ChatInput inputField = new ChatInput();
-		inputField.addKeyListener(new TextFieldActionListener());
+		inputField.getInputField().addKeyListener(new TextFieldActionListener(inputField.getInputField(), chat.getTextArea()));
 		getFrame().add(inputField, BorderLayout.SOUTH);
 		getFrame().pack();
 		Gui.centerPanelToScreen();
