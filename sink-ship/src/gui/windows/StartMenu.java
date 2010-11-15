@@ -42,10 +42,9 @@ public class StartMenu extends JFrame implements Runnable {
 	private static final long serialVersionUID = -5732982185534173892L;
 
 	/**
+	 * Constructor.
 	 * The starting menu of the game.
 	 * Contains join a game and host a game buttons.
-	 * 
-	 * Constructor.
 	 */
 	public StartMenu() {
 		//setup JFrame 
@@ -56,8 +55,8 @@ public class StartMenu extends JFrame implements Runnable {
 		//set center of the screen
 		setLocationRelativeTo(null);
 		
-		//set layout (2 rows, 2 columns)
-		setLayout(new GridLayout(2, 2));
+		//set layout
+		setLayout(new GridLayout(2, 0));
 
 		//create a font for the buttons
 		Font font = new Font("Verdana", Font.BOLD, 24);

@@ -16,8 +16,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui.actionListeners;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -26,9 +26,10 @@ import javax.swing.JTextField;
  * Key listener for a text field.
  * 
  * @author Petri Tuononen
+ * TODO: Remove if unused.
  *
  */
-public class TextFieldActionListener implements KeyListener {
+public class ButtonListener implements ActionListener {
 
 	//global variables
 	private JTextField jtf;
@@ -39,32 +40,19 @@ public class TextFieldActionListener implements KeyListener {
 	 * @param jtf JTextField
 	 * @param jta JTextArea
 	 */
-	public TextFieldActionListener(JTextField jtf, JTextArea jta)
+	public ButtonListener(JTextField jtf, JTextArea jta)
 	{
 		this.jtf = jtf;
 		this.jta = jta;
 	}
 
 	@Override
-	public void keyPressed(KeyEvent e) {
-		int key = e.getModifiers();
-		//if Enter key pressed
-		if (key == KeyEvent.VK_ENTER) {
-			System.out.println("WORKS!");
-			//add a new line from text field to text area
-			jta.setText(jta.getText() + "\n" + jtf.getSelectedText());
-			//clear text field
-			jtf.setText("");
-		}
-		
-	}
-
-	@Override
-	public void keyReleased(KeyEvent e) {
-	}
-
-	@Override
-	public void keyTyped(KeyEvent e) {
+	public void actionPerformed(ActionEvent e) {
+		System.out.println("WORKS!"); //DEBUG line TODO: remove
+		//add a new line from text field to text area
+		jta.setText(jta.getText() + "\n" + jtf.getSelectedText());
+		//clear text field
+		jtf.setText("");
 	}
 
 }
