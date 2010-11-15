@@ -57,7 +57,7 @@ public class JoinGame extends JFrame implements Runnable {
 		//set center of the screen
 		setLocationRelativeTo(null);
 		
-		//create a panel with layout
+		//create panels with layout
 		JPanel titlePanel = new JPanel(new BorderLayout());
 		JPanel ipPanel = new JPanel(new FlowLayout());
 		JPanel pwPanel = new JPanel(new FlowLayout());
@@ -88,7 +88,7 @@ public class JoinGame extends JFrame implements Runnable {
         cntBtn.addActionListener(
         		new JoinGameAction("Connect", KeyEvent.VK_C));
         
-        //add components to the panel
+        //add components to panels
         titlePanel.add(joinLbl);
         ipPanel.add(ipLbl);
         ipPanel.add(ipFld);
@@ -96,11 +96,13 @@ public class JoinGame extends JFrame implements Runnable {
         pwPanel.add(pwFld);
         btnPanel.add(cntBtn);
         
-        //add panel to content pane
+        //add panels to content pane
         getContentPane().add(titlePanel);
         getContentPane().add(ipPanel);
         getContentPane().add(pwPanel);
         getContentPane().add(btnPanel);
+        
+        //set layout for the content pane
         getContentPane().setLayout(new GridLayout(4, 0));
 	}
 	
