@@ -32,8 +32,6 @@ public class ChatInput extends JPanel {
 	
 	private JTextField inputField;
 	
-	private static String text;
-	
 	/**
 	 * Constructor.
 	 */
@@ -66,16 +64,16 @@ public class ChatInput extends JPanel {
 	 * Get text from the JTextField.
 	 * @return String
 	 */
-	public static String getText() {
-		return text;
+	public String getText() {
+		return inputField.getSelectedText();
 	}
 
 	/**
 	 * Set text for the JTextField.
 	 * @param text
 	 */
-	public static void setText(String text) {
-		ChatInput.text = text;
+	public void setText(String text) {
+		inputField.setText(text);
 	}
 	
 }
