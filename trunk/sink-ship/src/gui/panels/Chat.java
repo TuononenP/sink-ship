@@ -66,7 +66,7 @@ public class Chat extends JPanel {
 
 	/**
 	 * Get JTextArea.
-	 * @return
+	 * @return JTextArea
 	 */
 	public JTextArea getTextArea() {
 		return textArea;
@@ -82,7 +82,7 @@ public class Chat extends JPanel {
 
 	/**
 	 * Get text from the chat window.
-	 * @return
+	 * @return String
 	 */
 	public String getText() {
 		return textArea.getText();
@@ -90,7 +90,7 @@ public class Chat extends JPanel {
 	
 	/**
 	 * Add a new line to the chat window.
-	 * @param text
+	 * @param add
 	 */
 	public void setText(String add) {
 		text = text+newline+add;

@@ -94,7 +94,7 @@ public class Players extends JPanel {
 	}
 
 	/**
-	 * Get text from the chat window.
+	 * Get players from the text area.
 	 * @return String
 	 */
 	public String getPlayers() {
@@ -102,8 +102,8 @@ public class Players extends JPanel {
 	}
 	
 	/**
-	 * Add a new line to the chat window.
-	 * @param players String
+	 * Add a new player to text area.
+	 * @param player String
 	 */
 	public void addPlayer(String player) {
 		textArea.setText(getPlayers()+newline+player);
