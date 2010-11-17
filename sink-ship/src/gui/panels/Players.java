@@ -16,89 +16,105 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui.panels;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Graphics;
 
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
-import types.Coordinates;
 import types.Size;
 
 /**
+ * Players panel.
+ * Shows players currently in the game.
  * 
  * @author Petri Tuononen
  *
  */
 public class Players extends JPanel {
 	
-	private static final long serialVersionUID = -8414044164218806272L;
+	private static final long serialVersionUID = 9190972272373542235L;
+
+	private JTextArea textArea;
 	
-	private static Graphics g1;
+	private final static String newline = "\n";
 	
 	/**
-	 * Constructor.
+	 *  Default constructor.
+	 */
+	public Players() {
+		init(new Size(200, 400));
+	}
+	
+	/**
+	 * Constructor with size parameter.
+	 * @param size Size size of the players text area
 	 */
 	public Players(Size size) {
-		try {
-			setLayout(new BorderLayout());
-			setBackground(Color.BLUE); //TODO: Change color to RGB
-			if (size!=null) { //TODO: Remove this later
-				setSize(200, 600);
-			}
-			//draw horizontal line
-			getG1().drawLine(0, 20, size.getWidth(), 20);
-			//draw "Players" text
-			drawString(getG1(), "Players", new Font("Arial", Font.BOLD, 30),
-					Color.BLACK, new Coordinates(10, 10));
-		} catch (Exception e) {
-			// TODO: handle exception
-			//Size not set
-		}
-	}
-
-	//TODO: Move this to more generic GUI class.
-	/**
-	 * Draws a String using the Graphics class.
-	 * 
-	 * @param g Graphics
-	 * @param text String
-	 * @param font Font style and font styles
-	 * @param fontColor Color of the font
-	 * @param coords Coordinates of the position where the text will be drawn
-	 */
-	private void drawString(Graphics g, String text, Font font, Color fontColor,
-			Coordinates coords) {
-		//set font style
-		g.setFont(font);
-		//set font color
-		g.setColor(fontColor);
-		//draw String
-		g.drawString(text, coords.getX(), coords.getY());
-	}
-
-	/**
-	 * Get graphics object.
-	 * @return
-	 */
-	public static Graphics getG1() {
-		return g1;
-	}
-
-	/**
-	 * Set Graphics object.
-	 * @param g1
-	 */
-	public void setG1(Graphics g1) {
-		Players.g1 = g1;
-	}
-
-	/**
-	 * Paints components.
-	 */
-	protected void paintComponent(Graphics g) {
-		setG1(g);
+		init(size);
 	}
 	
+	/**
+	 * Initializes the players text area.
+	 * @param size Size of the text area
+	 */
+	public void init(Size size) {
+		//set layout
+		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+		//create title
+		JLabel lbl = new JLabel("Players");
+		lbl.setFont(new Font("Arial", Font.BOLD, 18));
+		//add title to panel
+		add(lbl);
+		textArea = new JTextArea("Player 1", 5, 20); //TODO: Change text later to ""
+		textArea.setPreferredSize(new Dimension(size.getWidth(), size.getHeight()));
+		textArea.setFont(new Font("Arial", Font.PLAIN, 14));
+		//don't allow editing
+		textArea.setEditable(false);
+        //add text area to the panel
+        add(textArea);
+	}
+	
+	/**
+	 * Get JTextArea.
+	 * @return JTextArea
+	 */
+	public JTextArea getTextArea() {
+		return textArea;
+	}
+
+	/**
+	 * Set JTextArea.
+	 * @param textArea
+	 */
+	public void setTextArea(JTextArea textArea) {
+		this.textArea = textArea;
+	}
+
+	/**
+	 * Get text from the chat window.
+	 * @return String
+	 */
+	public String getPlayers() {
+		return textArea.getText();
+	}
+	
+	/**
+	 * Add a new line to the chat window.
+	 * @param players String
+	 */
+	public void addPlayer(String player) {
+		textArea.setText(getPlayers()+newline+player);
+	}	
+
+	/**
+	 * Remove a player name from the text area.
+	 */
+	public void removePlayer(String player) {
+		//TODO: Implement removePlayer()
+		getPlayers().replaceAll(player, "");
+	}
+
 }
