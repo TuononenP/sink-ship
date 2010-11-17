@@ -36,9 +36,9 @@ public class Chat extends JPanel {
 	
 	private JTextArea textArea;
 	
-	private static String text;
+	private String text;
 	
-//	private final static String newline = "\n";
+	private final static String newline = "\n";
 	
 	/**
 	 * Constructor.
@@ -47,7 +47,7 @@ public class Chat extends JPanel {
 		//TODO: Change the text to "" later
 		String text = "Some sample text just to demonstrate that the " +
 				"text area works as intended.";
-		JTextArea textArea = new JTextArea(text, 20, 40);
+		textArea = new JTextArea(text, 20, 40);
 		textArea.setPreferredSize(new Dimension(100, 100));
 		textArea.setFont(new Font("Arial", Font.PLAIN, 14));
 		JScrollPane scrollPane = new JScrollPane(textArea,
@@ -60,8 +60,9 @@ public class Chat extends JPanel {
 		textArea.setLineWrap(true);
 		//wrap line after a word
 		textArea.setWrapStyleWord(true);
-		add(scrollPane);
+		//set layout
         setLayout(new BorderLayout());
+        //add scroll pane to the panel
         add(scrollPane, BorderLayout.CENTER);
 	}
 
@@ -85,26 +86,25 @@ public class Chat extends JPanel {
 	 * Get text from the chat window.
 	 * @return
 	 */
-	public static String getText() {
-		return text;
+	public String getText() {
+		return textArea.getSelectedText();
 	}
-
-//	/**
-//	 * Add a new line to the chat window.
-//	 * @param text
-//	 */
-//	public static void setText(String add) {
-//		Chat.text = text+newline+add;
-//		//scroll automatically to the bottom of the conversation
-//		Chat.textArea.setCaretPosition(textArea.getDocument().getLength());
-//	}	
+	
+	/**
+	 * Add a new line to the chat window.
+	 * @param text
+	 */
+	public void setText(String add) {
+		text = text+newline+add;
+		//scroll automatically to the bottom of the conversation
+		textArea.setCaretPosition(textArea.getDocument().getLength());
+	}	
 
 	/**
 	 * Erase everything on the chat window.
-	 * @param text
 	 */
 	public void erase() {
-		text = "";
+		textArea.setText("");
 	}	
 	
 }
