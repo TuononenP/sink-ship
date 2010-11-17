@@ -60,8 +60,6 @@ public class Chat extends JPanel {
 		textArea.setLineWrap(true);
 		//wrap line after a word
 		textArea.setWrapStyleWord(true);
-		//set layout
-        setLayout(new BorderLayout());
         //add scroll pane to the panel
         add(scrollPane, BorderLayout.CENTER);
 	}
@@ -87,7 +85,7 @@ public class Chat extends JPanel {
 	 * @return
 	 */
 	public String getText() {
-		return textArea.getSelectedText();
+		return textArea.getText();
 	}
 	
 	/**

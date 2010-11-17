@@ -22,6 +22,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
+ * Input field panel.
  * 
  * @author Petri Tuononen
  *
