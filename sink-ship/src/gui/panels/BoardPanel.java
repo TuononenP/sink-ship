@@ -156,7 +156,7 @@ public class BoardPanel extends JPanel {
 
 	/**
 	 * Get dimension of the board.
-	 * @return
+	 * @return Dimension
 	 */
 	public static Dimension getDim() {
 		return dim;
@@ -172,7 +172,7 @@ public class BoardPanel extends JPanel {
 
 	/**
 	 * Get the width of the board panel.
-	 * @return
+	 * @return int
 	 */
 	public static int getBoardWidth() {
 		return boardWidth;
@@ -188,7 +188,7 @@ public class BoardPanel extends JPanel {
 
 	/**
 	 * Get the height of the board panel.
-	 * @return
+	 * @return int
 	 */
 	public static int getBoardHeight() {
 		return boardHeight;

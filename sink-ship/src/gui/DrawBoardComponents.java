@@ -39,7 +39,7 @@ public class DrawBoardComponents {
 
 	/**
 	 * Set graphics object.
-	 * @return
+	 * @return Graphics
 	 */
 	public static Graphics getG() {
 		return g;
@@ -93,7 +93,6 @@ public class DrawBoardComponents {
 
 	/**
 	 * Draws an x on top of the selected square.
-	 * @param g Graphics
 	 */
 	public void drawX() {
 		//get the coordinates of the upper left corner of the clicked square

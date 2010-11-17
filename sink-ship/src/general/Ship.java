@@ -63,7 +63,6 @@ public class Ship {
 	 * @param size
 	 * @param direc
 	 * @param coords
-	 * @param status
 	 */
 	public Ship(int size, Direction direc, Coordinates coords) {
 		this.size = size;

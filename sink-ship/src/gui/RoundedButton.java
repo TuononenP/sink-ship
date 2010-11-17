@@ -45,7 +45,7 @@ public class RoundedButton implements Border {
     
     /**
      * Get the border insets.
-     * @param Component
+     * @param c
      */
     public Insets getBorderInsets(Component c) {
         return new Insets(

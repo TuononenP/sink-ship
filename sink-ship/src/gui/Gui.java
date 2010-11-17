@@ -80,7 +80,7 @@ public class Gui extends JFrame {
 
 	/**
 	 * Get gui instance.
-	 * @return
+	 * @return Gui
 	 */
 	public static Gui getGui() {
 		return gui;
@@ -96,7 +96,7 @@ public class Gui extends JFrame {
 	
 	/**
 	 * Get JFrame.
-	 * @return
+	 * @return JFrame
 	 */
 	public static JFrame getFrame() {
 		return frame;
@@ -128,7 +128,7 @@ public class Gui extends JFrame {
 
 	/**
 	 * Get icon image.
-	 * @return
+	 * @return String
 	 */
 	public static String getIconImg() {
 		return iconImg;
@@ -185,7 +185,7 @@ public class Gui extends JFrame {
 
 	/**
 	 * Set Layout.
-	 * @param LayoutManager
+	 * @param layout
 	 */
 	public void setLayout(LayoutManager layout) {
 		Gui.layout = layout;

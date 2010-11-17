@@ -1,6 +1,10 @@
 general
 gui
+gui.actionListeners
 gui.menuActions
+gui.panels
+gui.windows
+gui.windows.tests
 player
 socket
 types
