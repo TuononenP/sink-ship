@@ -16,6 +16,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui.panels;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 
@@ -71,6 +72,7 @@ public class Players extends JPanel {
 		textArea = new JTextArea("Player 1", 5, 20); //TODO: Change text later to ""
 		textArea.setPreferredSize(new Dimension(size.getWidth(), size.getHeight()));
 		textArea.setFont(new Font("Arial", Font.PLAIN, 14));
+		textArea.setBackground(new Color(154, 166, 171));
 		//don't allow editing
 		textArea.setEditable(false);
         //add text area to the panel
