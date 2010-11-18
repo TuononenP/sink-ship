@@ -16,89 +16,42 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui.windows;
 
-import gui.RoundedButton;
-import gui.menuActions.HostGameAction;
-import gui.menuActions.JoinGameAction;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.LayoutManager;
 
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.GridLayout;
-import java.awt.event.KeyEvent;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.WindowConstants;
+import gui.Gui;
+import gui.panels.StartPanel;
 
 /**
  * The start screen of the application.
  * 
- * @author  Petri Tuononen
- * 
+ * @author Petri Tuononen
  */
-public class StartMenu extends JFrame implements Runnable {
-	
-	private static final long serialVersionUID = -5732982185534173892L;
+public class StartMenu extends Gui {
 
+	private static final long serialVersionUID = -8871608265061270446L;
+	
 	/**
-	 * Constructor.
-	 * The starting menu of the game.
-	 * Contains join a game and host a game buttons.
+	 * Default constructor.
 	 */
 	public StartMenu() {
-		//setup JFrame 
-		setVisible(true);
-		setTitle("Start Menu");
-		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-		setSize(500, 300);
-		//set center of the screen
-		setLocationRelativeTo(null);
-		
-		//set layout
-		setLayout(new GridLayout(2, 0));
-
-		//create a font for the buttons
-		Font font = new Font("Verdana", Font.BOLD, 24);
-		
-		//create a join game button
-        JButton joinBtn = new JButton("Join a game");
-        joinBtn.setFont(font);
-        joinBtn.setForeground(Color.BLACK);
-        joinBtn.setBorder(new RoundedButton(0)); 
-        //add action listener for the button
-        joinBtn.addActionListener(
-        		new JoinGameAction("Join a game", KeyEvent.VK_J));
-        
-		//create a host game button
-        JButton hostBtn = new JButton("Host a game");
-        hostBtn.setFont(font);
-        hostBtn.setForeground(Color.BLACK);
-        hostBtn.setBorder(new RoundedButton(0)); 
-        //add action listener for the button
-        hostBtn.addActionListener(
-        		new HostGameAction("Host a game", KeyEvent.VK_H));
-		
-		//get a container
-		Container contentPane = getContentPane();
-		
-		//add buttons to the container
-		contentPane.add(joinBtn);
-		contentPane.add(hostBtn);
+		super(new Dimension(500, 300), new BorderLayout());
+		getFrame().add(new StartPanel());
 	}
 	
 	/**
-	 * Main method.
-	 * 
-	 * @param args
+	 * Constructor.
+	 * @param d Dimension
+	 * @param layout LayoutManager
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new StartMenu());
+	public StartMenu(Dimension d, LayoutManager layout) {
+		super(d, layout);
+		getFrame().add(new StartPanel());
 	}
 
-	@Override
-	public void run() {
-		JFrame.setDefaultLookAndFeelDecorated(false);
+	public static void main(String[] args) {
+		new StartMenu();
 	}
 
 }
