@@ -16,6 +16,10 @@
  */
 package gui.menuActions;
 
+import gui.Gui;
+import gui.windows.JoinGame;
+
+import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 
 /**
@@ -43,7 +47,9 @@ public class JoinGameAction extends MenuAction {
      */
     @Override
 	public void actionPerformed(ActionEvent e) {
-    	//TODO: Implement action performed for join game
+    	Gui.getFrame().setVisible(false);
+    	EventQueue.invokeLater(new JoinGame());
+    	Gui.getFrame().dispose();
     }
     
 }
