@@ -16,11 +16,48 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui.windows;
 
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.LayoutManager;
+
+import gui.Gui;
+import gui.panels.HostPanel;
+import gui.panels.StartPanel;
+
 /**
+ * Host a game window.
  * 
  * @author Petri Tuononen
- *
  */
-public class HostGame {
+public class HostGame extends Gui {
+
+	private static final long serialVersionUID = -8871608265061270446L;
+	
+	/**
+	 * Default constructor.
+	 */
+	public HostGame() {
+		super(new Dimension(400, 500), new FlowLayout());
+		getFrame().add(new HostPanel());
+		getFrame().pack();
+	}
+	
+	/**
+	 * Constructor.
+	 * @param d Dimension
+	 * @param layout LayoutManager
+	 */
+	public HostGame(Dimension d, LayoutManager layout) {
+		super(d, layout);
+		getFrame().add(new StartPanel());
+	}
+
+	/**
+	 * Main method.
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		new HostGame();
+	}
 
 }
