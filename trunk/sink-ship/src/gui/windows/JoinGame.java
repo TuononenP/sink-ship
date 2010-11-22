@@ -22,7 +22,6 @@ import java.awt.LayoutManager;
 
 import gui.Gui;
 import gui.panels.JoinPanel;
-import gui.panels.StartPanel;
 
 /**
  * Join a game window.
@@ -49,9 +48,13 @@ public class JoinGame extends Gui {
 	 */
 	public JoinGame(Dimension d, LayoutManager layout) {
 		super(d, layout);
-		getFrame().add(new StartPanel());
+		getFrame().add(new JoinPanel());
 	}
 
+	/**
+	 * NMain method.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		new JoinGame();
 	}
