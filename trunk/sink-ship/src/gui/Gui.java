@@ -237,12 +237,4 @@ public class Gui extends JFrame {
 		Gui.getFrame().setLocation(x, y);
 	}
 	
-//	/**
-//	 * Main method.
-//	 * @param args
-//	 */
-//	public static void main(String[] args) {
-//		 new Gui(new Dimension(800, 800), new BorderLayout());
-//	}
-	
 }

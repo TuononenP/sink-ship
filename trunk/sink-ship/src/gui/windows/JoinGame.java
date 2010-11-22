@@ -16,8 +16,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package gui.windows;
 
-import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.LayoutManager;
 
 import gui.Gui;
@@ -37,7 +37,7 @@ public class JoinGame extends Gui {
 	 * Default constructor.
 	 */
 	public JoinGame() {
-		super(new Dimension(400, 300), new BorderLayout());
+		super(new Dimension(400, 300), new FlowLayout());
 		getFrame().add(new JoinPanel());
 		getFrame().pack();
 	}
