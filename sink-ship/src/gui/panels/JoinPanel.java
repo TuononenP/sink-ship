@@ -32,6 +32,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import types.Size;
+
 /**
  * Join a game panel.
  * 
@@ -43,9 +45,25 @@ public class JoinPanel extends JPanel {
 	private static final long serialVersionUID = 5349286414627145516L;
 
 	/**
-	 * Constructor.
+	 * Default constructor.
 	 */
 	public JoinPanel() {
+		init(new Size(400, 300));
+	}
+
+	/**
+	 * Constructor.
+	 * @param size Size of the panel.
+	 */
+	public JoinPanel(Size size) {
+		init(size);
+	}
+	
+	/**
+	 * Initializes the join a game panel.
+	 * @param size
+	 */
+	private void init(Size size) {
         //set layout for the panel
         setLayout(new GridLayout(4, 0));
         
