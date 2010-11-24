@@ -71,48 +71,54 @@ public class HostPanel extends JPanel {
 		JPanel titlePanel = new JPanel(new BorderLayout());
 		JPanel pwPanel = new JPanel(new FlowLayout());
 		JPanel matrixPanel = new JPanel(new FlowLayout());
+		JPanel shipsPanel = new JPanel(new FlowLayout());
 		JPanel btnPanel = new JPanel(new BorderLayout());
 		
 		//create labels
 		JLabel hostLbl = new JLabel("Host a game");
 		JLabel pwLbl = new JLabel("PW");
 		JLabel matrixLbl = new JLabel("Matrix");
+		JLabel times = new JLabel("X");
+		JLabel ships = new JLabel("Ships");
 		
 		//set host a game label font
 		hostLbl.setFont(new Font("Verdana", Font.BOLD, 20));
 		
 		//create text fields
 		JTextField pwFld = new JTextField();
-		JTextField matrixFld = new JTextField();
+		JTextField matrixFldWidth = new JTextField();
+		JTextField matrixFldHeight = new JTextField();
 		
 		//set text field sizes
-		//set text field sizes
 		pwFld.setPreferredSize(new Dimension(100, 20));
-		matrixFld.setPreferredSize(new Dimension(100, 20));
-		
-		pwFld.setPreferredSize(new Dimension(100, 20));
-		matrixFld.setPreferredSize(new Dimension(100, 20));
+		matrixFldWidth.setPreferredSize(new Dimension(30, 20));
+		matrixFldHeight.setPreferredSize(new Dimension(30, 20));
 		
 		//create a connect button
-        JButton cntBtn = new JButton("Connect");
-        cntBtn.setFont(new Font("Verdana", Font.BOLD, 14));
-        cntBtn.setForeground(Color.BLACK);
-        cntBtn.setBorder(new RoundedButton(0)); 
+        JButton hostBtn = new JButton("Connect");
+        hostBtn.setFont(new Font("Verdana", Font.BOLD, 14));
+        hostBtn.setForeground(Color.BLACK);
+        hostBtn.setBorder(new RoundedButton(0)); 
         //add action listener for the button
-        cntBtn.addActionListener(
-        		new HostGameAction("Connect", KeyEvent.VK_C));
+        hostBtn.addActionListener(
+        		new HostGameAction("Host", KeyEvent.VK_H));
         
         //add components to panels
         titlePanel.add(hostLbl);
         pwPanel.add(pwLbl);
         pwPanel.add(pwFld);
         matrixPanel.add(matrixLbl);
-        btnPanel.add(cntBtn);
+        matrixPanel.add(matrixFldWidth);
+        matrixPanel.add(times);
+        matrixPanel.add(matrixFldHeight);
+        shipsPanel.add(ships);
+        btnPanel.add(hostBtn);
         
         //add panels to panel
         add(titlePanel);
         add(pwPanel);
         add(matrixPanel);
+//        add(shipsPanel);
         add(btnPanel);
 	}
 	

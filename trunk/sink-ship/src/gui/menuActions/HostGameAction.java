@@ -16,6 +16,9 @@
  */
 package gui.menuActions;
 
+import gui.Gui;
+import gui.windows.HostGame;
+
 import java.awt.event.ActionEvent;
 
 /**
@@ -43,7 +46,8 @@ public class HostGameAction extends MenuAction {
      */
     @Override
 	public void actionPerformed(ActionEvent e) {
-    	//TODO: Implement action performed for host game
+    	Gui.getFrame().dispose();
+    	new HostGame();
     }
     
 }
