@@ -65,21 +65,31 @@ public class HostPanel extends JPanel {
 	 */
 	private void init(Size size) {
         //set layout for the panel
-        setLayout(new GridLayout(4, 0));
+        setLayout(new GridLayout(10, 0));
         
 		//create panels with layout
 		JPanel titlePanel = new JPanel(new BorderLayout());
 		JPanel pwPanel = new JPanel(new FlowLayout());
 		JPanel matrixPanel = new JPanel(new FlowLayout());
-		JPanel shipsPanel = new JPanel(new FlowLayout());
+		JPanel shipsPanel = new JPanel(new BorderLayout());
 		JPanel btnPanel = new JPanel(new BorderLayout());
+		JPanel oneShipPanel = new JPanel(new FlowLayout());
+		JPanel twoShipPanel = new JPanel(new FlowLayout());
+		JPanel threeShipPanel = new JPanel(new FlowLayout());
+		JPanel fourShipPanel = new JPanel(new FlowLayout());
+		JPanel fiveShipPanel = new JPanel(new FlowLayout());
 		
 		//create labels
 		JLabel hostLbl = new JLabel("Host a game");
 		JLabel pwLbl = new JLabel("PW");
 		JLabel matrixLbl = new JLabel("Matrix");
-		JLabel times = new JLabel("X");
-		JLabel ships = new JLabel("Ships");
+		JLabel timesLbl = new JLabel("X");
+		JLabel shipsLbl = new JLabel("Ships");
+		JLabel oneShipLbl = new JLabel("1x Ship");
+		JLabel twoShipLbl = new JLabel("2x Ship");
+		JLabel threeShipLbl = new JLabel("3x Ship");
+		JLabel fourShipLbl = new JLabel("4x Ship");
+		JLabel fiveShipLbl = new JLabel("5x Ship");
 		
 		//set host a game label font
 		hostLbl.setFont(new Font("Verdana", Font.BOLD, 20));
@@ -88,11 +98,21 @@ public class HostPanel extends JPanel {
 		JTextField pwFld = new JTextField();
 		JTextField matrixFldWidth = new JTextField();
 		JTextField matrixFldHeight = new JTextField();
+		JTextField oneShipFld = new JTextField();
+		JTextField twoShipFld = new JTextField();
+		JTextField threeShipFld = new JTextField();
+		JTextField fourShipFld = new JTextField();
+		JTextField fiveShipFld= new JTextField();
 		
 		//set text field sizes
 		pwFld.setPreferredSize(new Dimension(100, 20));
 		matrixFldWidth.setPreferredSize(new Dimension(30, 20));
 		matrixFldHeight.setPreferredSize(new Dimension(30, 20));
+		oneShipFld.setPreferredSize(new Dimension(30, 20));
+		twoShipFld.setPreferredSize(new Dimension(30, 20));
+		threeShipFld.setPreferredSize(new Dimension(30, 20));
+		fourShipFld.setPreferredSize(new Dimension(30, 20));
+		fiveShipFld.setPreferredSize(new Dimension(30, 20));
 		
 		//create a connect button
         JButton hostBtn = new JButton("Connect");
@@ -100,8 +120,7 @@ public class HostPanel extends JPanel {
         hostBtn.setForeground(Color.BLACK);
         hostBtn.setBorder(new RoundedButton(0)); 
         //add action listener for the button
-        hostBtn.addActionListener(
-        		new HostGameAction("Host", KeyEvent.VK_H));
+        hostBtn.addActionListener(new HostGameAction("Host", KeyEvent.VK_H));
         
         //add components to panels
         titlePanel.add(hostLbl);
@@ -109,16 +128,31 @@ public class HostPanel extends JPanel {
         pwPanel.add(pwFld);
         matrixPanel.add(matrixLbl);
         matrixPanel.add(matrixFldWidth);
-        matrixPanel.add(times);
+        matrixPanel.add(timesLbl);
         matrixPanel.add(matrixFldHeight);
-        shipsPanel.add(ships);
+        shipsPanel.add(shipsLbl);
         btnPanel.add(hostBtn);
+        oneShipPanel.add(oneShipLbl);
+        oneShipPanel.add(oneShipFld);
+        twoShipPanel.add(twoShipLbl);
+        twoShipPanel.add(twoShipFld);
+        threeShipPanel.add(threeShipLbl);
+        threeShipPanel.add(threeShipFld);
+        fourShipPanel.add(fourShipLbl);
+        fourShipPanel.add(fourShipFld);
+        fiveShipPanel.add(fiveShipLbl);
+        fiveShipPanel.add(fiveShipFld);
         
-        //add panels to panel
+        //add panels to main panel
         add(titlePanel);
         add(pwPanel);
         add(matrixPanel);
-//        add(shipsPanel);
+        add(shipsPanel);
+        add(oneShipPanel);
+        add(twoShipPanel);
+        add(threeShipPanel);
+        add(fourShipPanel);
+        add(fiveShipPanel);
         add(btnPanel);
 	}
 	
