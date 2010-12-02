@@ -38,7 +38,7 @@ import gui.panels.ChatInput;
 import gui.panels.Players;
 
 /**
- * Shows Chat window with an input field.
+ * Shows a lobby view.
  * 
  * @author Petri Tuononen
  */
