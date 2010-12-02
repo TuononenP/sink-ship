@@ -32,7 +32,7 @@ import gui.Gui;
 import gui.RoundedButton;
 import gui.actionListeners.TextFieldActionListener2;
 import gui.menuActions.DisconnectAction;
-import gui.menuActions.JoinGameAction;
+import gui.menuActions.StartGameAction;
 import gui.panels.Chat;
 import gui.panels.ChatInput;
 import gui.panels.Players;
@@ -86,7 +86,7 @@ public class Lobby extends Gui {
         readyBtn.setPreferredSize(new Dimension(100, 40));
         //add action listener for the button
         readyBtn.addActionListener(
-        		new JoinGameAction("Ready", KeyEvent.VK_R));
+        		new StartGameAction("Ready", KeyEvent.VK_R));
 		//create a disconnect button       
         JButton disconnectBtn = new JButton("Disconnect");
         disconnectBtn.setFont(new Font("Verdana", Font.BOLD, 14));
