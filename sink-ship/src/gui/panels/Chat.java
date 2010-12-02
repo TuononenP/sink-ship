@@ -41,19 +41,31 @@ public class Chat extends JPanel {
 	private final static String newline = "\n";
 	
 	/**
-	 * Constructor.
+	 * Default Constructor.
 	 */
 	public Chat() {
-		//TODO: Change the text to "" later
-		String text = "Some sample text just to demonstrate that the " +
-				"text area works as intended.";
-		textArea = new JTextArea(text, 20, 40);
+		init(new Dimension(550, 200));
+	}
+
+	/**
+	 * Constructor.
+	 * @param Dimension
+	 */
+	public Chat(Dimension dimension) {
+		init(dimension);
+	}
+	
+	/**
+	 * Initializes the Chat frame.
+	 */
+	private void init(Dimension dimension) {
+		textArea = new JTextArea("", 20, 40);
 		textArea.setPreferredSize(new Dimension(100, 100));
 		textArea.setFont(new Font("Arial", Font.PLAIN, 14));
 		JScrollPane scrollPane = new JScrollPane(textArea,
 				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
 				JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane.setPreferredSize(new Dimension(550, 200)); //TODO check size later
+		scrollPane.setPreferredSize(dimension); //TODO check size later
 		//don't allow editing
 		textArea.setEditable(false);
 		//wraps lines that are too long for the display area
@@ -61,9 +73,9 @@ public class Chat extends JPanel {
 		//wrap line after a word
 		textArea.setWrapStyleWord(true);
         //add scroll pane to the panel
-        add(scrollPane, BorderLayout.CENTER);
+        add(scrollPane, BorderLayout.CENTER);	
 	}
-
+	
 	/**
 	 * Get JTextArea.
 	 * @return JTextArea
