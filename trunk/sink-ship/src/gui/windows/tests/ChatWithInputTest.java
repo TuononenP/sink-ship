@@ -21,7 +21,7 @@ import java.awt.BorderLayout;
 import java.awt.LayoutManager;
 
 import gui.Gui;
-import gui.actionListeners.TextFieldActionListener;
+import gui.actionListeners.TextFieldActionListener2;
 import gui.panels.Chat;
 import gui.panels.ChatInput;
 
@@ -42,7 +42,11 @@ public class ChatWithInputTest extends Gui {
 		Chat chat = new Chat();
 		getFrame().add(chat, BorderLayout.NORTH);
 		ChatInput inputField = new ChatInput();
-		inputField.getInputField().addKeyListener(new TextFieldActionListener(inputField.getInputField(), chat.getTextArea()));
+		ChatInput.getInputField().addKeyListener(
+				new TextFieldActionListener2(inputField, chat));
+//		inputField.getInputField().addKeyListener(
+//				new TextFieldActionListener(inputField.getInputField(),
+//						chat.getTextArea()));
 		getFrame().add(inputField, BorderLayout.SOUTH);
 		getFrame().pack();
 		Gui.centerPanelToScreen();

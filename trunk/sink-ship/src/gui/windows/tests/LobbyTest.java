@@ -14,7 +14,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package gui.windows;
+package gui.windows.tests;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -42,15 +42,15 @@ import gui.panels.Players;
  * 
  * @author Petri Tuononen
  */
-public class Lobby extends Gui {
+public class LobbyTest extends Gui {
 
-	private static final long serialVersionUID = 2856107391014496766L;
+	private static final long serialVersionUID = -4041907827100787890L;
 	
 	private static LayoutManager layout;
 	
-	public Lobby(Dimension d, LayoutManager layout) {
+	public LobbyTest(Dimension d, LayoutManager layout) {
 		super(new Dimension(800, 800), new BorderLayout());
-		Lobby.layout=layout;
+		LobbyTest.layout=layout;
 		
 		//add players panel to the frame
 		getFrame().add(new Players(new Size(100, 200)), BorderLayout.WEST);
@@ -116,7 +116,7 @@ public class Lobby extends Gui {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		new Lobby(getDimension(), layout);
+		new LobbyTest(getDimension(), layout);
 	}
 
 }

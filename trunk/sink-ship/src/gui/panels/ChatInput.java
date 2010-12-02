@@ -31,7 +31,7 @@ public class ChatInput extends JPanel {
 	
 	private static final long serialVersionUID = -7760630614307106453L;
 	
-	private JTextField inputField;
+	private static JTextField inputField;
 	
 	/**
 	 * Constructor.
@@ -49,7 +49,7 @@ public class ChatInput extends JPanel {
 	 * Get input field.
 	 * @return JTextField
 	 */
-	public JTextField getInputField() {
+	public static JTextField getInputField() {
 		return inputField;
 	}
 
@@ -58,7 +58,7 @@ public class ChatInput extends JPanel {
 	 * @param input
 	 */
 	public void setInputField(JTextField input) {
-		this.inputField = input;
+		ChatInput.inputField = input;
 	}
 
 	/**
