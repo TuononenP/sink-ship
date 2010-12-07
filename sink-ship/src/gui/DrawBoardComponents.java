@@ -79,14 +79,16 @@ public class DrawBoardComponents {
 		//##########################
 		getG().setColor(ColorSettings.getLineColor());
 		for (int i=1; i<=BoardPanel.getBoard().getMatrixSize().getWidth(); i++) {
-			getG().fillRect(x, i*BoardPanel.getBoard().getBlockSize().getHeight()-BoardPanel.getLineWidth(),
+			getG().fillRect(x, i*BoardPanel.getBoard().getBlockSize().getHeight()
+					-BoardPanel.getLineWidth(),
 					BoardPanel.getBoardWidth(), BoardPanel.getLineWidth());
 		}
 
 		//draw the vertical lines
 		//#########################
 		for (int i=1; i<=BoardPanel.getBoard().getMatrixSize().getHeight(); i++) {
-			getG().fillRect(i*BoardPanel.getBoard().getBlockSize().getWidth()-BoardPanel.getLineWidth(), x,
+			getG().fillRect(i*BoardPanel.getBoard().getBlockSize().getWidth()-
+					BoardPanel.getLineWidth(), x,
 					BoardPanel.getLineWidth(), BoardPanel.getBoardWidth());
 		}
 	}
@@ -103,15 +105,19 @@ public class DrawBoardComponents {
 		getG().drawLine(
 				coords.getX(),
 				coords.getY(),
-				coords.getX()+BoardPanel.getBoard().getBlockSize().getWidth()-BoardPanel.getLineWidth(),
-				coords.getY()+BoardPanel.getBoard().getBlockSize().getHeight()-BoardPanel.getLineWidth()
+				coords.getX()+BoardPanel.getBoard().getBlockSize().getWidth()
+				-BoardPanel.getLineWidth(),
+				coords.getY()+BoardPanel.getBoard().getBlockSize().getHeight()
+				-BoardPanel.getLineWidth()
 		);
 		//paint diagonal line starting from upper-right corner to bottom-left corner
 		getG().drawLine(
-				coords.getX()-BoardPanel.getLineWidth()+BoardPanel.getBoard().getBlockSize().getWidth()-BoardPanel.getLineWidth(),
+				coords.getX()-BoardPanel.getLineWidth()
+				+BoardPanel.getBoard().getBlockSize().getWidth()-BoardPanel.getLineWidth(),
 				coords.getY(),
 				coords.getX()-BoardPanel.getLineWidth(),
-				coords.getY()+BoardPanel.getBoard().getBlockSize().getHeight()-BoardPanel.getLineWidth()
+				coords.getY()+BoardPanel.getBoard().getBlockSize().getHeight()
+				-BoardPanel.getLineWidth()
 		);
 	}
 
@@ -171,8 +177,10 @@ public class DrawBoardComponents {
 		getG().fillRect(
 				x,
 				y, 
-				BoardPanel.getBoard().getBlockSize().getWidth()-BoardPanel.getLineWidth(),
-				BoardPanel.getBoard().getBlockSize().getHeight()-BoardPanel.getLineWidth()
+				BoardPanel.getBoard().getBlockSize().getWidth()
+				-BoardPanel.getLineWidth(),
+				BoardPanel.getBoard().getBlockSize().getHeight()
+				-BoardPanel.getLineWidth()
 		);
 	}
 	
